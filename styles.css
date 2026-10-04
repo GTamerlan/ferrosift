@@ -336,6 +336,20 @@ section[id] {
   min-width:220px;
 }
 
+.hero-actions {
+  display:flex;
+  flex-direction:column;
+  width:max-content;
+  max-width:100%;
+  gap:12px;
+  margin-top:32px;
+}
+
+.hero-actions .button {
+  min-width:250px;
+  margin-top:0;
+}
+
 .button:before {
   content:'';
   position:absolute;
@@ -1231,3 +1245,21 @@ section[id] {
   }
 }
 
+@media (min-width:861px) and (max-height:760px) {
+  .hero {
+    min-height:100svh;
+  }
+  .hero .scene-content {
+    padding-top:110px;
+    padding-bottom:40px;
+  }
+  .hero h1 {
+    font-size:clamp(60px,6vw,84px);
+  }
+  .hero .scene-copy {
+    margin-top:18px;
+  }
+  .hero-actions {
+    margin-top:24px;
+  }
+}
