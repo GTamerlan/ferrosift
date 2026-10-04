@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Ferrosift is developing an integrated smart conveyor: computer vision, inductive sensing, AI decisions and verified physical sorting. Explore the proposed machine in 3D and examine the evidence behind the opportunity.">
+  <meta property="og:title" content="Ferrosift — Value. Not waste."><meta property="og:description" content="See. Sense. Decide. Sort. An interactive exploration of the Ferrosift smart-conveyor concept."><meta property="og:type" content="website">
+  <title>Ferrosift — Engineering Explorer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230a0a0a%22%2F%3E%3Cpath%20d%3D%22M15%2016h39l-8%208H15zm0%2015h30l-8%208H15zm0%2015h18l-8%208H15z%22%20fill%3D%22%232b5bff%22%2F%3E%3C%2Fsvg%3E%0A">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Instrument+Serif&display=swap">
+  <style>
+/* FERROSIFT — minimal editorial system. One accent. Hairline grid. Mixed-case type.
+   Open-source fonts (Inter, Instrument Serif) with system fallbacks. */
+:root{
+  --bg:#0a0a0a;--bg-2:#0d0d0e;--panel:#111112;--panel-2:#151517;
+  --ink:#f3f3f3;--ink-2:#cfcfcf;--muted:#9b9b9b;--faint:#6f6f6f;
+  --line:rgba(255,255,255,.12);--line-2:rgba(255,255,255,.22);
+  --accent:#2b5bff;--accent-hover:#3d6bff;--accent-text:#6f90ff;--accent-soft:rgba(43,91,255,.14);
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --header:72px;--gutter:clamp(20px,4vw,64px);--max:1480px;--pad:clamp(20px,3.4vw,52px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--accent);color:#fff}
+button,input,textarea,select{font:inherit}
+button,a,input,select,summary,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button{cursor:pointer;border:0;background:none;color:inherit;padding:0}
+button:disabled{opacity:.45;cursor:not-allowed}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+h1,h2,h3,p{margin:0}
+h1,h2{font-weight:400;letter-spacing:-.028em;line-height:1.04}
+h1{font-size:clamp(42px,4.8vw,70px)}
+h2{font-size:clamp(32px,3.4vw,50px)}
+h2.serif{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4vw,60px);letter-spacing:-.012em;line-height:1.06}
+h3{font-size:18px;font-weight:500;letter-spacing:-.012em;line-height:1.3}
+p{color:var(--muted)}
+.dim{color:var(--faint)}
+.muted{color:var(--muted)}
+.lead{font-size:19px;line-height:1.45;color:var(--ink-2);letter-spacing:-.012em}
+.eyebrow,.label,.micro{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.6;color:var(--muted)}
+.eyebrow{color:var(--ink-2)}
+.eyebrow i{display:inline-block;width:6px;height:6px;background:var(--accent);margin:0 10px 1px 0;vertical-align:middle}
+.micro{font-size:11px!important;letter-spacing:.02em;text-transform:none;color:var(--faint)!important;line-height:1.6!important}
+.micro a,.figure-note a,.source-link{color:var(--accent-text)}
+.source-link{font-family:var(--mono);font-size:11px;letter-spacing:0}
+.badge{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:6px 10px;white-space:nowrap}
+.badge.blue{color:var(--accent-text);border-color:rgba(43,91,255,.45)}
+.skip{position:fixed;top:-100px;left:12px;z-index:100;background:#fff;color:#000;padding:10px}.skip:focus{top:12px}
+
+/* Buttons & links */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:48px;padding:0 22px;background:var(--accent);color:#fff;font-weight:500;font-size:14px;letter-spacing:-.005em;border-radius:2px;transition:background .2s,color .2s,border-color .2s,transform .2s;white-space:nowrap}
+.btn:hover{background:var(--accent-hover);color:#fff}
+.btn span{font-size:16px;line-height:1}
+.btn.ghost{background:transparent;border:1px solid var(--line-2);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.04)}
+.btn.white{background:#fff;color:#0a0a0a}
+.btn.white:hover{background:#e9edff;color:#0a0a0a}
+.btn.small{height:40px;padding:0 16px;font-size:13px}
+.link{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.link span{font-family:var(--sans);font-size:15px;transition:transform .2s}
+.link:hover{color:var(--accent-text)}.link:hover span{transform:translateX(3px)}
+
+/* Layout frame: centered column with hairlines at the content edges (desktop) */
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.frame-lines{position:fixed;top:0;bottom:0;left:50%;width:min(100%,var(--max));transform:translateX(-50%);pointer-events:none;z-index:4}
+.frame-lines:before,.frame-lines:after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+.frame-lines:before{left:var(--gutter)}.frame-lines:after{right:var(--gutter)}
+.section{position:relative;z-index:3;background:var(--bg)}
+.section-inner{position:relative;border-top:1px solid var(--line);padding:clamp(72px,8vw,120px) var(--pad)}
+.section-inner:before{content:"";position:absolute;left:-4px;top:-4px;width:7px;height:7px;background:var(--ink)}
+.section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px clamp(40px,6vw,120px);align-items:start}
+.section-head .eyebrow{grid-column:1/-1;margin-bottom:-6px}
+.section-head>p:not(.eyebrow){font-size:16px;line-height:1.65;max-width:520px;color:var(--muted);padding-top:10px}
+.section-head>p strong{color:var(--ink-2);font-weight:400}
+.section-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
+
+/* Header */
+.site-header{position:fixed;inset:0 0 auto;height:var(--header);z-index:30;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(10,10,10,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:var(--ink)}
+.wordmark svg{width:22px;height:22px;color:var(--ink)}
+.site-header nav{display:flex;gap:30px;margin-right:auto;margin-left:46px}
+.site-header nav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.site-header nav a:hover,.site-header nav a.active{color:var(--ink);border-color:var(--ink)}
+.header-cta{height:40px;padding:0 18px;font-size:13px}
+.menu-toggle{display:none}
+.mobile-nav[hidden]{display:none}
+.mobile-nav{position:fixed;top:var(--header);inset-inline:0;background:#0d0d0e;z-index:35;padding:28px var(--gutter) 34px;display:flex;flex-direction:column;gap:22px;border-bottom:1px solid var(--line)}
+.mobile-nav a,.mobile-nav button{font-size:20px;text-align:left;letter-spacing:-.01em}
+.mobile-nav button{color:var(--accent-text)}
+
+/* ===== 3D stage + scroll story ===== */
+.machine-story{position:relative;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr);isolation:isolate;overflow:clip}
+.machine-stage,.story-panels{grid-column:1;grid-row:1}
+.machine-stage{height:100vh;height:100svh;position:sticky;top:0;align-self:start;overflow:hidden;z-index:1}
+.scene-atmosphere{position:absolute;inset:0;background:radial-gradient(ellipse at 72% 55%,rgba(255,255,255,.045) 0%,rgba(255,255,255,.012) 32%,transparent 62%)}
+.scene-atmosphere:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse at 74% 58%,#000 0%,transparent 60%);-webkit-mask-image:radial-gradient(ellipse at 74% 58%,#000 0%,transparent 60%)}
+.scene-area{position:absolute;left:30%;right:-2%;top:10%;bottom:6%;z-index:1}
+.scene-area canvas{width:100%;height:100%;display:block;touch-action:pan-y;cursor:default}
+.scene-area canvas.explorable{cursor:grab;touch-action:none}.scene-area canvas.explorable:active{cursor:grabbing}
+.scene-topline{position:absolute;right:var(--gutter);top:calc(var(--header) + 22px);z-index:3;display:flex;gap:28px;align-items:center}
+.scene-topline .label{font-size:10px;color:var(--muted)}
+.status-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin:0 9px 1px 0;box-shadow:0 0 10px rgba(43,91,255,.6)}
+.scene-bottomline{position:absolute;right:var(--gutter);bottom:34px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;z-index:3}
+.scene-readout{display:grid;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+#stage-number{color:var(--ink)}
+.stage-dots{display:flex;gap:4px;margin-top:2px}
+.stage-dots i{width:26px;height:1px;background:rgba(255,255,255,.22);transition:background .3s}
+.stage-dots i.active{background:var(--accent)}
+.scene-controls{display:flex;gap:6px;align-items:center}
+.scene-controls button{background:rgba(10,10,10,.72);backdrop-filter:blur(8px);border:1px solid var(--line);height:34px;padding:0 12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:.2s;border-radius:2px}
+.scene-controls button:hover{border-color:var(--ink);color:var(--ink)}
+.scene-controls button[aria-pressed=true]{border-color:var(--accent);color:var(--ink);background:rgba(43,91,255,.16)}
+.scene-disclaimer{position:absolute;bottom:14px;right:var(--gutter);font-family:var(--mono);font-size:10px;color:var(--faint);z-index:3}
+.scene-tag{position:absolute;bottom:26%;left:61%;display:flex;gap:10px;align-items:center;z-index:2;pointer-events:none;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-2)}
+.tag-cross{width:7px;height:7px;background:var(--ink);flex-shrink:0}
+#scene-tag-text{padding:7px 10px;border:1px solid var(--line);background:rgba(10,10,10,.75);backdrop-filter:blur(6px)}
+.track-label{position:absolute;left:0;top:0;margin:-11px 0 0 18px;display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid var(--line);background:rgba(10,10,10,.82);backdrop-filter:blur(6px);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;pointer-events:none;z-index:3;will-change:transform}
+.track-label[hidden]{display:none}
+.track-label.flip{margin-left:-18px}
+.track-label i{width:6px;height:6px;background:var(--accent);flex-shrink:0}
+.story-panels{position:relative;z-index:2;pointer-events:none}
+.scene-step{height:100vh;height:100svh;min-height:680px;display:flex;align-items:center;padding:calc(var(--header) + 10px) var(--gutter) 70px;position:relative}
+.scene-step>.wrap{width:100%;padding-inline:var(--pad)}
+.step-copy{width:36%;max-width:470px;pointer-events:auto;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .step-copy{opacity:0;transform:translateY(18px)}
+.js .scene-step.in-view .step-copy{opacity:1;transform:none}
+.step-copy .eyebrow{margin-bottom:22px}
+.step-copy h2{margin-bottom:22px}
+.step-copy>.lead{margin-bottom:14px}
+.step-copy>p:not(.eyebrow):not(.lead):not(.micro){font-size:14.5px;line-height:1.65;max-width:420px}
+.step-copy>.micro{margin-top:18px;max-width:400px}
+.step-copy .link{margin-top:22px}
+.hero .step-copy{width:46%;max-width:620px}
+.hero h1{margin:26px 0 24px}
+.hero h1 .dim{color:var(--faint)}
+.hero .lead{max-width:470px;margin-bottom:30px}
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line);max-width:560px}
+.hero-meta .label{font-size:10px;color:var(--faint);white-space:nowrap}
+.scroll-cue{position:absolute;left:calc(var(--gutter) + var(--pad));bottom:34px;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.scroll-line{height:1px;width:40px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.scroll-line:after{content:"";position:absolute;inset:0;background:var(--ink);transform:translateX(-100%);animation:scroll-cue 2.6s infinite}
+@keyframes scroll-cue{to{transform:translateX(100%)}}
+/* Key-point lists inside the steps */
+.points{margin-top:26px;border-top:1px solid var(--line);max-width:420px}
+.points>div{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--muted)}
+.points>div b{font-weight:500;color:var(--ink);font-size:13px}
+.points.routes>div{grid-template-columns:14px 1fr;align-items:center}
+.route-dot{width:7px;height:7px;background:var(--ink)}
+.route-dot.accent{background:var(--accent)}.route-dot.grey{background:var(--faint)}
+.fusion{margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;display:grid;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);max-width:420px}
+.fusion-in,.fusion-out{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fusion-out{justify-content:flex-end}
+.fusion span{padding:5px 8px;border:1px solid var(--line);color:var(--ink-2)}
+.fusion i{font-style:normal;color:var(--faint)}
+.fusion b{font-weight:500;color:var(--accent-text);padding:5px 8px;border:1px solid rgba(43,91,255,.45)}
+.waveform{width:100%;max-width:420px;height:96px;display:block;margin-top:26px;border:1px solid var(--line);background:var(--panel)}
+.wave-grid{stroke:rgba(255,255,255,.08);fill:none;stroke-width:1}
+.wave-line{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-dasharray:5 1.5;animation:dash-flow 5s linear infinite}
+@keyframes dash-flow{to{stroke-dashoffset:-65}}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:26px;border-top:1px solid var(--line);border-left:1px solid var(--line);max-width:420px}
+.metric-grid>div{padding:14px 14px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metric-grid b{display:block;font-weight:500;font-size:14px;color:var(--ink)}
+.metric-grid span{font-size:12px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+#webgl-fallback{position:absolute;inset:10%;display:flex;flex-direction:column;justify-content:center}
+#webgl-fallback[hidden]{display:none}
+#webgl-fallback p{font-size:12px;text-align:center;font-family:var(--mono)}
+
+/* ===== Opportunity ===== */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(48px,6vw,84px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:34px 28px 30px;border-right:1px solid var(--line)}
+.stat:first-child{padding-left:0}.stat:last-child{border-right:0}
+.stat b{display:flex;align-items:baseline;gap:6px;font-weight:300;font-size:clamp(46px,5.2vw,78px);letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.stat b small{font-family:var(--mono);font-size:16px;letter-spacing:0;color:var(--muted);font-weight:400}
+.stat .label{margin-top:18px;font-size:10px;display:block;position:relative;padding-left:16px;line-height:1.6;max-width:300px}
+.stat .label i{position:absolute;left:0;top:5px;width:6px;height:6px;background:var(--accent)}
+.stat .label i.grey{background:var(--faint)}
+.stat .label a{color:var(--accent-text)}
+.flow-block{margin-top:clamp(48px,6vw,84px)}
+.block-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.block-head h3{font-size:18px}
+.global-flow{display:grid;grid-template-columns:1fr 1.15fr;gap:14%;align-items:center;position:relative;margin:34px 0 24px}
+.flow-connectors{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.flow-node{position:relative;z-index:1;padding:22px 24px;border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.flow-node strong{font-weight:300;font-size:44px;letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.flow-node strong small{font-family:var(--mono);font-size:14px;letter-spacing:0;color:var(--muted);font-weight:400;margin-left:4px}
+.flow-node>span:last-child{font-size:13px;color:var(--muted);max-width:300px;line-height:1.5}
+.flow-node .label{font-size:10px}
+.flow-branches{display:grid;gap:18px}
+.flow-node.documented{border-color:rgba(43,91,255,.55)}
+.flow-node.documented .label{color:var(--accent-text)}
+.flow-line{fill:none;stroke-width:1;opacity:.5}
+.flow-pulse{fill:none;stroke-width:1.5;stroke-dasharray:6 18;animation:flow 6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-120}}
+.figure-note{font-size:12px;line-height:1.7;color:var(--faint);max-width:860px}
+.figure-note strong{color:var(--muted);font-weight:400}
+.callout{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,80px);align-items:center;margin-top:clamp(48px,6vw,84px);padding-top:40px;border-top:1px solid var(--line)}
+.callout>b{font-weight:300;font-size:clamp(58px,7vw,112px);letter-spacing:-.045em;line-height:1;color:var(--ink);white-space:nowrap}
+.callout>div{max-width:560px}
+.callout .eyebrow{margin-bottom:14px}
+.callout p:not(.eyebrow){font-size:15px;line-height:1.7}
+
+/* ===== Economics / calculator ===== */
+.calculator{margin-top:clamp(48px,6vw,84px);display:grid;grid-template-columns:.9fr 1.3fr;gap:clamp(32px,5vw,80px);align-items:start}
+.calculator-inputs{border-top:1px solid var(--line);padding-top:26px}
+.calculator-inputs h3{margin-bottom:26px}
+.calculator-inputs label{display:block;color:var(--muted);font-size:12px;margin-bottom:22px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.number-field{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line-2);margin-top:8px;padding:8px 0;transition:border-color .2s}
+.number-field:focus-within{border-color:var(--ink)}
+.number-field input{width:100%;min-width:0;background:none;border:0;color:var(--ink);font:400 22px/1.2 var(--sans);letter-spacing:-.02em;outline:none;padding:0}
+.number-field input:focus-visible{outline:none}
+.number-field>span{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap;letter-spacing:0}
+.two-input{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.slider-label{position:relative;padding-top:4px}
+.slider-label output{float:right;font:400 15px var(--sans);color:var(--ink);letter-spacing:0;text-transform:none}
+.slider-label.accent output{color:var(--accent-text)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:1px;background:rgba(255,255,255,.25);margin:24px 0 16px;cursor:pointer;accent-color:var(--accent)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--ink);border:0;box-shadow:0 0 0 4px var(--bg)}
+.slider-label.accent input[type=range]::-webkit-slider-thumb{background:var(--accent)}
+input[type=range]::-moz-range-thumb{background:var(--ink);width:14px;height:14px;border:0;border-radius:50%}
+.slider-label.accent input[type=range]::-moz-range-thumb{background:var(--accent)}
+.cost-details{border-block:1px solid var(--line);margin:4px 0 22px}
+.cost-details summary{padding:16px 0;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;color:var(--ink-2);list-style:none}
+.cost-details summary::-webkit-details-marker{display:none}
+.cost-details[open] summary{margin-bottom:10px}
+.cost-details summary span{color:var(--muted);font-family:var(--mono)}
+.reset-link{color:var(--muted)}
+.calculator-results{border:1px solid var(--line);background:var(--panel);padding:30px 32px 32px}
+.calculator-results .block-head{padding-bottom:16px}
+.calculator-results .block-head h3{font-size:16px}
+.mass-row{margin:24px 0 0}
+.mass-row>div:first-child{display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mass-row b{font-weight:400;font-size:12px;color:var(--ink-2);letter-spacing:0;text-transform:none;font-family:var(--sans)}
+.mass-row.proposed>div:first-child>span{color:var(--accent-text)}
+.mass-track{height:10px;background:rgba(255,255,255,.06);position:relative;margin-top:10px;overflow:hidden}
+.mass-recovered{position:absolute;inset:0 auto 0 0;background:var(--accent);transition:width .35s}
+.mass-recovered.baseline{background:rgba(255,255,255,.42)}
+.mass-row p{font-size:12px;margin-top:9px;line-height:1.5;color:var(--faint)}
+.mass-row p>span{color:var(--ink-2)}
+.result-big{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 22px}
+.result-big>span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.result-big strong{display:block;font-size:clamp(46px,4.6vw,68px);font-weight:300;line-height:1.2;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:6px}
+.result-big p{font-size:12.5px;color:var(--muted)}
+.result-big.negative strong{color:#ff6b6b}
+.result-breakdown{border-top:1px solid var(--line)}
+.result-breakdown>div{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.result-breakdown b{font-weight:400;color:var(--ink-2);text-align:right;font-variant-numeric:tabular-nums}
+.calculator-actions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.method-note{margin-top:40px;border-block:1px solid var(--line);padding:18px 0}
+.method-note summary{font-size:13px;color:var(--ink-2);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.method-note summary::-webkit-details-marker{display:none}
+.method-note summary span{color:var(--muted);font-family:var(--mono)}
+.method-note p{font-size:13px;line-height:1.75;margin-top:16px;max-width:960px}
+
+/* ===== Build ===== */
+.build-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,90px);margin-top:clamp(48px,6vw,84px);align-items:start}
+.blueprint{padding:24px;border:1px solid var(--line);background-color:var(--panel);background-image:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px}
+.blueprint-head{display:flex;justify-content:space-between;gap:10px}
+.blueprint-head .label{font-size:10px}
+.blueprint svg{width:100%;height:auto;display:block;padding-top:18px}
+.blueprint .micro{border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+.build-steps{position:relative}
+.build-steps article{position:relative;display:grid;grid-template-columns:36px 1fr;gap:22px;padding:0 0 38px;transition:opacity .5s}
+.build-steps article:before{content:"";position:absolute;left:17px;top:40px;bottom:6px;width:1px;background:var(--line)}
+.build-steps article:last-child:before{display:none}
+.build-steps article>span{width:36px;height:36px;border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--bg);transition:border-color .4s,color .4s,background .4s}
+.build-steps article.focus>span{border-color:var(--accent);background:var(--accent);color:#fff}
+.build-steps h3{font-size:19px;padding-top:6px}
+.build-steps p{font-size:14px;line-height:1.6;margin:8px 0 0;max-width:430px}
+.build-steps small{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-top:10px;letter-spacing:.02em}
+.build-steps .btn{margin-top:18px}
+.accordion{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+.accordion details{border-top:1px solid var(--line);padding-top:16px}
+.accordion summary{font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--ink-2)}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary span{color:var(--muted);font-family:var(--mono)}
+.accordion details p{font-size:13px;line-height:1.7;margin-top:14px}
+.accordion strong{color:var(--ink-2);font-weight:400}
+
+/* ===== Horizon ===== */
+.horizon-visual{height:440px;position:relative;margin-top:clamp(40px,5vw,72px);border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.horizon-visual canvas{width:100%;height:100%;display:block}
+.orbital-kicker{position:absolute;left:22px;top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.orbit-title{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 22px;border:1px solid var(--line);border-top:0;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.orbit-title span:nth-child(2){color:var(--accent-text)}
+.horizon-copy{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,100px);margin-top:clamp(48px,6vw,84px)}
+.horizon-copy h2{margin-bottom:26px}
+.horizon-copy .lead{margin-bottom:16px}
+.horizon-copy>div>p:not(.lead){max-width:520px;font-size:15px;line-height:1.75}
+.ladder article{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.ladder article:last-child{border-bottom:1px solid var(--line)}
+.ladder article>b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent-text);font-weight:400;padding-top:4px}
+.ladder h3{font-size:17px}
+.ladder p{font-size:13px;line-height:1.6;margin-top:7px}
+.note{margin-top:clamp(40px,5vw,64px);padding:24px 28px;border:1px solid var(--line);border-left:2px solid var(--accent);display:grid;grid-template-columns:240px 1fr;gap:34px;align-items:baseline}
+.note b{font-size:14px;font-weight:500;color:var(--ink)}
+.note p{font-size:13px;line-height:1.7}
+
+/* ===== Team / CTA ===== */
+.team-row{display:grid;grid-template-columns:1fr 1fr auto;gap:40px;align-items:center;margin-top:clamp(40px,5vw,72px);padding-block:32px;border-block:1px solid var(--line)}
+.team-row>div .label{display:block;margin-bottom:16px;color:var(--accent-text)}
+.team-row h3{font-size:20px}
+.team-row p{font-size:13px;margin-top:8px}
+.team .micro{margin-top:22px;max-width:860px}
+.cta-band{position:relative;z-index:3}
+.cta-band .wrap>div{background:var(--accent);color:#fff;padding:clamp(48px,6vw,84px) var(--pad);display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.cta-band h2{font-weight:500;letter-spacing:-.03em;color:#fff;font-size:clamp(34px,4vw,58px)}
+.cta-band p{color:rgba(255,255,255,.82);font-size:16px;max-width:540px;margin-top:18px;line-height:1.55}
+
+/* ===== Sources / footer ===== */
+.source-list{margin-top:clamp(40px,5vw,72px)}
+.source-list>a{display:grid;grid-template-columns:40px 1fr auto;gap:24px;align-items:start;border-top:1px solid var(--line);padding:22px 0;transition:background .2s}
+.source-list>a:last-of-type{border-bottom:1px solid var(--line)}
+.source-list>a>span{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:4px}
+.source-list>a>span:last-child{font-family:var(--sans);font-size:18px;color:var(--muted);transition:color .2s,transform .2s}
+.source-list h3{font-size:16px;font-weight:400;color:var(--ink)}
+.source-list p{font-size:13px;margin-top:6px;max-width:820px;line-height:1.6}
+.source-list>a:hover h3{color:var(--accent-text)}
+.source-list>a:hover>span:last-child{color:var(--ink);transform:translate(2px,-2px)}
+footer{position:relative;z-index:3;background:var(--bg)}
+.footer-inner{border-top:1px solid var(--line);padding:clamp(48px,6vw,80px) var(--pad) 36px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer-grid>div>p{font-size:13px;line-height:1.65;margin-top:22px;max-width:360px}
+.footer-grid .label{display:block;margin-bottom:20px;font-size:10px;color:var(--faint)}
+.footer-grid a,.footer-grid button{display:block;font-size:14px;color:var(--ink-2);margin-bottom:12px;text-align:left;transition:color .2s}
+.footer-grid a:hover,.footer-grid button:hover{color:var(--accent-text)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:clamp(40px,5vw,64px);padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* Dialog & toast */
+dialog{color:var(--ink);width:min(520px,calc(100% - 30px));max-height:90vh;background:#0f0f10;border:1px solid var(--line-2);padding:40px;box-shadow:0 40px 120px rgba(0,0,0,.7);border-radius:2px}
+dialog::backdrop{background:rgba(5,5,5,.78);backdrop-filter:blur(10px)}
+.dialog-close{position:absolute;right:16px;top:10px;font-size:28px;font-weight:300;color:var(--muted);padding:6px 10px}
+dialog h2{font-size:clamp(34px,4vw,46px);margin:16px 0 14px}
+dialog>p:not(.eyebrow){font-size:13px;margin-bottom:20px}
+dialog label{display:block;font-size:11px;color:var(--muted);margin:16px 0;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+dialog input,dialog select,dialog textarea{display:block;width:100%;background:var(--bg);border:1px solid var(--line-2);padding:12px;color:var(--ink);font-size:14px;margin-top:8px;resize:vertical;border-radius:2px;font-family:var(--sans);letter-spacing:0;text-transform:none}
+dialog form .btn{width:100%;margin:6px 0 16px}
+dialog .micro{margin-top:16px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:#fff;color:#0a0a0a;box-shadow:0 8px 40px rgba(0,0,0,.5);padding:12px 20px;font:12px var(--mono);max-width:calc(100% - 32px);z-index:100;opacity:0;pointer-events:none;transition:.25s;border-radius:2px}
+.toast.active{opacity:1;transform:translate(-50%,0)}
+.noscript{background:#222;padding:20px;text-align:center;font-size:14px}
+.motion-paused *,.reduce-motion *{animation-play-state:paused!important}
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.visible{opacity:1;transform:none}
+
+/* ===== Responsive ===== */
+@media(min-width:761px){.step-copy{background:linear-gradient(90deg,rgba(10,10,10,.92) 70%,rgba(10,10,10,0));padding-right:40px}.hero .step-copy{background:none;padding-right:0}}
+@media(min-width:761px){.build-steps article:not(.focus){opacity:.42}.build-steps:not(.has-focus) article{opacity:1}}
+@media(max-width:1180px){.frame-lines{display:none}.section-inner{padding-inline:0}.section-inner:before{display:none}.scene-step>.wrap{padding-inline:0}.scroll-cue{left:var(--gutter)}.cta-band .wrap>div{padding-inline:clamp(24px,4vw,40px)}.footer-inner{padding-inline:0}.site-header nav{gap:22px;margin-left:30px}.step-copy{width:40%}.hero .step-copy{width:50%}.scene-tag{left:58%}.section-head{grid-template-columns:1fr;gap:22px}.calculator{grid-template-columns:1fr 1.2fr}.footer-grid{grid-template-columns:1fr 1fr}.build-grid{grid-template-columns:1fr;gap:40px}.accordion{grid-template-columns:1fr;gap:18px}.horizon-copy{grid-template-columns:1fr;gap:40px}.team-row{grid-template-columns:1fr 1fr}.team-row .btn{grid-column:1/-1;justify-self:start}}
+@media(max-width:900px){.scene-controls button span{display:none}.scene-controls button{padding:0 10px}.callout{grid-template-columns:1fr;gap:18px}.callout>b{font-size:64px}.note{grid-template-columns:1fr;gap:12px}.cta-band .wrap>div{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:22px 0}.stat:last-child{border-bottom:0}.global-flow{grid-template-columns:1fr;gap:44px}.flow-branches{grid-template-columns:1fr 1fr;gap:12px}.calculator{grid-template-columns:1fr}}
+@media(max-width:760px){
+  :root{--header:62px}
+  .site-header nav,.header-cta{display:none}
+  .wordmark{font-size:12px;letter-spacing:.2em}
+  .menu-toggle{display:flex;flex-direction:column;gap:6px;padding:12px 0 12px 16px}
+  .menu-toggle span{width:22px;height:1px;background:var(--ink)}
+  .scene-step{min-height:780px;height:112svh;align-items:flex-start;padding:calc(var(--header) + 40px) var(--gutter) 0}
+  .machine-stage{height:100svh;min-height:660px}
+  .step-copy,.hero .step-copy{width:100%;max-width:480px}
+  .step-copy{background:linear-gradient(180deg,rgba(10,10,10,.97) 82%,rgba(10,10,10,0));padding-bottom:44px}
+  .hero-meta{display:none}
+  .hero h1{font-size:clamp(40px,11.5vw,60px);margin:18px 0 18px}
+  .hero .lead{font-size:16px;margin-bottom:22px}
+  .hero-meta{margin-top:24px}
+  .scene-area{left:-12%;right:-12%;top:47%;bottom:4%;pointer-events:auto;mask-image:linear-gradient(transparent,#000 24%,#000 94%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 24%,#000 94%,transparent)}
+  .scene-atmosphere{background:radial-gradient(ellipse at 55% 78%,rgba(255,255,255,.05),transparent 58%)}
+  .scene-atmosphere:after{display:none}
+  .scene-topline{left:var(--gutter);right:var(--gutter);top:calc(var(--header) + 12px)}
+  .scene-mode{display:none}
+  .scene-bottomline{left:var(--gutter);right:var(--gutter);bottom:58px}
+  .scene-readout{font-size:9px}.stage-dots i{width:16px}
+  .scene-disclaimer{left:var(--gutter);right:var(--gutter);bottom:14px;font-size:9px;line-height:1.5}
+  .scene-controls button{height:30px;padding:0 8px;font-size:9px}
+  .scene-tag,.track-label{display:none!important}
+  .scroll-cue{display:none}
+  .step-copy h2{font-size:34px;margin-bottom:16px}
+  .step-copy>.lead{font-size:16px;margin-bottom:10px}
+  .step-copy>p:not(.eyebrow):not(.lead):not(.micro){font-size:13.5px}
+  .step-copy .eyebrow{margin-bottom:14px}
+  .points,.fusion,.waveform,.metric-grid{margin-top:16px}
+  .points>div{padding:9px 0;font-size:12px}
+  .waveform{height:70px}
+  .section-inner{padding-block:60px}
+  .section-head{gap:18px}
+  h2.serif{font-size:38px}
+  .stat b{font-size:56px}
+  .global-flow{gap:36px}.flow-node{padding:16px 16px}.flow-node strong{font-size:34px}.flow-branches{grid-template-columns:1fr;gap:10px}
+  .calculator-results{padding:22px 18px}
+  .result-big strong{font-size:48px}
+  .two-input{grid-template-columns:1fr;gap:0}
+  .blueprint{padding:16px}
+  .horizon-visual{height:300px}
+  .team-row{grid-template-columns:1fr;gap:26px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .cta-band h2{font-size:32px}
+  dialog{padding:26px}
+}
+@media(max-height:720px) and (min-width:761px){.scene-step{min-height:620px;padding-top:calc(var(--header) + 4px)}.hero h1{font-size:48px;margin:14px 0 16px}.step-copy h2{font-size:34px;margin-bottom:14px}.step-copy .eyebrow{margin-bottom:12px}.step-copy>.lead{font-size:16px}.points>div{padding:8px 0}.waveform{height:70px;margin-top:16px}.metric-grid{margin-top:16px}.scene-bottomline{bottom:26px}.scene-disclaimer{bottom:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js .reveal,.step-copy{opacity:1;transform:none}}
+@media print{.site-header,.machine-stage,.scene-controls,.scroll-cue,dialog,.horizon-visual,.frame-lines{display:none!important}body{background:white;color:black}.machine-story{display:block}.section,.machine-story,footer{background:white}.scene-step{height:auto;min-height:0;padding:25px 0}.step-copy,.hero .step-copy{width:100%;max-width:none;opacity:1;transform:none;background:none}.section-inner{padding:30px 0}.story-panels{pointer-events:auto}h1,h2{font-size:30px}p{color:#333}.source-list a{color:#000}.calculator-results,.number-field input{background:white;color:black}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#opportunity">Skip 3D tour and read the evidence</a>
+<div class="frame-lines" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="./" aria-label="Ferrosift home"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 7H31L26 12H4zm0 9h21l-5 5H4zm0 9h11l-5 5H4z" fill="currentColor"/></svg>Ferrosift</a>
+    <nav aria-label="Main navigation"><a href="#machine">The machine</a><a href="#opportunity">Opportunity</a><a href="#economics">Economics</a><a href="#roadmap">The build</a><a href="#horizon">Horizon</a></nav>
+    <button class="btn header-cta" data-contact>Build with us</button>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button>
+  </div>
+</header>
+<div id="mobile-nav" class="mobile-nav" hidden><a href="#machine">The machine</a><a href="#opportunity">Opportunity</a><a href="#economics">Economics</a><a href="#roadmap">The build</a><a href="#horizon">Horizon</a><a href="#sources">Sources</a><button data-contact>Build with us →</button></div>
+<main id="top">
+<div id="machine" class="machine-story">
+  <div class="machine-stage">
+    <div class="scene-atmosphere"></div>
+    <div class="scene-area"><canvas id="machine-canvas" role="img" aria-label="Interactive 3D concept of a conveyor with overhead camera, under-belt induction coil, controller, diverter and three bins."></canvas><div class="track-label" id="track-label" hidden><i></i><span id="track-text"></span></div><div id="webgl-fallback" hidden><svg viewBox="0 0 800 420" aria-label="Conveyor schematic"><g fill="none" stroke="#9b9b9b" stroke-width="2"><path d="M65 255H630V285H65Z M110 285V365 M570 285V365 M220 255V120H330V255 M250 140H300V175H250Z M410 280V220 M640 285L680 320"/><path d="M400 235c-35-30 55-30 20 0m-20 10c-35-30 55-30 20 0" stroke="#2b5bff"/><path d="M615 325H665V390H615ZM680 325H730V390H680ZM745 325H795V390H745Z"/></g><g fill="#e6e6e6" font-family="Inter,Arial" font-size="16"><text x="205" y="95">CAMERA</text><text x="350" y="190">INDUCTION</text><text x="535" y="235">ROUTING</text></g></svg><p>Static schematic · 3D graphics are unavailable on this device.</p></div></div>
+    <div class="scene-topline"><span class="label"><i class="status-dot"></i>FS–01 · Interactive concept model</span><span class="label scene-mode" id="scene-mode">ASSEMBLED VIEW</span></div>
+    <div class="scene-tag" id="scene-tag"><span class="tag-cross"></span><span id="scene-tag-text">Integrated sensing. Coordinated action.</span></div>
+    <div class="scene-bottomline">
+      <div class="scene-readout"><span id="stage-number">00 / 05</span><span id="stage-name">SYSTEM OVERVIEW</span><div class="stage-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="scene-controls" aria-label="3D controls"><button id="motion-toggle" aria-pressed="false" title="Pause decorative animation">Ⅱ <span>Pause</span></button><button id="explode-toggle" aria-pressed="false" title="Separate conceptual modules">⊞ <span>Explode</span></button><button id="orbit-toggle" aria-pressed="false" title="Enable drag to rotate the model">↻ <span>Explore</span></button><button id="reset-view" aria-label="Reset 3D camera" title="Reset camera">⌖</button></div>
+    </div>
+    <div class="scene-disclaimer">Illustrative model · no trained inference or measured performance is running.</div>
+  </div>
+  <div class="story-panels">
+    <section class="scene-step hero in-view" data-stage="0">
+      <div class="wrap"><div class="step-copy">
+        <p class="eyebrow reveal"><i></i>Intelligence for material recovery</p>
+        <h1>Value.<br><span class="dim">Not waste.</span></h1>
+        <p class="lead">One conveyor that sees, senses, decides and sorts electronic scrap into useful material streams.</p>
+        <div class="hero-actions"><a class="btn" href="#vision">Explore the machine <span>→</span></a><a class="link" href="#opportunity">Read the evidence <span>→</span></a></div>
+        <div class="hero-meta"><span class="label">Student-founded</span><span class="label">Prototype plan · 2026</span><span class="label">See · Sense · Decide · Sort</span></div>
+      </div></div>
+      <div class="scroll-cue"><span class="scroll-line"></span>Scroll to go inside</div>
+    </section>
+    <section id="vision" class="scene-step" data-stage="1"><div class="wrap"><div class="step-copy">
+      <p class="eyebrow">01 / Computer vision</p>
+      <h2>First, we look.</h2>
+      <p class="lead">Every piece gets an identity.</p>
+      <p>Controlled lighting and a camera capture shape, texture and boundaries. Tracking ties each piece to its next measurement — and to its sorting action.</p>
+      <div class="points"><div><b>Detect</b><span>Find each piece on the moving belt.</span></div><div><b>Classify</b><span>Score what it looks like — not what it is made of.</span></div><div><b>Track</b><span>Carry that identity to the coil and the gate.</span></div></div>
+      <p class="micro">Appearance is evidence, not an elemental assay.</p>
+    </div></div></section>
+    <section id="sensing" class="scene-step" data-stage="2"><div class="wrap"><div class="step-copy">
+      <p class="eyebrow">02 / Inductive sensing</p>
+      <h2>Then, we sense.</h2>
+      <p class="lead">A second, independent kind of evidence.</p>
+      <p>A low-power coil under the belt measures how the piece responds to a changing magnetic field. It complements the image; it is not a readout of copper or gold content.</p>
+      <svg class="waveform" viewBox="0 0 340 100" preserveAspectRatio="none" aria-label="Illustrative oscillating sensor signal"><path class="wave-grid" d="M0 25H340M0 50H340M0 75H340M50 0V100M120 0V100M190 0V100M260 0V100"/><path class="wave-line" d="M0 50Q15 48 25 50T45 50Q50 15 58 50T74 50T90 50T106 50T122 50T138 50T154 50T170 50T186 50Q198 25 210 50Q225 64 240 50T270 50T310 50H340"/></svg>
+      <p class="micro">Size, shape, gap and material all shape the reading. <a class="source-link" href="#source-ti">[02]</a></p>
+    </div></div></section>
+    <section id="intelligence" class="scene-step" data-stage="3"><div class="wrap"><div class="step-copy">
+      <p class="eyebrow">03 / Sensor fusion + control</p>
+      <h2>Two inputs.<br>One decision.</h2>
+      <p class="lead">Seeing and sensing lead to action.</p>
+      <p>The model combines image features, the coil reading and belt position to pick a destination and schedule the gate.</p>
+      <div class="fusion"><div class="fusion-in"><span>Vision</span><i>+</i><span>Induction</span><i>+</i><span>Position</span></div><div class="fusion-out"><i>↓</i><b>Destination · Timing</b></div></div>
+      <p class="micro">Uncertain pieces can take an extra look. Physical safety limits stay independent of the model.</p>
+    </div></div></section>
+    <section id="sorting" class="scene-step" data-stage="4"><div class="wrap"><div class="step-copy">
+      <p class="eyebrow">04 / Physical sorting</p>
+      <h2>Don’t just identify.<br>Separate.</h2>
+      <p class="lead">The gate makes the decision physical.</p>
+      <p>A timed, servo-driven diverter sends each piece to its output. A simple chute — not a high-speed eddy-current rotor or a general-purpose robot arm.</p>
+      <div class="points routes"><div><i class="route-dot accent"></i><span><b>01</b> &nbsp;Recovery product</span></div><div><i class="route-dot"></i><span><b>02</b> &nbsp;Original material route</span></div><div><i class="route-dot grey"></i><span><b>03</b> &nbsp;Review</span></div></div>
+      <p class="micro">Output definitions come from the actual material and buyer. A “recovery” bin does not imply pure metal.</p>
+    </div></div></section>
+    <section id="feedback" class="scene-step" data-stage="5"><div class="wrap"><div class="step-copy">
+      <p class="eyebrow">05 / Verification + improvement</p>
+      <h2>Close the loop.</h2>
+      <p class="lead">A correct label is not enough.</p>
+      <p>Check where each piece actually landed. Keep perception errors apart from tracking and mechanical errors. Improve the whole line against independent labels and real operating costs.</p>
+      <div class="metric-grid"><div><b>Recovery</b><span>Target material captured</span></div><div><b>Purity</b><span>Unwanted material excluded</span></div><div><b>Throughput</b><span>Mass processed per hour</span></div><div><b>Net value</b><span>After all added costs</span></div></div>
+      <a class="link" href="#opportunity">Why this matters <span>→</span></a>
+    </div></div></section>
+  </div>
+</div>
+
+<section id="opportunity" class="section"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>The opportunity · Documented global data</p><h2 class="serif">The value we leave behind.</h2><p>Electronic waste is a material stream. <strong>Better decisions on the belt turn more of it into useful output</strong> — and today, most of it never reaches a documented recycling pathway.</p></div>
+  <div class="stat-row reveal">
+    <div class="stat"><b><span data-count="62">62</span><small>Mt</small></b><p class="label"><i></i>E-waste generated worldwide · 2022 <a class="source-link" href="#source-gem">[01]</a></p></div>
+    <div class="stat"><b><span data-count="22.3" data-decimals="1">22.3</span><small>%</small></b><p class="label"><i></i>Documented formal collection and recycling <a class="source-link" href="#source-gem">[01]</a></p></div>
+    <div class="stat"><b>$<span data-count="91">91</span><small>B</small></b><p class="label"><i class="grey"></i>Metal value embedded in that e-waste · not Ferrosift’s market <a class="source-link" href="#source-gem">[01]</a></p></div>
+  </div>
+  <div class="flow-block reveal">
+    <div class="block-head"><h3>Follow the material.</h3><span class="badge">Published data · rounded derivation</span></div>
+    <div class="global-flow" id="global-flow"><svg class="flow-connectors" aria-hidden="true"></svg><div class="flow-node" data-node="origin"><span class="label">Generated</span><strong>62.0<small>Mt</small></strong><span>Electronic waste · 2022</span></div><div class="flow-branches"><div class="flow-node documented" data-node="formal"><span class="label">22.3%</span><strong>13.8<small>Mt</small></strong><span>Documented formal collection and recycling</span></div><div class="flow-node outside" data-node="outside"><span class="label">77.7% · complement</span><strong>48.2<small>Mt</small></strong><span>Outside that documented formal pathway</span></div></div></div>
+    <p class="figure-note">Rounded from 62 × 22.3% and its complement. The second branch includes multiple pathways; it is <strong>not all landfill, all lost metal, or all recoverable by a sorting machine.</strong> <a href="#source-gem">Source &amp; method →</a></p>
+  </div>
+  <div class="callout reveal"><b>$62B</b><div><p class="eyebrow">A resource gap, not a sales forecast</p><p>The report describes this value of recoverable resources as unaccounted for. Better sorting addresses one part of a much larger collection and processing problem. <a class="source-link" href="#source-gem">[01]</a></p></div></div>
+</div></div></section>
+
+<section id="economics" class="section"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>The economics · Make the assumptions visible</p><h2 class="serif">Every point has a price.</h2><p>Change the inputs and watch the material flow and the customer benefit move together. <strong>The recovery rates are assumptions</strong>, not claims about any manufacturer.</p></div>
+  <div class="calculator reveal">
+    <form class="calculator-inputs" id="calculator" autocomplete="off"><h3>Your scenario.</h3><label>Eligible material / year <div class="number-field"><input id="annual" type="number" min="0" max="100000000" step="100" value="10000"><span>tonnes</span></div></label><div class="two-input"><label>Target-metal content <div class="number-field"><input id="content" type="number" min="0" max="100" step="0.5" value="4"><span>%</span></div></label><label>Net realization <div class="number-field"><span>$</span><input id="price" type="number" min="0" max="1000000" step="100" value="2000"><span>/t</span></div></label></div><label class="slider-label">Baseline recovery <output id="baseline-display" for="baseline">80%</output><input id="baseline" type="range" min="0" max="100" step="1" value="80"></label><label class="slider-label accent">Proposed recovery <output id="candidate-display" for="candidate">90%</output><input id="candidate" type="range" min="0" max="100" step="1" value="90"></label><details class="cost-details"><summary>Show all assumed costs <span>+</span></summary><label>Annual system / service fee <div class="number-field"><span>$</span><input id="fee" type="number" min="0" max="100000000" step="1000" value="24000"></div></label><label>Additional operations / year <div class="number-field"><span>$</span><input id="ops" type="number" min="0" max="100000000" step="1000" value="8000"></div></label><label>Downtime, quality &amp; error burden / year <div class="number-field"><span>$</span><input id="risk" type="number" min="0" max="100000000" step="1000" value="10000"></div></label><label>One-time installation &amp; validation <div class="number-field"><span>$</span><input id="install" type="number" min="0" max="100000000" step="1000" value="24000"></div></label></details><button type="button" id="reset-calculator" class="link reset-link">Reset example <span>↺</span></button></form>
+    <div class="calculator-results"><div class="block-head"><h3>Target metal, not total scrap.</h3><span class="label" id="target-total">400 t / year</span></div><div class="mass-comparison"><div class="mass-row"><div><span>Baseline</span><b id="baseline-mass">320 t recovered</b></div><div class="mass-track"><span class="mass-recovered baseline" id="baseline-bar" style="width:80%"></span></div><p><span id="baseline-lost">80 t</span> of target metal remains outside the recovered output.</p></div><div class="mass-row proposed"><div><span>Proposed</span><b id="candidate-mass">360 t recovered</b></div><div class="mass-track"><span class="mass-recovered" id="candidate-bar" style="width:90%"></span></div><p><span id="candidate-lost">40 t</span> of target metal remains outside the recovered output.</p></div></div><div class="result-big" aria-live="polite"><span>First-year net customer benefit</span><strong id="net-benefit">$14,000</strong><p id="benefit-description">Positive in this assumed scenario. Not a measured saving.</p></div><div class="result-breakdown"><div><span>Additional metal</span><b id="added-metal">+40 t/year</b></div><div><span>Gross incremental contribution</span><b id="gross">$80,000/year</b></div><div><span>Year-one system burden</span><b id="total-cost">$66,000</b></div><div><span>Recurring net benefit</span><b id="recurring">$38,000/year</b></div><div><span>Year-one break-even improvement</span><b id="break-even">8.25 percentage points</b></div></div><div class="calculator-actions"><button id="export-scenario" class="btn small">Export assumptions <span>↓</span></button><button id="copy-scenario" class="btn small ghost">Copy summary <span>→</span></button></div></div>
+  </div>
+  <details class="method-note reveal"><summary>Read the calculation and its limitations <span>+</span></summary><p>Target metal = annual eligible feed × metal content. Additional metal = target metal × (proposed recovery − baseline recovery). Gross contribution = additional metal × net incremental realization. First-year net = gross contribution − fee − added operations − downtime/quality/error provision − installation. Break-even improvement = total year-one cost ÷ (target metal × net realization), expressed in percentage points.</p><p>Use independently measured target-metal mass and buyer specifications. Whole-object mass is not metal mass. Net realization must account for grade, downstream costs and the value already obtained from residue. Replace every assumption with customer data. Throughput loss, financing, taxes and other costs must be added where applicable; do not count an expense twice. Lower recovery is allowed and produces negative results.</p></details>
+</div></div></section>
+
+<section id="roadmap" class="section"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>The build · Small first, complete from the start</p><h2 class="serif">Build the line.<br>Prove the value.</h2><p>Not a decorative AI dashboard. <strong>A working path from a piece entering the conveyor to a verified output</strong> — then a disciplined comparison against existing methods.</p></div>
+  <div class="build-grid">
+    <div class="blueprint reveal"><div class="blueprint-head"><span class="label">FS–01 · Top view</span><span class="label">Concept · not to scale</span></div><svg viewBox="0 0 700 370" role="img" aria-label="Top-view conveyor diagram with feed, camera, induction sensor, diverter, and three outputs"><defs><marker id="bp-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#2b5bff"/></marker></defs><g fill="none" stroke="#5a5a5a" stroke-width="1"><path d="M42 112H505V258H42ZM60 125H488V244H60ZM75 130V240M90 130V240M465 130V240M478 130V240"/><path d="M203 93H305V278H203ZM365 113V259" stroke-dasharray="4 5"/><path d="M43 320H503M43 313V327M503 313V327"/><path d="M521 185L615 88M521 185H615M521 185L615 282" marker-end="url(#bp-arrow)" stroke="#2b5bff"/><rect x="620" y="56" width="60" height="64"/><rect x="620" y="155" width="60" height="64"/><rect x="620" y="253" width="60" height="64"/></g><g fill="none" stroke="#2b5bff" stroke-width="1.5"><rect x="220" y="151" width="68" height="68"/><circle cx="365" cy="185" r="32"/><circle cx="365" cy="185" r="22"/><path d="M112 185H180M407 185H455" marker-end="url(#bp-arrow)"/><path d="M498 181L541 194"/></g><g fill="#bdbdbd" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="1"><text x="60" y="84">FEED</text><text x="216" y="73">CAMERA</text><text x="331" y="84">COIL BELOW</text><text x="470" y="84">GATE</text><text x="203" y="345">~1 M DESKTOP ENVELOPE</text></g><g fill="#6f90ff" font-size="14" font-family="ui-monospace,Menlo,Consolas,monospace"><text x="637" y="95">01</text><text x="637" y="194">02</text><text x="637" y="291">03</text></g><g fill="#8a8a8a"><rect x="145" y="164" width="23" height="28" transform="rotate(18 155 175)"/><rect x="316" y="203" width="18" height="16"/></g></svg><p class="micro">Manual feed · controlled light · optional coil under a nonmetal sensing zone · guarded gate · independent destination check.</p></div>
+    <div class="build-steps reveal">
+      <article><span>1</span><div><h3>See → sort</h3><p>Collect approved samples. Build camera, lighting, tracking and a simple physical sorter.</p><small>First proof: the complete path works.</small><button class="btn small" data-contact>Send us a sample stream <span>→</span></button></div></article>
+      <article><span>2</span><div><h3>Sense → combine</h3><p>Add calibrated induction measurements. Match them to the right objects and compare against vision alone.</p><small>First proof: another sensor adds useful information.</small></div></article>
+      <article><span>3</span><div><h3>Measure → improve</h3><p>Evaluate unseen batches. Measure recovery, purity, throughput, failure cases and economics.</p><small>First proof: a benefit survives all the costs.</small></div></article>
+      <article><span>4</span><div><h3>Partner → repeat</h3><p>Seek a scoped pilot and an independent buyer specification. Validate the next installation separately.</p><small>Commercial milestone, not an existing contract.</small></div></article>
+    </div>
+  </div>
+  <div class="accordion reveal"><details><summary>What goes into the first bench?<span>+</span></summary><p>Small conveyor; overhead camera and lens; fixed lighting; motor and encoder; optional low-power induction evaluation board; laptop and microcontroller; simple servo chute; clean reference pieces; measurement log; physical guarding and emergency stop.</p><p>Planning allowance carried from the working model: <strong>$906–$2,484</strong> for sensing plus a slow sorting demonstrator, including 20% contingency. Not a supplier quote. Excludes labor, taxes, shipping, independent assays and industrial qualification.</p></details><details><summary>What are we competing against?<span>+</span></summary><p>Established sorters already combine vision, electromagnetic sensing and automated ejection. TOMRA NEW FINDER is a direct example. Ferrosift must earn an advantage in measured performance, cost or integration — not claim this combination is unprecedented. <a class="source-link" href="#source-tomra">[03]</a></p></details><details><summary>Where do the safety boundaries sit?<span>+</span></summary><p>Begin with approved, clean, battery-free samples. No shredding, unknown dust, charged components or homemade high-speed rotor. Lab staff review power, guarding and emergency stop. Safety acceptance is physical and human-reviewed — not delegated to AI.</p></details></div>
+</div></div></section>
+
+<section id="horizon" class="section"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>The long view · A research thesis</p><h2 class="serif">Built on Earth.<br>An eye on orbit.</h2><p>First, build something useful here. <strong>A network of sorting lines could build a permissioned record</strong> of images, electromagnetic responses and verified outcomes — and we want to find out whether any of it transfers beyond recycling.</p></div>
+  <div class="reveal"><div class="horizon-visual"><canvas id="network-canvas" role="img" aria-label="Illustrative network of future sorting installations linked to an orbital research concept, not deployed sites."></canvas><div class="orbital-kicker"><span class="status-dot"></span>Conceptual network · no deployed sites shown</div></div><div class="orbit-title"><span>Ground intelligence</span><span>2040–2045 · aspirational horizon</span><span>New environments</span></div></div>
+  <div class="horizon-copy reveal">
+    <div class="ladder"><article><b>Now</b><div><h3>An integrated conveyor</h3><p>Build and validate the physical sensing-to-sorting loop with approved electronic scrap.</p></div></article><article><b>Next</b><div><h3>A permissioned learning network</h3><p>With partner agreements, study cross-site calibration and reusable models. No customer data is automatically pooled or sold.</p></div></article><article><b>2040</b><div><h3>Investigate transferable models</h3><p>Explore research licensing of permitted datasets, estimation methods or simulation tools. Recycling-to-space transfer is unproven.</p></div></article><article><b>2045</b><div><h3>Explore orbital collaboration</h3><p>Partner on contactless characterization or detumbling only if separate physics, flight validation and customer demand support it.</p></div></article></div>
+    <div class="note"><b>Ambition is not a policy deadline.</b><p>These years are founder-selected horizons, not enacted cleanup mandates or promised launch dates. Eddy-current detumbling is an existing research area; reducing tumble is not the same as capturing or deorbiting debris. Conveyor data alone does not establish a space capability. <a class="source-link" href="#source-orbit">[04]</a></p></div>
+  </div>
+</div></div></section>
+
+<section id="team" class="section team"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>The people · The first milestone</p><h2 class="serif">Two founders.<br>One working line.</h2><p>We’re looking for <strong>useful engineering criticism, approved samples and conversations with recyclers</strong> who can define what a better result is worth.</p></div>
+  <div class="team-row reveal"><div><span class="label">01</span><h3>Tamerlan Goglichidze</h3><p>Yale · hardware, software &amp; integration</p></div><div><span class="label">02</span><h3>Brandon Chang</h3><p>Harvard · applied mathematics &amp; computing</p></div><button class="btn ghost" data-contact>Start a conversation <span>→</span></button></div>
+  <p class="micro">Independent student-founded concept. University names indicate founder affiliation, not endorsement. No customers, investment round or deployed installations are claimed.</p>
+</div></div></section>
+
+<section class="cta-band"><div class="wrap"><div class="reveal"><div><h2>Let’s build something real.</h2><p>Bring us a material stream, a hard engineering question or a buyer specification. We will show you exactly what is assumed and what is measured.</p></div><button class="btn white" data-contact>Build with us <span>→</span></button></div></div></section>
+
+<section id="sources" class="section sources"><div class="wrap"><div class="section-inner">
+  <div class="section-head reveal"><p class="eyebrow"><i></i>Evidence · Open the source</p><h2 class="serif">No mystery numbers.</h2><p>Published context, prototype intentions and hypothetical economics are different kinds of information. <strong>This site labels them separately.</strong></p></div>
+  <div class="source-list reveal"><a id="source-gem" href="https://unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling" target="_blank" rel="noopener noreferrer"><span>01</span><div><h3>Global E-waste Monitor 2024 · UNITAR / ITU</h3><p>2022 generation, formal collection/recycling rate, embedded metal value and unaccounted resources. Rounded flow branches are calculated from the reported rate.</p></div><span>↗</span></a><a id="source-ti" href="https://www.ti.com/lit/snoa957" target="_blank" rel="noopener noreferrer"><span>02</span><div><h3>Inductive sensing design guidance · Texas Instruments</h3><p>Sensor response and practical dependence on target geometry, material and nearby conductive structures.</p></div><span>↗</span></a><a id="source-tomra" href="https://www.tomra.com/en/waste-metal-recycling/products/machines/finder" target="_blank" rel="noopener noreferrer"><span>03</span><div><h3>NEW FINDER · TOMRA</h3><p>Commercial vision, electromagnetic sensing and sorting benchmark. Manufacturer description — not an independent performance comparison.</p></div><span>↗</span></a><a id="source-orbit" href="https://mmrobotics.mech.utah.edu/wp-content/uploads/2024/10/Allen_ISpaRo2024.pdf" target="_blank" rel="noopener noreferrer"><span>04</span><div><h3>Eddy-current detumbling research · University of Utah, 2024</h3><p>Technical context for the long-term research direction. Not evidence that Ferrosift’s data transfers to orbital operations.</p></div><span>↗</span></a></div>
+  <div class="section-foot"><span class="label">Research checked · 04 Oct 2026</span><span class="badge">Prototype intentions ≠ test results</span></div>
+  <details class="method-note reveal"><summary>Website, model and disclosure notes <span>+</span></summary><p>The conveyor is procedurally drawn in real-time 3D. Movement, sensor traces and routing are scripted illustrations — not trained inference, physical simulation, fabricated hardware or test results. Shape, dimensions and component placement are conceptual. The orbital network represents no deployed sites. Performance and commercial advantages remain to be established.</p><p>The product concept draws on founder discussions and the 3 October 2026 Ferrosift working draft. The current integrated-conveyor direction supersedes that draft’s narrower second-look-only positioning. Published market context is sourced separately above. No confidential draft, raw sample data, analytics or personal email is sent by this site.</p></details>
+</div></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-inner">
+  <div class="footer-grid">
+    <div><a class="wordmark" href="#top"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 7H31L26 12H4zm0 9h21l-5 5H4zm0 9h11l-5 5H4z" fill="currentColor"/></svg>Ferrosift</a><p>An integrated smart conveyor for electronic scrap: computer vision, inductive sensing, one decision and a verified sort. See. Sense. Decide. Sort.</p></div>
+    <div><span class="label">Site</span><a href="#machine">The machine</a><a href="#opportunity">The opportunity</a><a href="#economics">The economics</a><a href="#roadmap">The build</a><a href="#horizon">The horizon</a></div>
+    <div><span class="label">Evidence</span><a href="#sources">Sources</a><a href="#source-gem">Global E-waste Monitor</a><a href="#source-tomra">Competitive benchmark</a><button id="footer-motion">Motion settings</button></div>
+    <div><span class="label">Contact</span><button data-contact>Build with us</button><a href="https://github.com/GTamerlan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Ferrosift · Concept, not a product</span><span>Student-founded · No customers or installations claimed</span></div>
+</div></div></footer>
+<dialog id="contact-dialog"><button class="dialog-close" aria-label="Close conversation draft">×</button><p class="eyebrow"><i></i>Let’s talk about a real stream</p><h2>Build with us.</h2><p>Prepare a short introduction for the founders. This demo does not submit or store a form.</p><form id="contact-form"><label>Your name<input name="name" required maxlength="100" placeholder="Name / organization"></label><label>What would you like to explore?<select name="topic"><option>Recycler / sample partnership</option><option>Engineering collaboration</option><option>Investment conversation</option><option>General introduction</option></select></label><label>Tell us about it<textarea name="message" maxlength="2000" rows="4" placeholder="Material stream, current process, or a question…" required></textarea></label><button class="btn" type="submit">Copy introduction <span>→</span></button></form><a class="link" href="https://github.com/GTamerlan" target="_blank" rel="noopener noreferrer">Find Tamerlan on GitHub <span>↗</span></a><p class="micro">Copy your introduction and share it directly. No live inbox or backend is connected.</p></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><div class="noscript">Animations and the calculator require JavaScript. The explanations and source links remain available.</div></noscript>
+<script>/* Ferrosift Studio — dependency-free, procedural WebGL product renderer.
+   All models are illustrative geometry, not fabrication drawings or physics simulations. */
+(function(global){
+'use strict';
+const M={
+ identity:()=>new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]),
+ mul:(a,b)=>{let o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return o;},
+ trs:(p=[0,0,0],r=[0,0,0],s=[1,1,1])=>{let [x,y,z]=r,cx=Math.cos(x),sx=Math.sin(x),cy=Math.cos(y),sy=Math.sin(y),cz=Math.cos(z),sz=Math.sin(z);let a=new Float32Array([cy*cz, cx*sz+sx*sy*cz,sx*sz-cx*sy*cz,0,-cy*sz,cx*cz-sx*sy*sz,sx*cz+cx*sy*sz,0,sy,-sx*cy,cx*cy,0,p[0],p[1],p[2],1]);for(let i=0;i<3;i++){a[i]*=s[0];a[4+i]*=s[1];a[8+i]*=s[2];}return a;},
+ perspective:(fov,a,n=.1,f=120)=>{let t=1/Math.tan(fov/2),m=new Float32Array(16);m[0]=t/a;m[5]=t;m[10]=(f+n)/(n-f);m[11]=-1;m[14]=2*f*n/(n-f);return m;},
+ look:(eye,target)=>{const norm=a=>{let d=Math.hypot(...a)||1;return a.map(v=>v/d);},cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);let z=norm(eye.map((v,i)=>v-target[i])),x=norm(cross([0,1,0],z)),y=cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-dot(x,eye),-dot(y,eye),-dot(z,eye),1]);}
+};
+function box(){let v=[],n=[],uv=[];const faces=[[[1,0,0],[[.5,-.5,-.5],[.5,-.5,.5],[.5,.5,.5],[.5,.5,-.5]]],[[-1,0,0],[[-.5,-.5,.5],[-.5,-.5,-.5],[-.5,.5,-.5],[-.5,.5,.5]]],[[0,1,0],[[-.5,.5,-.5],[.5,.5,-.5],[.5,.5,.5],[-.5,.5,.5]]],[[0,-1,0],[[-.5,-.5,.5],[.5,-.5,.5],[.5,-.5,-.5],[-.5,-.5,-.5]]],[[0,0,1],[[.5,-.5,.5],[-.5,-.5,.5],[-.5,.5,.5],[.5,.5,.5]]],[[0,0,-1],[[-.5,-.5,-.5],[.5,-.5,-.5],[.5,.5,-.5],[-.5,.5,-.5]]]];for(const [normal,ps]of faces)for(const i of[0,1,2,0,2,3]){v.push(...ps[i]);n.push(...normal);uv.push(...[[0,0],[1,0],[1,1],[0,1]][i]);}return{v,n,uv};}
+function sphere(N=24,K=16){let v=[],n=[],uv=[];function p(i,j){let a=i/N*2*Math.PI,b=j/K*Math.PI;return[Math.sin(b)*Math.cos(a)*.5,Math.cos(b)*.5,Math.sin(b)*Math.sin(a)*.5];}for(let j=0;j<K;j++)for(let i=0;i<N;i++)for(const[ii,jj]of[[i,j],[i+1,j],[i+1,j+1],[i,j],[i+1,j+1],[i,j+1]]){let a=p(ii,jj);v.push(...a);n.push(...a.map(x=>x*2));uv.push(ii/N,jj/K);}return{v,n,uv};}
+function cylinder(N=32,top=1){let v=[],n=[],uv=[];let add=(p,q,u)=>{v.push(...p);n.push(...q);uv.push(...u);};for(let i=0;i<N;i++){let a=i/N*2*Math.PI,b=(i+1)/N*2*Math.PI,pa=[Math.cos(a)*.5,-.5,Math.sin(a)*.5],pb=[Math.cos(b)*.5,-.5,Math.sin(b)*.5],ta=[pa[0]*top,.5,pa[2]*top],tb=[pb[0]*top,.5,pb[2]*top];for(const[p,k]of[[pa,a],[ta,a],[tb,b],[pa,a],[tb,b],[pb,b]])add(p,[Math.cos(k),.5*(1-top),Math.sin(k)],[k/(2*Math.PI),p[1]+.5]);for(const p of[[0,-.5,0],pb,pa])add(p,[0,-1,0],[p[0]+.5,p[2]+.5]);for(const p of[[0,.5,0],ta,tb])add(p,[0,1,0],[p[0]+.5,p[2]+.5]);}return{v,n,uv};}
+function torus(N=48,K=8,tube=.05){let v=[],n=[],uv=[];let point=(i,j)=>{let a=i/N*Math.PI*2,b=j/K*Math.PI*2;return[(.5+tube*Math.cos(b))*Math.cos(a),tube*Math.sin(b),(.5+tube*Math.cos(b))*Math.sin(a)];},normal=(i,j)=>{let a=i/N*Math.PI*2,b=j/K*Math.PI*2;return[Math.cos(b)*Math.cos(a),Math.sin(b),Math.cos(b)*Math.sin(a)];};for(let i=0;i<N;i++)for(let j=0;j<K;j++)for(const[ii,jj]of[[i,j],[i+1,j],[i+1,j+1],[i,j],[i+1,j+1],[i,j+1]]){v.push(...point(ii,jj));n.push(...normal(ii,jj));uv.push(ii/N,jj/K);}return{v,n,uv};}
+function plane(){return{v:[-.5,0,-.5,.5,0,-.5,.5,0,.5,-.5,0,-.5,.5,0,.5,-.5,0,.5],n:Array(6).fill([0,1,0]).flat(),uv:[0,0,1,0,1,1,0,0,1,1,0,1]};}
+class Node{constructor(geo=null,mat={}){this.geo=geo;this.mat={color:[.2,.23,.26],metal:.3,rough:.4,alpha:1,emissive:0,kind:0,...mat};this.pos=[0,0,0];this.rot=[0,0,0];this.scale=[1,1,1];this.children=[];this.visible=true;this.world=M.identity();}add(n){this.children.push(n);return n;}set(p,s,r){if(p)this.pos=p;if(s)this.scale=s;if(r)this.rot=r;return this;}}
+const VS=`attribute vec3 aPos;attribute vec3 aNormal;attribute vec2 aUV;uniform mat4 uModel;uniform mat4 uView;uniform mat4 uProjection;varying vec3 vPos;varying vec3 vNormal;varying vec2 vUV;void main(){vec4 w=uModel*vec4(aPos,1.);vPos=w.xyz;vNormal=normalize(mat3(uModel)*aNormal);vUV=aUV;gl_Position=uProjection*uView*w;}`;
+const FS=`precision highp float;varying vec3 vPos;varying vec3 vNormal;varying vec2 vUV;uniform vec3 uColor;uniform vec3 uEye;uniform float uMetal;uniform float uRough;uniform float uAlpha;uniform float uEmissive;uniform float uKind;uniform float uTex;uniform sampler2D uTexture;
+/* Studio lighting: hemisphere ambient, one wrapped key light, a weak fill, restrained speculars and a faint cool rim. */
+void main(){vec3 N=normalize(vNormal);if(!gl_FrontFacing)N=-N;vec3 V=normalize(uEye-vPos);vec3 L=normalize(vec3(-.45,1.,.8)),L2=normalize(vec3(.85,.35,-.6));vec3 base=uColor;float alpha=uAlpha;if(uTex>.5){vec4 t=texture2D(uTexture,vUV);base*=t.rgb;alpha*=t.a;}if(uKind>1.5&&uKind<2.5){float q=length((vUV-.5)*2.);alpha*=1.-smoothstep(.05,1.,q);base=vec3(0.);}float up=N.y*.5+.5;vec3 amb=mix(vec3(.10,.10,.10),vec3(.50,.50,.52),up);float d=pow(clamp(dot(N,L)*.55+.45,0.,1.),1.6),d2=max(dot(N,L2),0.);float power=mix(110.,10.,uRough);float spec=pow(max(dot(N,normalize(L+V)),0.),power)*(1.-uRough);float spec2=pow(max(dot(N,normalize(L2+V)),0.),power)*(1.-uRough);float fres=pow(1.-max(dot(N,V),0.),4.);vec3 specCol=mix(vec3(.9),base*1.6,uMetal);vec3 lit=base*(amb+d*.9+d2*.22)+specCol*(spec*.55+spec2*.3)+vec3(.62,.70,.88)*fres*(.04+.14*uMetal);lit=mix(lit,base,uEmissive);if(uKind>.5&&uKind<1.5){vec2 g=fract(vPos.xz)-.5;float dt=1.-smoothstep(.03,.055,length(g));lit+=vec3(.075)*dt;float fade=1.-smoothstep(5.,15.,length(vPos.xz));alpha*=fade;}if(uKind>2.5){float longitude=pow(abs(sin(vUV.x*3.14159*24.)),70.),latitude=pow(abs(sin(vUV.y*3.14159*14.)),70.);lit+=vec3(.16,.45,.52)*max(longitude,latitude)*.34;lit+=vec3(.05,.3,.48)*fres*.7;}if(alpha<.006)discard;lit=mix(vec3(.039,.039,.041),lit,exp(-length(uEye-vPos)*.006));gl_FragColor=vec4(pow(max(lit,vec3(0.)),vec3(.86)),alpha);}`;
+class Renderer{constructor(canvas){this.canvas=canvas;this.gl=canvas.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,powerPreference:'high-performance'});if(!this.gl)throw Error('WebGL unavailable');let g=this.gl;let shader=(type,src)=>{let s=g.createShader(type);g.shaderSource(s,src);g.compileShader(s);if(!g.getShaderParameter(s,g.COMPILE_STATUS))throw Error(g.getShaderInfoLog(s));return s;};this.program=g.createProgram();g.attachShader(this.program,shader(g.VERTEX_SHADER,VS));g.attachShader(this.program,shader(g.FRAGMENT_SHADER,FS));g.linkProgram(this.program);if(!g.getProgramParameter(this.program,g.LINK_STATUS))throw Error(g.getProgramInfoLog(this.program));g.useProgram(this.program);this.loc={};for(let x of['uModel','uView','uProjection','uColor','uEye','uMetal','uRough','uAlpha','uEmissive','uKind','uTex','uTexture'])this.loc[x]=g.getUniformLocation(this.program,x);this.attrs={};for(let x of['aPos','aNormal','aUV'])this.attrs[x]=g.getAttribLocation(this.program,x);this.geometries={};for(const[name,data]of Object.entries({box:box(),sphere:sphere(),cylinder:cylinder(),cone:cylinder(32,0),torus:torus(),ring:torus(64,6,.009),plane:plane()})){let out={count:data.v.length/3};for(const[key,value]of Object.entries(data)){let b=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,b);g.bufferData(g.ARRAY_BUFFER,new Float32Array(value),g.STATIC_DRAW);out[key]=b;}this.geometries[name]=out;}g.enable(g.DEPTH_TEST);g.enable(g.BLEND);g.blendFunc(g.SRC_ALPHA,g.ONE_MINUS_SRC_ALPHA);this.root=new Node();this.eye=[12,8,14];this.target=[0,1,0];this.fov=38;this.textures=new Map();this.halftone=false;this.cell=5;try{this.initPost();}catch(e){this.post=null;}}
+ /* Optional dot-matrix post-process: the scene is drawn to a texture, then re-drawn as a grid of dots sized by luminance. */
+ initPost(){let g=this.gl;const sh=(type,src)=>{let s=g.createShader(type);g.shaderSource(s,src);g.compileShader(s);if(!g.getShaderParameter(s,g.COMPILE_STATUS))throw Error(g.getShaderInfoLog(s));return s;};const vs=`attribute vec2 aPos;varying vec2 vUV;void main(){vUV=aPos*.5+.5;gl_Position=vec4(aPos,0.,1.);}`;const fs=`precision highp float;varying vec2 vUV;uniform sampler2D uScene;uniform vec2 uRes;uniform float uCell;void main(){vec2 px=vUV*uRes;vec2 cell=floor(px/uCell);vec2 c=(cell+.5)*uCell;float o=uCell*.28;vec4 s=(texture2D(uScene,c/uRes)+texture2D(uScene,(c+vec2(o,0.))/uRes)+texture2D(uScene,(c-vec2(o,0.))/uRes)+texture2D(uScene,(c+vec2(0.,o))/uRes)+texture2D(uScene,(c-vec2(0.,o))/uRes))/5.;float lum=dot(s.rgb,vec3(.3,.59,.11))*s.a;lum=max(lum-.07,0.)/.93;float r=sqrt(clamp(lum*1.4,0.,1.))*uCell*.5;float dist=length(px-c);float m=1.-smoothstep(r-.75,r+.75,dist);m*=smoothstep(0.,.07,vUV.x)*smoothstep(0.,.07,1.-vUV.x)*smoothstep(0.,.07,vUV.y)*smoothstep(0.,.07,1.-vUV.y);float sat=max(s.r,max(s.g,s.b))-min(s.r,min(s.g,s.b));float isBlue=smoothstep(.1,.3,sat)*step(s.r,s.b)*step(s.g,s.b);vec3 col=mix(vec3(.8,.81,.84),vec3(.45,.62,1.),isBlue);if(m<.01)discard;gl_FragColor=vec4(col,m);}`;let p=g.createProgram();g.attachShader(p,sh(g.VERTEX_SHADER,vs));g.attachShader(p,sh(g.FRAGMENT_SHADER,fs));g.linkProgram(p);if(!g.getProgramParameter(p,g.LINK_STATUS))throw Error(g.getProgramInfoLog(p));let quad=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,quad);g.bufferData(g.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,1,1,-1,-1,1,1,-1,1]),g.STATIC_DRAW);this.post={program:p,quad,aPos:g.getAttribLocation(p,'aPos'),uScene:g.getUniformLocation(p,'uScene'),uRes:g.getUniformLocation(p,'uRes'),uCell:g.getUniformLocation(p,'uCell')};}
+ setupFBO(w,h){let g=this.gl;if(this.fbo&&this.fboW===w&&this.fboH===h)return;if(!this.fbo){this.fbo=g.createFramebuffer();this.fboTex=g.createTexture();this.fboDepth=g.createRenderbuffer();}g.bindTexture(g.TEXTURE_2D,this.fboTex);g.texImage2D(g.TEXTURE_2D,0,g.RGBA,w,h,0,g.RGBA,g.UNSIGNED_BYTE,null);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MIN_FILTER,g.LINEAR);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MAG_FILTER,g.LINEAR);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_S,g.CLAMP_TO_EDGE);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_T,g.CLAMP_TO_EDGE);g.bindRenderbuffer(g.RENDERBUFFER,this.fboDepth);g.renderbufferStorage(g.RENDERBUFFER,g.DEPTH_COMPONENT16,w,h);g.bindFramebuffer(g.FRAMEBUFFER,this.fbo);g.framebufferTexture2D(g.FRAMEBUFFER,g.COLOR_ATTACHMENT0,g.TEXTURE_2D,this.fboTex,0);g.framebufferRenderbuffer(g.FRAMEBUFFER,g.DEPTH_ATTACHMENT,g.RENDERBUFFER,this.fboDepth);g.bindFramebuffer(g.FRAMEBUFFER,null);g.bindTexture(g.TEXTURE_2D,null);this.fboW=w;this.fboH=h;}
+ texture(canvas){let g=this.gl,t=g.createTexture();g.bindTexture(g.TEXTURE_2D,t);g.pixelStorei(g.UNPACK_FLIP_Y_WEBGL,false);g.texImage2D(g.TEXTURE_2D,0,g.RGBA,g.RGBA,g.UNSIGNED_BYTE,canvas);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MIN_FILTER,g.LINEAR);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MAG_FILTER,g.LINEAR);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_S,g.CLAMP_TO_EDGE);g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_T,g.CLAMP_TO_EDGE);return t;}
+ resize(){let d=Math.min(devicePixelRatio||1,1.65),w=Math.round(this.canvas.clientWidth*d),h=Math.round(this.canvas.clientHeight*d);if(!w||!h)return;if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}this.gl.viewport(0,0,w,h);}
+ render(){this.resize();let g=this.gl;const W=this.canvas.width,H=this.canvas.height,post=this.halftone&&this.post;if(post){this.setupFBO(W,H);g.bindTexture(g.TEXTURE_2D,null);g.bindFramebuffer(g.FRAMEBUFFER,this.fbo);g.viewport(0,0,W,H);}g.clearColor(0,0,0,0);g.clear(g.COLOR_BUFFER_BIT|g.DEPTH_BUFFER_BIT);g.useProgram(this.program);g.uniformMatrix4fv(this.loc.uView,false,M.look(this.eye,this.target));g.uniformMatrix4fv(this.loc.uProjection,false,M.perspective(this.fov*Math.PI/180,this.canvas.width/this.canvas.height));g.uniform3fv(this.loc.uEye,this.eye);let opaque=[],trans=[];const visit=(node,parent)=>{if(!node.visible)return;node.world=M.mul(parent,M.trs(node.pos,node.rot,node.scale));if(node.geo)(node.mat.alpha<1?trans:opaque).push(node);for(const c of node.children)visit(c,node.world);};visit(this.root,M.identity());trans.sort((a,b)=>{let dist=n=>Math.hypot(n.world[12]-this.eye[0],n.world[13]-this.eye[1],n.world[14]-this.eye[2]);return dist(b)-dist(a);});g.depthMask(true);for(const n of opaque)this.draw(n);g.depthMask(false);for(const n of trans)this.draw(n);g.depthMask(true);if(post){g.bindFramebuffer(g.FRAMEBUFFER,null);g.viewport(0,0,W,H);g.clear(g.COLOR_BUFFER_BIT|g.DEPTH_BUFFER_BIT);g.useProgram(this.post.program);g.disable(g.DEPTH_TEST);for(const a of Object.values(this.attrs))g.disableVertexAttribArray(a);g.bindBuffer(g.ARRAY_BUFFER,this.post.quad);g.enableVertexAttribArray(this.post.aPos);g.vertexAttribPointer(this.post.aPos,2,g.FLOAT,false,0,0);g.activeTexture(g.TEXTURE0);g.bindTexture(g.TEXTURE_2D,this.fboTex);g.uniform1i(this.post.uScene,0);g.uniform2f(this.post.uRes,W,H);g.uniform1f(this.post.uCell,this.cell*Math.min(devicePixelRatio||1,1.65));g.drawArrays(g.TRIANGLES,0,6);g.disableVertexAttribArray(this.post.aPos);g.bindTexture(g.TEXTURE_2D,null);g.enable(g.DEPTH_TEST);}}
+ draw(n){let g=this.gl,geo=this.geometries[n.geo],m=n.mat,l=this.loc;for(const[key,attr,size]of[['v','aPos',3],['n','aNormal',3],['uv','aUV',2]]){g.bindBuffer(g.ARRAY_BUFFER,geo[key]);g.enableVertexAttribArray(this.attrs[attr]);g.vertexAttribPointer(this.attrs[attr],size,g.FLOAT,false,0,0);}g.uniformMatrix4fv(l.uModel,false,n.world);g.uniform3fv(l.uColor,m.color);g.uniform1f(l.uMetal,m.metal);g.uniform1f(l.uRough,m.rough);g.uniform1f(l.uAlpha,m.alpha);g.uniform1f(l.uEmissive,m.emissive);g.uniform1f(l.uKind,m.kind);g.uniform1f(l.uTex,m.texture?1:0);if(m.texture){g.activeTexture(g.TEXTURE0);g.bindTexture(g.TEXTURE_2D,m.texture);g.uniform1i(l.uTexture,0);}g.drawArrays(g.TRIANGLES,0,geo.count);}
+}
+
+/* A true projected-geometry Canvas renderer keeps all 3D interactions working on
+   machines where WebGL is unavailable. This is not a screenshot/video fallback. */
+class SoftwareRenderer {
+ constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d',{alpha:true});if(!this.ctx)throw Error('Canvas unavailable');this.root=new Node();this.eye=[12,8,14];this.target=[0,1,0];this.fov=38;this.software=true;this.geometries={box:box(),sphere:sphere(14,9),cylinder:cylinder(16),cone:cylinder(18,0),torus:torus(22,5),ring:torus(28,4,.012),plane:plane()};}
+ texture(canvas){return canvas;}
+ resize(){const d=Math.min(devicePixelRatio||1,1.3);const w=Math.max(1,Math.round(this.canvas.clientWidth*d)),h=Math.max(1,Math.round(this.canvas.clientHeight*d));if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}}
+ render(){this.resize();const c=this.ctx,W=this.canvas.width,H=this.canvas.height;c.clearRect(0,0,W,H);const view=M.look(this.eye,this.target),vp=M.mul(M.perspective(this.fov*Math.PI/180,W/H),view);
+ const project=(m,x,y,z)=>{const w=m[3]*x+m[7]*y+m[11]*z+m[15];if(w<.03)return null;return[(m[0]*x+m[4]*y+m[8]*z+m[12])/w*W/2+W/2,H/2-(m[1]*x+m[5]*y+m[9]*z+m[13])/w*H/2,w];};
+ const line=(a,b,alpha)=>{const A=project(vp,...a),B=project(vp,...b);if(!A||!B)return;c.strokeStyle=`rgba(150,150,150,${alpha})`;c.lineWidth=.6;c.beginPath();c.moveTo(A[0],A[1]);c.lineTo(B[0],B[1]);c.stroke();};
+ for(let i=-10;i<=10;i++){line([i,0,-7],[i,0,7],.065);line([-10,0,i],[10,0,i],.065);}
+ const sh=project(vp,.4,0,0);if(sh){c.save();c.translate(sh[0],sh[1]);c.scale(1,.24);const rad=Math.min(W*.4,500);const g=c.createRadialGradient(0,0,0,0,0,rad);g.addColorStop(0,'rgba(0,0,0,.8)');g.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=g;c.fillRect(-rad,-rad,rad*2,rad*2);c.restore();}
+ const tris=[],L=[-.383,.767,.69],L2=[.675,.465,-.576];
+ const visit=(node,parent)=>{if(!node.visible)return;node.world=M.mul(parent,M.trs(node.pos,node.rot,node.scale));if(node.geo&&node.mat.alpha>.013&&node.mat.kind!==1&&node.mat.kind!==2){const geo=this.geometries[node.geo],world=node.world,mat=node.mat,full=M.mul(vp,world),v=geo.v,n=geo.n,uv=geo.uv;
+ for(let i=0;i<v.length;i+=9){let ps=[project(full,v[i],v[i+1],v[i+2]),project(full,v[i+3],v[i+4],v[i+5]),project(full,v[i+6],v[i+7],v[i+8])];if(ps.some(p=>!p))continue;if(ps.every(p=>p[0]<-20)||ps.every(p=>p[0]>W+20)||ps.every(p=>p[1]<-20)||ps.every(p=>p[1]>H+20))continue;
+ const nx=n[i],ny=n[i+1],nz=n[i+2],scaleX=world[0]**2+world[1]**2+world[2]**2||1,scaleY=world[4]**2+world[5]**2+world[6]**2||1,scaleZ=world[8]**2+world[9]**2+world[10]**2||1;
+ let normal=[world[0]*nx/scaleX+world[4]*ny/scaleY+world[8]*nz/scaleZ,world[1]*nx/scaleX+world[5]*ny/scaleY+world[9]*nz/scaleZ,world[2]*nx/scaleX+world[6]*ny/scaleY+world[10]*nz/scaleZ],len=Math.hypot(...normal)||1;normal=normal.map(x=>x/len);
+ const cx=(v[i]+v[i+3]+v[i+6])/3,cy=(v[i+1]+v[i+4]+v[i+7])/3,cz=(v[i+2]+v[i+5]+v[i+8])/3;const wc=[world[0]*cx+world[4]*cy+world[8]*cz+world[12],world[1]*cx+world[5]*cy+world[9]*cz+world[13],world[2]*cx+world[6]*cy+world[10]*cz+world[14]];let vv=this.eye.map((x,j)=>x-wc[j]);const vl=Math.hypot(...vv)||1;vv=vv.map(x=>x/vl);const face=normal[0]*vv[0]+normal[1]*vv[1]+normal[2]*vv[2];if(face<-.02&&node.geo!=='plane')continue;
+ const d=Math.max(0,normal.reduce((s,x,j)=>s+x*L[j],0)),d2=Math.max(0,normal.reduce((s,x,j)=>s+x*L2[j],0));const hv=L.map((x,j)=>x+vv[j]),hl=Math.hypot(...hv);let spec=Math.pow(Math.max(0,normal.reduce((s,x,j)=>s+x*hv[j]/hl,0)),28)*(1-mat.rough)*.65;const bright=.36+d*.7+d2*.27;const color=mat.color.map((x,j)=>Math.round(Math.min(1,Math.pow(Math.max(0,x*(bright*(1-mat.emissive)+mat.emissive)+spec*(mat.metal*x+.22)),.84))*255));const u=i/3*2;tris.push({p:ps,z:(ps[0][2]+ps[1][2]+ps[2][2])/3-(mat.texture?.35:0),color:`rgb(${color.join(',')})`,alpha:mat.alpha,texture:mat.texture,uv:mat.texture?[uv[u],uv[u+1],uv[u+2],uv[u+3],uv[u+4],uv[u+5]]:null});}
+ }for(const ch of node.children)visit(ch,node.world);};visit(this.root,M.identity());tris.sort((a,b)=>b.z-a.z);
+ for(const t of tris){const p=t.p;c.globalAlpha=t.alpha;c.beginPath();c.moveTo(p[0][0],p[0][1]);c.lineTo(p[1][0],p[1][1]);c.lineTo(p[2][0],p[2][1]);c.closePath();if(t.texture){c.save();c.clip();const tex=t.texture,uv=t.uv,u0=uv[0]*tex.width,v0=uv[1]*tex.height,u1=uv[2]*tex.width,v1=uv[3]*tex.height,u2=uv[4]*tex.width,v2=uv[5]*tex.height;const de=u0*(v1-v2)+u1*(v2-v0)+u2*(v0-v1);if(Math.abs(de)>1e-6){const a=(p[0][0]*(v1-v2)+p[1][0]*(v2-v0)+p[2][0]*(v0-v1))/de,b=(p[0][1]*(v1-v2)+p[1][1]*(v2-v0)+p[2][1]*(v0-v1))/de,cc=(p[0][0]*(u2-u1)+p[1][0]*(u0-u2)+p[2][0]*(u1-u0))/de,d=(p[0][1]*(u2-u1)+p[1][1]*(u0-u2)+p[2][1]*(u1-u0))/de,e=(p[0][0]*(u1*v2-u2*v1)+p[1][0]*(u2*v0-u0*v2)+p[2][0]*(u0*v1-u1*v0))/de,f=(p[0][1]*(u1*v2-u2*v1)+p[1][1]*(u2*v0-u0*v2)+p[2][1]*(u0*v1-u1*v0))/de;c.transform(a,b,cc,d,e,f);c.drawImage(tex,0,0);}c.restore();}else{c.fillStyle=t.color;c.fill();if(t.alpha>.95){c.strokeStyle=t.color;c.lineWidth=.4;c.stroke();}}}c.globalAlpha=1;
+ }
+}
+global.FerroGL={Renderer,SoftwareRenderer,Node,M};
+})(window);
+
+/* Procedural concept geometry + scroll-linked camera. No third-party library or network assets. */
+(function(){'use strict';
+const {Renderer,SoftwareRenderer,Node,M}=window.FerroGL;
+const canvas=document.getElementById('machine-canvas');let renderer;
+try{renderer=new Renderer(canvas);}catch(e){try{renderer=new SoftwareRenderer(canvas);console.info('WebGL unavailable; using interactive software 3D.');}catch(error){canvas.hidden=true;document.getElementById('webgl-fallback').hidden=false;window.ferroScene={available:false,update(){},pause(){},explode(){},orbit(){},reset(){}};return;}}
+const hex=s=>{s=s.replace('#','');return[0,2,4].map(i=>parseInt(s.slice(i,i+2),16)/255);};
+// Monochrome material set: material identity comes from finish (matte / anodized / brushed / polished), colour is reserved for what the machine perceives.
+const mats={frame:{color:hex('5d5e61'),metal:.8,rough:.36},bright:{color:hex('b6b7b9'),metal:.9,rough:.2},dark:{color:hex('1e1f21'),metal:.5,rough:.42},rubber:{color:hex('0f0f10'),metal:.05,rough:.9},belt:{color:hex('242526'),metal:.1,rough:.78},black:{color:hex('0c0c0d'),metal:.2,rough:.5},copper:{color:hex('8c8d8f'),metal:.85,rough:.3},warm:{color:hex('2b5bff'),emissive:.55,rough:.3},blue:{color:hex('6f90ff'),emissive:.6,rough:.2},grey:{color:hex('9aa0a6'),emissive:.6,rough:.2},green:{color:hex('17191c'),metal:.1,rough:.7},plastic:{color:hex('2e3034'),metal:.05,rough:.92},pad:{color:hex('c9ccd0'),metal:.7,rough:.3}};
+function mesh(geo,p,s,mat,r,parent=renderer.root){let n=new Node(geo,{...mat});n.set(p,s,r);parent.add(n);return n;}
+function group(p=[0,0,0],parent=renderer.root){let n=new Node();n.pos=p;parent.add(n);return n;}
+function label(text,width=512,height=96,color='#e6e6e6',bg='#111214',size=36){let c=document.createElement('canvas');c.width=width;c.height=height;let q=c.getContext('2d');q.fillStyle=bg;q.fillRect(0,0,width,height);q.fillStyle=color;q.font=`500 ${size}px Inter, Arial, sans-serif`;q.textAlign='center';q.textBaseline='middle';q.fillText(text,width/2,height/2);return renderer.texture(c);}
+function panel(text,p,s,mat=mats.dark,size=35,parent=renderer.root){let texture=label(text,512,96,'#e6e6e6','#111214',size);return mesh('plane',p,s,{...mat,color:[1,1,1],texture,emissive:.85},[Math.PI/2,0,0],parent);}
+function bolt(p,parent=renderer.root){return mesh('cylinder',p,[.055,.025,.055],mats.bright,[Math.PI/2,0,0],parent);}
+function rail(p,s,parent=renderer.root){let n=mesh('box',p,s,mats.frame,null,parent);return n;}
+const root=group();
+mesh('plane',[0,-.028,0],[38,1,30],{color:hex('111112'),metal:.2,rough:.6,kind:1,alpha:.8});
+mesh('plane',[.5,-.013,0],[16,1,5.9],{color:[0,0,0],kind:2,alpha:.86,emissive:1});
+// An intentionally compact single-lane concept. Units are proportions, not fabrication dimensions.
+const frame=group([0,0,0],root);
+for(const z of[-.99,.99]){rail([-.25,1.12,z],[9.6,.31,.16],frame);mesh('box',[-.25,1.235,z*1.015],[9.45,.025,.045],mats.bright,null,frame);mesh('box',[-.25,.99,z],[9.55,.035,.13],mats.dark,null,frame);for(const x of[-4.7,-3,-.8,1.45,4.35])bolt([x,1.12,z+(z>0?.09:-.09)],frame);}
+for(const x of[-3.9,0,3.5]){for(const z of[-.81,.81]){rail([x,.57,z],[.11,1.08,.11],frame);mesh('box',[x,.065,z],[.4,.09,.33],mats.dark,null,frame);mesh('cylinder',[x,.013,z],[.26,.04,.26],mats.rubber,null,frame);}rail([x,.29,0],[.095,.095,1.7],frame);}
+for(const z of[-.81,.81]){rail([-.2,.4,z],[7.5,.07,.065],frame);}
+// Drive and idler rollers: rotation is decorative.
+const rollers=[];for(const x of[-4.88,4.43]){let n=mesh('cylinder',[x,1.17,0],[.38,1.8,.38],mats.dark,[Math.PI/2,0,0],frame);rollers.push(n);for(const z of[-1,1])mesh('cylinder',[x,1.17,z],[.12,.23,.12],mats.bright,[Math.PI/2,0,0],frame);}
+const beltGroup=group([0,0,0],root);
+mesh('box',[-2.42,1.34,0],[4.85,.035,1.78],mats.belt,null,beltGroup);
+const sensingWindow=mesh('box',[.65,1.34,0],[1.26,.035,1.78],mats.belt,null,beltGroup);
+mesh('box',[2.83,1.34,0],[3.08,.035,1.78],mats.belt,null,beltGroup);
+mesh('box',[-.22,1.02,0],[9.42,.026,1.78],mats.rubber,null,beltGroup);
+const beltMarks=[];for(let i=0;i<30;i++)beltMarks.push(mesh('box',[-4.7+i*.307,1.362,0],[.009,.002,1.77],{color:hex('3a3c40'),rough:1,metal:0},null,beltGroup));
+const drive=group([-4.3,1.02,1.29],root);mesh('cylinder',[0,0,0],[.4,.63,.4],mats.dark,[Math.PI/2,0,0],drive);for(let i=0;i<7;i++)mesh('torus',[0,0,-.26+i*.08],[.43,.65,.43],mats.frame,[Math.PI/2,0,0],drive);mesh('box',[0,.025,.38],[.36,.3,.2],mats.dark,null,drive);panel('M01',[0,.02,.487],[.28,1,.085],mats.dark,42,drive);
+panel('F E R R O S I F T',[-2.75,1.13,1.082],[2.08,1,.19],mats.dark,34,root);
+panel('FS–01  /  CONCEPT',[1.5,1.13,1.082],[1.57,1,.19],mats.dark,30,root);
+// Manual infeed: no automatic shredder or unverified singulation claim.
+mesh('box',[-5.35,1.265,0],[.7,.08,1.65],mats.dark,null,root);
+for(const z of[-.86,.86])mesh('box',[-5.35,1.38,z],[.7,.2,.07],mats.frame,null,root);
+// Optical assembly.
+const optical=group([-1.65,0,0],root);
+for(const z of[-1.05,1.05]){rail([0,2.13,z],[.12,1.73,.12],optical);rail([.015,2.93,z*.04],[.16,.13,2.15],optical);mesh('box',[0,1.4,z],[.31,.13,.3],mats.dark,null,optical);}
+mesh('box',[0,2.75,0],[.56,.32,.45],mats.dark,null,optical);mesh('box',[0,2.89,0],[.6,.035,.49],mats.frame,null,optical);
+mesh('cylinder',[0,2.44,0],[.33,.35,.33],mats.black,null,optical);mesh('torus',[0,2.27,0],[.34,.6,.34],mats.frame,null,optical);mesh('cylinder',[0,2.247,0],[.26,.015,.26],{color:hex('15171c'),metal:.75,rough:.02},null,optical);
+for(const x of[-.36,.36]){mesh('box',[x,2.59,0],[.11,.09,1.65],mats.dark,null,optical);mesh('box',[x,2.538,0],[.065,.013,1.55],{color:hex('e4ecf6'),emissive:1},null,optical);}
+panel('01 / VISION',[0,2.84,1.128],[.94,1,.12],mats.dark,37,optical);
+const visionBeam=mesh('cone',[0,1.82,0],[1.55,.86,1.25],{color:hex('8fa8ff'),emissive:1,alpha:.045},null,optical);
+// Clear guards are schematic. Opacity and spacing are not certified protective design.
+for(const z of[-.96,.96])mesh('box',[0,1.89,z],[1.23,.97,.012],{color:hex('c8d0e0'),alpha:.045,rough:.08,metal:.2},null,optical);
+const scanLine=mesh('box',[-1.65,1.378,0],[.008,.008,1.7],{...mats.warm,emissive:1,alpha:.6},null,root);
+// Sensing module: a low-power coil, not a rotor. Belt cutaway is only explanatory.
+const induction=group([.65,0,0],root);
+mesh('box',[0,.91,0],[1.1,.12,1.28],mats.dark,null,induction);
+mesh('box',[0,1.01,0],[1.08,.065,1.26],{color:hex('1a1c1f'),rough:.7},null,induction);
+for(let i=0;i<7;i++)mesh('torus',[0,1.068,0],[.85-i*.09,.34,.85-i*.09],mats.copper,null,induction);
+for(const x of[-.44,.44])for(const z of[-.51,.51])mesh('cylinder',[x,1.043,z],[.04,.035,.04],mats.bright,null,induction);
+const fieldRings=[];for(let i=0;i<4;i++)fieldRings.push(mesh('ring',[0,1.39+i*.11,0],[.42+i*.26,1,.42+i*.26],{...mats.warm,alpha:.12,emissive:1},null,induction));
+mesh('box',[0,1,-.93],[.11,.08,.5],mats.black,null,induction);
+panel('02 / INDUCTION',[.65,.91,1.012],[.91,1,.14],mats.dark,31,root);
+// Controller and local safe-state controls.
+const control=group([2.15,0,-1.35],root);
+rail([0,1.58,0],[.15,1.1,.15],control);mesh('box',[0,2.02,0],[1.47,1.05,.33],mats.dark,null,control);mesh('box',[0,2.02,.18],[1.32,.91,.025],mats.bright,null,control);mesh('box',[0,2.02,.201],[1.24,.84,.02],mats.black,null,control);
+const screenCanvas=document.createElement('canvas');screenCanvas.width=640;screenCanvas.height=420;let q=screenCanvas.getContext('2d');q.fillStyle='#0e0e10';q.fillRect(0,0,640,420);q.fillStyle='#f3f3f3';q.font='31px monospace';q.fillText('FERROSIFT / CONTROL',35,55);q.fillStyle='#8a8a8a';q.font='20px monospace';q.fillText('SCRIPTED CONCEPT VIEW',35,89);q.strokeStyle='#333336';q.beginPath();q.moveTo(35,109);q.lineTo(605,109);q.stroke();for(let i=0;i<3;i++){q.fillStyle=['#2b5bff','#d4d4d4','#6f6f6f'][i];q.fillRect(35,139+i*66,10,35);q.fillStyle='#d4d4d4';q.font='24px monospace';q.fillText(['01  RECOVERY','02  RESIDUE','03  REVIEW'][i],66,165+i*66);}q.fillStyle='#6f6f6f';q.font='18px monospace';q.fillText('TRACK → FUSE → ROUTE → VERIFY',35,381);
+mesh('plane',[0,2.02,.22],[1.19,1,.78],{color:[1,1,1],texture:renderer.texture(screenCanvas),emissive:1},[Math.PI/2,0,0],control);
+for(const x of[-.67,.67])for(const y of[1.55,2.49])bolt([x,y,.186],control);
+const stop=group([3.12,1.075,1.14],root);mesh('box',[0,0,0],[.42,.35,.15],{color:hex('3a3c40'),metal:.3,rough:.6},null,stop);mesh('cylinder',[0,0,.115],[.23,.15,.23],{color:hex('8e9196'),metal:.2,rough:.45},[Math.PI/2,0,0],stop);
+// Exit, channel walls, a conceptual servo diverter.
+const sorter=group([4.68,0,0],root);mesh('box',[0,1.16,0],[.45,.12,1.9],mats.frame,null,sorter);mesh('box',[0,1.43,-1.04],[.39,.4,.32],mats.dark,null,sorter);const gate=mesh('box',[.15,1.435,0],[.64,.14,.06],mats.warm,[0,0,0],sorter);
+for(const z of[-.78,0,.78]){let p=mesh('box',[.69,.99,z],[1.05,.06,.66],mats.dark,[0,0,-.2],sorter);for(const zz of[z-.34,z+.34])mesh('box',[.69,1.04,zz],[1.05,.1,.025],mats.bright,[0,0,-.2],sorter);}
+panel('04 / ROUTING',[4.15,1.13,1.083],[.78,1,.14],mats.dark,34,root);
+// Output bins with a visibly separate review route.
+const bins=[];for(let i=0;i<3;i++){let b=group([5.79,0,(i-1)*1.33],root);bins.push(b);let w=1.17,d=1.12,h=.64;mesh('box',[0,.095,0],[w,.07,d],mats.dark,null,b);for(const z of[-d/2,d/2])mesh('box',[0,.39,z],[w,h,.045],{...mats.dark,color:hex('26282c')},null,b);for(const x of[-w/2,w/2])mesh('box',[x,.39,0],[.045,h,d],mats.frame,null,b);for(const z of[-d/2,d/2])mesh('box',[0,.715,z],[w+.08,.035,.08],mats.bright,null,b);panel(['01 / RECOVERY','02 / RESIDUE','03 / REVIEW'][i],[0,.44,d/2+.024],[w-.06,1,.16],mats.dark,34,b);mesh('box',[0,.62,d/2+.027],[w-.08,.034,.012],[mats.warm,mats.bright,mats.grey][i],null,b);}
+// Outcome-check camera at the exit.
+rail([5.0,2.04,-1.06],[.065,1.4,.065],root);mesh('box',[5.03,2.73,-1.01],[.24,.15,.19],mats.dark,null,root);mesh('cylinder',[5.03,2.62,-.98],[.1,.11,.1],mats.black,[.35,0,0],root);
+// Individually modeled sample fragments. Their routes are SCRIPTED, not inference results.
+let seed=90210;function rnd(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}
+function fragment(type,parent){let n=group([0,0,0],parent);if(type===0){mesh('box',[0,.035,0],[.35,.042,.25],mats.green,null,n);for(let j=0;j<3;j++){mesh('box',[-.105+j*.09,.075,j%2?.035:-.035],[.063,.053,.059],mats.black,null,n);mesh('box',[-.105+j*.09,.071,-.083],[.073,.013,.017],mats.bright,null,n);}for(let j=0;j<5;j++)mesh('box',[-.12+j*.055,.06,.105],[.023,.01,.035],mats.pad,null,n);}else if(type===1){mesh('torus',[0,.065,0],[.27,.55,.15],mats.bright,[.15,0,.08],n);mesh('box',[.11,.065,.022],[.19,.03,.033],mats.bright,[0,.5,0],n);}else if(type===2){mesh('box',[0,.075,0],[.24,.085,.18],mats.bright,[0,.4,.2],n);mesh('box',[.08,.095,.025],[.17,.043,.13],mats.frame,[.2,-.4,-.24],n);}else{mesh('box',[0,.045,0],[.27,.07,.19],mats.plastic,[.06,.3,.05],n);mesh('box',[.1,.07,.03],[.11,.08,.08],mats.black,[0,.2,.2],n);}return n;}
+const items=[];for(let i=0;i<15;i++){let type=i%4,n=fragment(type,root),z=(rnd()-.5)*1.05;n.rot[1]=rnd()*Math.PI;let shadow=mesh('plane',[0,1.3625,0],[.62,1,.48],{color:[0,0,0],kind:2,alpha:.5,emissive:1});items.push({n,type,z,shadow,phase:i/15,route:type===3?1:(i%7===0?2:0)});}
+for(let i=0;i<3;i++)for(let j=0;j<8;j++){let n=fragment(i===0?j%3:i===1?3:j%4,bins[i]);n.pos=[(rnd()-.5)*.82,.12+rnd()*.06,(rnd()-.5)*.77];n.rot=[rnd()*.5,rnd()*6.2,rnd()*.25];n.scale=[.75,.75,.75];}
+// A thin conceptual object-outline follows the piece nearest the camera.
+const targetBox=group([0,0,0],root);for(const z of[-.19,.19])mesh('box',[0,.012,z],[.53,.01,.01],{...mats.blue,emissive:1},null,targetBox);for(const x of[-.265,.265])mesh('box',[x,.012,0],[.01,.01,.39],{...mats.blue,emissive:1},null,targetBox);
+const cameras=[
+ {eye:[11.6,8.2,14.8],target:[.1,1.08,0],fov:37},
+ {eye:[-3.8,4.2,5.6],target:[-1.63,1.97,0],fov:37},
+ {eye:[3.5,3.2,4.4],target:[.65,1.15,0],fov:35},
+ {eye:[5.1,3.7,4.5],target:[2.03,1.81,-.73],fov:36},
+ {eye:[9.1,5.7,6.7],target:[4.8,1.02,0],fov:36},
+ {eye:[10.5,9.6,12.8],target:[.35,1.03,0],fov:38}
+];
+const stageNames=['SYSTEM OVERVIEW','COMPUTER VISION','INDUCTIVE SENSING','FUSION + CONTROL','PHYSICAL SORTING','VERIFIED OUTCOMES'];
+const tagTexts=['Integrated sensing. Coordinated action.','Controlled light / independent visual evidence','Coil below belt / cutaway illustration','Image + sensor + belt position','Timed gate / three output routes','Verify destinations, not just predictions'];
+let paused=matchMedia('(prefers-reduced-motion: reduce)').matches,exploded=false,free=false,drag=false,dragX=0,dragY=0,yaw=0,pitch=0,currentStage=0,progress=0,explosion=0,time=0,last=0,lastDraw=0,visible=true;
+const dots=[...document.querySelectorAll('.stage-dots i')];
+// Screen-space tracking label: projects the tracked piece into canvas pixels so a crisp HTML label can ride with the blue box.
+const trackLabel=document.getElementById('track-label'),trackText=document.getElementById('track-text'),typeNames=['PCB fragment','Wire loop','Metal fragment','Plastic housing'],routeNames=['01 Recovery','02 Residue','03 Review'];let labelItem=null;
+function toScreen(p){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return null;const vp=M.mul(M.perspective(renderer.fov*Math.PI/180,w/h),M.look(renderer.eye,renderer.target));const cw=vp[3]*p[0]+vp[7]*p[1]+vp[11]*p[2]+vp[15];if(cw<=0)return null;return[((vp[0]*p[0]+vp[4]*p[1]+vp[8]*p[2]+vp[12])/cw*.5+.5)*w,(.5-(vp[1]*p[0]+vp[5]*p[1]+vp[9]*p[2]+vp[13])/cw*.5)*h];}
+function targetProgress(){let els=[...document.querySelectorAll('.scene-step')],s=window.scrollY;let start=els[0].getBoundingClientRect().top+s;let offset=s-start;let arr=els.map(e=>e.getBoundingClientRect().top+s-start);let idx=0;while(idx<arr.length-1&&offset>arr[idx+1])idx++;let step=idx>=5?5:idx+Math.max(0,Math.min(1,(offset-arr[idx])/(arr[idx+1]-arr[idx])));return step;}
+function update(){progress=targetProgress();visible=document.getElementById('machine').getBoundingClientRect().bottom>0;}
+function renderFrame(ts){requestAnimationFrame(renderFrame);if(document.hidden||!visible)return;if(ts-lastDraw<(renderer.software?70:innerWidth<761?32:20))return;let dt=Math.min((ts-(last||ts))/1000,.08);last=ts;lastDraw=ts;if(!paused)time+=dt;let idx=Math.min(5,Math.round(progress)),a=Math.floor(progress),b=Math.min(5,a+1),f=progress-a;f=f*f*(3-2*f);if(idx!==currentStage){currentStage=idx;document.getElementById('stage-number').textContent=String(idx).padStart(2,'0')+' / 05';document.getElementById('stage-name').textContent=stageNames[idx];document.getElementById('scene-tag-text').textContent=tagTexts[idx];dots.forEach((d,i)=>d.classList.toggle('active',i===idx));}
+ let A=cameras[a],B=cameras[b],goalEye=A.eye.map((v,i)=>v+(B.eye[i]-v)*f),goalTarget=A.target.map((v,i)=>v+(B.target[i]-v)*f);
+ if(innerWidth<761){goalEye=goalEye.map((v,i)=>goalTarget[i]+(v-goalTarget[i])*(idx===0||idx===5?1.32:1.08));}
+ if(free){let v=goalEye.map((x,i)=>x-goalTarget[i]),len=Math.hypot(...v),baseA=Math.atan2(v[0],v[2]),baseB=Math.asin(v[1]/len),el=Math.max(.15,Math.min(1.35,baseB+pitch));goalEye=[goalTarget[0]+Math.sin(baseA+yaw)*Math.cos(el)*len,goalTarget[1]+Math.sin(el)*len,goalTarget[2]+Math.cos(baseA+yaw)*Math.cos(el)*len];}
+ const lerp=paused?1:Math.min(1,dt*5);renderer.eye=renderer.eye.map((v,i)=>v+(goalEye[i]-v)*lerp);renderer.target=renderer.target.map((v,i)=>v+(goalTarget[i]-v)*lerp);renderer.fov=A.fov+(B.fov-A.fov)*f;
+ explosion+=(Number(exploded)-explosion)*Math.min(1,dt*6);optical.pos[1]=explosion*1.8;induction.pos[1]=-explosion*.43;control.pos[1]=explosion*.9;control.pos[2]=-1.35-explosion*.75;sorter.pos[0]=4.68+explosion*.55;beltGroup.pos[1]=explosion*.23;
+ const senseFocus=Math.max(0,1-Math.abs(progress-2));sensingWindow.mat.alpha=1-senseFocus*.84-explosion*.1;sensingWindow.mat.color=senseFocus>.5?hex('1b2a5a'):mats.belt.color;fieldRings.forEach((n,i)=>{n.mat.alpha=senseFocus*(.11+Math.sin(time*2-i)*.06);n.pos[1]=1.4+i*.13+Math.sin(time*1.5+i)*.016;});visionBeam.mat.alpha=.027+Math.max(0,1-Math.abs(progress-1))*.055;scanLine.pos[0]=-1.65+Math.sin(time*1.5)*.47;scanLine.mat.alpha=.2+Math.max(0,1-Math.abs(progress-1))*.4;
+ let nearest=null,best=Infinity,exitItem=null,exitDistance=Infinity;for(const item of items){let u=(time*.037+item.phase)%1,x=-4.85+u*11.3;if(x<4.48){if(4.48-x<exitDistance){exitItem=item;exitDistance=4.48-x;}item.n.pos=[x,1.373+explosion*.23,item.z];item.n.scale=[1,1,1];item.shadow.visible=true;item.shadow.pos=[x,1.3625+explosion*.23,item.z];if(Math.abs(x+1.65)<best){nearest=item;best=Math.abs(x+1.65);}}else{let q=Math.min(1,(x-4.48)/1.65);item.n.pos=[4.48+q*1.33,1.373-q*.8,(item.route-1)*1.33*q+item.z*(1-q)];item.n.scale=[1,1,1];item.shadow.visible=false;if(q>.94)item.n.visible=false;else item.n.visible=true;}if(x<4.48)item.n.visible=true;}
+ if(nearest&&best<.8){targetBox.visible=true;targetBox.pos=[nearest.n.pos[0],1.44+explosion*.23,nearest.z];}else targetBox.visible=false;
+ // The label follows the piece at the station the current stage is about: camera, coil, controller, gate.
+ if(trackLabel){const station=[null,-1.65,.65,2.3,4.2,null][idx];let pick=null,pd=.8;if(station!==null&&progress>.6&&progress<4.6)for(const item of items){if(!item.n.visible||item.n.pos[0]>=4.48)continue;const dd=Math.abs(item.n.pos[0]-station);if(dd<pd){pd=dd;pick=item;}}if(pick){const sp=toScreen([pick.n.pos[0],1.46+explosion*.23,pick.z+.2]);if(sp){const flip=sp[0]>canvas.clientWidth*.7;trackLabel.hidden=false;trackLabel.classList.toggle('flip',flip);trackLabel.style.transform=`translate(${sp[0].toFixed(1)}px,${sp[1].toFixed(1)}px)`+(flip?' translateX(-100%)':'');const key=pick.type*10+pick.route+idx*100;if(labelItem!==key){labelItem=key;trackText.textContent=idx===2?typeNames[pick.type]+' · coil response':idx===4?routeNames[pick.route]+' · gate timed':typeNames[pick.type]+' → '+routeNames[pick.route];}}else trackLabel.hidden=true;}else trackLabel.hidden=true;}
+ if(exitItem)gate.rot[1]+=((exitItem.route-1)*.5-gate.rot[1])*Math.min(1,dt*9);beltMarks.forEach((n,i)=>{n.pos[0]=-4.75+((i*.307+time*.42)%9.1);});rollers.forEach(n=>n.rot[1]=time*1.8);document.getElementById('scene-mode').textContent=exploded?'EXPLODED CONCEPT':idx===2?'SENSING CUTAWAY':'ASSEMBLED VIEW';renderer.render();}
+canvas.addEventListener('pointerdown',e=>{if(!free)return;drag=true;dragX=e.clientX;dragY=e.clientY;canvas.setPointerCapture(e.pointerId);});canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-dragX)*.008;pitch+=(e.clientY-dragY)*.006;dragX=e.clientX;dragY=e.clientY;});canvas.addEventListener('pointerup',()=>drag=false);canvas.addEventListener('pointercancel',()=>drag=false);
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();visible=false;canvas.hidden=true;document.getElementById('webgl-fallback').hidden=false;});
+window.ferroScene={available:true,update,pause(v){paused=v;last=0;},explode(v){exploded=v;},orbit(v){free=v;canvas.classList.toggle('explorable',v);},reset(){yaw=0;pitch=0;},halftone(v){if(!renderer.software)renderer.halftone=!!v;},getState(){return{currentStage,progress,paused,exploded,free,objects:items.length,renderer:renderer.software?'software-3d':'webgl'};}};
+update();requestAnimationFrame(renderFrame);
+})();
+
+/* Site UI, live scenario model and illustrative network. No tracking, backend or API calls. */
+(function(){'use strict';
+document.documentElement.classList.add('js');
+const $=id=>document.getElementById(id),reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches;
+const scene=window.ferroScene||{update(){},pause(){},explode(){},orbit(){},reset(){}};
+function toast(text){let el=$('toast');el.textContent=text;el.classList.add('active');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('active'),3500);}
+async function copy(text){try{await navigator.clipboard.writeText(text);}catch{let t=document.createElement('textarea');t.value=text;t.style.cssText='position:fixed;left:-10000px;top:0';document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();if(!ok)throw Error('Clipboard unavailable');}}
+function setPause(value){paused=value;document.body.classList.toggle('motion-paused',paused);scene.pause(paused);$('motion-toggle').setAttribute('aria-pressed',String(paused));$('motion-toggle').innerHTML=paused?'▶ <span>Play</span>':'Ⅱ <span>Pause</span>';window.ferroMotionPaused=paused;}
+setPause(paused);reduced.addEventListener('change',e=>setPause(e.matches));
+$('motion-toggle').addEventListener('click',()=>setPause(!paused));$('footer-motion').addEventListener('click',()=>{setPause(!paused);toast(paused?'Decorative motion paused.':'Decorative motion enabled.');});
+for(const[name,fn]of[['explode',v=>scene.explode(v)],['orbit',v=>scene.orbit(v)]]){const el=$(name+'-toggle');el.addEventListener('click',()=>{const active=el.getAttribute('aria-pressed')!=='true';el.setAttribute('aria-pressed',String(active));fn(active);if(name==='orbit'&&active)toast('Drag the 3D model to rotate. Scroll to continue the tour.');});}
+$('reset-view').addEventListener('click',()=>{scene.reset();scene.orbit(false);scene.explode(false);$('orbit-toggle').setAttribute('aria-pressed','false');$('explode-toggle').setAttribute('aria-pressed','false');});
+// Scroll-story focus: each step's copy fades in as it takes the viewport; roadmap steps brighten near the viewport centre.
+const stepFocus=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('in-view',e.isIntersecting)),{threshold:.4});document.querySelectorAll('.scene-step').forEach(el=>stepFocus.observe(el));
+const buildWrap=document.querySelector('.build-steps'),buildSteps=buildWrap?[...buildWrap.querySelectorAll('article')]:[];
+function focusSteps(){if(!buildWrap)return;const wr=buildWrap.getBoundingClientRect();if(wr.bottom<innerHeight*.15||wr.top>innerHeight*.85){buildWrap.classList.remove('has-focus');return;}const mid=innerHeight*.5;let best=null,bd=Infinity;for(const s of buildSteps){const r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-mid);if(d<bd){bd=d;best=s;}}buildSteps.forEach(s=>s.classList.toggle('focus',s===best));buildWrap.classList.add('has-focus');}
+// Section scroll-spy for the header navigation.
+const navLinks=[...document.querySelectorAll('.site-header nav a')];const spy=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const id='#'+e.target.id;navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));});},{rootMargin:'-40% 0px -55% 0px'});['machine','opportunity','economics','roadmap','horizon'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+// Lightweight scroll observers: no scroll-jacking.
+let pending=false;function onScroll(){if(pending)return;pending=true;requestAnimationFrame(()=>{document.querySelector('.site-header').classList.toggle('scrolled',scrollY>30);scene.update();focusSteps();pending=false;});}addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',()=>{scene.update();drawFlow();focusSteps();},{passive:true});onScroll();
+const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');reveal.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+const counter=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;counter.unobserve(e.target);if(reduced.matches)return;const end=Number(e.target.dataset.count),dec=Number(e.target.dataset.decimals||0),start=performance.now();function tick(t){let p=Math.min(1,(t-start)/1300);e.target.textContent=(end*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}),{threshold:.8});document.querySelectorAll('[data-count]').forEach(el=>counter.observe(el));
+// Mobile navigation.
+const menu=document.querySelector('.menu-toggle'),nav=$('mobile-nav');menu.addEventListener('click',()=>{let open=nav.hidden;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');});nav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{nav.hidden=true;menu.setAttribute('aria-expanded','false');}));
+// SVG flow links anchored to the actual HTML nodes, responsive on mobile.
+function drawFlow(){const wrap=$('global-flow'),svg=wrap.querySelector('svg'),base=wrap.getBoundingClientRect(),origin=wrap.querySelector('[data-node=origin]').getBoundingClientRect();if(!base.width)return;svg.setAttribute('viewBox',`0 0 ${base.width} ${base.height}`);let mobile=innerWidth<901,s='';for(const[name,color]of[['formal','#2b5bff'],['outside','#6f6f6f']]){let node=wrap.querySelector(`[data-node=${name}]`).getBoundingClientRect(),sx=mobile?origin.left+origin.width/2-base.left:origin.right-base.left,sy=mobile?origin.bottom-base.top:origin.top+origin.height/2-base.top,ex=mobile?node.left+node.width/2-base.left:node.left-base.left,ey=mobile?node.top-base.top:node.top+node.height/2-base.top,d=mobile?`M${sx} ${sy} C${sx} ${sy+29},${ex} ${ey-28},${ex} ${ey}`:`M${sx} ${sy} C${sx+45} ${sy},${ex-45} ${ey},${ex} ${ey}`;s+=`<path class="flow-line" d="${d}" stroke="${color}"/><path class="flow-pulse" d="${d}" stroke="${color}"/>`;}svg.innerHTML=s;}
+new ResizeObserver(drawFlow).observe($('global-flow'));drawFlow();
+// Transparent, editable example economics. No model performance is implied.
+const defaults={annual:10000,content:4,price:2000,baseline:80,candidate:90,fee:24000,ops:8000,risk:10000,install:24000};
+const money=x=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x),num=x=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(x);let latest={};
+function calculate(){let a={};for(const k of Object.keys(defaults)){const input=$(k),raw=Number(input.value);a[k]=Number.isFinite(raw)?Math.max(Number(input.min||0),Math.min(Number(input.max||1e12),raw)):0;}let target=a.annual*a.content/100,baseline=target*a.baseline/100,candidate=target*a.candidate/100,added=candidate-baseline,gross=added*a.price,ongoing=a.fee+a.ops+a.risk,burden=ongoing+a.install,net=gross-burden,recurring=gross-ongoing,pp=target*a.price?burden/(target*a.price)*100:null;latest={assumptions:a,results:{targetMetalTonnes:target,baselineRecoveredTonnes:baseline,candidateRecoveredTonnes:candidate,additionalMetalTonnes:added,grossAnnualContribution:gross,yearOneCost:burden,yearOneNetBenefit:net,recurringNetBenefit:recurring,yearOneBreakEvenPercentagePoints:pp}};
+$('baseline-display').textContent=a.baseline+'%';$('candidate-display').textContent=a.candidate+'%';$('target-total').textContent=num(target)+' t / year';$('baseline-mass').textContent=num(baseline)+' t recovered';$('candidate-mass').textContent=num(candidate)+' t recovered';$('baseline-lost').textContent=num(target-baseline)+' t';$('candidate-lost').textContent=num(target-candidate)+' t';$('baseline-bar').style.width=a.baseline+'%';$('candidate-bar').style.width=a.candidate+'%';$('net-benefit').textContent=money(net);$('gross').textContent=money(gross)+'/year';$('total-cost').textContent=money(burden);$('recurring').textContent=money(recurring)+'/year';$('added-metal').textContent=(added>0?'+':'')+num(added)+' t/year';$('break-even').textContent=pp===null?'Not defined with zero target value':num(pp)+' percentage points';$('benefit-description').textContent=net>0?'Positive in this assumed scenario. Not a measured saving.':net<0?'Negative in this scenario. The added benefit does not cover the costs.':'Break-even in this assumed scenario. Not a measured result.';document.querySelector('.result-big').classList.toggle('negative',net<0);return latest;}
+$('calculator').addEventListener('input',calculate);$('calculator').addEventListener('submit',e=>e.preventDefault());$('reset-calculator').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calculate();toast('Illustrative assumptions restored.');});calculate();
+function scenarioText(){let a=latest.assumptions,r=latest.results;return`FERROSIFT — ILLUSTRATIVE SCENARIO, NOT PERFORMANCE DATA\nFeed: ${num(a.annual)} t/year; target metal: ${a.content}%; baseline recovery: ${a.baseline}%; proposed: ${a.candidate}%.\nNet incremental realization: ${money(a.price)}/recovered tonne.\nAdditional recovered target metal: ${num(r.additionalMetalTonnes)} t/year.\nGross incremental contribution: ${money(r.grossAnnualContribution)}/year.\nAnnual fee: ${money(a.fee)}; operations: ${money(a.ops)}; downtime/quality/errors: ${money(a.risk)}; one-time installation: ${money(a.install)}.\nFirst-year net benefit: ${money(r.yearOneNetBenefit)}. Recurring net: ${money(r.recurringNetBenefit)}/year.\nReplace all assumptions with verified customer data. Whole-object mass is not target-metal mass. Additional real costs may apply.`;}
+$('copy-scenario').addEventListener('click',async()=>{try{await copy(scenarioText());toast('Scenario and its assumptions copied.');}catch{toast('Clipboard blocked. Use Export assumptions instead.');}});
+$('export-scenario').addEventListener('click',()=>{let out={title:'Ferrosift illustrative customer economics',disclosure:'Assumptions only. Not measured performance or investment advice.',units:'USD, metric tonnes, annual period',...latest,formula:'feed * metalContent/100 * (proposed-baseline)/100 * netRealization - fee - operations - errorBurden - installation'};let blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ferrosift-scenario.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Scenario exported with all assumptions.');});
+// A real draft interaction, not a fake contact submission.
+const dialog=$('contact-dialog');let priorFocus=null;document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',()=>{priorFocus=b;dialog.showModal();}));document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){let r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});dialog.addEventListener('close',()=>priorFocus?.focus());$('contact-form').addEventListener('submit',async e=>{e.preventDefault();let f=new FormData(e.target),text=`Hello Tamerlan and Brandon,\n\nI'm ${f.get('name')}. I'd like to discuss: ${f.get('topic')}.\n\n${f.get('message')}\n\nSent as an introduction about Ferrosift.`;try{await copy(text);toast('Introduction copied. Nothing was submitted or stored.');}catch{toast('Clipboard blocked by this browser; please copy your message manually.');}});
+// Conceptual network: Earth-like wire globe and symbolic lines. No real installations or geography.
+const net=$('network-canvas'),ctx=net.getContext('2d');let nt=0,lastNet=0,netVisible=false;new IntersectionObserver(es=>netVisible=es[0].isIntersecting,{rootMargin:'100px'}).observe(net);
+let stars=Array.from({length:95},(_,i)=>[Math.sin(i*129.7)*.5+.5,Math.cos(i*77.3)*.5+.5,(i%4+1)*.3]);
+function networkFrame(t){requestAnimationFrame(networkFrame);if(!netVisible||document.hidden)return;let dt=Math.min((t-(lastNet||t))/1000,.08);lastNet=t;if(!paused)nt+=dt;let d=Math.min(devicePixelRatio||1,1.6),w=net.clientWidth,h=net.clientHeight;if(net.width!==Math.round(w*d)||net.height!==Math.round(h*d)){net.width=Math.round(w*d);net.height=Math.round(h*d);}ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);let cx=w*.52,cy=h*.44,r=Math.min(h*.36,w*.27);for(const[x,y,s]of stars){ctx.fillStyle=`rgba(255,255,255,${.08+s*.1})`;ctx.fillRect(x*w,y*h*.88,s,s);}let glow=ctx.createRadialGradient(cx,cy,r*.4,cx,cy,r*1.55);glow.addColorStop(0,'rgba(43,91,255,.10)');glow.addColorStop(.72,'rgba(43,91,255,.05)');glow.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=glow;ctx.fillRect(cx-r*1.6,cy-r*1.6,r*3.2,r*3.2);let planet=ctx.createRadialGradient(cx-r*.32,cy-r*.38,r*.05,cx,cy,r);planet.addColorStop(0,'#1f1f22');planet.addColorStop(.6,'#151517');planet.addColorStop(1,'#0c0c0d');ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=planet;ctx.fill();
+let rot=nt*.045;function project(lat,lon){let x=Math.cos(lat)*Math.cos(lon+rot),z=Math.cos(lat)*Math.sin(lon+rot),y=Math.sin(lat),tilt=.28,Y=y*Math.cos(tilt)-z*Math.sin(tilt),Z=y*Math.sin(tilt)+z*Math.cos(tilt);return[cx+x*r,cy+Y*r,Z];}
+ctx.lineWidth=.65;for(let lat=-1.25;lat<=1.26;lat+=.25){ctx.beginPath();for(let j=0;j<=160;j++){let p=project(lat,j/160*Math.PI*2);if(p[2]>-.08){if(j===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1]);}else ctx.moveTo(p[0],p[1]);}ctx.strokeStyle='rgba(255,255,255,.16)';ctx.stroke();}for(let lon=0;lon<Math.PI*2;lon+=Math.PI/12){ctx.beginPath();for(let j=0;j<=70;j++){let p=project(-Math.PI/2+j/70*Math.PI,lon);if(p[2]>0)ctx.lineTo(p[0],p[1]);else ctx.moveTo(p[0],p[1]);}ctx.strokeStyle='rgba(255,255,255,.12)';ctx.stroke();}
+ctx.beginPath();ctx.ellipse(cx,cy,r*1.72,r*.35,-.28,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,.28)';ctx.lineWidth=1;ctx.stroke();let a=nt*.13-.9,sx=cx+Math.cos(a)*r*1.72,sy=cy+Math.sin(a)*r*.35-Math.cos(a)*r*.47;ctx.save();ctx.translate(sx,sy);ctx.rotate(.3);ctx.fillStyle='#e6e6e6';ctx.fillRect(-5,-4,10,8);ctx.strokeStyle='#8a8a8a';ctx.strokeRect(-22,-6,13,12);ctx.strokeRect(9,-6,13,12);ctx.restore();
+const sites=w<640?3:5;for(let i=0;i<sites;i++){let px=w*(sites===3?.2+i*.3:.1+i*.2),py=h*.87-Math.sin(i*.8)*9;ctx.beginPath();ctx.moveTo(px,py-15);ctx.quadraticCurveTo(px,cy+r*.95,cx+(i-2)*r*.22,cy+r*.5);ctx.strokeStyle='rgba(43,91,255,.35)';ctx.stroke();let p=(nt*.25+i*.19)%1,px2=(1-p)*(1-p)*px+2*(1-p)*p*px+p*p*(cx+(i-2)*r*.22),py2=(1-p)*(1-p)*(py-15)+2*(1-p)*p*(cy+r*.95)+p*p*(cy+r*.5);ctx.beginPath();ctx.arc(px2,py2,1.6,0,Math.PI*2);ctx.fillStyle='#2b5bff';ctx.fill();ctx.strokeStyle='#8a8a8a';ctx.lineWidth=1;ctx.strokeRect(px-19,py-8,38,9);ctx.beginPath();ctx.moveTo(px-14,py+1);ctx.lineTo(px-14,py+8);ctx.moveTo(px+14,py+1);ctx.lineTo(px+14,py+8);ctx.stroke();ctx.fillStyle='#8a8a8a';ctx.font='7px monospace';ctx.textAlign='center';ctx.fillText('LINE '+String.fromCharCode(65+i)+' / CONCEPT',px,py+23);}
+}
+requestAnimationFrame(networkFrame);
+// Small public debug interface for tests and future collaborators.
+window.ferrosift={calculate,getScenario:()=>structuredClone(latest),setMotion:setPause,goToStage:i=>document.querySelectorAll('.scene-step')[Math.max(0,Math.min(5,i))].scrollIntoView({behavior:'instant'}),scene};
+})();
+</script></body></html>
