@@ -9,7 +9,8 @@ Ferrosift's public concept website. Real photography, concise industry evidence,
 - `index.html`: homepage content and source credits
 - `styles.css`: responsive layout and self-hosted D-DIN typography
 - `site.js`: navigation, source disclosure, and restrained entrance effects
-- `explorer.html`: Brandon's interactive engineering concept, preserved from commit `1dc8dbd`
+- `explorer.html`: Brandon's interactive engineering concept, preserved from commit `1dc8dbd`, with a recorded model-results panel at `#vision-demo`; the original conveyor animation remains scripted
+- `model-demo/`: recorded model comparison, sampled image explorer, evaluation counts, and attribution; static saved outputs only
 - `assets/images`: real photographs; attribution and licensing in `SOURCES.md`
 - `assets/fonts`: D-DIN font files and SIL Open Font License
 

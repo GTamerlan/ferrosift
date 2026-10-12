@@ -1,0 +1,12 @@
+SteelDS a3 — Neubauer, Rauch, Koinig, Tischberger-Aldrian, Pomberger, Rueckert (2026).
+Dataset: https://doi.org/10.5281/zenodo.20271102
+License: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Changes: selected frames resized/recompressed; saved detection overlays added to video and rendered separately for images.
+
+ConMetal-6 subset — Diyana Ranasinghe and Mehrdad Arashpour (2026).
+Dataset: https://data.mendeley.com/datasets/ch34f38kz5/1
+DOI: 10.17632/ch34f38kz5.1
+License: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Changes: selected phone images resized/recompressed; derived bounding-box overlays rendered separately.
+
+Original authors do not endorse Ferrosift.

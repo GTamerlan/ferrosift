@@ -407,6 +407,21 @@ dialog .micro{margin-top:16px}
 @media(max-height:720px) and (min-width:761px){.scene-step{min-height:620px;padding-top:calc(var(--header) + 4px)}.hero h1{font-size:48px;margin:14px 0 16px}.step-copy h2{font-size:34px;margin-bottom:14px}.step-copy .eyebrow{margin-bottom:12px}.step-copy>.lead{font-size:16px}.points>div{padding:8px 0}.waveform{height:70px;margin-top:16px}.metric-grid{margin-top:16px}.scene-bottomline{bottom:26px}.scene-disclaimer{bottom:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js .reveal,.step-copy{opacity:1;transform:none}}
 @media print{.site-header,.machine-stage,.scene-controls,.scroll-cue,dialog,.horizon-visual,.frame-lines{display:none!important}body{background:white;color:black}.machine-story{display:block}.section,.machine-story,footer{background:white}.scene-step{height:auto;min-height:0;padding:25px 0}.step-copy,.hero .step-copy{width:100%;max-width:none;opacity:1;transform:none;background:none}.section-inner{padding:30px 0}.story-panels{pointer-events:auto}h1,h2{font-size:30px}p{color:#333}.source-list a{color:#000}.calculator-results,.number-field input{background:white;color:black}}
+/* Saved model replay stays separate from the six-stage animated concept. */
+#vision-demo .vision-demo-player{margin-top:36px;border:1px solid var(--line);background:var(--panel)}
+#vision-demo video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b141b}
+#vision-demo figcaption{padding:16px 20px;font-size:12px;color:var(--muted);line-height:1.6}
+#vision-demo figure{margin-inline:0}
+#vision-demo .vision-demo-scores{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:24px}
+#vision-demo .vision-demo-score{padding:24px;min-width:0}
+#vision-demo .vision-demo-score+div{border-left:1px solid var(--line)}
+#vision-demo .vision-demo-score strong{display:block;font-size:clamp(30px,4vw,48px);font-weight:400;letter-spacing:-.04em;margin:8px 0}
+#vision-demo .vision-demo-score p{font-size:13px;line-height:1.7}
+#vision-demo .vision-demo-score .label{font-size:10px}
+#vision-demo .vision-demo-note{font-size:13px;margin-top:20px;max-width:900px}
+#vision-demo .vision-demo-credits{font-size:11px;margin-top:20px;line-height:1.8}
+#vision-demo .vision-demo-credits a{color:var(--accent-text)}
+@media(max-width:760px){#vision-demo .vision-demo-scores{grid-template-columns:1fr}#vision-demo .vision-demo-score+div{border-left:0;border-top:1px solid var(--line)}#vision-demo .vision-demo-score{padding:20px}#vision-demo .section-foot{align-items:flex-start;flex-direction:column}#vision-demo .btn{white-space:normal;height:auto;min-height:48px;text-align:center}#vision-demo figcaption{padding:14px}}
   </style>
 </head>
 <body>
@@ -452,6 +467,7 @@ dialog .micro{margin-top:16px}
       <p>Controlled lighting and a camera capture shape, texture and boundaries. Tracking ties each piece to its next measurement — and to its sorting action.</p>
       <div class="points"><div><b>Detect</b><span>Find each piece on the moving belt.</span></div><div><b>Classify</b><span>Score what it looks like — not what it is made of.</span></div><div><b>Track</b><span>Carry that identity to the coil and the gate.</span></div></div>
       <p class="micro">Appearance is evidence, not an elemental assay.</p>
+      <a class="link" href="#vision-demo">Watch recorded inference <span>→</span></a>
     </div></div></section>
     <section id="sensing" class="scene-step" data-stage="2"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">02 / Inductive sensing</p>
@@ -487,6 +503,28 @@ dialog .micro{margin-top:16px}
     </div></div></section>
   </div>
 </div>
+
+<section id="vision-demo" class="section" aria-labelledby="vision-demo-title"><div class="wrap"><div class="section-inner">
+  <div class="section-head">
+    <p class="eyebrow"><i></i>Computer vision · Saved inference replay</p>
+    <h2 id="vision-demo-title" class="serif">See what the<br>model found.</h2>
+    <p>Recorded predictions from the Ferrosift YOLO26s development candidate and an internal YOLO11s reference. Inspect the detections, the misses, and the limits of transferring to unfamiliar images.</p>
+  </div>
+  <figure class="vision-demo-player">
+    <video controls playsinline preload="none" poster="model-demo/assets/poster.jpg" aria-label="Saved side-by-side conveyor predictions from YOLO11s and the Ferrosift YOLO26s candidate">
+      <source src="model-demo/assets/comparison.mp4" type="video/mp4">
+      <p><a href="model-demo/assets/comparison.mp4">Download the recorded comparison.</a></p>
+    </video>
+    <figcaption>60 development frames presented over 12 seconds. The 5 fps playback is a presentation speed, not measured inference speed; source capture timing is unverified. The scores below cover the full evaluation sets, not this excerpt.</figcaption>
+  </figure>
+  <div class="vision-demo-scores" aria-label="Copper annotation recall on two datasets">
+    <div class="vision-demo-score"><span class="label">Development conveyor · 1,522 frames</span><strong>93.97%</strong><p>7,081 of 7,535 copper annotations found; 454 missed.<br>361 steel matches and 3 unmatched copper alarms.<br>Internal reference: 85.57% copper recall.</p></div>
+    <div class="vision-demo-score"><span class="label">Phone-photo diagnostic · 232 images</span><strong>1.94%</strong><p>8 of 412 copper annotations found; 404 missed.<br>6 steel matches, 49 unmatched alarms, and 23 other-class matches.<br>The frozen setting transfers poorly to this different source.</p></div>
+  </div>
+  <p class="vision-demo-note">The model and operating point were selected on the development set. Its ≤1% alarm-burden budget is (steel matches + unmatched copper alarms) / steel annotations, not a false-positive rate or physical steel loss. Repeated appearances count as annotations, not unique pieces. These results do not establish plant performance, throughput, or sorting accuracy.</p>
+  <div class="section-foot"><a class="btn" href="model-demo/">Open the detection explorer <span>→</span></a><p class="micro">Saved outputs only · No live inference, camera, or sorting hardware</p></div>
+  <p class="vision-demo-credits">Conveyor images: SteelDS a3 — Neubauer, Rauch, Koinig, Tischberger-Aldrian, Pomberger &amp; Rueckert (2026), <a href="https://doi.org/10.5281/zenodo.20271102" target="_blank" rel="noopener noreferrer">source dataset</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Images resized/recompressed with saved detection overlays. Original authors do not endorse Ferrosift. <a href="model-demo/#evidence">Methods, phone-image credits, and limitations →</a></p>
+</div></div></section>
 
 <section id="opportunity" class="section"><div class="wrap"><div class="section-inner">
   <div class="section-head reveal"><p class="eyebrow"><i></i>The opportunity · Documented global data</p><h2 class="serif">The value we leave behind.</h2><p>Electronic waste is a material stream. <strong>Better decisions on the belt turn more of it into useful output</strong> — and today, most of it never reaches a documented recycling pathway.</p></div>
