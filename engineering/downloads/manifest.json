@@ -1,0 +1,41 @@
+{
+  "title": "Ferrosift conveyor concept v0 \u2014 downloadable engineering files",
+  "status": "Concept for review; not fabrication-ready or tested performance",
+  "generatedUtc": "2026-10-13T05:46:20.774524+00:00",
+  "assembly": {
+    "components": 380,
+    "triangles": 108124,
+    "meshSha256": "9653941448d66024fa84dfaaff5996f093865977866bac7145ccd179e5793ab2",
+    "stepSha256": "c4b5179c836f98c5db248c6e9d48a9cd382be3dfc331bd21d05991c875f38809"
+  },
+  "files": {
+    "Ferrosift_Conveyor_Concept_Drawings.pdf": {
+      "bytes": 812522,
+      "sha256": "d6536da1ddfd41b5e66de74bb26a3bbc53f5d3afdeaa8195f821d8d5f39ce095"
+    },
+    "Ferrosift_Conveyor_Concept_Source.zip": {
+      "bytes": 90100,
+      "sha256": "57efe8901c06d82dc4a06776afe554f690293163d73e397ddcef86af9fa1a1f2"
+    },
+    "conveyor_assembly.glb": {
+      "bytes": 9481104,
+      "sha256": "490672b170d503b9197a73026193980a3c3a7ae3c49bfd9b1dd18650506e3a21"
+    },
+    "conveyor_assembly.step": {
+      "bytes": 8308787,
+      "sha256": "c4b5179c836f98c5db248c6e9d48a9cd382be3dfc331bd21d05991c875f38809"
+    }
+  },
+  "sourceArchive": {
+    "file": "Ferrosift_Conveyor_Concept_Source.zip",
+    "sourceFiles": 16,
+    "readmeFiles": 1,
+    "excludes": [
+      "virtual environments",
+      "Fusion probe",
+      "private image models and weights",
+      "recorded model assets"
+    ]
+  },
+  "frozenRevision": "2026-10-13 concept v0.1; reviewed release"
+}

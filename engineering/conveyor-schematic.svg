@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+ <title id="title">PCB recovery concept — accessible process schematic</title>
+ <desc id="desc">Depolluted and screened feed enters a 3000 millimetre sensing deck. RGB is centred at x1300, induction at x1600, final sensing reference at x1750 and the lip at x3000. Airjet selection divides target from balance. A second gate on the balance path sends a group or broad time window to review. The diagram is not a scaled chute or machine drawing.</desc>
+ <rect width="1000" height="430" fill="#0b111a"/>
+ <g font-family="system-ui,sans-serif" fill="#b8c9df" font-size="14">
+  <text x="30" y="34" fill="#e9f0fc" font-size="18">PCB-RICH RECOVERY · PROPOSED PILOT</text>
+  <text x="30" y="62" font-size="12">Process schematic, not scaled trajectories or fabrication geometry</text>
+  <g fill="none" stroke="#7792b4" stroke-width="2">
+   <rect x="35" y="144" width="125" height="76"/><rect x="190" y="155" width="530" height="54"/>
+   <path d="M160 182H190M720 182L780 116H900M720 182L790 225H850M805 225L860 300H900"/>
+   <path d="M670 151L686 165M678 146L694 160" stroke="#648cff"/>
+  </g>
+  <text x="48" y="171" font-size="12">Meter + spread</text><text x="48" y="195" font-size="11">Qualified feed only</text>
+  <text x="213" y="188" font-size="11">Stabilize → controlled sensing → encoder timing</text>
+  <g stroke="#7e9ef3" stroke-dasharray="4 4"><path d="M420 115V246M473 115V246M500 115V270"/></g>
+  <text x="376" y="101" font-size="12">RGB x1300</text><text x="427" y="263" font-size="12">Induction x1600</text>
+  <text x="493" y="289" font-size="11">Last sensing x1750</text>
+  <text x="650" y="130" font-size="12">Airjet</text><text x="686" y="237" font-size="12">Lip x3000</text>
+  <text x="801" y="103" fill="#8cafff">PCB-rich target</text>
+  <text x="862" y="230">Balance</text><text x="900" y="305" fill="#e9b571">Review</text>
+  <circle cx="805" cy="225" r="7" fill="#e9b571"/>
+  <text x="780" y="267" fill="#e9b571" font-size="11">Group / window gate</text>
+  <path d="M190 320H720M190 312V328M720 312V328" fill="none" stroke="#8dacc9"/>
+  <text x="343" y="345" font-size="13">3000 mm deck · 600 mm active belt</text>
+  <text x="30" y="383" font-size="12">Feed inhibit + verified clear gap + gate-position feedback precede review-state changes.</text>
+  <text x="30" y="407" font-size="12">No PCB inference, physical recovery, throughput or safety certification is demonstrated by this concept.</text>
+ </g>
+</svg>
