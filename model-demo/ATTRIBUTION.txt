@@ -1,0 +1,230 @@
+FERROSIFT VIDEO LAB — SOURCE CREDITS
+Source videos/posters: CC BY 4.0. Display snapshots derive from the same viewing copies. Source recordings and author graphics remain distinct from saved Ferrosift/reference model overlays.
+
+steelds_a1_test
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_train_1
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_train_2
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_train_3
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_train_4
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_train_5
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a1_val
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_test
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_train_1
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_train_2
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_train_3
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_train_4
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_train_5
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a2_val
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_test
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_train_1
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_train_2
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_train_3
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_train_4
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_train_5
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a3_val
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a4_test
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a4_train
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a4_val
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a5_all1_1
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a5_all1_2
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a5_all2_1
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+steelds_a5_all2_2
+SteelDS, Melanie Neubauer, Christian Rauch, Gerald Koinig, Alexia Tischberger-Aldrian, Roland Pomberger and Elmar Rueckert (2026), https://doi.org/10.5281/zenodo.20271102, CC BY 4.0.
+https://zenodo.org/records/20271102
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Resized to 1280x720 and sampled to 25 fps with H.264 CRF 24. Source playback contains no added Ferrosift boxes. Saved model overlays appear separately.
+
+iron_ore_boardcamera_iron_ore
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_2
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_3
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_4
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_5
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_6
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_7_wood
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+iron_ore_boardcamera_iron_ore_7_wood_2
+Frederico Martins Sousa; Thiago Eustaquio Alves de Oliveira; Bruno Nazário Coelho; Saul Emanuel Delabrida Silva (2025), In-lab Image Dataset of Foreign Objects and Anomalies in Iron Ore Conveyor Belts, Mendeley Data, V1, doi:10.17632/s25x2bnshz.1. CC BY 4.0.
+https://data.mendeley.com/datasets/s25x2bnshz/1
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy downscaled to 960x540, sampled at 25 fps, H.264 CRF27, audio omitted. Original duration retained; no retiming.
+
+hacettepe_rgb_0823
+Burak Akdemir, Seniha Esen Yuksel, Sinan Topçakar and Eren Korkmaz (2026), Multi-View Material Classification on a Conveyor Belt: RGB–LWIR Video Dataset, v1.1.0, Zenodo, doi:10.5281/zenodo.21377502. CC BY 4.0.
+https://zenodo.org/records/21377502
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Viewing copy sampled at 25fps, H.264 CRF26, audio omitted. Dimensions and original duration retained, no retiming.
+
+construction_demolition_author_demo
+Umesh Samarasekara, Construction and Demolition Waste Dataset and YOLOv11-L Model for Real-Time Detection and Dynamic Tracking, https://doi.org/10.5281/zenodo.17447590, CC BY 4.0. Original author demonstration unchanged.
+https://zenodo.org/records/17447590
+CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+None; original author file used for browsing.

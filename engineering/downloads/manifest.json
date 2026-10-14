@@ -1,7 +1,7 @@
 {
   "title": "Ferrosift investor engineering review IR01-R1",
-  "generatedUtc": "2026-10-14T04:43:26.422923+00:00",
-  "status": "LOCAL REVIEW CANDIDATE \u2014 NOT PUBLISHED; preliminary concept, not fabrication or safety release",
+  "generatedUtc": "2026-10-14T06:42:21.178932+00:00",
+  "status": "LOCAL REVIEW CANDIDATE — NOT PUBLISHED; preliminary concept, not fabrication or safety release",
   "assembly": {
     "components": 494,
     "triangles": 204200,
@@ -12,7 +12,7 @@
   "physical_flow": {
     "verified_utc": "2026-10-14T04:43:26.422923+00:00",
     "status": "Static intake spans and nominal routing topology checked; moving-particle capture, accepted-feed, gate sealing and sorting-performance remain design holds.",
-    "paper_wording": "The preliminary CAD uses a two-stream pneumatic split followed by a separate group review gate on the non-ejected balance stream. Both primary catch mouths span the nominal belt width with extra lateral allowance; explicit tapered walls collect material into downstream channels. The revised gate topology and branch surfaces are modeled, with finite operating clearances remaining an unresolved leakage and accepted-feed hold. Three collection bins represent proposed destinations, not demonstrated independent per-object three-way sorting. Feed inhibition, clearing, motion and verified position are required before resuming feed; no physical validation has been performed. Moving-particle capture is a design hold. A gravity-only 1.5 m/s horizontal point launch at x=3000, z=1000 mm and y=275 mm crosses the converging cheek at x=3174.64 mm, z=933.51 mm; the wall top is 863.21 mm (about 70 mm below). Existing side guards at y=\u00b1525 mm do not collect that interior path. This analytical counterexample is not a measured trial. Intake width does not prove capture. No operating speed or full-width no-jet capture route is approved; all displayed paths and motion speeds are schematic until receiving containment and physical trials resolve this hold.",
+    "paper_wording": "The preliminary CAD uses a two-stream pneumatic split followed by a separate group review gate on the non-ejected balance stream. Both primary catch mouths span the nominal belt width with extra lateral allowance; explicit tapered walls collect material into downstream channels. The revised gate topology and branch surfaces are modeled, with finite operating clearances remaining an unresolved leakage and accepted-feed hold. Three collection bins represent proposed destinations, not demonstrated independent per-object three-way sorting. Feed inhibition, clearing, motion and verified position are required before resuming feed; no physical validation has been performed. Moving-particle capture is a design hold. A gravity-only 1.5 m/s horizontal point launch at x=3000, z=1000 mm and y=275 mm crosses the converging cheek at x=3174.64 mm, z=933.51 mm; the wall top is 863.21 mm (about 70 mm below). Existing side guards at y=±525 mm do not collect that interior path. This analytical counterexample is not a measured trial. Intake width does not prove capture. No operating speed or full-width no-jet capture route is approved; all displayed paths and motion speeds are schematic until receiving containment and physical trials resolve this hold.",
     "primary_stage": {
       "function": "One pneumatic bank proposes target ejection versus non-ejected balance.",
       "cad_ids": [
@@ -154,7 +154,7 @@
         "research/parent_inputs/source/engineering_claims_matrix.csv C05-C06"
       ]
     },
-    "receiving_capture_hold": "Moving-particle capture is a design hold. A gravity-only 1.5 m/s horizontal point launch at x=3000, z=1000 mm and y=275 mm crosses the converging cheek at x=3174.64 mm, z=933.51 mm; the wall top is 863.21 mm (about 70 mm below). Existing side guards at y=\u00b1525 mm do not collect that interior path. This analytical counterexample is not a measured trial. Intake width does not prove capture. No operating speed or full-width no-jet capture route is approved; all displayed paths and motion speeds are schematic until receiving containment and physical trials resolve this hold."
+    "receiving_capture_hold": "Moving-particle capture is a design hold. A gravity-only 1.5 m/s horizontal point launch at x=3000, z=1000 mm and y=275 mm crosses the converging cheek at x=3174.64 mm, z=933.51 mm; the wall top is 863.21 mm (about 70 mm below). Existing side guards at y=±525 mm do not collect that interior path. This analytical counterexample is not a measured trial. Intake width does not prove capture. No operating speed or full-width no-jet capture route is approved; all displayed paths and motion speeds are schematic until receiving containment and physical trials resolve this hold."
   },
   "baseline_public_commit": "af611cd885e5e643c7ac583c27395051238ccc7f",
   "files": {
@@ -227,20 +227,20 @@
       "sha256": "6066c5ad77f684cfaaa8d8bafae30c258fe9eb33ebb70a2293ec2cdf0af24982"
     },
     "historical_video_evidence_audit.json": {
-      "bytes": 32816,
-      "sha256": "570b2c9bff757303a967afc316e5fad3211907feb761f26ffabce123563f3b6c"
+      "bytes": 19486,
+      "sha256": "721ee942f33157e558b01aae6ac02d9d1f4b429d42a07b4cd7c95b6bb0f12ea4"
     },
     "historical_video_evidence_audit.txt": {
-      "bytes": 10190,
-      "sha256": "0fdbee3321287ea65112aa87bd45dfc1e917253edb27293cab447c63f122f685"
+      "bytes": 10747,
+      "sha256": "cb7217f77157224ae68117f7eff51c2f07962044949ac75d599cbbf8081864c7"
     },
     "integration_manifest.json": {
       "bytes": 12689,
       "sha256": "55aeeb05562f1aeb367617eff1d470abc99366e446bb1e99b917a2df113a51e4"
     },
     "known_source_exposure_audit.json": {
-      "bytes": 8010,
-      "sha256": "2b259b1c64968e09d8916c3b4bc032db031ab8682511691b93f312667a2b6bf8"
+      "bytes": 7954,
+      "sha256": "57001baa7e3319e0a995c47f8b45b1bb61be0eb0628321894db390498dad312d"
     },
     "model_lineage.json": {
       "bytes": 759,
@@ -266,5 +266,11 @@
       "bytes": 4457,
       "sha256": "1bb9ab15429baca9f40f6a1622a3bd1688e9f74277569871e0e4362f59071f57"
     }
+  },
+  "public_documentation_revision": {
+    "preparedUtc": "2026-10-14T06:22:33.209393+00:00",
+    "scope": "Conveyor-only public evidence excerpts; original detailed diagnostics remain private.",
+    "geometry_changed": false,
+    "development_alarm_cap_changed": false
   }
 }

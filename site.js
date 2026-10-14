@@ -4,7 +4,6 @@
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.mobile-menu');
   const menuLinks = [...menu.querySelectorAll('a')];
-  const sources = document.querySelector('#sources');
   const setMenu = (open, restoreFocus = true) => {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
@@ -38,8 +37,11 @@
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   const revealSource = hash => {
-    if (hash !== '#sources' && hash !== '#source-monitor') return false;
-    sources.open = true;
+    if (!hash || !hash.startsWith('#')) return false;
+    const target = document.getElementById(hash.slice(1));
+    const details = target?.closest('details');
+    if (!details) return false;
+    details.open = true;
     return true;
   };
   document.addEventListener('click', event => {

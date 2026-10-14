@@ -1,0 +1,1371 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_utc": "2026-10-14T06:43:53.973004+00:00",
+  "presentation": "Prerecorded matched-frame inference; no live server inference",
+  "models": {
+    "candidate": {
+      "method": "yolo26s_640",
+      "export_checkpoint_sha256": "d5bd5245261692d125d4f2cb5e8c94217c64876fe455667bed8b0732ab4dddb7",
+      "copper_threshold": 0.8073331713676453,
+      "input_size": 640
+    },
+    "reference": {
+      "method": "yolo11s_640",
+      "export_checkpoint_sha256": "6f195796029aa62b5d4be562bc8521c37bcfe05252270fb1d02a54cf5ff2017d",
+      "copper_threshold": 0.9101877808570862,
+      "input_size": 640
+    }
+  },
+  "classes": {
+    "0": "steel",
+    "1": "visible_copper"
+  },
+  "inference": {
+    "conf": 0.001,
+    "iou": 0.7,
+    "max_det": 1000,
+    "augment": false,
+    "agnostic_nms": false,
+    "classes": null,
+    "half": false,
+    "batch": 1,
+    "rect": false,
+    "device": "cpu",
+    "verbose": false,
+    "save": false,
+    "save_txt": false,
+    "save_conf": false,
+    "save_crop": false,
+    "visualize": false,
+    "stream": false,
+    "nms": null
+  },
+  "imgsz": 640,
+  "expected_backend_end2end": false,
+  "postprocessing": "Native common class-aware NMS at IoU 0.7; FP32 batch 1, fixed square preprocessing rect=false. No flags changed after loading.",
+  "runtime": {
+    "versions": {
+      "torch": "2.14.1",
+      "torchvision": "0.29.1",
+      "ultralytics": "8.4.175",
+      "Pillow": "12.3.0",
+      "numpy": "2.3.5",
+      "opencv-python": "5.0.0.93",
+      "scipy": "1.17.0"
+    },
+    "python": "3.12.14",
+    "machine": "arm64",
+    "device": "cpu",
+    "actual_torch_threads": 4,
+    "new_runtime_declaration": "Torch 2.14.1/torchvision 0.29.1 local CPU rather than bundled Torch 2.8.0/torchvision 0.23.0; fresh separately declared inference, not reproduction of historical scores."
+  },
+  "sampling": {
+    "clips": 38,
+    "frames": 2720,
+    "selection": "Uniform integer viewing-video seconds (nearest frame), plus843 initially verified labeled frame times; identical decoded RGB pixels sent to both models.",
+    "viewing_frame_index_note": "source_frame_index refers to viewing-copy video frame index, not original publisher 50 fps index.",
+    "prediction_boxes": "Native viewing-copy pixel xyxy coordinates",
+    "public_overlays": "Native copper-class detections at or above each frozen copper threshold only. No class relabeling. Full post-NMS proposals, including steel detections, retained privately for scoring.",
+    "confidence_note": "Native model confidence is not measured accuracy or calibrated material purity."
+  },
+  "labels": {
+    "revision": 1,
+    "labeled_frames": 979,
+    "copper_annotations": 5969,
+    "steel_annotations": 26318,
+    "scored_clips": 7,
+    "unscored_clips": 31,
+    "verification_tiers": {
+      "direct_image_content_alignment": 843,
+      "ordinal_provenance_with_recording_content_support": 136
+    },
+    "verification_note": "843 frames retain individual image-content comparison. 136 additional sampled frames use audited publisher frame ordinals and original/converted label hashes with recording-level content support; individual publisher image-pixel comparison was not performed for those additions.",
+    "join_note": "136 additional labels were joined after inference to existing sampled frames. Their original raw.labeled_frame_id remains null. No model input or prediction changed.",
+    "missing_labels": "Unlabeled frames have accuracy unavailable; they are not negative/background examples.",
+    "mapping_sha256": "8e5ee5402a2a26f1ce6be5fc8482e75b20daf457fc82db3d21cd5ccb51f08eee"
+  },
+  "scoring": {
+    "matching": "Class- and score-blind maximum-cardinality one-to-one assignment at IoU>=0.5, then maximum summed IoU, stable input ordering. Positive-area post-NMS proposals from both classes participate before applying each frozen copper threshold.",
+    "copper_recall": "Matched copper alarms on copper annotations / all copper annotations in labeled sampled frames, including misses.",
+    "steel_matches": "Matched copper alarms on steel annotations; annotation diagnostic, not physical steel loss.",
+    "unmatched_alarms": "Copper alarms not assigned to a supplied annotation, including duplicates.",
+    "other_matches": "Copper alarms matched to out-of-target annotations when supplied.",
+    "interpretation": "Repeated frame-object diagnostics on exposed/development data; not independent holdouts, unique physical pieces, commercial-sorter superiority, chemical purity, copper mass recovery, or physical ejection performance.",
+    "historical_comparability": "New sampled viewing-copy inference and geometry-only matching. Historical93.97/85.57scores are not reused.",
+    "geometry_policy": "Preserve zero-area post-clipping native boxes separately. Exclude only zero-area detections below the frozen copper alarm threshold; zero-area boxes cannot overlap any valid annotation and subthreshold boxes cannot become copper alarms. Abort for a zero-area copper alarm or any inverted/out-of-bounds geometry. Original strict-run cache contained only valid geometry and is reused unchanged.",
+    "zero_area_subthreshold_native_records": 376,
+    "zero_area_by_model": {
+      "reference": 372,
+      "candidate": 4
+    }
+  },
+  "display": {
+    "format": "JPEG",
+    "quality": 60,
+    "native_dimensions_preserved": true,
+    "generated_from_exact_decoded_inference_frames": true,
+    "sample_count": 2720,
+    "sample_bytes": 194094022,
+    "note": "Lossy display compression occurs after inference; model inputs, boxes and scores are unchanged."
+  },
+  "provenance": {
+    "inference_protocol_sha256": "87cd09d9666154b6d39ca04ea13ac70ec4f68aae0a345979769e934b7ffab9ad",
+    "initial_inference_protocol_sha256": "660bb006f85348ed9c6c4c4c179d2820f02a8678be036ba347aeb82132ba96b3",
+    "scoring_revision_protocol_sha256": "ec329ba81c071ac06081ef282bd95ae4bef30740538d102a13afd5dfa0fe153e",
+    "label_join_manifest_sha256": "a1671555b74399607742dc939d55b96506bc1f1d285d7311bc6291f0bc1a996f",
+    "raw_prediction_manifest_sha256": "35c74e9a59123def64dafd8daec0e232a210c0798716868ea56ba558c129409d",
+    "display_changes_manifest_sha256": "9e30519de84dd41df88f246ae4f39524cd0da17cd9aa93e1ca405aec43d64262",
+    "models_trained_this_task": false,
+    "thresholds_tuned_this_task": false,
+    "cloud_compute_used_this_task": false
+  },
+  "source_files": {
+    "generate_predictions.py": {
+      "bytes": 23859,
+      "sha256": "ed5399f7300512333f8313c0d766b42e0446e44078b948fe0a1939c712cb7a55"
+    },
+    "detection_evaluation.py": {
+      "bytes": 17831,
+      "sha256": "46b4ab23dea451d9637fcc41aae0772f92102c85d81f7c5e3eb3ea1d98f8db95",
+      "executed_source_sha256": "0bb694c446146c3682c3c85a0ed870a5d6b509a7d810642486228782f8e6a747",
+      "adaptation": "Presentation metadata only: target_definition_note generalized to supplied SteelDS labels. Algorithm unchanged."
+    },
+    "rescore_revision1.py": {
+      "bytes": 9587,
+      "sha256": "c32556e1c35a2fe7d90d5244f867a0f90285cafc709ecdb8ac5a7541991924d5"
+    },
+    "reencode_display_samples.py": {
+      "bytes": 6249,
+      "sha256": "f5fb24fc7fd53ee7c5c8adfc5f62966118b21efe175d9d6e7eb4f9d9779cb6d8"
+    },
+    "AGPL-3.0.txt": {
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    "README.md": {
+      "bytes": 4768,
+      "sha256": "086813d3b5f66150138a87bdbcc84589fa861f8e26f0bbcb00596c7d64b24f40"
+    },
+    "UPSTREAM_NOTICES.md": {
+      "bytes": 1871,
+      "sha256": "b5d0f32333cb6e2b502c5502f70501174d172a5873bc818f00c68f85bb42ffd3"
+    }
+  },
+  "clips": [
+    {
+      "asset_id": "steelds_a1_test",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "0a7c09e074c8dd8f9159bec0225d3bd9e680dcc9d58b25a846773a0989395506",
+      "sampled_frames": 20,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 20,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_train_1",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "60533a9eb90e32a52632998cbbba28cafbc61862d671ccbf99b6ce59a84255f6",
+      "sampled_frames": 17,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 17,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_train_2",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "7e5bf05f5be4581fe6f449fe0eda29a31828dc3c667b3f70193734dcf51dae0c",
+      "sampled_frames": 16,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 16,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_train_3",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "bf7479a761f507ed9349317ee9fe487d43beb7bfbe4bcf884496c276222b82e1",
+      "sampled_frames": 15,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 15,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_train_4",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "16a302c091958f3cbd41b7ef061ab35797b568f08875df186bdb6036114978e9",
+      "sampled_frames": 15,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 15,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_train_5",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "6c1fbe513b45a38933744ba9b35d3536d8281b8e3eceaf91fc582c25aaaca1dc",
+      "sampled_frames": 15,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 15,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a1_val",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "3b9a3c8076672605dc54f4f8acdf9e018fe73ad50f7259f6d276b02309dc889c",
+      "sampled_frames": 19,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 19,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_test",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "a1073071f4fcf9308ad0c9626fea10d6a7d234db9af0159302fe791779498cd2",
+      "sampled_frames": 24,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 24,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_train_1",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "2c0f0d627f19c52851d41552a7c49ad343ccfef54283cc764defcb5d38c9677a",
+      "sampled_frames": 25,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 25,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_train_2",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "43632953877cb0efafe1563c05dad936872212db052f702ca83c285daca9a229",
+      "sampled_frames": 26,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 26,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_train_3",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "750eb0892596d47cb3db664bb3772b6951d5d1237fb5f7cbaf2a0644efdfc6a4",
+      "sampled_frames": 28,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 28,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_train_4",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "519462e7997b5d2cb1967abf3d7a9132257fe8e2635c333a6a06145cb15b032d",
+      "sampled_frames": 25,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 25,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_train_5",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "c6a81a4a8ed4a441c29e152b06cc055a2d95ec52fd9327f0f348a403cd5c6ab0",
+      "sampled_frames": 25,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 25,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a2_val",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "d266807e729fdc4505406e59f9547c4fab1a6c4eda9e5e7aadde9afb440399c6",
+      "sampled_frames": 26,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 26,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a3_test",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "bf0651be432964c5beb99688787819516d44c09a8bc9bda4f5cdfcf72f7e8abd",
+      "sampled_frames": 106,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 106,
+        "labeled_frames": 81,
+        "copper_annotations": 355,
+        "steel_annotations": 1982,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 81,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 326,
+          "copper_missed": 29,
+          "steel_matches": 15,
+          "unmatched_alarms": 2,
+          "other_matches": 0,
+          "copper_alarms": 343,
+          "copper_recall": 0.9183098591549296,
+          "copper_alarm_precision": 0.9504373177842566,
+          "steel_annotation_false_copper_rate": 0.0075681130171543895
+        },
+        "reference": {
+          "copper_found": 329,
+          "copper_missed": 26,
+          "steel_matches": 14,
+          "unmatched_alarms": 0,
+          "other_matches": 0,
+          "copper_alarms": 343,
+          "copper_recall": 0.9267605633802817,
+          "copper_alarm_precision": 0.9591836734693877,
+          "steel_annotation_false_copper_rate": 0.007063572149344097
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_train_1",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "1f19c4d8509e655418ed4deedf2d66d736a18b6853bd8375c00c3b27ceba16fc",
+      "sampled_frames": 89,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 89,
+        "labeled_frames": 87,
+        "copper_annotations": 649,
+        "steel_annotations": 2690,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 65,
+          "ordinal_provenance_with_recording_content_support": 22
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 630,
+          "copper_missed": 19,
+          "steel_matches": 0,
+          "unmatched_alarms": 8,
+          "other_matches": 0,
+          "copper_alarms": 638,
+          "copper_recall": 0.9707241910631741,
+          "copper_alarm_precision": 0.987460815047022,
+          "steel_annotation_false_copper_rate": 0.0
+        },
+        "reference": {
+          "copper_found": 553,
+          "copper_missed": 96,
+          "steel_matches": 0,
+          "unmatched_alarms": 3,
+          "other_matches": 0,
+          "copper_alarms": 556,
+          "copper_recall": 0.8520801232665639,
+          "copper_alarm_precision": 0.9946043165467626,
+          "steel_annotation_false_copper_rate": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_train_2",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "68a46e5163d7a7d6eed8a1b73429ae12cc371987883f5b02abdc541b4f7eae52",
+      "sampled_frames": 96,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 96,
+        "labeled_frames": 96,
+        "copper_annotations": 652,
+        "steel_annotations": 2697,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 69,
+          "ordinal_provenance_with_recording_content_support": 27
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 632,
+          "copper_missed": 20,
+          "steel_matches": 0,
+          "unmatched_alarms": 1,
+          "other_matches": 0,
+          "copper_alarms": 633,
+          "copper_recall": 0.9693251533742331,
+          "copper_alarm_precision": 0.9984202211690363,
+          "steel_annotation_false_copper_rate": 0.0
+        },
+        "reference": {
+          "copper_found": 584,
+          "copper_missed": 68,
+          "steel_matches": 0,
+          "unmatched_alarms": 0,
+          "other_matches": 0,
+          "copper_alarms": 584,
+          "copper_recall": 0.8957055214723927,
+          "copper_alarm_precision": 1.0,
+          "steel_annotation_false_copper_rate": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_train_3",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "136f8d391fde7b52fe51240da5fc95c826ed251bf6b478240d1431fe73abdcc4",
+      "sampled_frames": 90,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 90,
+        "labeled_frames": 90,
+        "copper_annotations": 720,
+        "steel_annotations": 2820,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 65,
+          "ordinal_provenance_with_recording_content_support": 25
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 693,
+          "copper_missed": 27,
+          "steel_matches": 0,
+          "unmatched_alarms": 0,
+          "other_matches": 0,
+          "copper_alarms": 693,
+          "copper_recall": 0.9625,
+          "copper_alarm_precision": 1.0,
+          "steel_annotation_false_copper_rate": 0.0
+        },
+        "reference": {
+          "copper_found": 616,
+          "copper_missed": 104,
+          "steel_matches": 0,
+          "unmatched_alarms": 0,
+          "other_matches": 0,
+          "copper_alarms": 616,
+          "copper_recall": 0.8555555555555555,
+          "copper_alarm_precision": 1.0,
+          "steel_annotation_false_copper_rate": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_train_4",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "448cefa76903a77f379f2d62033195dcb7cb2fdfdda327a3035e9b515153889b",
+      "sampled_frames": 95,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 95,
+        "labeled_frames": 94,
+        "copper_annotations": 672,
+        "steel_annotations": 2573,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 68,
+          "ordinal_provenance_with_recording_content_support": 26
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 644,
+          "copper_missed": 28,
+          "steel_matches": 0,
+          "unmatched_alarms": 1,
+          "other_matches": 0,
+          "copper_alarms": 645,
+          "copper_recall": 0.9583333333333334,
+          "copper_alarm_precision": 0.9984496124031008,
+          "steel_annotation_false_copper_rate": 0.0
+        },
+        "reference": {
+          "copper_found": 575,
+          "copper_missed": 97,
+          "steel_matches": 0,
+          "unmatched_alarms": 0,
+          "other_matches": 0,
+          "copper_alarms": 575,
+          "copper_recall": 0.8556547619047619,
+          "copper_alarm_precision": 1.0,
+          "steel_annotation_false_copper_rate": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_train_5",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "329cede62cb3755c57c6d1c66e68e20e795f5c6bff2a4c35f28be11d6a05e153",
+      "sampled_frames": 94,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 94,
+        "labeled_frames": 94,
+        "copper_annotations": 679,
+        "steel_annotations": 2589,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 69,
+          "ordinal_provenance_with_recording_content_support": 25
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 648,
+          "copper_missed": 31,
+          "steel_matches": 0,
+          "unmatched_alarms": 4,
+          "other_matches": 0,
+          "copper_alarms": 652,
+          "copper_recall": 0.9543446244477173,
+          "copper_alarm_precision": 0.9938650306748467,
+          "steel_annotation_false_copper_rate": 0.0
+        },
+        "reference": {
+          "copper_found": 589,
+          "copper_missed": 90,
+          "steel_matches": 0,
+          "unmatched_alarms": 2,
+          "other_matches": 0,
+          "copper_alarms": 591,
+          "copper_recall": 0.8674521354933726,
+          "copper_alarm_precision": 0.9966159052453468,
+          "steel_annotation_false_copper_rate": 0.0
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a3_val",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "db7ae523fedce733ba1297f7640948af087e19cee81c35b959331b42b6ddacce",
+      "sampled_frames": 439,
+      "metrics": {
+        "available": true,
+        "reason": null,
+        "sampled_frames": 439,
+        "labeled_frames": 437,
+        "copper_annotations": 2242,
+        "steel_annotations": 10967,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 426,
+          "ordinal_provenance_with_recording_content_support": 11
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": {
+          "copper_found": 2075,
+          "copper_missed": 167,
+          "steel_matches": 89,
+          "unmatched_alarms": 7,
+          "other_matches": 0,
+          "copper_alarms": 2171,
+          "copper_recall": 0.9255129348795718,
+          "copper_alarm_precision": 0.9557807461999078,
+          "steel_annotation_false_copper_rate": 0.008115254855475517
+        },
+        "reference": {
+          "copper_found": 1923,
+          "copper_missed": 319,
+          "steel_matches": 94,
+          "unmatched_alarms": 2,
+          "other_matches": 0,
+          "copper_alarms": 2019,
+          "copper_recall": 0.8577163247100803,
+          "copper_alarm_precision": 0.9524517087667161,
+          "steel_annotation_false_copper_rate": 0.008571168049603355
+        }
+      }
+    },
+    {
+      "asset_id": "steelds_a4_test",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "526424882b8e93e368bdb1990a11d4b5de1d8f6f84bf10b66a0bf9ddc2e62e79",
+      "sampled_frames": 12,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 12,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a4_train",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "691584a554787efcab5460df113a575b29f297cc3b55401216e23b656a13d4d1",
+      "sampled_frames": 21,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 21,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a4_val",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "3d1eda3f3ccbec513a5cf6258d9edc910f3768c039994ecdabe02d92c884dd8e",
+      "sampled_frames": 11,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 11,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a5_all1_1",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "cced50807ccf3cd22fdb061bcd88f19553815c40df80f4339571f431de581a44",
+      "sampled_frames": 39,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 39,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a5_all1_2",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "188df4995ebfd7e55ed3ae1c3eb4f4d09217a5d9bf296180865bca675d2c0edd",
+      "sampled_frames": 41,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 41,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a5_all2_1",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "932f910a0647d06d704da9e39ad22c3da30bee2d4f666234d1f0643060be9476",
+      "sampled_frames": 13,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 13,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "steelds_a5_all2_2",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "viewing_video_sha256": "cdb9acbf2c39ebf64ce6a97f6821e8d3f9c40d2b59c65ad5b8c7ec4b0ac8c593",
+      "sampled_frames": 13,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 13,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "d6439d1558074d2e0327bf959338577b8ae0cdde3463d7ff695d956d4cd5dec3",
+      "sampled_frames": 250,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 250,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_2",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "04e2dbcd1323c9ccb76ac6584ebfdeb3737941578e10d65f65b67b7863e44a03",
+      "sampled_frames": 36,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 36,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_3",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "3124c723a67bb58218b602cb4a5d8b86190ce51936a44e30221a1ab64496c816",
+      "sampled_frames": 59,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 59,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_4",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "16de2792a094c3abd50657fc328173ddb506a5e2cb78fff080f3c7d25b7ac1a7",
+      "sampled_frames": 42,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 42,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_5",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "48265c4e3a71cd889111773858a7331c078535958bbefdb823a59f2e034c20ac",
+      "sampled_frames": 120,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 120,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_6",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "789b4c0bbcd4d3ee69969af9bd5d3151194683a1e07ba25020d120642161bc1d",
+      "sampled_frames": 87,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 87,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_7_wood",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "6f82a36dbb50a9ba17ebc7687d366f94cd8fda710927ffb3787cea255157450a",
+      "sampled_frames": 37,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 37,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "iron_ore_boardcamera_iron_ore_7_wood_2",
+      "width": 960,
+      "height": 540,
+      "fps": 25.0,
+      "viewing_video_sha256": "fe60e2755bc178366cbe8e13d2631bf36621b63fe5941cd1140eaf2bb2e65c33",
+      "sampled_frames": 37,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 37,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "hacettepe_rgb_0823",
+      "width": 460,
+      "height": 286,
+      "fps": 25.0,
+      "viewing_video_sha256": "de9e5abc997891b52ca35bc2805d731fe8c5b766db78ff5811f5816183eed954",
+      "sampled_frames": 539,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 539,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    },
+    {
+      "asset_id": "construction_demolition_author_demo",
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "viewing_video_sha256": "6795185548198ca9f45bda5e2a3421a7f7745e1aa6235cfb87891e8b7ab04654",
+      "sampled_frames": 58,
+      "metrics": {
+        "available": false,
+        "reason": "Accuracy unavailable: no verified labels for these sampled video frames.",
+        "sampled_frames": 58,
+        "labeled_frames": 0,
+        "copper_annotations": 0,
+        "steel_annotations": 0,
+        "matching_rule": "Class- and score-blind maximum-cardinality matching at IoU>=0.5, then maximum summed IoU over all positive-area post-NMS proposals. Native zero-area subthreshold rows are preserved separately and cannot match annotations or become copper alarms.",
+        "scope": "Frame-object annotation diagnostics on exposed or development recordings; not independent holdouts, unique physical pieces, chemistry or physical sorting.",
+        "verification_tiers": {
+          "direct_image_content_alignment": 0,
+          "ordinal_provenance_with_recording_content_support": 0
+        },
+        "thresholds": {
+          "candidate": 0.8073331713676453,
+          "reference": 0.9101877808570862
+        },
+        "candidate": null,
+        "reference": null
+      }
+    }
+  ],
+  "source_adaptations": {
+    "detection_evaluation.py": {
+      "status": "pass",
+      "adaptation": "Only the returned target_definition_note string was generalized to the supplied SteelDS ground-truth mapping. No matching, threshold, count, numeric score, public prediction or private executed evaluator changed.",
+      "executed_evaluator_sha256": "0bb694c446146c3682c3c85a0ed870a5d6b509a7d810642486228782f8e6a747",
+      "public_evaluator_sha256": "46b4ab23dea451d9637fcc41aae0772f92102c85d81f7c5e3eb3ea1d98f8db95",
+      "changed_AST_constants": 1,
+      "exact_inverse_replacement_reproduces_executed_source": true
+    }
+  }
+}

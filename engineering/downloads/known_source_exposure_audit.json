@@ -2,11 +2,11 @@
   "as_of_utc": "2026-10-14T03:06:00Z",
   "status": "PROVIDED_ARCHIVE_AND_MAC_AUDIT_REVIEWED_A3_TEST_EXPOSURE_CONFIRMED",
   "sources": [
-    "/workspace/shared/ferrosift/storage_retention_20261014/verification_prep/exp009_verifier_reference.json",
+    "storage_retention_20261014/verification_prep/exp009_verifier_reference.json",
     "Ferrosift_Lab.zip:Ferrosift_Lab/data/source_metadata.json",
     "Ferrosift_Lab.zip:Ferrosift_Lab/data/manifest.csv",
     "Candidate model ZIP:samples/belt-06.jpg",
-    "/workspace/shared/ferrosift/investor_package_20261014/imported/initial_inventory/video_audit/portable_audit.json"
+    "investor_package_20261014/imported/initial_inventory/video_audit/portable_audit.json"
   ],
   "exp009": {
     "dataset_record": "https://zenodo.org/records/20271102",

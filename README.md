@@ -1,13 +1,23 @@
-# Ferrosift investor review site — IR01
+# Ferrosift — conveyor intelligence and engineering
 
-This folder is a static local review candidate for the existing GTamerlan/ferrosift GitHub Pages site. It is not a deployed release.
+Ferrosift connects visual material detection with the engineering of physical separation. This static website brings the model comparison, conveyor design, engineering program and operator planning scenario together.
 
-Serve this directory over HTTP. Open `explorer.html` for the unified continuous machine walkthrough, recorded evidence, proposed R&D, operator economics and engineering files. `index.html` is the landing page with confirmed founder names; `engineering/index.html` redirects into the Explorer. There is no build step or server-side inference.
+Serve this directory over HTTP and open `index.html`. Explore `model-demo/` for the conveyor video comparison and `explorer.html` for the machine, teams we're building, planning scenario and engineering downloads. The `engineering/` route opens the machine view. There is no build step or server-side inference.
 
-Current assembly: 494 named solids / 204,200 triangles, exported from the same editable CadQuery source as the STEP/BREP/GLB downloads. Current drawing package: ten A3 sheets. The entire machine remains an unvalidated concept, not fabrication-ready or certified hardware.
+The video picker contains 38 recordings from four datasets and 2,720 saved comparison frames. Both exact model checkpoints ran on the same decoded pixels. Seven clips have scores on 979 verified labeled frames; the other 31 show “Accuracy unavailable: no verified labels.” The selected-clip metric is copper-annotation routing recall under the frozen all-proposal matcher. Source credits, exposure history, model hashes, thresholds and runtime are included with the comparison. `model-demo/method/` contains the calculation source and run provenance.
 
-`engineering/downloads/manifest.json` records engineering-file checksums. `economics-model.mjs` is the byte-for-byte supplied tested module; initial economics inputs are unselected. Choose assumptions explicitly. The public candidate excludes the unreviewed startup funding and salary plan; those materials are retained privately outside this site.
+On our labeled conveyor evaluation, Ferrosift detected 94.0% of copper annotations versus 85.6% for the YOLO11s reference, an 8.4 percentage-point improvement. The homepage's **Methods, assumptions & design status** section gives the exact counts and comparison scope. These historical results come from the development cohort used to select the model configuration and operating point.
 
-The active recorded video has 60 development frames at a 5 fps presentation cadence. Saved labels/boxes/media are preserved. ConMetal-6 photos and historical A3 test frames were previously exposed; neither is an untouched holdout. Playback, inference timing and simulated belt speed are distinct.
+## Engineering files
 
-For provenance and review evidence see the parent working release's `START_HERE.md`, `engineering/` and `verification/`. Final reviewed paper/deck links belong in `#research-files`. Deploy only after those integrations and the publication review are complete.
+The current IR01-R1 assembly contains 494 named solids and 204,200 triangles, with ten A3 drawing sheets. STEP, BREP, GLB and browser geometry come from the same editable CadQuery source. `engineering/downloads/manifest.json` records exact engineering-file sizes and checksums; `engineering/README.md` describes the file set and design review.
+
+## Methods and design status
+
+The historical candidate found 7,081 of 7,535 copper annotations; the reference found 6,448. Repeated frames count repeated annotations. The selected configurations combine architecture, training and model-selection effects. Their approximately 1% development alarm-burden cap remains a selection constraint, distinct from physical steel loss or a field guarantee. Source exposure, thresholds, steel alarms and exact counts are recorded in the public conveyor evidence excerpt and evaluation contract.
+
+The CAD is preliminary and not for fabrication. Receiving containment has an unresolved capture hold, documented in `engineering/downloads/receiving_capture_hold.json`. No operating speed or full-width capture route is approved. Actuator selection, sensing coverage, controls, guarding and physical recovery trials remain part of the engineering program.
+
+Source playback, prediction cadence, measured inference speed and schematic belt motion are separate quantities. New operating conditions require their own evaluation. The **Planning scenario** uses explicit reader-entered assumptions for recovery, prices and costs.
+
+This release builds on the preserved IR01-R1 website. Model development is described in `training.html`; engineering provenance is retained in the engineering manifests. The five expandable programs include research questions, proposed mechanisms, concept sketches, measurable gates and primary-source references.

@@ -547,6 +547,24 @@ section[id] {
   gap:60px;
 }
 
+.results-statement {
+  max-width:820px;
+  margin:32px 0 40px;
+  font-size:clamp(20px,2vw,26px);
+  line-height:1.5;
+  color:var(--muted);
+}
+
+.results-statement strong {
+  color:var(--white);
+  font-weight:400;
+}
+
+.results-actions {
+  margin-top:36px;
+  align-items:center;
+}
+
 .stat {
   font-size:clamp(65px,7.5vw,110px);
   font-weight:400;
@@ -839,6 +857,16 @@ section[id] {
 
 .sources-content strong {
   color:#bcbcbc;
+}
+
+#technical-methods {
+  font-size:14px;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+#technical-methods .sources-content strong {
+  color:var(--white);
 }
 
 .sources-content a {

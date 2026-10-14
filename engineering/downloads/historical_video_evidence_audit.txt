@@ -1,5 +1,16 @@
-FERROSIFT LOCAL VIDEO / MODEL EVIDENCE AUDIT
-14 October 2026 — investor package v01 — read-only source audit
+FERROSIFT HISTORICAL VIDEO / MODEL EVIDENCE — PUBLIC CONVEYOR EXCERPT
+Original audit: 14 October 2026 — investor package v01
+
+PUBLIC SCOPE
+Public demonstration scope is conveyor footage and explicitly identified source-author demonstrations. Untested materials, camera views, lighting, occlusion, belt loading and operating conditions are not validated. The shown development results do not establish general material recognition, physical recovery, live sorting, or field readiness.
+
+This is an excerpt of the dated historical audit. Non-conveyor diagnostic images,
+cohort counts and numerical results are omitted from this public copy. Complete
+originals remain preserved privately. Omission does not imply that the earlier
+diagnostic was never performed or that the models generalize to untested inputs.
+Training provenance, source-exposure history and the separate 1% development
+alarm-burden selection cap remain unchanged. Inventory and availability below
+refer to the original audit snapshot, not the new video-picker collection.
 
 DECISION FOR THE INVESTOR PACKAGE
 There are ZERO locally verified, fresh, fully annotated, independent test
@@ -45,12 +56,13 @@ data/demo/labeled_training_replay.json is a separate sequence of50 annotated
 still frames from five TRAIN source IDs:1296 steel +326 visible-copper annotations.
 Every selected image exists and its declared file hash matches. Labels attach
 to these still images exactly; this is not a continuous video or held-out test.
-The current web data.json holds12 development and12 external illustrative images,
-with copper boxes. It does not contain the full cohort predictions or all labels.
+The historical web data.json included selected development stills with copper
+boxes. Selected stills do not contain the full cohort predictions or all labels.
+The current public demonstration is restricted to the declared conveyor scope.
 
 LICENSING / AUTHORIZATION EVIDENCE
-Existing local SteelDS and ConMetal metadata/attribution document CC BY4.0 with
-authors, source URLs and modification notices. The audit verifies the local
+Existing local SteelDS metadata/attribution documents CC BY4.0 with authors,
+source URLs and modification notices. Other records remain in the private audit. The audit verifies the local
 evidence and preserves attribution; it is not a new legal clearance or a new
 publisher lookup. No client/factory video releases or additional rights-cleared
 independent video collections were found. The legacy website walkthrough is
@@ -72,14 +84,11 @@ Displayed development cohort:1522 frames,7535 copper,36563 steel annotations.
   Alarm burden=(steel matches+unmatched alarms)/36563 steel annotations, about1%.
   This is not physical steel loss, purity or conventional false-positive rate.
 
-Displayed ConMetal-6 EXTERNAL-DOMAIN DIAGNOSTIC:232 photos,412 copper annotations.
-  Candidate:8/412 =1.9417%;404 missed;6 strict-steel matches;49 unmatched;
-            23 other-class matches.
-  Reference:2/412 =0.4854%;410 missed;3 strict-steel matches;27 unmatched;
-            13 other-class matches.
-These232 images were historically exposed. They are not an untouched independent
-holdout, despite the current site's informal "Independent phone photos" label.
-This poor transfer result must remain visible alongside development results.
+CONVEYOR SCOPE AND UNTESTED CONDITIONS
+The public demonstration does not characterize performance on non-conveyor
+photography or materials, camera views, lighting, loading and operating
+conditions outside the identified footage. Earlier diagnostic use remains in
+the historical record; it cannot establish a fresh holdout or field readiness.
 
 The exact thresholds below were supplied by the coordinating parent after its
 inspection of candidate ZIP README/strict_development_metrics.json:
@@ -117,22 +126,18 @@ frames;155 VAL frames select model/thresholds. Ferrosift adds an ImageNet-1K
 pretrained ConvNeXt-Tiny crop refiner:5 complete epochs, selected epoch 4, partial
 epoch 6excluded. Frozen thresholds were read, not tuned in this audit.
 
-Pure CPU re-scoring of all saved predictions and existing labels reproduced all
-six original complete count dictionaries exactly (no new inference):
-  External232 ConMetal photos,412 copper /2911 mapped-steel annotations:
-    YOLO11n:71 copper found;153 steel flags;1567 unmatched copper alarms.
-    YOLO26n:40 copper found;61 steel flags;381 unmatched copper alarms.
-    Ferrosift:42 copper found;108 steel flags;968 unmatched copper alarms.
+Pure CPU re-scoring of saved predictions and existing labels reproduced the
+three historical conveyor count dictionaries retained here (no new inference):
   Historical163 SteelDS frames,706 copper /3868 steel annotations:
     YOLO11n:667 copper found;73 steel flags;11 unmatched copper alarms.
     YOLO26n:660 copper found;56 steel flags;66 unmatched copper alarms.
     Ferrosift:694 copper found;76 steel flags;105 unmatched copper alarms.
-Use recomputed_exp007_metrics.json for authoritative per-model counts and hashes.
-EXP007 mapping includes generic ferrous as steel; later strict steel mapping
-does not. Do not compare the cohorts/methods as a single unchanged experiment.
+The complete original count records and hashes remain privately preserved.
+EXP007 mapping and matching differ from the later strict configuration.
+Do not compare the cohorts/methods as a single unchanged experiment.
 
-Original detector development837 frames, external232frames, historical163frames
-and50sampled replay images all exist and match declared file hashes. This checks
+Original conveyor detector development837 frames, historical163frames and
+50sampled replay images all existed and matched declared file hashes at audit. This checks
 byte identity, not physical-piece independence or annotation correctness.
 Evaluation scripts use one-to-one geometry matching at IoU>=0.5, retain misses,
 steel flags, distractors and unmatched alarms. Newest scoring logic must be
@@ -154,6 +159,6 @@ REQUIRED DATA BEFORE A TEN-TEST-VIDEO CLAIM
 6. Link the completed later cloud checkpoint/result package locally with hashes
    for reproducibility. Do not retrain to fill a documentation gap.
 
-No downloads, model loading, inference, training, GPU starts, spending, contacts,
-source edits or public changes were made. All new files are confined to this
-dated verification/video_audit directory.
+The original audit performed no downloads, model loading, inference, training,
+GPU starts, spending or contacts. This public excerpt changes documentation
+scope only. It makes no new model-performance or physical-validation claim.

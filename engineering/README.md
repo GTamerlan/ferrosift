@@ -1,24 +1,31 @@
-# Ferrosift Engineering Explorer — investor review IR01
+# Ferrosift engineering program — IR01-R1
 
-The engineering route redirects to `../explorer.html#machine`, the unified scrolling review. The new versioned local candidate contains 494 named valid solids, 204,200 triangles and ten A3 drawing sheets. It is an unvalidated parametric concept, not fabricated equipment, a certified machine or a manufacturing release.
+The Engineering Explorer connects the conveyor's sensing, tracking and separation stages in an interactive CAD view. Open `../explorer.html#machine` to inspect the assembly and download its editable source, drawings and component inventory.
 
-`conveyor-assembly.json` is generated from the same CAD solids as `downloads/conveyor_assembly.step`, `.brep` and `.glb`. `downloads/manifest.json` records exact bytes and hashes, the two-stage physical flow and publication hold. The instance BOM contains CAD components, not quoted purchased items or validated masses. Proposed tolerances require engineering approval.
+The assembly contains 494 named solids, 204,200 triangles and ten A3 drawing sheets. `conveyor-assembly.json`, STEP, BREP and GLB are generated from the same CAD solids. `downloads/manifest.json` records exact bytes and hashes, the two-stage flow and design status.
 
 ## Primary files
 
-- `downloads/Ferrosift_Investor_Engineering_Drawings_IR01.pdf`: ten A3 sheets, including four actual solid sections.
-- `downloads/Ferrosift_Engineering_Source_v01.zip`: editable CadQuery sources, parameters, design basis and source QA.
-- `downloads/Ferrosift_Editable_Drawings_and_BOM_IR01.zip`: editable SVG sheets, projection scripts, BOM, assumptions and proposed tolerance register.
-- `downloads/integration_manifest.json` and `assembly_manifest.json`: identities, exact flow and current design holds.
-- `downloads/historical_video_evidence_audit.txt`: recorded source overlap, timing limitations and independent-test shortfall.
-- `downloads/benchmark_verification_contract.json`: required identity, settings, evaluation and disclosure contract; a protocol is not evidence that new tests were completed.
+- `downloads/Ferrosift_Investor_Engineering_Drawings_IR01.pdf`: ten A3 sheets, including four solid sections.
+- `downloads/Ferrosift_Engineering_Source_v01.zip`: editable CadQuery source, parameters, design basis and source QA.
+- `downloads/Ferrosift_Editable_Drawings_and_BOM_IR01.zip`: editable SVG sheets, projection scripts, component inventory, assumptions and tolerance register.
+- `downloads/integration_manifest.json` and `assembly_manifest.json`: assembly identities, physical flow and current design holds.
+- `downloads/receiving_capture_hold.json`: receiving-containment analysis and the open capture hold.
+- `downloads/historical_video_evidence_audit.txt`: conveyor evidence, source exposure and historical development context.
+- `downloads/benchmark_verification_contract.json`: model identity, frozen settings and evaluation methods.
 
-## Interpretation and review status
+## Design and next engineering steps
 
-A pneumatic primary split produces concentrate and balance; a separate balance-path gate can route broad groups or clearing windows to a review bin. The gate cannot recover an already ejected item. Actuation and position-switch bodies are unselected envelopes. Motion and markers in the viewer are explanatory simulation, not measured control timing or sorting performance.
+The design uses a primary pneumatic split toward concentrate and balance. A separate gate on the balance path routes groups or clearing windows into a review bin. The gate's operating sequence inhibits feed, clears the path, moves the gate and verifies position before feed resumes.
 
-The induction cassette is unpopulated; its enclosure spacing is not active coil standoff. Height adjustment, complete guards/interlocks, optical coverage, vendor selection, loads, drive sizing, impulse/trajectory trials, material recovery, purity and safety validation remain open.
+Receiving containment is the next geometry priority. An analytical gravity-only point launch at 1.5 m/s from an outer lane clears a converging wall by about 70 mm. The side guards do not capture that interior path. The capture hold remains unresolved; no operating speed or full-width capture route is approved.
 
-The verified public predecessor remains commit `af611cd885e5e643c7ac583c27395051238ccc7f`. The two downloads retaining the old `Ferrosift_Conveyor_Concept_` names are compatibility aliases with the same bytes as the current IR01 drawing PDF and source ZIP. New links use the IR01 names above.
+The program also covers actuator and valve selection, optical coverage, induction-coil design, encoder synchronization, structural loads, drive sizing, guarding and interlocks. Physical impulse/trajectory trials and weighed output-stream testing will establish recovery and purity.
 
-This candidate has not been deployed. Unreviewed startup funding and salary materials are retained privately outside this site. The existing private recorded-results site's sharing is unchanged. No model training or paid compute was launched.
+## Technical status
+
+The CAD is preliminary and not for fabrication or a certified machine release. Actuator and switch bodies are design envelopes; the induction cassette reserves space for sensor development. Viewer motion and markers explain the intended sequence. The component inventory counts CAD parts; procurement choices, masses, costs and manufacturing tolerances require further engineering approval.
+
+The historical visual-detection comparison is separate from machine validation. Exact counts, steel alarms, source exposure and development-selection scope are accessible through `../index.html#technical-methods` and the evidence downloads.
+
+The preserved IR01-R1 public release is commit `5c890035c539e892ef8b0298a08997b7db5922a5`; its earlier predecessor is `af611cd885e5e643c7ac583c27395051238ccc7f`. The two downloads retaining the `Ferrosift_Conveyor_Concept_` names are compatibility aliases containing the same bytes as the current IR01 drawing PDF and source ZIP. This local candidate keeps those engineering assets unchanged.
