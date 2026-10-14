@@ -1,21 +1,13 @@
-# Ferrosift
+# Ferrosift investor review site — IR01
 
-Ferrosift's public concept website. Real photography, concise industry evidence, and a separate interactive engineering explorer.
+This folder is a static local review candidate for the existing GTamerlan/ferrosift GitHub Pages site. It is not a deployed release.
 
-**Live:** https://gtamerlan.github.io/ferrosift/
+Serve this directory over HTTP. Open `explorer.html` for the unified continuous machine walkthrough, recorded evidence, proposed R&D, operator economics and engineering files. `index.html` is the landing page with confirmed founder names; `engineering/index.html` redirects into the Explorer. There is no build step or server-side inference.
 
-## Editing and preview
+Current assembly: 494 named solids / 204,200 triangles, exported from the same editable CadQuery source as the STEP/BREP/GLB downloads. Current drawing package: ten A3 sheets. The entire machine remains an unvalidated concept, not fabrication-ready or certified hardware.
 
-- `index.html`: homepage content and source credits
-- `styles.css`: responsive layout and self-hosted D-DIN typography
-- `site.js`: navigation, source disclosure, and restrained entrance effects
-- `explorer.html`: Brandon's interactive engineering concept, preserved from commit `1dc8dbd`, with a recorded model-results panel at `#vision-demo`; the original conveyor animation remains scripted
-- `model-demo/`: recorded model comparison, sampled image explorer, evaluation counts, and attribution; static saved outputs only
-- `assets/images`: real photographs; attribution and licensing in `SOURCES.md`
-- `assets/fonts`: D-DIN font files and SIL Open Font License
+`engineering/downloads/manifest.json` records engineering-file checksums. `economics-model.mjs` is the byte-for-byte supplied tested module; initial economics inputs are unselected. Choose assumptions explicitly. The public candidate excludes the unreviewed startup funding and salary plan; those materials are retained privately outside this site.
 
-No build step or runtime packages. Preview with `python3 -m http.server 8766` and open http://localhost:8766.
+The active recorded video has 60 development frames at a 5 fps presentation cadence. Saved labels/boxes/media are preserved. ConMetal-6 photos and historical A3 test frames were previously exposed; neither is an untouched holdout. Playback, inference timing and simulated belt speed are distinct.
 
-GitHub Pages publishes the repository root on `main`. `.nojekyll` enables plain static-file hosting. All homepage assets are hosted in this repository. The explorer retains its existing external Google Fonts dependency.
-
-Industry results are not Ferrosift results. Ferrosift is an early-stage concept; its system and beyond-Earth plans are not demonstrated product capabilities. No AI-generated photographs are used.
+For provenance and review evidence see the parent working release's `START_HERE.md`, `engineering/` and `verification/`. Final reviewed paper/deck links belong in `#research-files`. Deploy only after those integrations and the publication review are complete.

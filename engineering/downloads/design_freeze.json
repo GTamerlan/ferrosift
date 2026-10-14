@@ -1,0 +1,86 @@
+{
+  "release_id": "investor_package_20261014_v01",
+  "freeze_status": "nominal_geometry_checked_physical_routing_and_sealing_design_hold",
+  "units": "mm",
+  "belt_width": 600,
+  "belt_carrying_x": [
+    0,
+    3000
+  ],
+  "belt_top_z": 1000,
+  "rgb_center_x": 1300,
+  "induction_center_x": 1600,
+  "last_active_sensing_x": 1750,
+  "cassette_x": [
+    1425,
+    1775
+  ],
+  "cassette_z": [
+    780,
+    980
+  ],
+  "window_x": [
+    1350,
+    1850
+  ],
+  "window_z": [
+    988,
+    994
+  ],
+  "housing_to_window_gap": 8,
+  "last_sensor_to_lip": 1250,
+  "gate_pivot": [
+    3560,
+    0,
+    740
+  ],
+  "gate_endpoints_rad": [
+    -0.45,
+    0.45
+  ],
+  "baseline_optional_depth": "uninstalled_hidden",
+  "status_boundaries": [
+    "All dimensions are provisional coordination assumptions.",
+    "No coil internals or guaranteed field coverage.",
+    "No selected purchased camera, motor, encoder, pneumatic valve or depth device.",
+    "No rated capacity, certified safety, load rating or fabrication approval.",
+    "Screened 12.5\u201350 mm does not bound piece height or mass.",
+    "Trial design speed and video replay speed are independent quantities."
+  ],
+  "checks_required": [
+    "native positive-volume validity",
+    "STEP round trip",
+    "indexed mesh provenance and normals",
+    "620 mm parameter probe",
+    "targeted module interfaces",
+    "cassette and bin service envelopes",
+    "gate sweep and route capsules",
+    "drawing provenance and layout",
+    "website integration/browser QA",
+    "full-width static intake spans, complete outlet projection, branch connectivity and source-solid gate motion"
+  ],
+  "geometry_release": {
+    "parts": 494,
+    "triangles": 204200,
+    "step_sha256": "80c159dc06435c0017f9effc0cdc7d10c6e15e669c94946849011cf088953e3c",
+    "mesh_sha256": "cc3ac83732475b3c81774636482e697f77eb3a10881e8cf5ee07d9465ac9ae07",
+    "verification": "verification/geometry_export_consistency.json",
+    "full_width_review": "verification/full_width_routing_review.json"
+  },
+  "physical_validation_status": "not_performed",
+  "open_design_holds": [
+    "Induction coil architecture, active standoff and tray height-adjustment mechanism require detailed design. Current assembly provides removable cassette with fixed provisional support geometry.",
+    "Complete head/drive nip guarding, access interlocks and safety-function architecture require risk assessment and detailed design. Current covers are concept provisions only.",
+    "Nozzle stand-off, angle, manifold and splitter settings require representative fragment trials; available slotted mounts do not prove a validated adjustment range.",
+    "Motor, bearing, belt, valve and encoder supplier identities/ratings and manufacturing tolerances remain unselected.",
+    "Full-width intake spans and nominal gate contacts are geometric provisions only. Transverse focusing, accepted feed bounds, cone/branch friction, bridging and bounce require physical trials.",
+    "Practical gate seals, motion clearance, manufacturing tolerances, wear, thin-piece leakage and jamming remain an unresolved design hold; exact nominal contact is not a working seal.",
+    "Moving-particle capture is a design hold. A gravity-only 1.5 m/s horizontal point launch at x=3000, z=1000 mm and y=275 mm crosses the converging cheek at x=3174.64 mm, z=933.51 mm; the wall top is 863.21 mm (about 70 mm below). Existing side guards at y=\u00b1525 mm do not collect that interior path. This analytical counterexample is not a measured trial. Intake width does not prove capture. No operating speed or full-width no-jet capture route is approved; all displayed paths and motion speeds are schematic until receiving containment and physical trials resolve this hold."
+  ],
+  "gate_route_angles": {
+    "balance": 0.45,
+    "review": -0.45
+  },
+  "gate_geometry_contract": "cad/discharge_geometry_contract.json",
+  "repaired_utc": "2026-10-14T04:12:34.012103+00:00"
+}

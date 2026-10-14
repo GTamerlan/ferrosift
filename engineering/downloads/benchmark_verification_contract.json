@@ -1,0 +1,279 @@
+{
+  "contract_version": "1.0.0",
+  "prepared_utc": "2026-10-14",
+  "purpose": "Independent verification requirements for the Ferrosift10-video investor demonstration. This contract does not report a newly run benchmark.",
+  "status": "AWAITING_LOCAL_VIDEO_INVENTORY_AND_EVALUATION",
+  "scope": {
+    "candidate": "Fine-tuned Ultralytics YOLO26s, selected development configuration",
+    "reference": "Fine-tuned Ultralytics YOLO11s reference configuration",
+    "claim_scope": "Paired visual detection comparison on the identified clips. No commercial-sorter comparison, physical recovery or field-readiness claim.",
+    "independence": "Independent review is distinct from independent data. Label each clip separately as untouched holdout, exposed development/diagnostic, repeated source objects, unknown, or qualitative only."
+  },
+  "verified_package_identity": {
+    "candidate": {
+      "model_id": "yolo26s_640",
+      "packaged_checkpoint_sha256": "d5bd5245261692d125d4f2cb5e8c94217c64876fe455667bed8b0732ab4dddb7"
+    },
+    "reference": {
+      "model_id": "yolo11s_640",
+      "packaged_checkpoint_sha256": "6f195796029aa62b5d4be562bc8521c37bcfe05252270fb1d02a54cf5ff2017d"
+    }
+  },
+  "frozen_operating_point": {
+    "candidate_threshold": 0.8073331713676453,
+    "reference_threshold": 0.9101877808570862,
+    "rule": "class_id == 1 and score >= threshold AFTER frozen common class-aware NMS",
+    "classes": {
+      "0": "steel",
+      "1": "visible_copper"
+    },
+    "common_inference": {
+      "conf": 0.001,
+      "iou": 0.7,
+      "max_det": 1000,
+      "augment": false,
+      "agnostic_nms": false,
+      "classes": null,
+      "half": false,
+      "batch": 1,
+      "rect": false,
+      "device": "cpu",
+      "verbose": false,
+      "save": false,
+      "save_txt": false,
+      "save_conf": false,
+      "save_crop": false,
+      "visualize": false,
+      "stream": false,
+      "nms": null
+    },
+    "imgsz": 640,
+    "expected_end2end": false,
+    "ultralytics_version": "8.4.175",
+    "selection_history": "Both thresholds and candidate configuration were selected on the 1522-frame development set under a 1% conservative alarm-burden constraint. This is development selection, not a test guarantee.",
+    "changes": "No per-clip thresholds or post-test selection. Any new setting is a separately identified exploratory run; it cannot replace the frozen result. Keep original checkpoints and all negative runs."
+  },
+  "inventory_required_per_clip": [
+    "clip_id, original source URL/citation, release/version, acquisition permission, license/attribution and redistribution status",
+    "original file SHA256, decoded dimensions, codec, original presentation timestamps/timebase, duration, original capture rate if known",
+    "source session/run, physical-object group IDs if verified; training/validation/test and prior-viewing/use history",
+    "complete frame-selection manifest: frame_id, original_timestamp_s, scored/displayed status, decoded-pixel hash; crops/re-encoding/resampling provenance",
+    "ground-truth source/hash/version, supported classes and mapping, annotation completeness by frame/region/class, blind-review status",
+    "annotation type: complete boxes/masks, audited passage tracks, partial positives, or absent; ignored regions and exclusion counts",
+    "raw continuous recording versus extracted stills/slideshow; selection reason registered before results"
+  ],
+  "freeze_manifest_required": [
+    "run_id, protocol SHA256, UTC freeze time and prior-exposure declaration",
+    "all clip/annotation manifests, exclusions and exact eligible frame sets",
+    "both checkpoint/config hashes, training/pretraining provenance, code revision, evaluator/dependency versions",
+    "input color conversion/resize/letterbox/ROI, class mapping, confidence floor, NMS/head choice, max detections, thresholds",
+    "tracker/association/aggregation rules, ROI/decision line/deadline, missing-frame rule and event deduplication",
+    "primary endpoint/unit, false-alarm budget and allowed degradation if any, uncertainty method, all planned subgroup reports"
+  ],
+  "paired_execution": {
+    "accuracy": "Both models consume the same decoded source pixels and eligible frame IDs. Use the shipped common 640-square/FP32/batch-1/NMS path unless a separately disclosed benchmark configuration was frozen before testing. No ground-truth crops, future-frame rescue or different input enhancement.",
+    "runtime": "Same named machine/device, backend, package versions, numerical precision, batch size, input shape and measured thread settings. Run models separately, not contending side by side. Warm up identically; alternate model order across at least 3 complete passes. Report every pass and cold-start separately. This measures runtime variation, not new accuracy samples.",
+    "failure": "Do not omit failed or skipped frames. Report errors/drops; eligible GT in an unprocessed frame remains missed in the complete-input system score. A partial run is incomplete and cannot be a completed benchmark.",
+    "architecture": "Record exact inference head/end2end/NMS mode. A newer architecture does not establish better scrap detection, and a common architecture name does not verify checkpoint identity.",
+    "numeric_drift": "Record platform and near-threshold decisions. Reproduction tolerance applies only to declared numeric differences; never move the threshold to restore a preferred count. If backend/platform changes the strict result, publish the new observed result with its runtime provenance."
+  },
+  "frame_scoring": {
+    "unit": "One independently annotated class instance in one scored frame. The same physical piece appearing again is another annotation, not another recovered object.",
+    "eligibility": "Use all predeclared fully annotated eligible frames/regions, including negative/empty-belt frames. Prespecify ignore/crowd rules. Ground truth is model-blind; unknown or excluded areas have recorded counts/coverage.",
+    "matching": "At IoU >= 0.50, match each class separately with one-to-one score-descending greedy matching to unmatched nonignored ground truth; deterministic stable tie-break by prediction ID then GT ID. Freeze implementation and edge cases. Wrong class: FP for predicted class and FN for true class; duplicate target boxes beyond one match are FP. Keep class-agnostic error-attribution matching separate from TP/FP counts.",
+    "definitions": {
+      "tp": "Matched predicted target instances at the frozen operating threshold",
+      "fp": "All retained predicted target instances not matched to eligible target GT, excluding only predeclared legitimate ignored regions",
+      "fn": "Eligible target GT instances not matched at that threshold, including eligible dropped-frame GT",
+      "target_gt": "tp + fn",
+      "precision": "tp / (tp + fp); null when no predictions",
+      "recall": "tp / (tp + fn); null when no target GT",
+      "false_target_boxes_per_1000_scored_frames": "1000 * fp / scored_frame_count; null if frame count is zero",
+      "steel_matched_as_target_fraction": "distinct eligible steel GT matched to a target prediction / eligible steel GT; only if steel annotations are complete",
+      "conservative_alarm_burden_per_steel_annotation": "(steel-matched target predictions + other-class-matched target predictions + unmatched target predictions) / steel GT, with categories separately visible; not conventional FPR or steel mass loss"
+    },
+    "false_alarm_attribution": "After target TP matching, separately classify remaining FP as steel match, other annotated class match, duplicate on target, background/unmatched, or unknown coverage. Categories must be exclusive and sum to FP. Do not let many duplicates on one steel instance inflate a claimed steel-object error fraction.",
+    "ap": {
+      "evaluator": "Pinned pycocotools COCOeval bbox; explicit category mapping, imgIds, area=all, maxDets=[1,10,100], ignore/crowd policy; store version and full parameters.",
+      "AP50": "Interpolated precision-recall integral for each class at IoU 0.50 over the saved score-ranked predictions; not precision at the displayed threshold.",
+      "AP50_95": "Average AP over IoU 0.50,0.55,...,0.95. Report copper AP separately; mAP is the mean over named eligible classes.",
+      "score_floor": 0.001,
+      "input": "Use all detections retained by the frozen common pipeline above its 0.001 score floor, not only strict-threshold alarms. Report score truncation and detector max_det=1000 alongside evaluator maxDets=100. If counts exceed evaluator limits, retain this standard result and add a clearly named, predeclared higher-cap diagnostic.",
+      "nulls": "No GT for a class => AP null (not 0 or 100%). Positive GT with no predictions => AP=0. Missing/incomplete GT => affected AP null.",
+      "aggregation": "Per-clip AP and pooled-all-eligible-frame AP are separate outputs; pooled AP is recomputed from predictions, not an arithmetic average of clip AP."
+    },
+    "aggregation": "Publish every registered clip. Pooled precision=sum(tp)/sum(tp+fp); pooled recall=sum(tp)/sum(tp+fn). Do not present mean clip recall as pooled recall. Keep development, exposed diagnostic and untouched holdout pools separate.",
+    "uncertainty": "Frames are correlated. Report raw counts; never calculate independent-binomial confidence from repeated frames. Paired uncertainty resamples independent source/session or verified physical-object groups, retaining both models and repeated views. With inadequate independent groups, label comparative evidence descriptive/inconclusive.",
+    "ground_truth_geometry": "Use bbox IoU for this detector comparison. Convert any polygon/mask annotation once to a deterministic tight axis-aligned box in original pixel coordinates, save the conversion/version and class remapping, and verify image bounds. Segmentation AP requires mask predictions and is a different named metric."
+  },
+  "passage_scoring": {
+    "availability_gate": "Requires independently audited GT object-passage identities/labels, full temporal coverage and a frozen causal decision policy. Predicted tracker IDs alone are not truth.",
+    "ids": "Separate frame_annotation_id, gt_passage_id, predicted_track_id and verified physical_piece_id. Repeated passages of one piece are repeatability observations and clustered for uncertainty.",
+    "decision": "At most one credited positive decision per GT passage before its source-time deadline. Missing detection, abstention without diversion and late-only detection are misses. Missing source samples cannot be filled with GT.",
+    "precision": "correct unique target decisions / all emitted target commands; false non-target commands, phantom commands and duplicate commands are reported and count against command precision. A late first command can be both a missed on-time target and an unsuccessful command.",
+    "recall": "target GT passages with at least one valid on-time decision / all eligible target GT passages",
+    "steel_false_route_fraction": "distinct steel passages receiving an erroneous removal decision / all eligible steel passages; non-target categories remain visible",
+    "phantom_rate": "commands not associated with any GT passage / fully audited source minutes",
+    "duplicate_rate": "excess commands beyond the first for each GT passage / fully audited source minutes",
+    "display": "If no actuator/bin measurement, call these software decisions or simulated route commands, never objects recovered or copper saved.",
+    "unverified_identity": "Show predicted tracks only; unique-object accuracy, actual unique object counts and sorting outcomes remain null."
+  },
+  "ground_truth_modes": {
+    "complete_frame_annotations": "Enable frame precision/recall/AP; event results remain null unless passage gate also passes.",
+    "audited_passage_annotations_only": "Enable passage decisions if policy/deadlines are defined; frame AP stays null without localization GT.",
+    "partial_positive_annotations": "Only a clearly scoped diagnostic recall on the labeled positives may be shown. Precision/AP/FPR, full-clip recall and winner badges stay null because unannotated objects cannot be classified as false alarms.",
+    "none": "Show timestamped predictions and actual measured runtime only. Precision, recall, AP, accuracy, uplift, winner and measured copper/money saved are null.",
+    "model_generated_labels": "Not independent ground truth. Human model-blind audit is required before benchmark use; preserve annotation provenance."
+  },
+  "playback_and_timing": {
+    "display": "Both panels show identical source frame ID/timestamp under shared play/pause/seek/step. Keep source timestamp, playback clock and inference wall time separate. Show source age for reused predictions. Replaying or seeking never increments finalized counts.",
+    "mode_enum": [
+      "recorded_prediction_replay",
+      "inference_on_prerecorded_video",
+      "live_camera_inference",
+      "still_image_sequence_demo"
+    ],
+    "playback_speed": "A playback multiplier changes display only. Cached overlays at video speed do not demonstrate inference throughput.",
+    "speed_outputs": [
+      "hardware/backend/threads",
+      "scored_frames and attempted_frames",
+      "decode/preprocess/inference/postprocess/tracking latency separately",
+      "full decode-to-decision wall time",
+      "p50/p95/p99 latency",
+      "source duration / wall duration real-time factor",
+      "sustained output FPS",
+      "dropped/errored frames",
+      "queue age/deadline misses",
+      "cold start and warmup exclusion"
+    ],
+    "scoping": "Model-only inference FPS excludes other work and must say so. Offline faster-than-duration throughput is not proof of bounded live latency. A 100-fps original sampled at 20 fps is reported as that sampling policy, not a 100-fps inference claim.",
+    "physical_calibration": "No m/s, kg/h, tonnes/h, ejection success or physical real-time sorting claim without measured belt encoder/speed, spatial calibration at belt plane, original timestamps, camera-to-actuator geometry, actuator delay/jitter, load/weights and output-bin evidence. Edited/slowed video or pixels/frame cannot establish these.",
+    "deadline": "Only with calibration: remaining physical travel time - measured actuator delay - declared safety margin. Time-varying speed needs encoder-based travel, not one nominal FPS conversion."
+  },
+  "result_decision": {
+    "primary_endpoint": "Freeze one supported endpoint before results; prefer on-time target-passage recall at a declared non-target-command budget when GT allows. Otherwise use visible-copper frame-annotation recall and say so.",
+    "candidate_higher": "Show signed observed difference and both false-alarm outcomes. Any supported superiority statement requires preregistered constraints and suitable paired uncertainty.",
+    "reference_higher": "Show the reference advantage in the same units and styling; retain the clip and signed negative candidate difference. No hidden substitution, threshold retuning or zero-clamping.",
+    "mixed_or_uncertain": "Show tradeoff or inconclusive. Higher recall with more false alarms is not an unqualified win.",
+    "tie": "Show tie at declared numeric tolerance; round for display only, never for outcome decisions.",
+    "selected_examples": "A curated illustration may be clearly labeled and linked to the full all-clip results, including losses; it cannot supply an independent headline score.",
+    "prohibited": "No always-win guarantee, hardcoded positive result, inferred missing metrics, rebranded commercial comparator, forced candidate rank or hidden unfavorable input."
+  },
+  "copper_value_scenario": {
+    "default_state": "disabled_or_all_inputs_null_until_user_assumptions_present",
+    "persistent_label": "Illustrative copper-value scenario. Assumptions only; this video does not measure copper mass recovery or savings.",
+    "no_metric_binding": "Never bind frame recall, AP, object-count recall, box area, predicted confidence, counted frames or replay elapsed time to copper kilograms or money. Equal copper mass per visible piece is an unverified scenario assumption, not a measurement.",
+    "inputs": [
+      "feed_kg_per_hour",
+      "operating_hours",
+      "contained_copper_mass_fraction",
+      "assumed_reference_copper_mass_recovery",
+      "assumed_candidate_copper_mass_recovery",
+      "reference_payability_fraction",
+      "candidate_payability_fraction",
+      "price_currency_per_kg",
+      "currency",
+      "price_asof_or_assumed",
+      "incremental_processing_cost",
+      "lost_non_target_value",
+      "annualized_capital_cost"
+    ],
+    "provenance": "Each input is explicitly user-assumed or independently measured with source/date, units and range. Null never silently becomes a favorable default.",
+    "formula_additional_recovered_copper_kg": "feed_kg_per_hour * operating_hours * contained_copper_mass_fraction * (assumed_candidate_copper_mass_recovery - assumed_reference_copper_mass_recovery)",
+    "formula_incremental_payable_value": "feed_kg_per_hour * operating_hours * contained_copper_mass_fraction * (assumed_candidate_copper_mass_recovery * candidate_payability_fraction - assumed_reference_copper_mass_recovery * reference_payability_fraction) * price_currency_per_kg",
+    "formula_scenario_contribution": "incremental_payable_value - incremental_processing_cost - lost_non_target_value - annualized_capital_cost (all over the same period; otherwise null)",
+    "negative_results": "Preserve negative quantities and values; label incremental value/loss, never guaranteed savings.",
+    "measurement_upgrade_gate": "Measured mass recovery requires representative weighed input/output streams, independent copper assays and declared material-balance closure; recovery = target-product copper mass / input copper mass. Include dust/residue/reject streams. Matched controlled sorting trials, buyer payability and complete incremental cost are needed for a savings claim."
+  },
+  "minimum_deliverables": [
+    "immutable frozen_manifest.json",
+    "clip_inventory.json with inclusion/exclusion ledger",
+    "GT/provenance and video hashes",
+    "both per-frame prediction JSONL files",
+    "matching/error ledger with timestamp links",
+    "per-clip and pooled metrics.json/CSV with units/denominators/null reasons",
+    "per-passage decisions.jsonl if eligible",
+    "runtime raw logs and timing_summary.json",
+    "complete continuous paired demo with evidence/limitations panel",
+    "all-run disclosure and license/attribution notices"
+  ],
+  "required_metric_record": {
+    "clip_id": "string",
+    "model_id": "string",
+    "run_id": "string",
+    "evidence_tier": "untouched_holdout | exposed_development | exposed_external_diagnostic | unknown | qualitative",
+    "unit": "frame_annotation | gt_passage | emitted_command",
+    "status": "complete | incomplete | unscorable",
+    "n_eligible_frames": "integer",
+    "n_processed_frames": "integer",
+    "n_target_gt": "integer or null",
+    "tp": "integer or null",
+    "fp": "integer or null",
+    "fn": "integer or null",
+    "precision": "number in [0,1] or null",
+    "recall": "number in [0,1] or null",
+    "ap50": "number in [0,1] or null",
+    "ap50_95": "number in [0,1] or null",
+    "fp_breakdown": "exclusive category counts or null",
+    "n_steel_gt": "integer or null",
+    "steel_matched_fraction": "number in [0,1] or null",
+    "alarm_burden_per_steel_annotation": "nonnegative number or null; may exceed 1",
+    "null_reasons": "map from null field to reason",
+    "threshold": "number",
+    "matching_iou": "number",
+    "prediction_sha256": "string",
+    "annotation_sha256": "string or null"
+  },
+  "automated_acceptance_assertions": [
+    "All present hashes verify; settings/thresholds match manifest and run logs; no test-dependent edits.",
+    "Identical eligible frame manifests/pixel hashes for both models; no missing/unreported clip or source frame.",
+    "Per clip and class: n_target_gt == tp + fn; n_predictions == tp + fp; exclusive FP categories sum to fp.",
+    "Null conditions enforced; no-GT footage cannot emit performance scores or winners.",
+    "Pooled counts exactly sum included clip counts and preserve evidence tiers; AP recomputed from ranked predictions.",
+    "Replay, backward seek, restart and speed change leave final counts unchanged; both panels remain source-aligned.",
+    "Dropped/errored frames, zero detections, duplicate boxes, wrong classes, ignored regions and empty clips have fixture tests.",
+    "Reference-win, negative-difference, zero-reference-misses, tie, all-empty and mixed-tradeoff display fixtures pass.",
+    "No divisions by zero, NaN/Infinity or fabricated 100% for empty denominators; use null with reason.",
+    "Economic scenario is a separate assumption namespace with no binding to benchmark recall; negative economic results remain negative.",
+    "Source-video license/attribution and deployed checkpoint/code-license route reviewed; unresolved distribution rights block distribution, not read-only audit."
+  ],
+  "sources": [
+    {
+      "id": "P1",
+      "title": "Verified candidate and reference review packages",
+      "location": "verification_sources/; read directly from existing locally backed-up ZIPs; checkpoint bytes rehashed without execution"
+    },
+    {
+      "id": "P2",
+      "title": "COCO reference evaluator",
+      "url": "https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py",
+      "purpose": "AP conventions and explicit evaluator parameters; pin installed implementation"
+    },
+    {
+      "id": "P3",
+      "title": "SteelDS primary paper",
+      "url": "https://arxiv.org/html/2605.26682v1",
+      "purpose": "Repeated physical pieces, cumulative subsets, raw/extracted rates, class mapping and CC BY attribution; verify actual downloaded release"
+    },
+    {
+      "id": "P4",
+      "title": "Ultralytics YOLO26 documentation",
+      "url": "https://docs.ultralytics.com/models/yolo26",
+      "purpose": "Inference-head/NMS modes are explicit configuration; current docs do not override pinned historic runtime"
+    },
+    {
+      "id": "P5",
+      "title": "Ultralytics license information",
+      "url": "https://www.ultralytics.com/license",
+      "purpose": "Licensing review gate; preserve notices and establish applicable AGPL compliance or Enterprise terms. No legal clearance is implied."
+    }
+  ],
+  "historical_reproduction": {
+    "metric_namespace": "historical_routing_alarm_diagnostic; keep separate from newly computed standard detection metrics",
+    "matching": "Original diagnostic sorts target alarms by descending score, lexicographic xyxy, then prediction index; assigns highest-IoU unmatched GT of ANY class at IoU>=0.5, GT-row tie-break; reveals class after assignment. This differs from class-specific detection/AP matching. Retain the original matcher to reproduce published counts; do not silently relabel or recompute them under a different matcher.",
+    "excluded_frames": "Six official validation frames lacked acquired labels, leaving 1522 of 1528. Missing labels were not treated as empty belt. Preserve the six-frame exclusion ledger and report coverage.",
+    "protocol_precedence": "The copied inference_protocol.json records an earlier 5%/native-postprocessing experiment. Current bundle settings.json, strict_development_metrics.json and README define the shipped 1% common-NMS strict configuration. Do not apply the historical protocol\u2019s 5% ceiling or native/end-to-end choices to the shipped comparison.",
+    "runtime_caution": "Historical torch_threads=4 records a requested pre-setup value, not verified actual runtime thread count. No historical 4-thread/deployment speed claim is supported.",
+    "evidence_status": "Package hashes and arithmetic checked here; no inference rerun, video decoding, unseen-data audit, new independent test or measured recovery performed."
+  }
+}

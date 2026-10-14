@@ -1,462 +1,33 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="Explore a proposed PCB-rich recovery conveyor in 3D, inspect its design assumptions and review the separate recorded steel/copper model results. No PCB inference or physical sorting performance is demonstrated.">
-  <meta property="og:title" content="Ferrosift — Value. Not waste."><meta property="og:description" content="See. Sense. Decide. Sort. An interactive exploration of the Ferrosift smart-conveyor concept."><meta property="og:type" content="website">
-  <title>Ferrosift — Engineering Explorer</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230a0a0a%22%2F%3E%3Cpath%20d%3D%22M15%2016h39l-8%208H15zm0%2015h30l-8%208H15zm0%2015h18l-8%208H15z%22%20fill%3D%22%232b5bff%22%2F%3E%3C%2Fsvg%3E%0A">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Instrument+Serif&display=swap">
-  <style>
-/* FERROSIFT — minimal editorial system. One accent. Hairline grid. Mixed-case type.
-   Open-source fonts (Inter, Instrument Serif) with system fallbacks. */
-:root{
-  --bg:#0a0a0a;--bg-2:#0d0d0e;--panel:#111112;--panel-2:#151517;
-  --ink:#f3f3f3;--ink-2:#cfcfcf;--muted:#9b9b9b;--faint:#6f6f6f;
-  --line:rgba(255,255,255,.12);--line-2:rgba(255,255,255,.22);
-  --accent:#2b5bff;--accent-hover:#3d6bff;--accent-text:#6f90ff;--accent-soft:rgba(43,91,255,.14);
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
-  --header:72px;--gutter:clamp(20px,4vw,64px);--max:1480px;--pad:clamp(20px,3.4vw,52px);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 12px)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:var(--accent);color:#fff}
-button,input,textarea,select{font:inherit}
-button,a,input,select,summary,textarea{-webkit-tap-highlight-color:transparent}
-button,a{touch-action:manipulation}
-button{cursor:pointer;border:0;background:none;color:inherit;padding:0}
-button:disabled{opacity:.45;cursor:not-allowed}
-a{color:inherit;text-decoration:none}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-h1,h2,h3,p{margin:0}
-h1,h2{font-weight:400;letter-spacing:-.028em;line-height:1.04}
-h1{font-size:clamp(42px,4.8vw,70px)}
-h2{font-size:clamp(32px,3.4vw,50px)}
-h2.serif{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4vw,60px);letter-spacing:-.012em;line-height:1.06}
-h3{font-size:18px;font-weight:500;letter-spacing:-.012em;line-height:1.3}
-p{color:var(--muted)}
-.dim{color:var(--faint)}
-.muted{color:var(--muted)}
-.lead{font-size:19px;line-height:1.45;color:var(--ink-2);letter-spacing:-.012em}
-.eyebrow,.label,.micro{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.6;color:var(--muted)}
-.eyebrow{color:var(--ink-2)}
-.eyebrow i{display:inline-block;width:6px;height:6px;background:var(--accent);margin:0 10px 1px 0;vertical-align:middle}
-.micro{font-size:11px!important;letter-spacing:.02em;text-transform:none;color:var(--faint)!important;line-height:1.6!important}
-.micro a,.figure-note a,.source-link{color:var(--accent-text)}
-.source-link{font-family:var(--mono);font-size:11px;letter-spacing:0}
-.badge{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:6px 10px;white-space:nowrap}
-.badge.blue{color:var(--accent-text);border-color:rgba(43,91,255,.45)}
-.skip{position:fixed;top:-100px;left:12px;z-index:100;background:#fff;color:#000;padding:10px}.skip:focus{top:12px}
-
-/* Buttons & links */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:48px;padding:0 22px;background:var(--accent);color:#fff;font-weight:500;font-size:14px;letter-spacing:-.005em;border-radius:2px;transition:background .2s,color .2s,border-color .2s,transform .2s;white-space:nowrap}
-.btn:hover{background:var(--accent-hover);color:#fff}
-.btn span{font-size:16px;line-height:1}
-.btn.ghost{background:transparent;border:1px solid var(--line-2);color:var(--ink)}
-.btn.ghost:hover{border-color:var(--ink);background:rgba(255,255,255,.04)}
-.btn.white{background:#fff;color:#0a0a0a}
-.btn.white:hover{background:#e9edff;color:#0a0a0a}
-.btn.small{height:40px;padding:0 16px;font-size:13px}
-.link{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.link span{font-family:var(--sans);font-size:15px;transition:transform .2s}
-.link:hover{color:var(--accent-text)}.link:hover span{transform:translateX(3px)}
-
-/* Layout frame: centered column with hairlines at the content edges (desktop) */
-.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
-.frame-lines{position:fixed;top:0;bottom:0;left:50%;width:min(100%,var(--max));transform:translateX(-50%);pointer-events:none;z-index:4}
-.frame-lines:before,.frame-lines:after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
-.frame-lines:before{left:var(--gutter)}.frame-lines:after{right:var(--gutter)}
-.section{position:relative;z-index:3;background:var(--bg)}
-.section-inner{position:relative;border-top:1px solid var(--line);padding:clamp(72px,8vw,120px) var(--pad)}
-.section-inner:before{content:"";position:absolute;left:-4px;top:-4px;width:7px;height:7px;background:var(--ink)}
-.section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px clamp(40px,6vw,120px);align-items:start}
-.section-head .eyebrow{grid-column:1/-1;margin-bottom:-6px}
-.section-head>p:not(.eyebrow){font-size:16px;line-height:1.65;max-width:520px;color:var(--muted);padding-top:10px}
-.section-head>p strong{color:var(--ink-2);font-weight:400}
-.section-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
-
-/* Header */
-.site-header{position:fixed;inset:0 0 auto;height:var(--header);z-index:30;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-.site-header.scrolled{background:rgba(10,10,10,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
-.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.wordmark{display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:var(--ink)}
-.wordmark svg{width:22px;height:22px;color:var(--ink)}
-.site-header nav{display:flex;gap:30px;margin-right:auto;margin-left:46px}
-.site-header nav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.site-header nav a:hover,.site-header nav a.active{color:var(--ink);border-color:var(--ink)}
-.header-cta{height:40px;padding:0 18px;font-size:13px}
-.menu-toggle{display:none}
-.mobile-nav[hidden]{display:none}
-.mobile-nav{position:fixed;top:var(--header);inset-inline:0;background:#0d0d0e;z-index:35;padding:28px var(--gutter) 34px;display:flex;flex-direction:column;gap:22px;border-bottom:1px solid var(--line)}
-.mobile-nav a,.mobile-nav button{font-size:20px;text-align:left;letter-spacing:-.01em}
-.mobile-nav button{color:var(--accent-text)}
-
-/* ===== 3D stage + scroll story ===== */
-.machine-story{position:relative;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr);isolation:isolate;overflow:clip}
-.machine-stage,.story-panels{grid-column:1;grid-row:1}
-.machine-stage{height:100vh;height:100svh;position:sticky;top:0;align-self:start;overflow:hidden;z-index:1}
-.scene-atmosphere{position:absolute;inset:0;background:radial-gradient(ellipse at 72% 55%,rgba(255,255,255,.045) 0%,rgba(255,255,255,.012) 32%,transparent 62%)}
-.scene-atmosphere:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(ellipse at 74% 58%,#000 0%,transparent 60%);-webkit-mask-image:radial-gradient(ellipse at 74% 58%,#000 0%,transparent 60%)}
-.scene-area{position:absolute;left:30%;right:-2%;top:10%;bottom:6%;z-index:1}
-.scene-area canvas{width:100%;height:100%;display:block;touch-action:pan-y;cursor:default}
-.scene-area canvas.explorable{cursor:grab;touch-action:none}.scene-area canvas.explorable:active{cursor:grabbing}
-.scene-topline{position:absolute;right:var(--gutter);top:calc(var(--header) + 22px);z-index:3;display:flex;gap:28px;align-items:center}
-.scene-topline .label{font-size:10px;color:var(--muted)}
-.status-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin:0 9px 1px 0;box-shadow:0 0 10px rgba(43,91,255,.6)}
-.scene-bottomline{position:absolute;right:var(--gutter);bottom:34px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;z-index:3}
-.scene-readout{display:grid;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-#stage-number{color:var(--ink)}
-.stage-dots{display:flex;gap:4px;margin-top:2px}
-.stage-dots i{width:26px;height:1px;background:rgba(255,255,255,.22);transition:background .3s}
-.stage-dots i.active{background:var(--accent)}
-.scene-controls{display:flex;gap:6px;align-items:center}
-.scene-controls button{background:rgba(10,10,10,.72);backdrop-filter:blur(8px);border:1px solid var(--line);height:34px;padding:0 12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:.2s;border-radius:2px}
-.scene-controls button:hover{border-color:var(--ink);color:var(--ink)}
-.scene-controls button[aria-pressed=true]{border-color:var(--accent);color:var(--ink);background:rgba(43,91,255,.16)}
-.scene-disclaimer{position:absolute;bottom:14px;right:var(--gutter);font-family:var(--mono);font-size:10px;color:var(--faint);z-index:3}
-.scene-tag{position:absolute;bottom:26%;left:61%;display:flex;gap:10px;align-items:center;z-index:2;pointer-events:none;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-2)}
-.tag-cross{width:7px;height:7px;background:var(--ink);flex-shrink:0}
-#scene-tag-text{padding:7px 10px;border:1px solid var(--line);background:rgba(10,10,10,.75);backdrop-filter:blur(6px)}
-.track-label{position:absolute;left:0;top:0;margin:-11px 0 0 18px;display:flex;align-items:center;gap:8px;padding:6px 9px;border:1px solid var(--line);background:rgba(10,10,10,.82);backdrop-filter:blur(6px);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;pointer-events:none;z-index:3;will-change:transform}
-.track-label[hidden]{display:none}
-.track-label.flip{margin-left:-18px}
-.track-label i{width:6px;height:6px;background:var(--accent);flex-shrink:0}
-.story-panels{position:relative;z-index:2;pointer-events:none}
-.scene-step{height:100vh;height:100svh;min-height:680px;display:flex;align-items:center;padding:calc(var(--header) + 10px) var(--gutter) 70px;position:relative}
-.scene-step>.wrap{width:100%;padding-inline:var(--pad)}
-.step-copy{width:36%;max-width:470px;pointer-events:auto;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-.js .step-copy{opacity:0;transform:translateY(18px)}
-.js .scene-step.in-view .step-copy{opacity:1;transform:none}
-.step-copy .eyebrow{margin-bottom:22px}
-.step-copy h2{margin-bottom:22px}
-.step-copy>.lead{margin-bottom:14px}
-.step-copy>p:not(.eyebrow):not(.lead):not(.micro){font-size:14.5px;line-height:1.65;max-width:420px}
-.step-copy>.micro{margin-top:18px;max-width:400px}
-.step-copy .link{margin-top:22px}
-.hero .step-copy{width:46%;max-width:620px}
-.hero h1{margin:26px 0 24px}
-.hero h1 .dim{color:var(--faint)}
-.hero .lead{max-width:470px;margin-bottom:30px}
-.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line);max-width:560px}
-.hero-meta .label{font-size:10px;color:var(--faint);white-space:nowrap}
-.scroll-cue{position:absolute;left:calc(var(--gutter) + var(--pad));bottom:34px;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.scroll-line{height:1px;width:40px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
-.scroll-line:after{content:"";position:absolute;inset:0;background:var(--ink);transform:translateX(-100%);animation:scroll-cue 2.6s infinite}
-@keyframes scroll-cue{to{transform:translateX(100%)}}
-/* Key-point lists inside the steps */
-.points{margin-top:26px;border-top:1px solid var(--line);max-width:420px}
-.points>div{display:grid;grid-template-columns:92px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--muted)}
-.points>div b{font-weight:500;color:var(--ink);font-size:13px}
-.points.routes>div{grid-template-columns:14px 1fr;align-items:center}
-.route-dot{width:7px;height:7px;background:var(--ink)}
-.route-dot.accent{background:var(--accent)}.route-dot.grey{background:var(--faint)}
-.fusion{margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;display:grid;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);max-width:420px}
-.fusion-in,.fusion-out{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.fusion-out{justify-content:flex-end}
-.fusion span{padding:5px 8px;border:1px solid var(--line);color:var(--ink-2)}
-.fusion i{font-style:normal;color:var(--faint)}
-.fusion b{font-weight:500;color:var(--accent-text);padding:5px 8px;border:1px solid rgba(43,91,255,.45)}
-.waveform{width:100%;max-width:420px;height:96px;display:block;margin-top:26px;border:1px solid var(--line);background:var(--panel)}
-.wave-grid{stroke:rgba(255,255,255,.08);fill:none;stroke-width:1}
-.wave-line{stroke:var(--accent);stroke-width:1.5;fill:none;stroke-dasharray:5 1.5;animation:dash-flow 5s linear infinite}
-@keyframes dash-flow{to{stroke-dashoffset:-65}}
-.metric-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:26px;border-top:1px solid var(--line);border-left:1px solid var(--line);max-width:420px}
-.metric-grid>div{padding:14px 14px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.metric-grid b{display:block;font-weight:500;font-size:14px;color:var(--ink)}
-.metric-grid span{font-size:12px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
-#webgl-fallback{position:absolute;inset:10%;display:flex;flex-direction:column;justify-content:center}
-#webgl-fallback[hidden]{display:none}
-#webgl-fallback p{font-size:12px;text-align:center;font-family:var(--mono)}
-
-/* ===== Opportunity ===== */
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(48px,6vw,84px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat{padding:34px 28px 30px;border-right:1px solid var(--line)}
-.stat:first-child{padding-left:0}.stat:last-child{border-right:0}
-.stat b{display:flex;align-items:baseline;gap:6px;font-weight:300;font-size:clamp(46px,5.2vw,78px);letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
-.stat b small{font-family:var(--mono);font-size:16px;letter-spacing:0;color:var(--muted);font-weight:400}
-.stat .label{margin-top:18px;font-size:10px;display:block;position:relative;padding-left:16px;line-height:1.6;max-width:300px}
-.stat .label i{position:absolute;left:0;top:5px;width:6px;height:6px;background:var(--accent)}
-.stat .label i.grey{background:var(--faint)}
-.stat .label a{color:var(--accent-text)}
-.flow-block{margin-top:clamp(48px,6vw,84px)}
-.block-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
-.block-head h3{font-size:18px}
-.global-flow{display:grid;grid-template-columns:1fr 1.15fr;gap:14%;align-items:center;position:relative;margin:34px 0 24px}
-.flow-connectors{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.flow-node{position:relative;z-index:1;padding:22px 24px;border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column;gap:6px}
-.flow-node strong{font-weight:300;font-size:44px;letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
-.flow-node strong small{font-family:var(--mono);font-size:14px;letter-spacing:0;color:var(--muted);font-weight:400;margin-left:4px}
-.flow-node>span:last-child{font-size:13px;color:var(--muted);max-width:300px;line-height:1.5}
-.flow-node .label{font-size:10px}
-.flow-branches{display:grid;gap:18px}
-.flow-node.documented{border-color:rgba(43,91,255,.55)}
-.flow-node.documented .label{color:var(--accent-text)}
-.flow-line{fill:none;stroke-width:1;opacity:.5}
-.flow-pulse{fill:none;stroke-width:1.5;stroke-dasharray:6 18;animation:flow 6s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-120}}
-.figure-note{font-size:12px;line-height:1.7;color:var(--faint);max-width:860px}
-.figure-note strong{color:var(--muted);font-weight:400}
-.callout{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,80px);align-items:center;margin-top:clamp(48px,6vw,84px);padding-top:40px;border-top:1px solid var(--line)}
-.callout>b{font-weight:300;font-size:clamp(58px,7vw,112px);letter-spacing:-.045em;line-height:1;color:var(--ink);white-space:nowrap}
-.callout>div{max-width:560px}
-.callout .eyebrow{margin-bottom:14px}
-.callout p:not(.eyebrow){font-size:15px;line-height:1.7}
-
-/* ===== Economics / calculator ===== */
-.calculator{margin-top:clamp(48px,6vw,84px);display:grid;grid-template-columns:.9fr 1.3fr;gap:clamp(32px,5vw,80px);align-items:start}
-.calculator-inputs{border-top:1px solid var(--line);padding-top:26px}
-.calculator-inputs h3{margin-bottom:26px}
-.calculator-inputs label{display:block;color:var(--muted);font-size:12px;margin-bottom:22px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.number-field{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line-2);margin-top:8px;padding:8px 0;transition:border-color .2s}
-.number-field:focus-within{border-color:var(--ink)}
-.number-field input{width:100%;min-width:0;background:none;border:0;color:var(--ink);font:400 22px/1.2 var(--sans);letter-spacing:-.02em;outline:none;padding:0}
-.number-field input:focus-visible{outline:none}
-.number-field>span{font-family:var(--mono);font-size:11px;color:var(--faint);white-space:nowrap;letter-spacing:0}
-.two-input{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.slider-label{position:relative;padding-top:4px}
-.slider-label output{float:right;font:400 15px var(--sans);color:var(--ink);letter-spacing:0;text-transform:none}
-.slider-label.accent output{color:var(--accent-text)}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:1px;background:rgba(255,255,255,.25);margin:24px 0 16px;cursor:pointer;accent-color:var(--accent)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--ink);border:0;box-shadow:0 0 0 4px var(--bg)}
-.slider-label.accent input[type=range]::-webkit-slider-thumb{background:var(--accent)}
-input[type=range]::-moz-range-thumb{background:var(--ink);width:14px;height:14px;border:0;border-radius:50%}
-.slider-label.accent input[type=range]::-moz-range-thumb{background:var(--accent)}
-.cost-details{border-block:1px solid var(--line);margin:4px 0 22px}
-.cost-details summary{padding:16px 0;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;color:var(--ink-2);list-style:none}
-.cost-details summary::-webkit-details-marker{display:none}
-.cost-details[open] summary{margin-bottom:10px}
-.cost-details summary span{color:var(--muted);font-family:var(--mono)}
-.reset-link{color:var(--muted)}
-.calculator-results{border:1px solid var(--line);background:var(--panel);padding:30px 32px 32px}
-.calculator-results .block-head{padding-bottom:16px}
-.calculator-results .block-head h3{font-size:16px}
-.mass-row{margin:24px 0 0}
-.mass-row>div:first-child{display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.mass-row b{font-weight:400;font-size:12px;color:var(--ink-2);letter-spacing:0;text-transform:none;font-family:var(--sans)}
-.mass-row.proposed>div:first-child>span{color:var(--accent-text)}
-.mass-track{height:10px;background:rgba(255,255,255,.06);position:relative;margin-top:10px;overflow:hidden}
-.mass-recovered{position:absolute;inset:0 auto 0 0;background:var(--accent);transition:width .35s}
-.mass-recovered.baseline{background:rgba(255,255,255,.42)}
-.mass-row p{font-size:12px;margin-top:9px;line-height:1.5;color:var(--faint)}
-.mass-row p>span{color:var(--ink-2)}
-.result-big{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 22px}
-.result-big>span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.result-big strong{display:block;font-size:clamp(46px,4.6vw,68px);font-weight:300;line-height:1.2;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:6px}
-.result-big p{font-size:12.5px;color:var(--muted)}
-.result-big.negative strong{color:#ff6b6b}
-.result-breakdown{border-top:1px solid var(--line)}
-.result-breakdown>div{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
-.result-breakdown b{font-weight:400;color:var(--ink-2);text-align:right;font-variant-numeric:tabular-nums}
-.calculator-actions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
-.method-note{margin-top:40px;border-block:1px solid var(--line);padding:18px 0}
-.method-note summary{font-size:13px;color:var(--ink-2);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
-.method-note summary::-webkit-details-marker{display:none}
-.method-note summary span{color:var(--muted);font-family:var(--mono)}
-.method-note p{font-size:13px;line-height:1.75;margin-top:16px;max-width:960px}
-
-/* ===== Build ===== */
-.build-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,90px);margin-top:clamp(48px,6vw,84px);align-items:start}
-.blueprint{padding:24px;border:1px solid var(--line);background-color:var(--panel);background-image:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px}
-.blueprint-head{display:flex;justify-content:space-between;gap:10px}
-.blueprint-head .label{font-size:10px}
-.blueprint svg{width:100%;height:auto;display:block;padding-top:18px}
-.blueprint .micro{border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
-.build-steps{position:relative}
-.build-steps article{position:relative;display:grid;grid-template-columns:36px 1fr;gap:22px;padding:0 0 38px;transition:opacity .5s}
-.build-steps article:before{content:"";position:absolute;left:17px;top:40px;bottom:6px;width:1px;background:var(--line)}
-.build-steps article:last-child:before{display:none}
-.build-steps article>span{width:36px;height:36px;border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--bg);transition:border-color .4s,color .4s,background .4s}
-.build-steps article.focus>span{border-color:var(--accent);background:var(--accent);color:#fff}
-.build-steps h3{font-size:19px;padding-top:6px}
-.build-steps p{font-size:14px;line-height:1.6;margin:8px 0 0;max-width:430px}
-.build-steps small{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-top:10px;letter-spacing:.02em}
-.build-steps .btn{margin-top:18px}
-.accordion{margin-top:clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
-.accordion details{border-top:1px solid var(--line);padding-top:16px}
-.accordion summary{font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--ink-2)}
-.accordion summary::-webkit-details-marker{display:none}
-.accordion summary span{color:var(--muted);font-family:var(--mono)}
-.accordion details p{font-size:13px;line-height:1.7;margin-top:14px}
-.accordion strong{color:var(--ink-2);font-weight:400}
-
-/* ===== Horizon ===== */
-.horizon-visual{height:440px;position:relative;margin-top:clamp(40px,5vw,72px);border:1px solid var(--line);background:var(--panel);overflow:hidden}
-.horizon-visual canvas{width:100%;height:100%;display:block}
-.orbital-kicker{position:absolute;left:22px;top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.orbit-title{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 22px;border:1px solid var(--line);border-top:0;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.orbit-title span:nth-child(2){color:var(--accent-text)}
-.horizon-copy{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,100px);margin-top:clamp(48px,6vw,84px)}
-.horizon-copy h2{margin-bottom:26px}
-.horizon-copy .lead{margin-bottom:16px}
-.horizon-copy>div>p:not(.lead){max-width:520px;font-size:15px;line-height:1.75}
-.ladder article{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
-.ladder article:last-child{border-bottom:1px solid var(--line)}
-.ladder article>b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--accent-text);font-weight:400;padding-top:4px}
-.ladder h3{font-size:17px}
-.ladder p{font-size:13px;line-height:1.6;margin-top:7px}
-.note{margin-top:clamp(40px,5vw,64px);padding:24px 28px;border:1px solid var(--line);border-left:2px solid var(--accent);display:grid;grid-template-columns:240px 1fr;gap:34px;align-items:baseline}
-.note b{font-size:14px;font-weight:500;color:var(--ink)}
-.note p{font-size:13px;line-height:1.7}
-
-/* ===== Team / CTA ===== */
-.team-row{display:grid;grid-template-columns:1fr 1fr auto;gap:40px;align-items:center;margin-top:clamp(40px,5vw,72px);padding-block:32px;border-block:1px solid var(--line)}
-.team-row>div .label{display:block;margin-bottom:16px;color:var(--accent-text)}
-.team-row h3{font-size:20px}
-.team-row p{font-size:13px;margin-top:8px}
-.team .micro{margin-top:22px;max-width:860px}
-.cta-band{position:relative;z-index:3}
-.cta-band .wrap>div{background:var(--accent);color:#fff;padding:clamp(48px,6vw,84px) var(--pad);display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.cta-band h2{font-weight:500;letter-spacing:-.03em;color:#fff;font-size:clamp(34px,4vw,58px)}
-.cta-band p{color:rgba(255,255,255,.82);font-size:16px;max-width:540px;margin-top:18px;line-height:1.55}
-
-/* ===== Sources / footer ===== */
-.source-list{margin-top:clamp(40px,5vw,72px)}
-.source-list>a{display:grid;grid-template-columns:40px 1fr auto;gap:24px;align-items:start;border-top:1px solid var(--line);padding:22px 0;transition:background .2s}
-.source-list>a:last-of-type{border-bottom:1px solid var(--line)}
-.source-list>a>span{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:4px}
-.source-list>a>span:last-child{font-family:var(--sans);font-size:18px;color:var(--muted);transition:color .2s,transform .2s}
-.source-list h3{font-size:16px;font-weight:400;color:var(--ink)}
-.source-list p{font-size:13px;margin-top:6px;max-width:820px;line-height:1.6}
-.source-list>a:hover h3{color:var(--accent-text)}
-.source-list>a:hover>span:last-child{color:var(--ink);transform:translate(2px,-2px)}
-footer{position:relative;z-index:3;background:var(--bg)}
-.footer-inner{border-top:1px solid var(--line);padding:clamp(48px,6vw,80px) var(--pad) 36px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-.footer-grid>div>p{font-size:13px;line-height:1.65;margin-top:22px;max-width:360px}
-.footer-grid .label{display:block;margin-bottom:20px;font-size:10px;color:var(--faint)}
-.footer-grid a,.footer-grid button{display:block;font-size:14px;color:var(--ink-2);margin-bottom:12px;text-align:left;transition:color .2s}
-.footer-grid a:hover,.footer-grid button:hover{color:var(--accent-text)}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:clamp(40px,5vw,64px);padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-
-/* Dialog & toast */
-dialog{color:var(--ink);width:min(520px,calc(100% - 30px));max-height:90vh;background:#0f0f10;border:1px solid var(--line-2);padding:40px;box-shadow:0 40px 120px rgba(0,0,0,.7);border-radius:2px}
-dialog::backdrop{background:rgba(5,5,5,.78);backdrop-filter:blur(10px)}
-.dialog-close{position:absolute;right:16px;top:10px;font-size:28px;font-weight:300;color:var(--muted);padding:6px 10px}
-dialog h2{font-size:clamp(34px,4vw,46px);margin:16px 0 14px}
-dialog>p:not(.eyebrow){font-size:13px;margin-bottom:20px}
-dialog label{display:block;font-size:11px;color:var(--muted);margin:16px 0;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
-dialog input,dialog select,dialog textarea{display:block;width:100%;background:var(--bg);border:1px solid var(--line-2);padding:12px;color:var(--ink);font-size:14px;margin-top:8px;resize:vertical;border-radius:2px;font-family:var(--sans);letter-spacing:0;text-transform:none}
-dialog form .btn{width:100%;margin:6px 0 16px}
-dialog .micro{margin-top:16px}
-.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:#fff;color:#0a0a0a;box-shadow:0 8px 40px rgba(0,0,0,.5);padding:12px 20px;font:12px var(--mono);max-width:calc(100% - 32px);z-index:100;opacity:0;pointer-events:none;transition:.25s;border-radius:2px}
-.toast.active{opacity:1;transform:translate(-50%,0)}
-.noscript{background:#222;padding:20px;text-align:center;font-size:14px}
-.motion-paused *,.reduce-motion *{animation-play-state:paused!important}
-.reveal{opacity:1;transform:none}
-.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.js .reveal.visible{opacity:1;transform:none}
-
-/* ===== Responsive ===== */
-@media(min-width:761px){.step-copy{background:linear-gradient(90deg,rgba(10,10,10,.92) 70%,rgba(10,10,10,0));padding-right:40px}.hero .step-copy{background:none;padding-right:0}}
-@media(min-width:761px){.build-steps article:not(.focus){opacity:.42}.build-steps:not(.has-focus) article{opacity:1}}
-@media(max-width:1180px){.frame-lines{display:none}.section-inner{padding-inline:0}.section-inner:before{display:none}.scene-step>.wrap{padding-inline:0}.scroll-cue{left:var(--gutter)}.cta-band .wrap>div{padding-inline:clamp(24px,4vw,40px)}.footer-inner{padding-inline:0}.site-header nav{gap:22px;margin-left:30px}.step-copy{width:40%}.hero .step-copy{width:50%}.scene-tag{left:58%}.section-head{grid-template-columns:1fr;gap:22px}.calculator{grid-template-columns:1fr 1.2fr}.footer-grid{grid-template-columns:1fr 1fr}.build-grid{grid-template-columns:1fr;gap:40px}.accordion{grid-template-columns:1fr;gap:18px}.horizon-copy{grid-template-columns:1fr;gap:40px}.team-row{grid-template-columns:1fr 1fr}.team-row .btn{grid-column:1/-1;justify-self:start}}
-@media(max-width:900px){.scene-controls button span{display:none}.scene-controls button{padding:0 10px}.callout{grid-template-columns:1fr;gap:18px}.callout>b{font-size:64px}.note{grid-template-columns:1fr;gap:12px}.cta-band .wrap>div{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:22px 0}.stat:last-child{border-bottom:0}.global-flow{grid-template-columns:1fr;gap:44px}.flow-branches{grid-template-columns:1fr 1fr;gap:12px}.calculator{grid-template-columns:1fr}}
-@media(max-width:760px){
-  :root{--header:62px}
-  .site-header nav,.header-cta{display:none}
-  .wordmark{font-size:12px;letter-spacing:.2em}
-  .menu-toggle{display:flex;flex-direction:column;gap:6px;padding:12px 0 12px 16px}
-  .menu-toggle span{width:22px;height:1px;background:var(--ink)}
-  .scene-step{min-height:780px;height:112svh;align-items:flex-start;padding:calc(var(--header) + 40px) var(--gutter) 0}
-  .machine-stage{height:100svh;min-height:660px}
-  .step-copy,.hero .step-copy{width:100%;max-width:480px}
-  .step-copy{background:linear-gradient(180deg,rgba(10,10,10,.97) 82%,rgba(10,10,10,0));padding-bottom:44px}
-  .hero-meta{display:none}
-  .hero h1{font-size:clamp(40px,11.5vw,60px);margin:18px 0 18px}
-  .hero .lead{font-size:16px;margin-bottom:22px}
-  .hero-meta{margin-top:24px}
-  .scene-area{left:-12%;right:-12%;top:47%;bottom:4%;pointer-events:auto;mask-image:linear-gradient(transparent,#000 24%,#000 94%,transparent);-webkit-mask-image:linear-gradient(transparent,#000 24%,#000 94%,transparent)}
-  .scene-atmosphere{background:radial-gradient(ellipse at 55% 78%,rgba(255,255,255,.05),transparent 58%)}
-  .scene-atmosphere:after{display:none}
-  .scene-topline{left:var(--gutter);right:var(--gutter);top:calc(var(--header) + 12px)}
-  .scene-mode{display:none}
-  .scene-bottomline{left:var(--gutter);right:var(--gutter);bottom:58px}
-  .scene-readout{font-size:9px}.stage-dots i{width:16px}
-  .scene-disclaimer{left:var(--gutter);right:var(--gutter);bottom:14px;font-size:9px;line-height:1.5}
-  .scene-controls button{height:30px;padding:0 8px;font-size:9px}
-  .scene-tag,.track-label{display:none!important}
-  .scroll-cue{display:none}
-  .step-copy h2{font-size:34px;margin-bottom:16px}
-  .step-copy>.lead{font-size:16px;margin-bottom:10px}
-  .step-copy>p:not(.eyebrow):not(.lead):not(.micro){font-size:13.5px}
-  .step-copy .eyebrow{margin-bottom:14px}
-  .points,.fusion,.waveform,.metric-grid{margin-top:16px}
-  .points>div{padding:9px 0;font-size:12px}
-  .waveform{height:70px}
-  .section-inner{padding-block:60px}
-  .section-head{gap:18px}
-  h2.serif{font-size:38px}
-  .stat b{font-size:56px}
-  .global-flow{gap:36px}.flow-node{padding:16px 16px}.flow-node strong{font-size:34px}.flow-branches{grid-template-columns:1fr;gap:10px}
-  .calculator-results{padding:22px 18px}
-  .result-big strong{font-size:48px}
-  .two-input{grid-template-columns:1fr;gap:0}
-  .blueprint{padding:16px}
-  .horizon-visual{height:300px}
-  .team-row{grid-template-columns:1fr;gap:26px}
-  .footer-grid{grid-template-columns:1fr;gap:28px}
-  .cta-band h2{font-size:32px}
-  dialog{padding:26px}
-}
-@media(max-height:720px) and (min-width:761px){.scene-step{min-height:620px;padding-top:calc(var(--header) + 4px)}.hero h1{font-size:48px;margin:14px 0 16px}.step-copy h2{font-size:34px;margin-bottom:14px}.step-copy .eyebrow{margin-bottom:12px}.step-copy>.lead{font-size:16px}.points>div{padding:8px 0}.waveform{height:70px;margin-top:16px}.metric-grid{margin-top:16px}.scene-bottomline{bottom:26px}.scene-disclaimer{bottom:8px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js .reveal,.step-copy{opacity:1;transform:none}}
-@media print{.site-header,.machine-stage,.scene-controls,.scroll-cue,dialog,.horizon-visual,.frame-lines{display:none!important}body{background:white;color:black}.machine-story{display:block}.section,.machine-story,footer{background:white}.scene-step{height:auto;min-height:0;padding:25px 0}.step-copy,.hero .step-copy{width:100%;max-width:none;opacity:1;transform:none;background:none}.section-inner{padding:30px 0}.story-panels{pointer-events:auto}h1,h2{font-size:30px}p{color:#333}.source-list a{color:#000}.calculator-results,.number-field input{background:white;color:black}}
-/* Saved model replay stays separate from the six-stage animated concept. */
-#vision-demo .vision-demo-player{margin-top:36px;border:1px solid var(--line);background:var(--panel)}
-#vision-demo video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b141b}
-#vision-demo figcaption{padding:16px 20px;font-size:12px;color:var(--muted);line-height:1.6}
-#vision-demo figure{margin-inline:0}
-#vision-demo .vision-demo-scores{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:24px}
-#vision-demo .vision-demo-score{padding:24px;min-width:0}
-#vision-demo .vision-demo-score+div{border-left:1px solid var(--line)}
-#vision-demo .vision-demo-score strong{display:block;font-size:clamp(30px,4vw,48px);font-weight:400;letter-spacing:-.04em;margin:8px 0}
-#vision-demo .vision-demo-score p{font-size:13px;line-height:1.7}
-#vision-demo .vision-demo-score .label{font-size:10px}
-#vision-demo .vision-demo-note{font-size:13px;margin-top:20px;max-width:900px}
-#vision-demo .vision-demo-credits{font-size:11px;margin-top:20px;line-height:1.8}
-#vision-demo .vision-demo-credits a{color:var(--accent-text)}
-@media(max-width:760px){#vision-demo .vision-demo-scores{grid-template-columns:1fr}#vision-demo .vision-demo-score+div{border-left:0;border-top:1px solid var(--line)}#vision-demo .vision-demo-score{padding:20px}#vision-demo .section-foot{align-items:flex-start;flex-direction:column}#vision-demo .btn{white-space:normal;height:auto;min-height:48px;text-align:center}#vision-demo figcaption{padding:14px}}
-  </style>
-  <link rel="stylesheet" href="engineering/conveyor-viewer.css">
-</head>
-<body>
-<a class="skip" href="#opportunity">Skip 3D tour and read the evidence</a>
-<div class="frame-lines" aria-hidden="true"></div>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="wordmark" href="./" aria-label="Ferrosift home"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 7H31L26 12H4zm0 9h21l-5 5H4zm0 9h11l-5 5H4z" fill="currentColor"/></svg>Ferrosift</a>
-    <nav aria-label="Main navigation"><a href="#machine">The machine</a><a href="#opportunity">Opportunity</a><a href="#economics">Economics</a><a href="#roadmap">The build</a><a href="#horizon">Horizon</a></nav>
-    <button class="btn header-cta" data-contact>Build with us</button>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button>
-  </div>
-</header>
-<div id="mobile-nav" class="mobile-nav" hidden><a href="#machine">The machine</a><a href="#opportunity">Opportunity</a><a href="#economics">Economics</a><a href="#roadmap">The build</a><a href="#horizon">Horizon</a><a href="#sources">Sources</a><button data-contact>Build with us →</button></div>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11161c"><meta name="description" content="Ferrosift engineering review: parametric conveyor concept, recorded computer vision evidence, proposed R&D workstreams and explicit economic assumptions. Prototype design; hardware unvalidated.">
+<title>Engineering Explorer — Ferrosift</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="engineering/conveyor-viewer.css"><link rel="stylesheet" href="explorer-investor.css"><link rel="stylesheet" href="economics.css">
+</head><body class="investor-explorer">
+<a class="skip" href="#vision-demo">Skip the 3D tour</a>
+<header class="site-header"><div class="header-inner"><a class="wordmark" href="./" aria-label="Ferrosift home">FERROSIFT<span class="wordmark-mark" aria-hidden="true"></span></a><a class="header-context" href="#machine">Engineering Explorer</a><nav aria-label="Explorer sections"><a href="#machine" class="active">Machine</a><a href="#vision-demo">Evidence</a><a href="#teams">R&amp;D</a><a href="#economics">Economics</a><a href="#engineering-downloads">Files</a></nav><span class="review-label">Review v01 · 14 Oct 2026</span><button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">Menu <span>+</span></button></div><div class="tour-progress" aria-hidden="true"><span id="tour-progress-bar"></span></div></header>
+<nav id="mobile-nav" class="mobile-nav" aria-label="Mobile explorer sections" hidden><a href="#machine">Machine</a><a href="#vision-demo">Recorded evidence</a><a href="#teams">Proposed R&amp;D</a><a href="#economics">Economics</a><a href="#engineering-downloads">Engineering files</a><a href="./">Ferrosift home ↗</a></nav>
 <main id="top">
 <div id="machine" class="machine-story">
   <div class="machine-stage">
     <div class="scene-atmosphere"></div>
-    <div class="scene-area"><canvas id="machine-canvas" role="img" aria-label="Named 3D assembly of the proposed PCB recovery conveyor. Drag or use arrow keys to orbit; plus and minus zoom."></canvas><svg id="assembly-overlay" class="assembly-overlay" aria-hidden="true"></svg><div id="webgl-fallback" hidden><img class="assembly-fallback-svg" src="engineering/conveyor-schematic.svg" alt="Process schematic: metering, RGB, induction, encoder timing, airjet target/balance split, then balance-window review gate."><p>Accessible process schematic · Concept only</p><a href="engineering/#design-basis">Read the dimensions and design basis →</a><p class="assembly-error" id="assembly-error-detail"></p></div></div>
-    <div class="scene-topline"><span class="label"><i class="status-dot"></i>FS–01 · Conveyor study</span><span class="label scene-mode" id="scene-mode">ASSEMBLY VIEW</span></div>
+    <div class="scene-area"><canvas id="machine-canvas" role="img" aria-label="Named 3D assembly of the proposed PCB recovery conveyor. Drag or use arrow keys to orbit; plus and minus zoom."></canvas><svg id="assembly-overlay" class="assembly-overlay" aria-hidden="true"></svg><div id="webgl-fallback" hidden><img class="assembly-fallback-svg" src="engineering/conveyor-schematic.svg" alt="Process schematic: metering, RGB, induction, encoder timing, airjet target/balance split, then balance-window review gate."><p>Accessible process schematic · Concept only</p><a href="#design-basis">Read the dimensions and design basis →</a><p class="assembly-error" id="assembly-error-detail"></p></div></div>
+    <div class="scene-topline"><span class="label"><i class="status-dot"></i>FS–01 / Engineering review</span><span class="label scene-mode" id="scene-mode">ASSEMBLY VIEW</span></div>
     <div class="scene-tag" id="scene-tag"><span class="tag-cross"></span><span id="scene-tag-text">Integrated sensing. Coordinated action.</span></div>
     <nav class="view-presets" aria-label="Camera close-ups"><button data-view="0" aria-pressed="true">Overview</button><button data-view="1" aria-pressed="false">Optical</button><button data-view="2" aria-pressed="false">Induction</button><button data-view="3" aria-pressed="false">Tracking</button><button data-view="4" aria-pressed="false">Routing</button></nav>
     <div class="scene-bottomline"><div class="scene-readout"><span id="stage-number">00 / 05</span><span id="stage-name">SYSTEM OVERVIEW</span><div class="stage-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="scene-controls" aria-label="3D controls"><button id="motion-toggle" aria-pressed="false" title="Pause illustrative motion">Ⅱ <span>Pause</span></button><button id="reset-view" aria-label="Reset 3D camera">↺ <span>Reset view</span></button></div></div>
-    <details class="assembly-inspector"><summary>Inspect <span aria-hidden="true">+</span></summary><div class="assembly-inspector-body"><h2>View tools</h2><div class="assembly-tool-grid"><button id="explode-toggle" aria-pressed="false">Explode</button><button id="section-toggle" aria-pressed="false">Section</button><button id="dimensions-toggle" aria-pressed="false">Dimensions</button><button id="service-toggle" aria-pressed="false">Service space</button><button id="annotation-toggle" aria-pressed="false">Route labels</button><button id="orbit-toggle" aria-pressed="true">Orbit</button></div><label for="component-select">Component</label><select id="component-select"><option value="">All components</option></select><p id="component-detail">Device envelopes do not reproduce manufacturer internals.</p><details class="assembly-panel-section"><summary>Visible subsystems</summary><div id="category-controls" class="assembly-categories"></div></details><details class="assembly-panel-section"><summary>Motion study</summary><label class="assembly-speed-label" for="belt-speed"><span>Study speed</span><output id="belt-speed-value" for="belt-speed">1.00 m/s</output></label><input id="belt-speed" type="range" min="0.5" max="2" step="0.05" value="1"><p id="kinematic-readout"></p><p id="routing-phase" class="assembly-routing">Illustrative group/window routing</p><p id="review-tally">Illustrative review assignments: 0 markers · 0 candidate neighbours</p><p>Markers: blue target candidate · gray balance · amber entire review group, including candidate neighbours.</p><p>Calculated travel only. No demonstrated latency or throughput.</p><p>Colored markers and routing windows are explanatory, not PCB inference, tested trajectories or control timings.</p></details><details class="assembly-panel-section"><summary>Geometry &amp; evidence</summary><p id="assembly-status" class="assembly-status" role="status">Loading assembly…</p><a class="assembly-link" href="engineering/">Full assembly workbench →</a><a class="assembly-link" href="engineering/#engineering-downloads">CAD &amp; drawings →</a><a class="assembly-link" href="engineering/#design-basis">Design basis &amp; limitations →</a></details><p class="assembly-input-hint">Drag to orbit · Ctrl+scroll or + / − to zoom</p></div></details>
+    <details class="assembly-inspector"><summary>Inspect <span aria-hidden="true">+</span></summary><div class="assembly-inspector-body"><h2>View tools</h2><div class="assembly-tool-grid"><button id="explode-toggle" aria-pressed="false">Explode</button><button id="section-toggle" aria-pressed="false">Section</button><button id="dimensions-toggle" aria-pressed="false">Dimensions</button><button id="service-toggle" aria-pressed="false">Service space</button><button id="annotation-toggle" aria-pressed="false">Route labels</button><button id="orbit-toggle" aria-pressed="true">Orbit</button></div><label for="component-select">Component</label><select id="component-select"><option value="">All components</option></select><p id="component-detail">Device envelopes do not reproduce manufacturer internals.</p><details class="assembly-panel-section"><summary>Visible subsystems</summary><div id="category-controls" class="assembly-categories"></div></details><details class="assembly-panel-section"><summary>Motion study</summary><label class="assembly-speed-label" for="belt-speed"><span>Design belt speed</span><output id="belt-speed-value" for="belt-speed">1.00 m/s</output></label><input id="belt-speed" type="range" min="0.5" max="2" step="0.05" value="1"><p id="kinematic-readout"></p><p id="routing-phase" class="assembly-routing">Illustrative group/window routing</p><p id="review-tally">Illustrative review assignments: 0 markers · 0 candidate neighbours</p><p>Markers: blue target candidate · gray balance · amber entire review group, including candidate neighbours.</p><p><strong>Capture hold:</strong> No operating speed or full-width no-jet capture route is approved. The route paths are schematic; the 1.5 m/s outer-lane point-path check overflies the receiving wall.</p><p>Calculated travel only. Independent of recorded video playback; no demonstrated latency or throughput.</p><p>Colored markers and routing windows are explanatory, not PCB inference, tested trajectories or control timings.</p></details><details class="assembly-panel-section"><summary>Geometry &amp; evidence</summary><p id="assembly-status" class="assembly-status" role="status">Loading assembly…</p><a class="assembly-link" href="#engineering-downloads">Engineering files →</a><a class="assembly-link" href="#engineering-downloads">CAD &amp; drawings →</a><a class="assembly-link" href="#design-basis">Design basis &amp; limitations →</a></details><p class="assembly-input-hint">Drag to orbit · Ctrl+scroll or + / − to zoom</p></div></details>
     <p id="focus-note" class="assembly-focus-note" hidden></p>
     <div class="scene-disclaimer">Concept design · Illustrative motion · Unvalidated hardware</div>
   </div>
   <div class="story-panels">
     <section class="scene-step hero in-view" data-stage="0">
       <div class="wrap"><div class="step-copy">
-        <p class="eyebrow">00 / Conveyor concept</p>
-        <h1>PCB recovery study.</h1>
-        <p class="lead">A proposed recovery stage for PCB-rich fragments in already depolluted, screened electronic scrap.</p>
-        <div class="hero-actions"><a class="link" href="engineering/">Open full viewer <span>↗</span></a></div>
+        <p class="eyebrow">Design study / Revision 01</p>
+        <h1>Better decisions.<br> On the belt.</h1>
+        <p class="lead">A modular recovery concept for screened electronic scrap. Explore how sensing, tracking and physical separation fit together.</p>
+        <p class="tour-status"><span class="status-pill concept">CAD concept</span><span>Hardware unvalidated</span></p><div class="hero-actions"><a class="link" href="#engineering-downloads">Engineering files <span>↗</span></a></div>
 
       </div></div>
       <div class="scroll-cue">Scroll to inspect the line <span>↓</span></div>
@@ -464,7 +35,7 @@ dialog .micro{margin-top:16px}
     <section id="vision" class="scene-step" data-stage="1"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">01 / Computer vision</p>
       <h2>Optical inspection.</h2>
-      <p class="lead">Controlled appearance evidence.</p>
+      <p class="lead">Give the camera a repeatable view.</p><button class="text-action" data-topic="optical">Inspect optical geometry <span>↗</span></button>
       <details class="story-detail"><summary>Design notes</summary><div>
       <p>The optical bay reserves controlled lighting, RGB and an optional depth mount. A new PCB dataset and validated coverage are still needed; the 400 mm optical footprint is an example within a 600 mm belt.</p>
       <div class="points"><div><b>Detect</b><span>Find each piece on the moving belt.</span></div><div><b>Classify</b><span>Score what it looks like — not what it is made of.</span></div><div><b>Track</b><span>Test object association through sensing and ejection.</span></div></div>
@@ -475,17 +46,17 @@ dialog .micro{margin-top:16px}
     <section id="sensing" class="scene-step" data-stage="2"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">02 / Inductive sensing</p>
       <h2>Induction cassette.</h2>
-      <p class="lead">A second, independent kind of evidence.</p>
+      <p class="lead">Measure response beneath the belt.</p><button class="text-action" data-topic="induction">Inspect the sensing bay <span>↗</span></button>
       <details class="story-detail"><summary>Design notes</summary><div>
       <p>A replaceable induction cassette is reserved beneath a nonconductive window. The study tests whether its response adds useful information to RGB. Gap, coverage and interference remain unvalidated; it cannot assay copper or gold.</p>
       <svg class="waveform" viewBox="0 0 340 100" preserveAspectRatio="none" aria-label="Illustrative oscillating sensor signal"><path class="wave-grid" d="M0 25H340M0 50H340M0 75H340M50 0V100M120 0V100M190 0V100M260 0V100"/><path class="wave-line" d="M0 50Q15 48 25 50T45 50Q50 15 58 50T74 50T90 50T106 50T122 50T138 50T154 50T170 50T186 50Q198 25 210 50Q225 64 240 50T270 50T310 50H340"/></svg>
-      <p class="micro">Size, shape, gap and material all shape the reading. <a class="source-link" href="#source-ti">[02]</a></p>
+      <p class="micro">Illustrative signal trace, not a sensor measurement. Size, shape, gap and material all shape the reading. <a class="source-link" href="#sources">[02]</a></p>
     </div></details>
     </div></div></section>
     <section id="intelligence" class="scene-step" data-stage="3"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">03 / Sensor fusion + control</p>
       <h2>Position &amp; timing.</h2>
-      <p class="lead">Track distance. Bound uncertainty.</p>
+      <p class="lead">Know which piece arrives, and when.</p><button class="text-action" data-topic="tracking">Inspect position and timing <span>↗</span></button>
       <details class="story-detail"><summary>Design notes</summary><div>
       <p>The proposed controller joins image and induction observations in encoder coordinates. The final sensing datum is 1250 mm before the lip: 1.25 seconds of travel at the 1 m/s study reference.</p>
       <div class="fusion"><div class="fusion-in"><span>Vision</span><i>+</i><span>Induction</span><i>+</i><span>Position</span></div><div class="fusion-out"><i>↓</i><b>Destination · Timing</b></div></div>
@@ -495,9 +66,9 @@ dialog .micro{margin-top:16px}
     <section id="sorting" class="scene-step" data-stage="4"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">04 / Physical sorting</p>
       <h2>Routing hardware.</h2>
-      <p class="lead">A target split, then a review window.</p>
+      <p class="lead">Proposed separation · moving capture unresolved.</p><button class="text-action" data-topic="sorting">Inspect the sorting path <span>↗</span></button>
       <details class="story-detail"><summary>Design notes</summary><div>
-      <p>An airjet stage proposes PCB-rich target versus balance. A second gate on the balance chute diverts groups or broad windows to review, after feed inhibit, a verified clear gap and gate-position feedback.</p>
+      <p><strong>Moving-particle capture — design hold.</strong> At a hypothetical 1.5 m/s, a gravity-only point at y=275 mm passes about 70 mm above the converging wall. The surrounding side guards do not collect this interior path. Width checks do not establish capture; displayed speeds and paths are schematic, with no operating speed approved.</p><p>An airjet stage proposes PCB-rich target versus balance. A second gate on the balance chute diverts groups or broad windows to review, after feed inhibit, a verified clear gap and gate-position feedback.</p>
       <div class="points routes"><div><i class="route-dot accent"></i><span><b>01</b> &nbsp;PCB-rich target</span></div><div><i class="route-dot"></i><span><b>02</b> &nbsp;Balance → existing process</span></div><div><i class="route-dot grey"></i><span><b>03</b> &nbsp;Balance-window review</span></div></div>
       <p class="micro">The balance gate cannot recover material already ejected into target. Three bins do not imply three-way per-object sorting or a certified safety function.</p>
     </div></details>
@@ -509,7 +80,7 @@ dialog .micro{margin-top:16px}
       <details class="story-detail"><summary>Design notes</summary><div>
       <p>Weigh input and every output; separate recognition, tracking and actuator errors. Begin with sparse, qualified 12.5–25 mm and 25–50 mm campaigns. The 50–200 kg/h ramp is a proposed trial, not rated capacity.</p>
       <div class="metric-grid"><div><b>Recovery</b><span>Target material captured</span></div><div><b>Purity</b><span>Unwanted material excluded</span></div><div><b>Throughput</b><span>Mass processed per hour</span></div><div><b>Net value</b><span>After all added costs</span></div></div>
-      <a class="link" href="engineering/">Inspect the assembly and design basis <span>→</span></a>
+      <a class="link" href="#engineering-downloads">Read the design basis <span>→</span></a>
     </div></details>
     </div></div></section>
   </div>
@@ -517,12 +88,12 @@ dialog .micro{margin-top:16px}
 
 <section id="vision-demo" class="section" aria-labelledby="vision-demo-title"><div class="wrap"><div class="section-inner">
   <div class="section-head">
-    <p class="eyebrow"><i></i>Computer vision · Saved inference replay</p>
-    <h2 id="vision-demo-title" class="serif">See what the<br>model found.</h2>
+    <p class="eyebrow">01 / Recorded evidence</p>
+    <h2 id="vision-demo-title" class="serif">Show the result.<br>Show the failure.</h2>
     <p>Recorded predictions from the Ferrosift YOLO26s development candidate and an internal YOLO11s reference. Inspect the detections, the misses, and the limits of transferring to unfamiliar images.</p>
   </div>
-  <figure class="vision-demo-player">
-    <video controls playsinline preload="none" poster="model-demo/assets/poster.jpg" aria-label="Saved side-by-side conveyor predictions from YOLO11s and the Ferrosift YOLO26s candidate">
+  <div class="evidence-availability"><span class="status-pill measured">Saved predictions</span><p><strong>One prepared excerpt.</strong> The three available MP4s are comparison, candidate and reference renderings of the same 60 development frames. They are not ten independent test videos.</p></div><figure class="vision-demo-player">
+    <video id="evidence-video" controls playsinline preload="none" poster="model-demo/assets/poster.jpg" aria-label="Saved side-by-side conveyor predictions from YOLO11s and the Ferrosift YOLO26s candidate">
       <source src="model-demo/assets/comparison.mp4" type="video/mp4">
       <p><a href="model-demo/assets/comparison.mp4">Download the recorded comparison.</a></p>
     </video>
@@ -530,139 +101,63 @@ dialog .micro{margin-top:16px}
   </figure>
   <div class="vision-demo-scores" aria-label="Copper annotation recall on two datasets">
     <div class="vision-demo-score"><span class="label">Development conveyor · 1,522 frames</span><strong>93.97%</strong><p>7,081 of 7,535 copper annotations found; 454 missed.<br>361 steel matches and 3 unmatched copper alarms.<br>Internal reference: 85.57% copper recall.</p></div>
-    <div class="vision-demo-score"><span class="label">Phone-photo diagnostic · 232 images</span><strong>1.94%</strong><p>8 of 412 copper annotations found; 404 missed.<br>6 steel matches, 49 unmatched alarms, and 23 other-class matches.<br>The frozen setting transfers poorly to this different source.</p></div>
+    <div class="vision-demo-score"><span class="label">External-domain diagnostic · 232 images</span><strong>1.94%</strong><p>8 of 412 copper annotations found; 404 missed.<br>6 steel matches, 49 unmatched alarms, and 23 other-class matches.<br>Historically exposed images; not an untouched holdout. The frozen setting transfers poorly to this source.</p></div>
   </div>
-  <p class="vision-demo-note">The model and operating point were selected on the development set. Its ≤1% alarm-burden budget is (steel matches + unmatched copper alarms) / steel annotations, not a false-positive rate or physical steel loss. Repeated appearances count as annotations, not unique pieces. These results do not establish plant performance, throughput, or sorting accuracy.</p>
-  <div class="section-foot"><a class="btn" href="model-demo/">Open the detection explorer <span>→</span></a><p class="micro">Saved outputs only · No live inference, camera, or sorting hardware</p></div>
-  <p class="vision-demo-credits">Conveyor images: SteelDS a3 — Neubauer, Rauch, Koinig, Tischberger-Aldrian, Pomberger &amp; Rueckert (2026), <a href="https://doi.org/10.5281/zenodo.20271102" target="_blank" rel="noopener noreferrer">source dataset</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Images resized/recompressed with saved detection overlays. Original authors do not endorse Ferrosift. <a href="model-demo/#evidence">Methods, phone-image credits, and limitations →</a></p>
+  <p class="vision-demo-note">The model and operating point were selected on the development set. The external-domain images were historically exposed and are not an untouched independent holdout. Its ≤1% alarm-burden budget is (steel matches + unmatched copper alarms) / steel annotations, not a false-positive rate or physical steel loss. Repeated appearances count as annotations, not unique pieces. These results do not establish plant performance, throughput, or sorting accuracy.</p>
+  <div class="section-foot"><a class="btn" href="#frame-level-evidence">Inspect saved detections <span>↓</span></a><p class="micro">Saved outputs only · No live inference, camera, or sorting hardware</p></div>
+  <details id="evaluation-methods" class="document-detail evidence-methods"><summary><span>Model lineage, frozen settings &amp; evaluation limits</span><b>+</b></summary><div class="document-body"><p>The candidate is a <strong>fine-tuned Ultralytics YOLO26s</strong> configuration; the comparator is a <strong>fine-tuned Ultralytics YOLO11s internal reference</strong>. This comparison is between the identified development checkpoints, not commercial sorting systems or industry leaders.</p><div class="table-scroll"><table><thead><tr><th>Recorded configuration</th><th>Ferrosift candidate</th><th>Internal reference</th></tr></thead><tbody><tr><td>Model family</td><td>YOLO26s</td><td>YOLO11s</td></tr><tr><td>Frozen copper threshold</td><td>0.8073331713676453</td><td>0.9101877808570862</td></tr><tr><td>Development copper matches</td><td>7,081 / 7,535</td><td>6,448 / 7,535</td></tr><tr><td>Non-copper alarm attribution</td><td>361 steel + 3 unmatched</td><td>364 steel + 1 unmatched</td></tr></tbody></table></div><p>The packaged inference path uses 640-pixel inputs, common class-aware NMS, FP32, CPU and batch size 1 (Ultralytics 8.4.175; confidence floor 0.001, NMS IoU 0.7, maximum 1,000 detections). These are configuration settings, not a measured throughput result.</p><p>Six of 1,528 official validation frames lacked acquired labels and were excluded, leaving 1,522 scored frames. Missing labels were not treated as empty belt. Both thresholds and the candidate configuration were selected using the <strong>1,522-frame SteelDS a3 development set</strong>, with a conservative alarm budget of ≤1% per 36,563 steel annotations. The historical alarm-routing matcher uses class-blind matching for alarm assignment at IoU ≥0.5. Its annotation counts must not be relabeled as AP, standard precision, conventional FPR or physical steel mass loss.</p><p>The 232 ConMetal-6 photos are an <strong>external-domain diagnostic with historical exposure</strong>, not an untouched holdout. Repeated views in conveyor frames are separate annotations, not independently recovered pieces. The complete pretraining/training provenance and group-level split manifest must be reconciled before any new independent benchmark.</p><p>Both panels use the same saved 60-frame development excerpt. Browser playback is 1×; the MP4 encodes a 5 fps presentation. Original capture timing is unverified for this excerpt. Replay speed, inference time and simulated belt speed are separate quantities.</p></div></details>
+<details id="frame-level-evidence" class="evidence-frame-details"><summary>Frame-level evidence <span>Saved images · predictions · annotations</span></summary><div class="frame-lab-intro"><p>Inspect the complete evidence interface below. All detections are saved outputs. The external-domain diagnostic images were historically exposed; they are not an untouched holdout.</p><a href="model-demo/" target="_blank" rel="noopener">Open separately ↗</a></div><iframe data-src="model-demo/" title="Ferrosift recorded detections and annotation evidence" loading="lazy"></iframe></details><p class="vision-demo-credits">Conveyor images: SteelDS a3 — Neubauer, Rauch, Koinig, Tischberger-Aldrian, Pomberger &amp; Rueckert (2026), <a href="https://doi.org/10.5281/zenodo.20271102" target="_blank" rel="noopener noreferrer">source dataset</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Images resized/recompressed with saved detection overlays. Original authors do not endorse Ferrosift. <a href="model-demo/#evidence">Methods, phone-image credits, and limitations →</a></p>
 </div></div></section>
 
-<section id="opportunity" class="section"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>The opportunity · Documented global data</p><h2 class="serif">The value we leave behind.</h2><p>Electronic waste is a material stream. <strong>Better decisions on the belt turn more of it into useful output</strong> — and today, most of it never reaches a documented recycling pathway.</p></div>
-  <div class="stat-row reveal">
-    <div class="stat"><b><span data-count="62">62</span><small>Mt</small></b><p class="label"><i></i>E-waste generated worldwide · 2022 <a class="source-link" href="#source-gem">[01]</a></p></div>
-    <div class="stat"><b><span data-count="22.3" data-decimals="1">22.3</span><small>%</small></b><p class="label"><i></i>Documented formal collection and recycling <a class="source-link" href="#source-gem">[01]</a></p></div>
-    <div class="stat"><b>$<span data-count="91">91</span><small>B</small></b><p class="label"><i class="grey"></i>Metal value embedded in that e-waste · not Ferrosift’s market <a class="source-link" href="#source-gem">[01]</a></p></div>
-  </div>
-  <div class="flow-block reveal">
-    <div class="block-head"><h3>Follow the material.</h3><span class="badge">Published data · rounded derivation</span></div>
-    <div class="global-flow" id="global-flow"><svg class="flow-connectors" aria-hidden="true"></svg><div class="flow-node" data-node="origin"><span class="label">Generated</span><strong>62.0<small>Mt</small></strong><span>Electronic waste · 2022</span></div><div class="flow-branches"><div class="flow-node documented" data-node="formal"><span class="label">22.3%</span><strong>13.8<small>Mt</small></strong><span>Documented formal collection and recycling</span></div><div class="flow-node outside" data-node="outside"><span class="label">77.7% · complement</span><strong>48.2<small>Mt</small></strong><span>Outside that documented formal pathway</span></div></div></div>
-    <p class="figure-note">Rounded from 62 × 22.3% and its complement. The second branch includes multiple pathways; it is <strong>not all landfill, all lost metal, or all recoverable by a sorting machine.</strong> <a href="#source-gem">Source &amp; method →</a></p>
-  </div>
-  <div class="callout reveal"><b>$62B</b><div><p class="eyebrow">A resource gap, not a sales forecast</p><p>The report describes this value of recoverable resources as unaccounted for. Better sorting addresses one part of a much larger collection and processing problem. <a class="source-link" href="#source-gem">[01]</a></p></div></div>
-</div></div></section>
 
+<section class="section evidence-map" id="evidence-status"><div class="wrap"><div class="section-inner">
+<div class="section-head"><p class="eyebrow">Evidence boundary</p><h2>Three different kinds<br>of confidence.</h2><p>A rendered machine, a recorded model result and a financial scenario answer different questions. This review keeps their claims separate.</p></div>
+<div class="status-grid"><article><span class="status-pill measured">Recorded</span><h3>Computer vision outputs</h3><p>Saved predictions and labels support the stated annotation metrics. Development selection and poor transfer on the phone-photo diagnostic remain visible.</p></article><article><span class="status-pill concept">Designed</span><h3>Parametric assembly</h3><p>Named solids, interfaces and service provisions make the design reviewable. They do not establish fabricated hardware, rated capacity or machinery compliance.</p></article><article><span class="status-pill proposed">Proposed</span><h3>Physical and economic results</h3><p>Recovery, purity, continuous throughput, operating cost and customer value require material trials, buyer requirements and measured system performance.</p></article></div>
+</div></div></section>
+<section id="teams" class="section"><div class="wrap"><div class="section-inner">
+<div class="section-head"><p class="eyebrow">02 / Proposed research &amp; development</p><h2>A complete system.<br>Five accountable workstreams.</h2><p>Proposed responsibilities for an engineering program. These cards describe work to fund and validate, not an existing hired team or guaranteed percentage improvement.</p></div>
+<div class="team-grid">
+<details class="team-card"><summary><span class="team-number">01</span><span class="team-icon" aria-hidden="true">◉</span><h3>Induction &amp;<br>electromagnetic sensing</h3><p>Find out what a response adds beyond appearance.</p><span class="card-expand">Research scope <b>+</b></span></summary><div class="team-detail"><dl><dt>Own</dt><dd>Coil experiments, excitation and acquisition, shielding, gap sensitivity, material response and calibration.</dd><dt>Test</dt><dd>Does induction improve the chosen task on unseen samples at the same purity and throughput?</dd><dt>Deliver</dt><dd>Calibrated response data, uncertainty analysis and a selected sensing architecture.</dd></dl><p>Induction senses. Air jets perform the proposed separation. No ECS rotor or hidden-copper assay is claimed.</p></div></details>
+<details class="team-card"><summary><span class="team-number">02</span><span class="team-icon" aria-hidden="true">⌾</span><h3>Computer vision &amp;<br>evaluation</h3><p>Build a dataset that represents the actual feed.</p><span class="card-expand">Research scope <b>+</b></span></summary><div class="team-detail"><dl><dt>Own</dt><dd>Camera and lighting experiments, approved data collection, annotation policy, lineage and split integrity.</dd><dt>Test</dt><dd>How does the frozen model behave on unseen recording sessions, different materials and difficult objects?</dd><dt>Deliver</dt><dd>Reproducible comparisons with misses and false alarms, plus a documented decision policy.</dd></dl><p>The current steel/copper result does not establish PCB recognition. Public-model comparisons are reference experiments, not industry-leader benchmarks.</p></div></details>
+<details class="team-card"><summary><span class="team-number">03</span><span class="team-icon" aria-hidden="true">◎</span><h3>Mechanical design &amp;<br>physical sorting</h3><p>Make a commanded decision become the right output.</p><span class="card-expand">Research scope <b>+</b></span></summary><div class="team-detail"><dl><dt>Own</dt><dd>Feed presentation, belt/drive/tensioning, guards, mounts, air delivery, chutes, service access and hardware selection.</dd><dt>Test</dt><dd>Which qualified objects can be routed reliably, and where do overlap, bounce or jams create failure?</dd><dt>Deliver</dt><dd>Reviewed drawings, measured impulse and routing trials, maintenance procedure and a prototype build plan.</dd></dl><p>Rounded covers and guards in the CAD are design provisions. Loads, drive sizing and competent machinery-safety review remain necessary.</p></div></details>
+<details class="team-card"><summary><span class="team-number">04</span><span class="team-icon" aria-hidden="true">↝</span><h3>Sensing, tracking &amp;<br>controls</h3><p>Keep identity, position and actuation synchronized.</p><span class="card-expand">Research scope <b>+</b></span></summary><div class="team-detail"><dl><dt>Own</dt><dd>Encoder coordinates, clock synchronization, event association, actuator latency and conservative uncertain-group handling.</dd><dt>Test</dt><dd>How much position error and delay can the complete system tolerate before routing fails?</dd><dt>Deliver</dt><dd>Timing budget, fault-injection evidence, logging and a repeatable integration test.</dd></dl><p>Calculated travel time is not a latency measurement. A normal controller or review gate is not a certified safety function.</p></div></details>
+<details class="team-card wide"><summary><span class="team-number">05</span><span class="team-icon" aria-hidden="true">↗</span><h3>Process validation &amp;<br>commercial evidence</h3><p>Close the mass balance before claiming value.</p><span class="card-expand">Research scope <b>+</b></span></summary><div class="team-detail"><dl><dt>Own</dt><dd>Representative feed, weighed inputs and all outputs, independent assay, buyer specifications, operating cost and pilot acceptance criteria.</dd><dt>Test</dt><dd>Does the system recover more copper at matched purity and throughput after every material and operating cost is included?</dd><dt>Deliver</dt><dd>Auditable recovery/purity/throughput measurements and a customer-specific economic case.</dd></dl><p>Workstream gains are coupled. Model them through one end-to-end recovery scenario; do not add separate team percentages.</p></div></details>
+</div>
+<div class="program-gates" id="roadmap"><div><span class="eyebrow">Program gates</span><h3>Advance when the evidence supports it.</h3></div><ol><li><b>01</b><strong>Define the stream</strong><span>Approved samples, task, buyer requirement and evaluation protocol.</span></li><li><b>02</b><strong>Bench the uncertainty</strong><span>Optical, induction, tracking and pneumatic tests in isolation.</span></li><li><b>03</b><strong>Integrate the line</strong><span>Complete sense-to-route path with measured timing and errors.</span></li><li><b>04</b><strong>Prove the balance</strong><span>All outputs weighed and assayed at matched operating constraints.</span></li></ol></div>
+</div></div></section>
 <section id="economics" class="section"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>The economics · Make the assumptions visible</p><h2 class="serif">Every point has a price.</h2><p>Enter your own assumptions to explore a generic target-metal recovery calculation. <strong>Inputs start unknown</strong>; this is not PCB settlement, a return-on-investment model or a comparison with any manufacturer.</p></div>
-  <div class="calculator reveal">
-    <form class="calculator-inputs" id="calculator" autocomplete="off"><h3>Illustrative recovery calculation.</h3><p class="micro">Not PCB settlement or ROI. Supply every input, including explicit zeros for costs that do not apply.</p><label>Eligible material / year <div class="number-field"><input id="annual" type="number" min="0" max="100000000" step="100" value="" placeholder="Unknown"><span>tonnes</span></div></label><div class="two-input"><label>Target-metal content <div class="number-field"><input id="content" type="number" min="0" max="100" step="0.5" value="" placeholder="Unknown"><span>%</span></div></label><label>Net realization <div class="number-field"><span>$</span><input id="price" type="number" min="0" max="1000000" step="100" value="" placeholder="Unknown"><span>/t</span></div></label></div><label class="slider-label">Baseline recovery <output id="baseline-display" for="baseline">—</output><div class="number-field"><input id="baseline" type="number" min="0" max="100" step="0.1" value="" placeholder="Unknown"><span>%</span></div></label><label class="slider-label accent">Proposed recovery <output id="candidate-display" for="candidate">—</output><div class="number-field"><input id="candidate" type="number" min="0" max="100" step="0.1" value="" placeholder="Unknown"><span>%</span></div></label><details class="cost-details" open><summary>Show all assumed costs <span>+</span></summary><label>Annual system / service fee <div class="number-field"><span>$</span><input id="fee" type="number" min="0" max="100000000" step="1000" value="" placeholder="Unknown"></div></label><label>Additional operations / year <div class="number-field"><span>$</span><input id="ops" type="number" min="0" max="100000000" step="1000" value="" placeholder="Unknown"></div></label><label>Downtime, quality &amp; error burden / year <div class="number-field"><span>$</span><input id="risk" type="number" min="0" max="100000000" step="1000" value="" placeholder="Unknown"></div></label><label>One-time installation &amp; validation <div class="number-field"><span>$</span><input id="install" type="number" min="0" max="100000000" step="1000" value="" placeholder="Unknown"></div></label></details><button type="button" id="reset-calculator" class="link reset-link">Clear inputs <span>↺</span></button></form>
-    <div class="calculator-results"><div class="block-head"><h3>Target metal, not total scrap.</h3><span class="label" id="target-total">—</span></div><div class="mass-comparison"><div class="mass-row"><div><span>Baseline</span><b id="baseline-mass">—</b></div><div class="mass-track"><span class="mass-recovered baseline" id="baseline-bar" style="width:0%"></span></div><p><span id="baseline-lost">—</span> of target metal remains outside the recovered output.</p></div><div class="mass-row proposed"><div><span>Proposed</span><b id="candidate-mass">—</b></div><div class="mass-track"><span class="mass-recovered" id="candidate-bar" style="width:0%"></span></div><p><span id="candidate-lost">—</span> of target metal remains outside the recovered output.</p></div></div><div class="result-big" aria-live="polite"><span>First-year scenario result</span><strong id="net-benefit">—</strong><p id="benefit-description">Enter all assumptions to calculate. No measured recovery or financial outcome is available.</p></div><div class="result-breakdown"><div><span>Additional metal</span><b id="added-metal">—</b></div><div><span>Gross incremental contribution</span><b id="gross">—</b></div><div><span>Year-one system burden</span><b id="total-cost">—</b></div><div><span>Recurring net benefit</span><b id="recurring">—</b></div><div><span>Year-one break-even improvement</span><b id="break-even">—</b></div></div><div class="calculator-actions"><button id="export-scenario" disabled class="btn small">Export assumptions <span>↓</span></button><button id="copy-scenario" disabled class="btn small ghost">Copy summary <span>→</span></button></div></div>
-  </div>
-  <details class="method-note reveal"><summary>Read the calculation and its limitations <span>+</span></summary><p>Target metal = annual eligible feed × metal content. Additional metal = target metal × (proposed recovery − baseline recovery). Gross contribution = additional metal × net incremental realization. First-year net = gross contribution − fee − added operations − downtime/quality/error provision − installation. Break-even improvement = total year-one cost ÷ (target metal × net realization), expressed in percentage points.</p><p>This simplified target-metal calculation does not model PCB assay, payability, product-by-product settlement or all-output value. Those are necessary for the proposed PCB concept. Use independently measured target-metal mass and buyer specifications. Whole-object mass is not metal mass. Net realization must account for grade, downstream costs and the value already obtained from residue. Replace every assumption with customer data. Throughput loss, financing, taxes and other costs must be added where applicable; do not count an expense twice. Lower recovery is allowed and produces negative results.</p></details>
+<div class="section-head"><p class="eyebrow">03 / Economic scenario</p><h2>Follow the copper.<br>Then follow the costs.</h2><p>Compare explicit recovery, product-grade and buyer-payability assumptions. Start with matched feed, then test verified-capacity conditions. Every gain remains an editable assumption.</p></div>
+<div id="economics-content" class="economics-slot"><div class="economics-method"><span class="status-pill proposed">Scenario inputs required</span><h3>A mass-balanced model</h3><p>Feed capacity × operating hours × copper grade sets the available copper. Recovery changes where that copper goes; it does not create additional feed.</p><div class="formula-flow"><span>Eligible feed</span><i>×</i><span>Copper grade</span><i>×</i><span>Recovery</span><i>=</i><span>Recovered copper</span></div><p>Value then depends on concentrate purity, buyer payability, realized price, residue value and all incremental costs. Bounding-box recall cannot supply copper kilograms or revenue.</p><p class="micro">Select explicit hypothetical assumptions in the operator calculator. These scenarios do not establish measured performance or company revenue.</p></div></div>
 </div></div></section>
-
-<section id="roadmap" class="section"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>The build · Small first, complete from the start</p><h2 class="serif">Build the line.<br>Prove the value.</h2><p>Not a decorative AI dashboard. <strong>A working path from a piece entering the conveyor to a verified output</strong> — then a disciplined comparison against existing methods.</p></div>
-  <div class="build-grid">
-    <div class="blueprint reveal"><div class="blueprint-head"><span class="label">FS–01 · Process view</span><span class="label">Concept · not to scale</span></div><img src="engineering/conveyor-schematic.svg" style="display:block;width:100%;height:auto" alt="Proposed PCB recovery sequence: spread feed, RGB, induction, airjet target versus balance, then a balance-path group gate to review."><p class="micro">3000 mm sensing deck · 600 mm belt · all dimensions are study assumptions. Actual chutes, windows and safety functions need validation.</p><a class="link" href="engineering/#design-basis">Read the dimension schedule →</a></div>
-    <div class="build-steps reveal">
-      <article><span>1</span><div><h3>See → sort</h3><p>Collect approved samples. Build camera, lighting, tracking and a simple physical sorter.</p><small>First proof: the complete path works.</small><button class="btn small" data-contact>Send us a sample stream <span>→</span></button></div></article>
-      <article><span>2</span><div><h3>Sense → combine</h3><p>Add calibrated induction measurements. Match them to the right objects and compare against vision alone.</p><small>First proof: another sensor adds useful information.</small></div></article>
-      <article><span>3</span><div><h3>Measure → improve</h3><p>Evaluate unseen batches. Measure recovery, purity, throughput, failure cases and economics.</p><small>First proof: a benefit survives all the costs.</small></div></article>
-      <article><span>4</span><div><h3>Partner → repeat</h3><p>Seek a scoped pilot and an independent buyer specification. Validate the next installation separately.</p><small>Commercial milestone, not an existing contract.</small></div></article>
-    </div>
-  </div>
-  <div class="accordion reveal"><details><summary>What goes into the first bench?<span>+</span></summary><p>Small conveyor; overhead camera and lens; fixed lighting; motor and encoder; optional low-power induction evaluation board; laptop and microcontroller; simple servo chute; clean reference pieces; measurement log; physical guarding and emergency stop.</p><p>Planning allowance carried from the working model: <strong>$906–$2,484</strong> for sensing plus a slow sorting demonstrator, including 20% contingency. Not a supplier quote. Excludes labor, taxes, shipping, independent assays and industrial qualification.</p></details><details><summary>What are we competing against?<span>+</span></summary><p>Established sorters already combine vision, electromagnetic sensing and automated ejection. TOMRA NEW FINDER is a direct example. Ferrosift must earn an advantage in measured performance, cost or integration — not claim this combination is unprecedented. <a class="source-link" href="#source-tomra">[03]</a></p></details><details><summary>Where do the safety boundaries sit?<span>+</span></summary><p>Begin with approved, clean, battery-free samples. No shredding, unknown dust, charged components or homemade high-speed rotor. Lab staff review power, guarding and emergency stop. Safety acceptance is physical and human-reviewed — not delegated to AI.</p></details></div>
+<section id="engineering-downloads" class="section"><div class="wrap"><div class="section-inner">
+<div class="section-head"><p class="eyebrow">04 / Engineering review room</p><h2>Open the source.<br>Inspect the assumptions.</h2><p>Editable geometry, interchange files and dimensioned drawings belong to one versioned package. Every drawing is preliminary and intended for design review.</p></div>
+<div class="engineering-layout"><div class="engineering-plate"><div class="plate-label"><span>FS–01</span><span>System architecture / concept</span></div><img src="engineering/conveyor-schematic.svg" alt="Concept process diagram: metered feed, camera, induction, encoder, air jets, and a balance-path review gate."><div class="plate-footer"><span>Optical + inductive evidence</span><span>Encoder-referenced sorting</span></div><p>This process diagram is schematic. Refer to dimensioned drawings for geometry, interfaces and preliminary assumptions.</p></div><div class="file-list" id="engineering-file-list"><a data-file="drawings" href="engineering/downloads/Ferrosift_Investor_Engineering_Drawings_IR01.pdf" target="_blank" rel="noopener"><span class="file-type">PDF</span><span><strong>Engineering drawings</strong><small>10 A3 sheets · actual solid sections · preliminary interfaces</small></span><b>↗</b></a><a data-file="step" href="engineering/downloads/conveyor_assembly.step" download><span class="file-type">STEP</span><span><strong>Solid assembly</strong><small>Interchange geometry for engineering review</small></span><b>↓</b></a><a data-file="mesh" href="engineering/downloads/conveyor_assembly.glb" download><span class="file-type">GLB</span><span><strong>Viewing mesh</strong><small>Named visualization geometry</small></span><b>↓</b></a><a data-file="source" href="engineering/downloads/Ferrosift_Engineering_Source_v01.zip" download><span class="file-type">ZIP</span><span><strong>Editable design source</strong><small>Editable CadQuery model · parameters · source QA</small></span><b>↓</b></a><a data-file="drawing-source" href="engineering/downloads/Ferrosift_Editable_Drawings_and_BOM_IR01.zip" download><span class="file-type">ZIP</span><span><strong>Editable drawings &amp; BOM</strong><small>SVG sheets · projection sources · proposed tolerances</small></span><b>↓</b></a><a data-file="bom" href="engineering/downloads/part_instance_bom.csv" download><span class="file-type">CSV</span><span><strong>Preliminary component schedule</strong><small>494 CAD instances · no supplier quotes or validated masses</small></span><b>↓</b></a><a data-file="tolerances" href="engineering/downloads/proposed_tolerance_register.csv" download><span class="file-type">CSV</span><span><strong>Proposed inspection targets</strong><small>Engineering approval required before fabrication</small></span><b>↓</b></a><a data-file="evidence-audit" href="engineering/downloads/historical_video_evidence_audit.txt" download><span class="file-type">TXT</span><span><strong>Recorded-video evidence audit</strong><small>Source overlap · replay timing · missing independent tests</small></span><b>↓</b></a><a data-file="protocol" href="engineering/downloads/benchmark_verification_contract.json" download><span class="file-type">JSON</span><span><strong>Frozen benchmark requirements</strong><small>Identity · thresholds · fresh-evaluation requirements</small></span><b>↓</b></a><a data-file="manifest" href="engineering/downloads/manifest.json"><span class="file-type">JSON</span><span><strong>Release manifest</strong><small>Export identity and file checksums</small></span><b>↗</b></a></div></div>
+<div id="research-files" class="research-files"><span class="eyebrow">Research &amp; investor materials</span><p>Evidence paper and pitch deck will be linked here after cross-review. Sources and current limitations are available below.</p></div>
+<details id="design-basis" class="document-detail"><summary><span>Design basis &amp; preliminary interfaces</span><b>+</b></summary><div class="document-body"><p>The proposed stage receives already depolluted, dry, liberated and screened electronic scrap after ferrous removal and before a host process's eddy-current separator. Initial campaigns separate 12.5–25 mm and 25–50 mm sieve bands; wire length, mass and shape also need qualification.</p><div class="table-scroll"><table><thead><tr><th>Design datum</th><th>Study value</th><th>Interpretation</th></tr></thead><tbody><tr><td>Active belt</td><td>600 × 3000 mm</td><td>Width × deck length; discharge lip x=3000</td></tr><tr><td>Belt top</td><td>z=1000 mm</td><td>Floor datum z=0</td></tr><tr><td>Camera / induction centre</td><td>x=1300 / 1600 mm</td><td>Device and coverage remain unselected</td></tr><tr><td>Final sensing datum</td><td>x=1750 mm</td><td>1250 mm to discharge lip</td></tr><tr><td>Optical footprint example</td><td>400 mm across belt</td><td>Does not validate full 600 mm belt coverage</td></tr><tr><td>Design speed study</td><td>0.5–2.0 m/s</td><td>1.0 m/s illustration; not a rated operating range</td></tr><tr><td>Initial feed ramp</td><td>50–200 kg/h</td><td>Proposed trial range, not rated capacity</td></tr><tr><td>Side service allowance</td><td>900 mm each side</td><td>Layout reservation, not a compliance clearance</td></tr></tbody></table></div><p><strong>Receiving containment remains unresolved:</strong> the 1.5 m/s outer-lane analytical counterexample overflies the funnel cheek. No full-width no-jet capture or operating-speed claim is supported; receiving geometry and representative-material trials must resolve this hold.</p><p>Air jets propose a target/balance split. A downstream gate can route a broad group or clearing window on the balance path to review. It cannot retrieve material already ejected to target. No three-way per-object accuracy is implied.</p><p>Fabrication release needs selected hardware, drive and structural calculations, tolerance analysis, material and actuator trials, and a competent machinery-safety review. Guards, ports and controls shown in CAD are design provisions.</p></div></details>
+<details class="document-detail"><summary><span>How to read this package</span><b>+</b></summary><div class="document-body"><div class="walkthrough-grid"><article><h3>Start with one piece.</h3><p>The feed spreads material onto a belt. The camera records appearance. Induction may supply a complementary electrical response. Neither alone is a laboratory assay.</p></article><article><h3>Keep its position.</h3><p>The encoder estimates belt travel so the controller can associate measurements with an object and schedule a downstream action. Slip, overlap and delays create uncertainty.</p></article><article><h3>Separate, then measure.</h3><p>An air pulse aims to redirect qualified target pieces. The receiving outputs must be weighed and assayed before recovery, purity or economic benefit can be claimed.</p></article></div></div></details>
 </div></div></section>
-
-<section id="horizon" class="section"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>The long view · A research thesis</p><h2 class="serif">Built on Earth.<br>An eye on orbit.</h2><p>First, build something useful here. <strong>A network of sorting lines could build a permissioned record</strong> of images, electromagnetic responses and verified outcomes — and we want to find out whether any of it transfers beyond recycling.</p></div>
-  <div class="reveal"><div class="horizon-visual"><canvas id="network-canvas" role="img" aria-label="Illustrative network of future sorting installations linked to an orbital research concept, not deployed sites."></canvas><div class="orbital-kicker"><span class="status-dot"></span>Conceptual network · no deployed sites shown</div></div><div class="orbit-title"><span>Ground intelligence</span><span>2040–2045 · aspirational horizon</span><span>New environments</span></div></div>
-  <div class="horizon-copy reveal">
-    <div class="ladder"><article><b>Now</b><div><h3>An integrated conveyor</h3><p>Build and validate the physical sensing-to-sorting loop with approved electronic scrap.</p></div></article><article><b>Next</b><div><h3>A permissioned learning network</h3><p>With partner agreements, study cross-site calibration and reusable models. No customer data is automatically pooled or sold.</p></div></article><article><b>2040</b><div><h3>Investigate transferable models</h3><p>Explore research licensing of permitted datasets, estimation methods or simulation tools. Recycling-to-space transfer is unproven.</p></div></article><article><b>2045</b><div><h3>Explore orbital collaboration</h3><p>Partner on contactless characterization or detumbling only if separate physics, flight validation and customer demand support it.</p></div></article></div>
-    <div class="note"><b>Ambition is not a policy deadline.</b><p>These years are founder-selected horizons, not enacted cleanup mandates or promised launch dates. Eddy-current detumbling is an existing research area; reducing tumble is not the same as capturing or deorbiting debris. Conveyor data alone does not establish a space capability. <a class="source-link" href="#source-orbit">[04]</a></p></div>
-  </div>
-</div></div></section>
-
-<section id="team" class="section team"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>The people · The first milestone</p><h2 class="serif">Two founders.<br>One working line.</h2><p>We’re looking for <strong>useful engineering criticism, approved samples and conversations with recyclers</strong> who can define what a better result is worth.</p></div>
-  <div class="team-row reveal"><div><span class="label">01</span><h3>Tamerlan Goglichidze</h3><p>Yale · hardware, software &amp; integration</p></div><div><span class="label">02</span><h3>Brandon Chang</h3><p>Harvard · applied mathematics &amp; computing</p></div><button class="btn ghost" data-contact>Start a conversation <span>→</span></button></div>
-  <p class="micro">Independent student-founded concept. University names indicate founder affiliation, not endorsement. No customers, investment round or deployed installations are claimed.</p>
-</div></div></section>
-
-<section class="cta-band"><div class="wrap"><div class="reveal"><div><h2>Let’s build something real.</h2><p>Bring us a material stream, a hard engineering question or a buyer specification. We will show you exactly what is assumed and what is measured.</p></div><button class="btn white" data-contact>Build with us <span>→</span></button></div></div></section>
-
-<section id="sources" class="section sources"><div class="wrap"><div class="section-inner">
-  <div class="section-head reveal"><p class="eyebrow"><i></i>Evidence · Open the source</p><h2 class="serif">No mystery numbers.</h2><p>Published context, prototype intentions and hypothetical economics are different kinds of information. <strong>This site labels them separately.</strong></p></div>
-  <div class="source-list reveal"><a id="source-gem" href="https://unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling" target="_blank" rel="noopener noreferrer"><span>01</span><div><h3>Global E-waste Monitor 2024 · UNITAR / ITU</h3><p>2022 generation, formal collection/recycling rate, embedded metal value and unaccounted resources. Rounded flow branches are calculated from the reported rate.</p></div><span>↗</span></a><a id="source-ti" href="https://www.ti.com/lit/snoa957" target="_blank" rel="noopener noreferrer"><span>02</span><div><h3>Inductive sensing design guidance · Texas Instruments</h3><p>Sensor response and practical dependence on target geometry, material and nearby conductive structures.</p></div><span>↗</span></a><a id="source-tomra" href="https://www.tomra.com/en/waste-metal-recycling/products/machines/finder" target="_blank" rel="noopener noreferrer"><span>03</span><div><h3>NEW FINDER · TOMRA</h3><p>Commercial vision, electromagnetic sensing and sorting benchmark. Manufacturer description — not an independent performance comparison.</p></div><span>↗</span></a><a id="source-orbit" href="https://mmrobotics.mech.utah.edu/wp-content/uploads/2024/10/Allen_ISpaRo2024.pdf" target="_blank" rel="noopener noreferrer"><span>04</span><div><h3>Eddy-current detumbling research · University of Utah, 2024</h3><p>Technical context for the long-term research direction. Not evidence that Ferrosift’s data transfers to orbital operations.</p></div><span>↗</span></a></div>
-  <div class="section-foot"><span class="label">Research checked · 04 Oct 2026</span><span class="badge">Prototype intentions ≠ test results</span></div>
-  <details class="method-note reveal"><summary>Website, model and disclosure notes <span>+</span></summary><p>The conveyor viewer loads a named concept assembly and displays its geometry provenance. Study dimensions remain assumptions, not a fabrication release. Colored moving samples, sensor traces and routing windows are scripted explanations, not PCB inference, physical simulation, fabricated hardware or test results. The existing saved steel/copper results remain separate. The orbital network represents no deployed sites. Performance and commercial advantages remain to be established.</p><p>The current PCB recovery layout follows the 13 October 2026 concept research, with a 600 mm belt and 3000 mm sensing deck. It is a first-use-case hypothesis requiring representative feed, physical trials and buyer qualification. <a href="engineering/#design-basis">Read its design basis and primary research links</a>. Published market context is sourced separately above. No confidential draft, raw sample data, analytics or personal email is sent by this site.</p></details>
-</div></div></section>
-</main>
-<footer><div class="wrap"><div class="footer-inner">
-  <div class="footer-grid">
-    <div><a class="wordmark" href="#top"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 7H31L26 12H4zm0 9h21l-5 5H4zm0 9h11l-5 5H4z" fill="currentColor"/></svg>Ferrosift</a><p>An integrated smart conveyor for electronic scrap: computer vision, inductive sensing, one decision and a verified sort. See. Sense. Decide. Sort.</p></div>
-    <div><span class="label">Site</span><a href="#machine">The machine</a><a href="#opportunity">The opportunity</a><a href="#economics">The economics</a><a href="#roadmap">The build</a><a href="#horizon">The horizon</a></div>
-    <div><span class="label">Evidence</span><a href="#sources">Sources</a><a href="#source-gem">Global E-waste Monitor</a><a href="#source-tomra">Competitive benchmark</a><button id="footer-motion">Motion settings</button></div>
-    <div><span class="label">Contact</span><button data-contact>Build with us</button><a href="https://github.com/GTamerlan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 Ferrosift · Concept, not a product</span><span>Student-founded · No customers or installations claimed</span></div>
-</div></div></footer>
-<dialog id="contact-dialog"><button class="dialog-close" aria-label="Close conversation draft">×</button><p class="eyebrow"><i></i>Let’s talk about a real stream</p><h2>Build with us.</h2><p>Prepare a short introduction for the founders. This demo does not submit or store a form.</p><form id="contact-form"><label>Your name<input name="name" required maxlength="100" placeholder="Name / organization"></label><label>What would you like to explore?<select name="topic"><option>Recycler / sample partnership</option><option>Engineering collaboration</option><option>Investment conversation</option><option>General introduction</option></select></label><label>Tell us about it<textarea name="message" maxlength="2000" rows="4" placeholder="Material stream, current process, or a question…" required></textarea></label><button class="btn" type="submit">Copy introduction <span>→</span></button></form><a class="link" href="https://github.com/GTamerlan" target="_blank" rel="noopener noreferrer">Find Tamerlan on GitHub <span>↗</span></a><p class="micro">Copy your introduction and share it directly. No live inbox or backend is connected.</p></dialog>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<noscript><div class="noscript">Animations and the calculator require JavaScript. The explanations and source links remain available.</div></noscript>
-<script src="engineering/conveyor-viewer.js"></script>
-<script src="engineering/conveyor-details.js"></script>
+<section id="sources" class="section sources"><div class="wrap"><div class="section-inner"><div class="section-head"><p class="eyebrow">05 / Source record</p><h2>Evidence has a location.</h2><p>The sources below provide dataset attribution and process context. They do not validate Ferrosift's proposed machine.</p></div><ol class="source-list"><li><span>01</span><div><h3>SteelDS a3</h3><p>Neubauer, Rauch, Koinig, Tischberger-Aldrian, Pomberger &amp; Rueckert (2026). Conveyor images used under CC BY 4.0; resized/recompressed and overlaid with saved predictions. No author endorsement.</p><a href="https://doi.org/10.5281/zenodo.20271102" target="_blank" rel="noopener">Dataset record ↗</a><a href="model-demo/#evidence">Frozen settings, methods and additional image credits ↗</a></div></li><li><span>02</span><div><h3>Sensor sorting process context</h3><p>Commercial descriptions provide precedent for combining appearance, shape and induction measurements. No equivalence to commercial systems or their performance is claimed.</p><a href="https://steinertglobal.com/sorting-systems/sensor-sorting/combined-sensor-sorting-systems/steinert-kssr-cli/" target="_blank" rel="noopener">STEINERT KSS CLI ↗</a><a href="https://www.tomra.com/en-ie/waste-metal-recycling/media-center/news/2022/how-sensorbased-sorting-technology-is-driving-advances-in-e-scrap-recycling" target="_blank" rel="noopener">TOMRA e-scrap process context ↗</a></div></li><li><span>03</span><div><h3>Transfer and object association</h3><p>Williams et al., Sensors 2023, describes sensor research and association challenges in aluminium. It is context for experimentation, not evidence of PCB recovery.</p><a href="https://pure.manchester.ac.uk/ws/portalfiles/portal/277754037/sensors-23-07837.pdf" target="_blank" rel="noopener">Research paper ↗</a></div></li></ol></div></div></section>
+</main><footer><div class="wrap footer-inner"><a class="wordmark" href="./">FERROSIFT</a><p>Engineering review v01 · Unvalidated prototype design</p><a href="#machine">Back to the machine ↑</a><a href="./">Return to landing page ↗</a></div></footer>
+<noscript><p class="noscript">The model requires JavaScript and WebGL. The written design basis, evidence, drawings and source links remain available.</p></noscript>
+<script type="module" src="economics.js"></script>
+<script src="engineering/conveyor-viewer.js"></script><script src="engineering/conveyor-details.js"></script>
 <script>
-/* Site UI, live scenario model and illustrative network. No tracking, backend or API calls. */
 (function(){'use strict';
+const $=id=>document.getElementById(id), scene=window.ferroScene||{update(){},pause(){},orbit(){},explode(){},reset(){}}, reduced=matchMedia('(prefers-reduced-motion: reduce)'); let paused=reduced.matches;
 document.documentElement.classList.add('js');
-const $=id=>document.getElementById(id),reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches;
-const scene=window.ferroScene||{update(){},pause(){},explode(){},orbit(){},reset(){}};
-function toast(text){let el=$('toast');el.textContent=text;el.classList.add('active');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('active'),3500);}
-async function copy(text){try{await navigator.clipboard.writeText(text);}catch{let t=document.createElement('textarea');t.value=text;t.style.cssText='position:fixed;left:-10000px;top:0';document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();if(!ok)throw Error('Clipboard unavailable');}}
-function setPause(value){paused=value;document.body.classList.toggle('motion-paused',paused);scene.pause(paused);$('motion-toggle').setAttribute('aria-pressed',String(paused));$('motion-toggle').innerHTML=paused?'▶ <span>Play</span>':'Ⅱ <span>Pause</span>';window.ferroMotionPaused=paused;}
-setPause(paused);scene.orbit(true);reduced.addEventListener('change',e=>setPause(e.matches));
-$('motion-toggle').addEventListener('click',()=>setPause(!paused));$('footer-motion').addEventListener('click',()=>{setPause(!paused);toast(paused?'Decorative motion paused.':'Decorative motion enabled.');});
-for(const[name,fn]of[['explode',v=>scene.explode(v)],['orbit',v=>scene.orbit(v)]]){const el=$(name+'-toggle');el.addEventListener('click',()=>{const active=el.getAttribute('aria-pressed')!=='true';el.setAttribute('aria-pressed',String(active));fn(active);if(name==='orbit'&&active)toast('Drag the 3D model to rotate. Scroll to continue the tour.');});}
+function pause(v){paused=v;scene.pause(v);$('motion-toggle').setAttribute('aria-pressed',String(v));$('motion-toggle').innerHTML=v?'▶ <span>Play</span>':'Ⅱ <span>Pause</span>';window.ferroMotionPaused=v;}
+pause(paused);scene.orbit(true);$('motion-toggle').addEventListener('click',()=>pause(!paused));reduced.addEventListener('change',e=>pause(e.matches));
+for(const name of ['explode','orbit'])$(name+'-toggle').addEventListener('click',()=>{const el=$(name+'-toggle'),v=el.getAttribute('aria-pressed')!=='true';el.setAttribute('aria-pressed',String(v));scene[name](v);});
 $('reset-view').addEventListener('click',()=>{scene.reset();scene.orbit(true);scene.explode(false);$('orbit-toggle').setAttribute('aria-pressed','true');$('explode-toggle').setAttribute('aria-pressed','false');});
-// Scroll-story focus: each step's copy fades in as it takes the viewport; roadmap steps brighten near the viewport centre.
-const stepFocus=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('in-view',e.isIntersecting)),{threshold:.4});document.querySelectorAll('.scene-step').forEach(el=>stepFocus.observe(el));
-const buildWrap=document.querySelector('.build-steps'),buildSteps=buildWrap?[...buildWrap.querySelectorAll('article')]:[];
-function focusSteps(){if(!buildWrap)return;const wr=buildWrap.getBoundingClientRect();if(wr.bottom<innerHeight*.15||wr.top>innerHeight*.85){buildWrap.classList.remove('has-focus');return;}const mid=innerHeight*.5;let best=null,bd=Infinity;for(const s of buildSteps){const r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-mid);if(d<bd){bd=d;best=s;}}buildSteps.forEach(s=>s.classList.toggle('focus',s===best));buildWrap.classList.add('has-focus');}
-// Section scroll-spy for the header navigation.
-const navLinks=[...document.querySelectorAll('.site-header nav a')];const spy=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const id='#'+e.target.id;navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===id));});},{rootMargin:'-40% 0px -55% 0px'});['machine','opportunity','economics','roadmap','horizon'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
-// Lightweight scroll observers: no scroll-jacking.
-let pending=false;function onScroll(){if(pending)return;pending=true;requestAnimationFrame(()=>{document.querySelector('.site-header').classList.toggle('scrolled',scrollY>30);scene.update();focusSteps();pending=false;});}addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',()=>{scene.update();drawFlow();focusSteps();},{passive:true});onScroll();
-const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');reveal.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
-const counter=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;counter.unobserve(e.target);if(reduced.matches)return;const end=Number(e.target.dataset.count),dec=Number(e.target.dataset.decimals||0),start=performance.now();function tick(t){let p=Math.min(1,(t-start)/1300);e.target.textContent=(end*(1-Math.pow(1-p,3))).toFixed(dec);if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}),{threshold:.8});document.querySelectorAll('[data-count]').forEach(el=>counter.observe(el));
-// Mobile navigation.
-const menu=document.querySelector('.menu-toggle'),nav=$('mobile-nav');menu.addEventListener('click',()=>{let open=nav.hidden;nav.hidden=!open;menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');});nav.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{nav.hidden=true;menu.setAttribute('aria-expanded','false');}));
-// SVG flow links anchored to the actual HTML nodes, responsive on mobile.
-function drawFlow(){const wrap=$('global-flow'),svg=wrap.querySelector('svg'),base=wrap.getBoundingClientRect(),origin=wrap.querySelector('[data-node=origin]').getBoundingClientRect();if(!base.width)return;svg.setAttribute('viewBox',`0 0 ${base.width} ${base.height}`);let mobile=innerWidth<901,s='';for(const[name,color]of[['formal','#2b5bff'],['outside','#6f6f6f']]){let node=wrap.querySelector(`[data-node=${name}]`).getBoundingClientRect(),sx=mobile?origin.left+origin.width/2-base.left:origin.right-base.left,sy=mobile?origin.bottom-base.top:origin.top+origin.height/2-base.top,ex=mobile?node.left+node.width/2-base.left:node.left-base.left,ey=mobile?node.top-base.top:node.top+node.height/2-base.top,d=mobile?`M${sx} ${sy} C${sx} ${sy+29},${ex} ${ey-28},${ex} ${ey}`:`M${sx} ${sy} C${sx+45} ${sy},${ex-45} ${ey},${ex} ${ey}`;s+=`<path class="flow-line" d="${d}" stroke="${color}"/><path class="flow-pulse" d="${d}" stroke="${color}"/>`;}svg.innerHTML=s;}
-new ResizeObserver(drawFlow).observe($('global-flow'));drawFlow();
-// Generic user-entered recovery scenario. Unknown inputs remain null; no PCB ROI claim.
-const defaults={annual:"",content:"",price:"",baseline:"",candidate:"",fee:"",ops:"",risk:"",install:""};
-const money=x=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(x),num=x=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(x);let latest={};
-function calculate(){let a={},missing=[];for(const k of Object.keys(defaults)){const input=$(k),text=input.value.trim(),raw=Number(text),min=Number(input.min||0),max=Number(input.max||1e12);a[k]=text!==''&&Number.isFinite(raw)&&raw>=min&&raw<=max?raw:null;if(a[k]===null)missing.push(k);}const complete=missing.length===0;$('export-scenario').disabled=!complete;$('copy-scenario').disabled=!complete;if(!complete){latest={complete:false,missing,assumptions:a,results:null};for(const id of ['baseline-display','candidate-display','target-total','baseline-mass','candidate-mass','baseline-lost','candidate-lost','net-benefit','gross','total-cost','recurring','added-metal','break-even'])$(id).textContent='—';$('baseline-bar').style.width='0%';$('candidate-bar').style.width='0%';$('benefit-description').textContent='Enter all assumptions to calculate. No measured recovery or financial outcome is available.';document.querySelector('.result-big').classList.remove('negative');return latest;}let target=a.annual*a.content/100,baseline=target*a.baseline/100,candidate=target*a.candidate/100,added=candidate-baseline,gross=added*a.price,ongoing=a.fee+a.ops+a.risk,burden=ongoing+a.install,net=gross-burden,recurring=gross-ongoing,pp=target*a.price?burden/(target*a.price)*100:null;latest={complete:true,missing:[],assumptions:a,results:{targetMetalTonnes:target,baselineRecoveredTonnes:baseline,candidateRecoveredTonnes:candidate,additionalMetalTonnes:added,grossAnnualContribution:gross,yearOneCost:burden,yearOneNetBenefit:net,recurringNetBenefit:recurring,yearOneBreakEvenPercentagePoints:pp}};
-$('baseline-display').textContent=a.baseline+'%';$('candidate-display').textContent=a.candidate+'%';$('target-total').textContent=num(target)+' t / year';$('baseline-mass').textContent=num(baseline)+' t recovered';$('candidate-mass').textContent=num(candidate)+' t recovered';$('baseline-lost').textContent=num(target-baseline)+' t';$('candidate-lost').textContent=num(target-candidate)+' t';$('baseline-bar').style.width=a.baseline+'%';$('candidate-bar').style.width=a.candidate+'%';$('net-benefit').textContent=money(net);$('gross').textContent=money(gross)+'/year';$('total-cost').textContent=money(burden);$('recurring').textContent=money(recurring)+'/year';$('added-metal').textContent=(added>0?'+':'')+num(added)+' t/year';$('break-even').textContent=pp===null?'Not defined with zero target value':num(pp)+' percentage points';$('benefit-description').textContent=net>0?'Positive in this assumed scenario. Not a measured saving.':net<0?'Negative in this scenario. The added benefit does not cover the costs.':'Break-even in this assumed scenario. Not a measured result.';document.querySelector('.result-big').classList.toggle('negative',net<0);return latest;}
-$('calculator').addEventListener('input',calculate);$('calculator').addEventListener('submit',e=>e.preventDefault());$('reset-calculator').addEventListener('click',()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);calculate();toast('Inputs cleared. Results remain unknown until all assumptions are supplied.');});calculate();
-function scenarioText(){let a=latest.assumptions,r=latest.results;return`FERROSIFT — USER-ENTERED RECOVERY SCENARIO, NOT PERFORMANCE DATA OR PCB SETTLEMENT/ROI\nFeed: ${num(a.annual)} t/year; target metal: ${a.content}%; baseline recovery: ${a.baseline}%; proposed: ${a.candidate}%.\nNet incremental realization: ${money(a.price)}/recovered tonne.\nAdditional recovered target metal: ${num(r.additionalMetalTonnes)} t/year.\nGross incremental contribution: ${money(r.grossAnnualContribution)}/year.\nAnnual fee: ${money(a.fee)}; operations: ${money(a.ops)}; downtime/quality/errors: ${money(a.risk)}; one-time installation: ${money(a.install)}.\nFirst-year net benefit: ${money(r.yearOneNetBenefit)}. Recurring net: ${money(r.recurringNetBenefit)}/year.\nReplace all assumptions with verified customer data. Whole-object mass is not target-metal mass. Additional real costs may apply.`;}
-$('copy-scenario').addEventListener('click',async()=>{if(!latest.complete)return;try{await copy(scenarioText());toast('Scenario and its assumptions copied.');}catch{toast('Clipboard blocked. Use Export assumptions instead.');}});
-$('export-scenario').addEventListener('click',()=>{if(!latest.complete)return;let out={title:'Ferrosift user-entered recovery scenario',disclosure:'User-entered assumptions only. Not measured performance, PCB settlement, ROI or investment advice.',units:'USD, metric tonnes, annual period',...latest,formula:'feed * metalContent/100 * (proposed-baseline)/100 * netRealization - fee - operations - errorBurden - installation'};let blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ferrosift-scenario.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Scenario exported with all assumptions.');});
-// A real draft interaction, not a fake contact submission.
-const dialog=$('contact-dialog');let priorFocus=null;document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',()=>{priorFocus=b;dialog.showModal();}));document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){let r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});dialog.addEventListener('close',()=>priorFocus?.focus());$('contact-form').addEventListener('submit',async e=>{e.preventDefault();let f=new FormData(e.target),text=`Hello Tamerlan and Brandon,\n\nI'm ${f.get('name')}. I'd like to discuss: ${f.get('topic')}.\n\n${f.get('message')}\n\nSent as an introduction about Ferrosift.`;try{await copy(text);toast('Introduction copied. Nothing was submitted or stored.');}catch{toast('Clipboard blocked by this browser; please copy your message manually.');}});
-// Conceptual network: Earth-like wire globe and symbolic lines. No real installations or geography.
-const net=$('network-canvas'),ctx=net.getContext('2d');let nt=0,lastNet=0,netVisible=false;new IntersectionObserver(es=>netVisible=es[0].isIntersecting,{rootMargin:'100px'}).observe(net);
-let stars=Array.from({length:95},(_,i)=>[Math.sin(i*129.7)*.5+.5,Math.cos(i*77.3)*.5+.5,(i%4+1)*.3]);
-function networkFrame(t){requestAnimationFrame(networkFrame);if(!netVisible||document.hidden)return;let dt=Math.min((t-(lastNet||t))/1000,.08);lastNet=t;if(!paused)nt+=dt;let d=Math.min(devicePixelRatio||1,1.6),w=net.clientWidth,h=net.clientHeight;if(net.width!==Math.round(w*d)||net.height!==Math.round(h*d)){net.width=Math.round(w*d);net.height=Math.round(h*d);}ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);let cx=w*.52,cy=h*.44,r=Math.min(h*.36,w*.27);for(const[x,y,s]of stars){ctx.fillStyle=`rgba(255,255,255,${.08+s*.1})`;ctx.fillRect(x*w,y*h*.88,s,s);}let glow=ctx.createRadialGradient(cx,cy,r*.4,cx,cy,r*1.55);glow.addColorStop(0,'rgba(43,91,255,.10)');glow.addColorStop(.72,'rgba(43,91,255,.05)');glow.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=glow;ctx.fillRect(cx-r*1.6,cy-r*1.6,r*3.2,r*3.2);let planet=ctx.createRadialGradient(cx-r*.32,cy-r*.38,r*.05,cx,cy,r);planet.addColorStop(0,'#1f1f22');planet.addColorStop(.6,'#151517');planet.addColorStop(1,'#0c0c0d');ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fillStyle=planet;ctx.fill();
-let rot=nt*.045;function project(lat,lon){let x=Math.cos(lat)*Math.cos(lon+rot),z=Math.cos(lat)*Math.sin(lon+rot),y=Math.sin(lat),tilt=.28,Y=y*Math.cos(tilt)-z*Math.sin(tilt),Z=y*Math.sin(tilt)+z*Math.cos(tilt);return[cx+x*r,cy+Y*r,Z];}
-ctx.lineWidth=.65;for(let lat=-1.25;lat<=1.26;lat+=.25){ctx.beginPath();for(let j=0;j<=160;j++){let p=project(lat,j/160*Math.PI*2);if(p[2]>-.08){if(j===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1]);}else ctx.moveTo(p[0],p[1]);}ctx.strokeStyle='rgba(255,255,255,.16)';ctx.stroke();}for(let lon=0;lon<Math.PI*2;lon+=Math.PI/12){ctx.beginPath();for(let j=0;j<=70;j++){let p=project(-Math.PI/2+j/70*Math.PI,lon);if(p[2]>0)ctx.lineTo(p[0],p[1]);else ctx.moveTo(p[0],p[1]);}ctx.strokeStyle='rgba(255,255,255,.12)';ctx.stroke();}
-ctx.beginPath();ctx.ellipse(cx,cy,r*1.72,r*.35,-.28,0,Math.PI*2);ctx.strokeStyle='rgba(255,255,255,.28)';ctx.lineWidth=1;ctx.stroke();let a=nt*.13-.9,sx=cx+Math.cos(a)*r*1.72,sy=cy+Math.sin(a)*r*.35-Math.cos(a)*r*.47;ctx.save();ctx.translate(sx,sy);ctx.rotate(.3);ctx.fillStyle='#e6e6e6';ctx.fillRect(-5,-4,10,8);ctx.strokeStyle='#8a8a8a';ctx.strokeRect(-22,-6,13,12);ctx.strokeRect(9,-6,13,12);ctx.restore();
-const sites=w<640?3:5;for(let i=0;i<sites;i++){let px=w*(sites===3?.2+i*.3:.1+i*.2),py=h*.87-Math.sin(i*.8)*9;ctx.beginPath();ctx.moveTo(px,py-15);ctx.quadraticCurveTo(px,cy+r*.95,cx+(i-2)*r*.22,cy+r*.5);ctx.strokeStyle='rgba(43,91,255,.35)';ctx.stroke();let p=(nt*.25+i*.19)%1,px2=(1-p)*(1-p)*px+2*(1-p)*p*px+p*p*(cx+(i-2)*r*.22),py2=(1-p)*(1-p)*(py-15)+2*(1-p)*p*(cy+r*.95)+p*p*(cy+r*.5);ctx.beginPath();ctx.arc(px2,py2,1.6,0,Math.PI*2);ctx.fillStyle='#2b5bff';ctx.fill();ctx.strokeStyle='#8a8a8a';ctx.lineWidth=1;ctx.strokeRect(px-19,py-8,38,9);ctx.beginPath();ctx.moveTo(px-14,py+1);ctx.lineTo(px-14,py+8);ctx.moveTo(px+14,py+1);ctx.lineTo(px+14,py+8);ctx.stroke();ctx.fillStyle='#8a8a8a';ctx.font='7px monospace';ctx.textAlign='center';ctx.fillText('LINE '+String.fromCharCode(65+i)+' / CONCEPT',px,py+23);}
-}
-requestAnimationFrame(networkFrame);
-// Small public debug interface for tests and future collaborators.
-window.ferrosift={calculate,getScenario:()=>structuredClone(latest),setMotion:setPause,goToStage:i=>document.querySelectorAll('.scene-step')[Math.max(0,Math.min(5,i))].scrollIntoView({behavior:'instant'}),scene};
+document.querySelectorAll('[data-topic]').forEach(button=>button.addEventListener('click',()=>scene.inspectTopic?.(button.dataset.topic)));
+const steps=[...document.querySelectorAll('.scene-step')], navLinks=[...document.querySelectorAll('.site-header nav a')];
+let pending=false;function updatePage(){pending=false;document.querySelector('.site-header').classList.toggle('scrolled',scrollY>25);scene.update();const r=$('machine').getBoundingClientRect(),progress=Math.max(0,Math.min(1,-r.top/Math.max(1,r.height-innerHeight)));$('tour-progress-bar').style.transform='scaleX('+progress+')';for(const step of steps){const rect=step.getBoundingClientRect();step.classList.toggle('in-view',rect.top<innerHeight*.67&&rect.bottom>innerHeight*.33);}}
+function schedule(){if(!pending){pending=true;requestAnimationFrame(updatePage);}}addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});updatePage();
+const spy=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id));}),{rootMargin:'-25% 0px -65% 0px'});['machine','vision-demo','teams','economics','engineering-downloads'].forEach(id=>spy.observe($(id)));
+const menu=document.querySelector('.menu-toggle'),mobile=$('mobile-nav');function closeMenu(){mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');}menu.addEventListener('click',()=>{const open=mobile.hidden;mobile.hidden=!open;menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+function openHash(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const el=$(id);if(el?.tagName==='DETAILS')el.open=true;}addEventListener('hashchange',openHash);openHash();
+const frames=$('frame-level-evidence');frames.addEventListener('toggle',()=>{const f=frames.querySelector('iframe');if(frames.open&&!f.src)f.src=f.dataset.src;});if(frames.open)frames.querySelector('iframe').src=frames.querySelector('iframe').dataset.src;
+const video=$('evidence-video');video.playbackRate=1;new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)video.pause();},{threshold:0}).observe(video);
+window.ferrosift={setMotion:pause,goToStage:i=>scene.setStage(Math.max(0,Math.min(5,i))),scene};
 })();
 </script></body></html>

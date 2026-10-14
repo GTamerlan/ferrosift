@@ -1,0 +1,156 @@
+{
+  "as_of_utc": "2026-10-14T03:06:00Z",
+  "status": "PROVIDED_ARCHIVE_AND_MAC_AUDIT_REVIEWED_A3_TEST_EXPOSURE_CONFIRMED",
+  "sources": [
+    "/workspace/shared/ferrosift/storage_retention_20261014/verification_prep/exp009_verifier_reference.json",
+    "Ferrosift_Lab.zip:Ferrosift_Lab/data/source_metadata.json",
+    "Ferrosift_Lab.zip:Ferrosift_Lab/data/manifest.csv",
+    "Candidate model ZIP:samples/belt-06.jpg",
+    "/workspace/shared/ferrosift/investor_package_20261014/imported/initial_inventory/video_audit/portable_audit.json"
+  ],
+  "exp009": {
+    "dataset_record": "https://zenodo.org/records/20271102",
+    "archive_url": "https://zenodo.org/records/20271102/files/a3.zip?download=1",
+    "archive_publisher_md5": "b2d49862d421770de6665a557c82c94a",
+    "source_index_sha256": "af886036cd0e1acdeefadd2fb6500a19d6a54ff08606d653cf964637b48f640e",
+    "recordings": [
+      {
+        "publisher_split": "train",
+        "recording_id": "a3_train1",
+        "included_frames": 1255
+      },
+      {
+        "publisher_split": "train",
+        "recording_id": "a3_train2",
+        "included_frames": 1353
+      },
+      {
+        "publisher_split": "train",
+        "recording_id": "a3_train3",
+        "included_frames": 1303
+      },
+      {
+        "publisher_split": "train",
+        "recording_id": "a3_train4",
+        "included_frames": 1391
+      },
+      {
+        "publisher_split": "train",
+        "recording_id": "a3_train5",
+        "included_frames": 1379
+      },
+      {
+        "publisher_split": "val",
+        "recording_id": "a3_val",
+        "included_frames": 1522
+      }
+    ],
+    "test_frames_requested": 0,
+    "bounded_conclusion": "A3 publisher-test was excluded from this EXP009 acquisition/training/development run, but the provided Mac audit confirms 163 frames of that same A3 test recording had already been acquired, labeled and predicted in EXP007. Therefore no untouched recording-level claim is valid for A3 test."
+  },
+  "historical_a1": {
+    "recorded_test_crops": 60,
+    "test_source_frames_represented": 26,
+    "source_recordings": [
+      "a1_test",
+      "a1_train1",
+      "a1_train2",
+      "a1_train3",
+      "a1_train4",
+      "a1_train5",
+      "a1_val"
+    ],
+    "bounded_conclusion": "A1 publisher-test crop evaluation was already performed. A1/A2/A3 cumulative object pools create a shared-object exposure concern for A2/A3 even if file bytes are new; exact cross-subset physical identity mapping is not verified."
+  },
+  "candidate_sample_visual": {
+    "inspected_file": "candidate_belt06_sample.jpg",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "view": "overhead",
+    "belt": "black, longitudinal marks, glossy broad reflection near center, yellow edges",
+    "material": "spaced irregular silver/gray and rusty steel-looking pieces with orange copper-bearing-looking pieces",
+    "limits": "Appearance only; sample source recording and chemical composition not inferred from pixels."
+  },
+  "fingerprint_guidance": [
+    "Resolve raw MP4 member names, source recording IDs and frame stems to one canonical recording before comparing files. a3_train1 frame stems and a3_train_1.mp4 may represent the same recording; archive member mappings must be explicit.",
+    "A different frame index, timestamp, crop, resize, JPEG quality or video re-encode is not independent data. Treat all adjacent segments from a known training or development recording as that same exposed source.",
+    "Compare original-source file SHA256 where available, saved derivative file SHA256, decoded RGB SHA256 with dimensions and exact decode/preprocessing definition, then near-duplicate sequence/visual matching. Hash mismatches only exclude exact equality.",
+    "The provided EXP009 pixel hashes are of decoded saved max1280 JPEG90 derivatives. Raw-video frames will need the same documented transformation for exact comparison, and re-encoding may prevent exact matches even for identical content.",
+    "Use timestamp sequence alignment and provenance before perceptual similarity. Physically repeated pieces across different recordings require independent IDs or model-blind human audit; visual distance alone is not proof of disjointness.",
+    "A frozen source ZIP central-directory index lists reserved source members and CRCs; its mere existence does not imply test pixel/label access. Separate index creation, file acquisition, label reading, prediction generation and result-driven selection in the exposure ledger.",
+    "A fresh score run on previously exposed footage is a reproducibility or robustness result. Describe independently audited evaluation separately from untouched independent-data evaluation.",
+    "A3 publisher-test is now confirmed historically exposed by saved-image/manifest and saved-prediction evidence. A1 test is also historically exposed. A2/A4/A5 need their own use history plus cross-subset piece mapping; do not assume that a previously unopened file is an independent physical-object holdout."
+  ],
+  "not_performed": [
+    "New test-pixel download",
+    "New test-label reading",
+    "New inference",
+    "Mac operation",
+    "Physical-object identity certification"
+  ],
+  "historical_a3": {
+    "source_recording": "steelds:a3_test",
+    "publisher_video_member": "a3/test/videos/a3_test.mp4",
+    "manifest": {
+      "annotations": {
+        "steel": 3868,
+        "visible_copper": 706
+      },
+      "bytes": 1764677,
+      "file_hash_mismatches": [],
+      "frames": 163,
+      "missing_images": [],
+      "path": "data/detection_v1/historical_test.json",
+      "sha256": "758a4f6e33849b7cc885b3e0d09488bd39fb3980de166b0a5db7582224202c0a",
+      "source_recordings_or_image_groups": {
+        "steelds:a3_test": 163
+      },
+      "splits": {
+        "test": 163
+      }
+    },
+    "saved_prediction_evidence": [
+      {
+        "model": "yolo11n",
+        "stage": "historical",
+        "source_predictions": "runs/exp007_historical_diagnostic_20261010_evening/historical_predictions_yolo11n.json",
+        "predictions_file_sha256": "51c1edbd93006b60fd38f8f2a91297acd40f62173256a91dae7c5606a18172b0",
+        "frames": 163
+      },
+      {
+        "model": "yolo26n",
+        "stage": "historical",
+        "source_predictions": "runs/exp007_historical_diagnostic_20261010_evening/historical_predictions_yolo26n.json",
+        "predictions_file_sha256": "7663d673636a553ebe0d989376ac28f5a8de0faece594aca6ce53185ef471f49",
+        "frames": 163
+      },
+      {
+        "model": "ferrosift",
+        "stage": "historical",
+        "source_predictions": "runs/exp007_historical_diagnostic_20261010_evening/historical_predictions_ferrosift_canonical.json",
+        "predictions_file_sha256": "e88d5e8a1c31dcfe17cedaeb2171f9add45553d636cd194669089ffa420cbe8e",
+        "frames": 163
+      }
+    ],
+    "audit_file_sha256": "570b2c9bff757303a967afc316e5fad3211907feb761f26ffabce123563f3b6c",
+    "conclusion": "Confirmed historically exposed A3 test source, not merely a filename reservation. Unused adjacent frames or a new MP4 extraction remain the same exposed recording."
+  },
+  "known_demo_source": {
+    "source_recording": "steelds:a3_train1",
+    "publisher_video_member": "a3/train/videos/a3_train_1.mp4",
+    "basis": "portable_audit.json evidence_sources: data/demo/ATTRIBUTION.txt and data/demo/conveyor_training_demo.json",
+    "source_media_measured_fps": 50.0,
+    "publisher_camera_fps": 100,
+    "original_retained": false,
+    "timing_conclusion": "Source timestamps/capture conversion not reconciled. Original physical timing cannot be asserted from the presentation."
+  },
+  "remaining_limits": [
+    "No exhaustive all-experiment exposure audit beyond the provided records",
+    "No persistent physical-object IDs or proven cross-subset object-disjointness",
+    "No new test labels or images opened in this audit",
+    "No complete raw-video frame-to-annotation/time mapping verified",
+    "A1/A2/A3 cumulative pools and A4/A5 reused pools prevent automatic independence claims"
+  ]
+}

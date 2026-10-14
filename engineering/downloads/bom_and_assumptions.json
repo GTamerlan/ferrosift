@@ -1,0 +1,379 @@
+{
+  "status": "preliminary design review only",
+  "part_instances": 494,
+  "groups": [
+    {
+      "category": "airjet",
+      "modeled_part_instances": 65,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "bearing",
+      "modeled_part_instances": 16,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "belt",
+      "modeled_part_instances": 1,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "bin",
+      "modeled_part_instances": 24,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "cable",
+      "modeled_part_instances": 14,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "camera",
+      "modeled_part_instances": 22,
+      "optional_study_instances": 3,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "chute",
+      "modeled_part_instances": 24,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "controls",
+      "modeled_part_instances": 25,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "deck",
+      "modeled_part_instances": 8,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "drive",
+      "modeled_part_instances": 9,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "encoder",
+      "modeled_part_instances": 3,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "fasteners",
+      "modeled_part_instances": 16,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "feeder",
+      "modeled_part_instances": 61,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "frame",
+      "modeled_part_instances": 46,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "gate",
+      "modeled_part_instances": 17,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "guard",
+      "modeled_part_instances": 31,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "hood",
+      "modeled_part_instances": 45,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "light",
+      "modeled_part_instances": 14,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "research",
+      "modeled_part_instances": 8,
+      "optional_study_instances": 8,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "roller",
+      "modeled_part_instances": 8,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "sensor",
+      "modeled_part_instances": 20,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "tensioning",
+      "modeled_part_instances": 10,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    },
+    {
+      "category": "window",
+      "modeled_part_instances": 7,
+      "optional_study_instances": 0,
+      "purchased_quantity": "TBD; one CAD solid does not equal one purchased assembly",
+      "material_grade": "TBD",
+      "cost_usd": "TBD; do not infer from modeled volume"
+    }
+  ],
+  "optional_study_instances": 11,
+  "source_step_sha256": "80c159dc06435c0017f9effc0cdc7d10c6e15e669c94946849011cf088953e3c",
+  "source_manifest_sha256": "594265827c8ffab3ac69a6ecf45de710a3a72633aa64074cb187a21dc3290b3e",
+  "proposed_inspection_targets": [
+    {
+      "id": "T01",
+      "interface": "Frame coordination lengths",
+      "nominal": "Per modeled geometry",
+      "target": "+/-2 mm",
+      "method": "Measure unloaded against datum A/B/C",
+      "gate": "Structural/mechanical design approval"
+    },
+    {
+      "id": "T02",
+      "interface": "Head/tail shaft parallelism",
+      "nominal": "Axes parallel in plan",
+      "target": "0.3 mm over 600 mm",
+      "method": "Indicator or laser alignment, unloaded",
+      "gate": "Belt tracking trial under load"
+    },
+    {
+      "id": "T03",
+      "interface": "Camera bracket repositioning",
+      "nominal": "Calibration origin retained",
+      "target": "+/-1 mm translation",
+      "method": "Fiducial recheck after repositioning",
+      "gate": "Pixel-to-belt calibration and blur test"
+    },
+    {
+      "id": "T04",
+      "interface": "Cassette mount repositioning",
+      "nominal": "Repeat measured reference pose",
+      "target": "+/-0.5 mm translation",
+      "method": "Gauge installed mount reference points",
+      "gate": "Response/repeatability versus lift-off"
+    },
+    {
+      "id": "T05",
+      "interface": "Nonmetallic window flatness",
+      "nominal": "600 mm transverse span",
+      "target": "0.5 mm unloaded",
+      "method": "Straightedge / indicator on test fixture",
+      "gate": "Loaded deflection, wear and EMC trial"
+    },
+    {
+      "id": "T06",
+      "interface": "Shaft/bearing fits and runout",
+      "nominal": "Envelope bores only",
+      "target": "TBD - no fit released",
+      "method": "Vendor drawing and load calculation",
+      "gate": "Bearing life, shaft/fit engineering"
+    },
+    {
+      "id": "T07",
+      "interface": "Nozzles / splitter / chute angles",
+      "nominal": "Adjustable study configuration",
+      "target": "TBD after sample tests",
+      "method": "High-speed measured trajectories",
+      "gate": "Recovery at fixed purity/throughput"
+    },
+    {
+      "id": "T08",
+      "interface": "Guards / interlocks / air isolation",
+      "nominal": "Access concept only",
+      "target": "TBD after risk review",
+      "method": "Competent machinery safety assessment",
+      "gate": "Validated protection and procedures"
+    }
+  ],
+  "design_assumptions": [
+    [
+      "A01",
+      "Transport envelope",
+      "600 mm belt; x0..3000; belt surface z1000",
+      "Provisional layout",
+      "Not a selected production conveyor"
+    ],
+    [
+      "A02",
+      "Sensor datums",
+      "RGB x1300; induction x1600; last datum x1750",
+      "Provisional layout",
+      "Recalibrate installed device poses"
+    ],
+    [
+      "A03",
+      "Measurement window",
+      "x1350..1850; z988..994; nonmetallic",
+      "Geometric selection",
+      "Material, wear, deflection and EM response unverified"
+    ],
+    [
+      "A04",
+      "Housing gap",
+      "8 mm housing top to window underside",
+      "Geometric selection",
+      "Not active coil-to-object lift-off"
+    ],
+    [
+      "A05",
+      "Optical footprint",
+      "400 mm transverse by 300 mm travel",
+      "Illustrative example",
+      "Does not establish full 600 mm belt coverage"
+    ],
+    [
+      "A06",
+      "Design speed cases",
+      "0.5, 1.0, 2.0 m/s",
+      "Ideal kinematic study",
+      "Uncalibrated demo playback speed is separate"
+    ],
+    [
+      "A07",
+      "Pilot feed ramp",
+      "50..200 kg/h",
+      "Proposed test plan",
+      "No rated capacity or achieved recovery"
+    ],
+    [
+      "A08",
+      "Nozzle array",
+      "12 modeled positions; 50 mm visual pitch",
+      "Packaging choice",
+      "Pitch, pressure, impulse and latency await sample trials"
+    ],
+    [
+      "A09",
+      "Three collection bins",
+      "Airjet two-way split plus balance-only gate",
+      "Two-stage routing concept",
+      "Group/window review; cannot recover an already ejected target"
+    ],
+    [
+      "A10",
+      "Side service reservation",
+      "900 mm beyond actual outer equipment",
+      "Layout assumption",
+      "Door and bin sweeps, isolation and safety review still required"
+    ],
+    [
+      "A11",
+      "Fragment campaigns",
+      "12.5..25 and 25..50 mm sieve classes",
+      "Proposed trials",
+      "Maximum length, thickness, mass and hazards separately bounded"
+    ],
+    [
+      "A12",
+      "Drive and bearings",
+      "Geometric housings, shafts and brackets",
+      "Unselected devices",
+      "No power, torque, bearing life or fit rating"
+    ],
+    [
+      "A13",
+      "Depth device",
+      "Optional unbuilt envelope",
+      "R&D option",
+      "No purchased sensor, selected laser or validated benefit"
+    ],
+    [
+      "A14",
+      "Safety and compliance",
+      "Concept guard and access provisions",
+      "Unvalidated",
+      "No certification, containment, safety function or standards claim"
+    ],
+    [
+      "A15",
+      "Full-width discharge capture",
+      "660 mm balance and concentrate inlets for a 600 mm belt",
+      "Source geometry repair",
+      "30 mm nominal edge allowance is not a validated scatter envelope"
+    ],
+    [
+      "A16",
+      "Transverse convergence",
+      "Balance to 136 mm gate approach; concentrate to 260 mm outlet",
+      "Source geometry repair",
+      "Flow, rebound, bridging, wear and maximum accepted fragment size need sample trials"
+    ]
+  ],
+  "limitations": [
+    "Not a purchasing BOM",
+    "No supplier, load rating or cost selected",
+    "No modeled volume-to-mass conversion",
+    "Unmodeled internals and final fixing schedules remain TBD"
+  ]
+}

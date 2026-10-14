@@ -1,0 +1,87 @@
+{
+  "release_id": "investor_package_20261014_v01",
+  "source": "../../research/parent_inputs/source/engineering_requirements_matrix.csv",
+  "meaning": "Geometry provision coverage only. No row establishes physical compliance or a passed engineering release gate.",
+  "requirements": [
+    {
+      "id": "R03",
+      "status": "represented_provisionally",
+      "evidence": "parameters.json and assembly_manifest.json: belt 600 mm, carrying 3000 mm, deck 1000 mm; overall envelope remains separate."
+    },
+    {
+      "id": "R04",
+      "status": "represented_test_required",
+      "evidence": "Tapered hopper, sloped spreader, isolated stand and settling belt; feed performance untested."
+    },
+    {
+      "id": "R05",
+      "status": "placeholder_component_hold",
+      "evidence": "Closed 6 mm belt loop and four rollers; composition, splice, sharp-fragment resistance, tension and pulley suitability unselected."
+    },
+    {
+      "id": "R06",
+      "status": "partial_design_hold",
+      "evidence": "Nonmetallic window and removable cassette, no steel support in reserved active gap;8 mm enclosure/window gap geometrically checked. Coil active standoff, full field exclusion and height adjustment design remain held."
+    },
+    {
+      "id": "R09",
+      "status": "represented_component_test_required",
+      "evidence": "Slotted camera mount/crossrail, lens envelope;400\u00d7300 mm footprint is uncalibrated and does not claim 600 mm coverage."
+    },
+    {
+      "id": "R10",
+      "status": "represented_test_required",
+      "evidence": "Angled diffuse light bars and hood with removable windows; illuminance/glare/thermal/cleaning performance untested."
+    },
+    {
+      "id": "R12",
+      "status": "optional_uninstalled",
+      "evidence": "Three depth device parts explicitly optional=true,installed=false,default_hidden=true; no selected laser or performance."
+    },
+    {
+      "id": "R13",
+      "status": "partial_component_test_required",
+      "evidence": "Head-shaft encoder/bracket; does not measure belt-to-roller or item slip. Measuring-wheel selection remains a hold."
+    },
+    {
+      "id": "R14",
+      "status": "geometry_datums_only",
+      "evidence": "Last active sensing plane 1750 and lip 3000 explicit;1250 mm ideal travel. Registration and timing validation unperformed."
+    },
+    {
+      "id": "R16",
+      "status": "partial_component_test_required",
+      "evidence": "12 generic nozzle/union envelopes at 50 mm pitch; slotted mounting plates and discrete generic valves; impulse, latency, tubing/circuit and mounted ranges unvalidated."
+    },
+    {
+      "id": "R17",
+      "status": "geometric_routing_provisions_physical_design_hold",
+      "evidence": "Full-width static intake spans and convergent guides, upstream-facing balance/review gate and defined branch boundaries; current full_width_routing_review.json checks source-solid routing. Nominal contacts are not physical seals. A 1.5 m/s gravity-only outer-lane point-path counterexample overflies the funnel wall by about 70 mm; existing side guards do not collect it. No operating speed or full-width no-jet capture is approved. Accepted-feed thickness/height, leakage, friction, bridging, bounce and physical flow remain design holds."
+    },
+    {
+      "id": "R20",
+      "status": "geometry_only_engineering_release_hold",
+      "evidence": "Rounded RHS, hollow rollers, bearing envelopes, slotted tail tensioner/locks, finned drive enclosure; no load/tension/torque calculations or purchased part selection."
+    },
+    {
+      "id": "R21",
+      "status": "partial_safety_design_hold",
+      "evidence": "Tail cheeks, return trough/access panels, hood and ejection observation panels; full guarding/access-interlock/safety function architecture incomplete."
+    },
+    {
+      "id": "R25",
+      "status": "partial_test_safety_hold",
+      "evidence": "Removable panels and cassette, forward bin withdrawal with all actual parts conservatively swept; cleaning performance/operator handling untested."
+    },
+    {
+      "id": "R26",
+      "status": "route_reservations_only",
+      "evidence": "Cabinet, cable trunk, conduit, optical duct and glands; site supply/wiring/shielding/bonding and thermal rating unselected."
+    },
+    {
+      "id": "R30",
+      "status": "preliminary_not_released",
+      "evidence": "Source/export provenance and coordinated dimension/section/BOM package; no fabrication or compliance release."
+    }
+  ]
+}
