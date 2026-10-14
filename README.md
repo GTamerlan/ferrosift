@@ -4,6 +4,10 @@ Ferrosift connects visual material detection with the engineering of physical se
 
 Serve this directory over HTTP and open `index.html`. Explore `model-demo/` for the conveyor video comparison and `explorer.html` for the machine, teams we're building, planning scenario and engineering downloads. The `engineering/` route opens the machine view. There is no build step or server-side inference.
 
+The comparison now puts synchronized saved Ferrosift/reference views first, with the selected clip's scores immediately underneath. Shared playback and seeking follow the source recording clock; images and boxes update at the actual saved sample times. Original footage and source details remain available below the comparison.
+
+`sensor-concept/` explains a proposed experiment on one tracked fragment through RGB, optional exterior 3D geometry, and sequential under-belt and side-coil measurements. Explorer's **Research cell** control adds a separate procedural 3D overlay. These are labeled research schematics: no measured sensor performance, buildable coil design or hidden copper map is asserted. Authoritative CAD and engineering downloads are unchanged.
+
 The video picker contains 38 recordings from four datasets and 2,720 saved comparison frames. Both exact model checkpoints ran on the same decoded pixels. Seven clips have scores on 979 verified labeled frames; the other 31 show “Accuracy unavailable: no verified labels.” The selected-clip metric is copper-annotation routing recall under the frozen all-proposal matcher. Source credits, exposure history, model hashes, thresholds and runtime are included with the comparison. `model-demo/method/` contains the calculation source and run provenance.
 
 On our labeled conveyor evaluation, Ferrosift detected 94.0% of copper annotations versus 85.6% for the YOLO11s reference, an 8.4 percentage-point improvement. The homepage's **Methods, assumptions & design status** section gives the exact counts and comparison scope. These historical results come from the development cohort used to select the model configuration and operating point.
