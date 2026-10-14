@@ -441,68 +441,76 @@ dialog .micro{margin-top:16px}
 <div id="machine" class="machine-story">
   <div class="machine-stage">
     <div class="scene-atmosphere"></div>
-    <div class="scene-area"><canvas id="machine-canvas" role="img" aria-label="Named 3D assembly of the proposed PCB recovery conveyor. Enable Explore and use drag or arrow keys to orbit; plus and minus zoom."></canvas><svg id="assembly-overlay" class="assembly-overlay" aria-hidden="true"></svg><div id="webgl-fallback" hidden><img class="assembly-fallback-svg" src="engineering/conveyor-schematic.svg" alt="Process schematic: metering, RGB, induction, encoder timing, airjet target/balance split, then balance-window review gate."><p>Accessible process schematic · Concept only</p><a href="engineering/#design-basis">Read the dimensions and design basis →</a><p class="assembly-error" id="assembly-error-detail"></p></div></div>
-    <div class="scene-topline"><span class="label"><i class="status-dot"></i>FS–01 · PCB recovery concept / v0</span><span class="label scene-mode" id="scene-mode">ASSEMBLY VIEW</span></div>
+    <div class="scene-area"><canvas id="machine-canvas" role="img" aria-label="Named 3D assembly of the proposed PCB recovery conveyor. Drag or use arrow keys to orbit; plus and minus zoom."></canvas><svg id="assembly-overlay" class="assembly-overlay" aria-hidden="true"></svg><div id="webgl-fallback" hidden><img class="assembly-fallback-svg" src="engineering/conveyor-schematic.svg" alt="Process schematic: metering, RGB, induction, encoder timing, airjet target/balance split, then balance-window review gate."><p>Accessible process schematic · Concept only</p><a href="engineering/#design-basis">Read the dimensions and design basis →</a><p class="assembly-error" id="assembly-error-detail"></p></div></div>
+    <div class="scene-topline"><span class="label"><i class="status-dot"></i>FS–01 · Conveyor study</span><span class="label scene-mode" id="scene-mode">ASSEMBLY VIEW</span></div>
     <div class="scene-tag" id="scene-tag"><span class="tag-cross"></span><span id="scene-tag-text">Integrated sensing. Coordinated action.</span></div>
-    <div class="scene-bottomline">
-      <div class="scene-readout"><span id="stage-number">00 / 05</span><span id="stage-name">SYSTEM OVERVIEW</span><div class="stage-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div>
-      <div class="scene-controls" aria-label="3D controls"><button id="motion-toggle" aria-pressed="false" title="Pause decorative animation">Ⅱ <span>Pause</span></button><button id="explode-toggle" aria-pressed="false" title="Separate conceptual modules">⊞ <span>Explode</span></button><button id="orbit-toggle" aria-pressed="false" title="Enable drag to rotate the model">↻ <span>Explore</span></button><button id="section-toggle" aria-pressed="false" title="Open an uncapped transverse section">◩ <span>Section</span></button><button id="dimensions-toggle" aria-pressed="false" title="Show study dimensions in millimetres">↔ <span>Dimensions</span></button><button id="service-toggle" aria-pressed="false" title="Show reserved service space">▱ <span>Service</span></button><button id="reset-view" aria-label="Reset 3D camera" title="Reset camera">⌖</button></div>
-    </div>
-    <details class="assembly-inspector"><summary>Inspect assembly</summary><div class="assembly-inspector-body"><label for="component-select">Named component</label><select id="component-select"><option value="">All components</option></select><p id="component-detail">Device envelopes do not reproduce manufacturer internals.</p><div id="category-controls" class="assembly-categories"></div><label class="assembly-speed-label" for="belt-speed"><span>Study speed</span><output id="belt-speed-value" for="belt-speed">1.00 m/s</output></label><input id="belt-speed" type="range" min="0.5" max="2" step="0.05" value="1"><p id="kinematic-readout"></p><p id="review-tally">Illustrative review assignments: 0 markers · 0 candidate neighbours</p><p>Markers: blue target candidate · gray balance · amber entire review group, including candidate neighbours.</p><p>Calculated travel only. No demonstrated latency or throughput.</p><a class="assembly-link" href="engineering/">Open full assembly workbench →</a></div></details>
-    <p id="routing-phase" class="assembly-routing">Illustrative group/window routing</p><p id="assembly-status" class="assembly-status" role="status">Loading assembly…</p>
-    <div class="scene-disclaimer">Concept only · Colored markers and routing windows are explanatory, not PCB inference, tested trajectories or control timings.</div>
+    <nav class="view-presets" aria-label="Camera close-ups"><button data-view="0" aria-pressed="true">Overview</button><button data-view="1" aria-pressed="false">Optical</button><button data-view="2" aria-pressed="false">Induction</button><button data-view="3" aria-pressed="false">Tracking</button><button data-view="4" aria-pressed="false">Routing</button></nav>
+    <div class="scene-bottomline"><div class="scene-readout"><span id="stage-number">00 / 05</span><span id="stage-name">SYSTEM OVERVIEW</span><div class="stage-dots" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="scene-controls" aria-label="3D controls"><button id="motion-toggle" aria-pressed="false" title="Pause illustrative motion">Ⅱ <span>Pause</span></button><button id="reset-view" aria-label="Reset 3D camera">↺ <span>Reset view</span></button></div></div>
+    <details class="assembly-inspector"><summary>Inspect <span aria-hidden="true">+</span></summary><div class="assembly-inspector-body"><h2>View tools</h2><div class="assembly-tool-grid"><button id="explode-toggle" aria-pressed="false">Explode</button><button id="section-toggle" aria-pressed="false">Section</button><button id="dimensions-toggle" aria-pressed="false">Dimensions</button><button id="service-toggle" aria-pressed="false">Service space</button><button id="annotation-toggle" aria-pressed="false">Route labels</button><button id="orbit-toggle" aria-pressed="true">Orbit</button></div><label for="component-select">Component</label><select id="component-select"><option value="">All components</option></select><p id="component-detail">Device envelopes do not reproduce manufacturer internals.</p><details class="assembly-panel-section"><summary>Visible subsystems</summary><div id="category-controls" class="assembly-categories"></div></details><details class="assembly-panel-section"><summary>Motion study</summary><label class="assembly-speed-label" for="belt-speed"><span>Study speed</span><output id="belt-speed-value" for="belt-speed">1.00 m/s</output></label><input id="belt-speed" type="range" min="0.5" max="2" step="0.05" value="1"><p id="kinematic-readout"></p><p id="routing-phase" class="assembly-routing">Illustrative group/window routing</p><p id="review-tally">Illustrative review assignments: 0 markers · 0 candidate neighbours</p><p>Markers: blue target candidate · gray balance · amber entire review group, including candidate neighbours.</p><p>Calculated travel only. No demonstrated latency or throughput.</p><p>Colored markers and routing windows are explanatory, not PCB inference, tested trajectories or control timings.</p></details><details class="assembly-panel-section"><summary>Geometry &amp; evidence</summary><p id="assembly-status" class="assembly-status" role="status">Loading assembly…</p><a class="assembly-link" href="engineering/">Full assembly workbench →</a><a class="assembly-link" href="engineering/#engineering-downloads">CAD &amp; drawings →</a><a class="assembly-link" href="engineering/#design-basis">Design basis &amp; limitations →</a></details><p class="assembly-input-hint">Drag to orbit · Ctrl+scroll or + / − to zoom</p></div></details>
+    <p id="focus-note" class="assembly-focus-note" hidden></p>
+    <div class="scene-disclaimer">Concept design · Illustrative motion · Unvalidated hardware</div>
   </div>
   <div class="story-panels">
     <section class="scene-step hero in-view" data-stage="0">
       <div class="wrap"><div class="step-copy">
-        <p class="eyebrow reveal"><i></i>Intelligence for material recovery</p>
-        <h1>Value.<br><span class="dim">Not waste.</span></h1>
+        <p class="eyebrow">00 / Conveyor concept</p>
+        <h1>PCB recovery study.</h1>
         <p class="lead">A proposed recovery stage for PCB-rich fragments in already depolluted, screened electronic scrap.</p>
-        <div class="hero-actions"><a class="btn" href="#vision">Explore the machine <span>→</span></a><a class="link" href="#opportunity">Read the evidence <span>→</span></a></div>
-        <div class="hero-meta"><span class="label">Student-founded</span><span class="label">Concept study · 2026</span><span class="label">See · Sense · Decide · Sort</span></div>
+        <div class="hero-actions"><a class="link" href="engineering/">Open full viewer <span>↗</span></a></div>
+
       </div></div>
-      <div class="scroll-cue"><span class="scroll-line"></span>Scroll to go inside</div>
+      <div class="scroll-cue">Scroll to inspect the line <span>↓</span></div>
     </section>
     <section id="vision" class="scene-step" data-stage="1"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">01 / Computer vision</p>
-      <h2>First, we look.</h2>
+      <h2>Optical inspection.</h2>
       <p class="lead">Controlled appearance evidence.</p>
+      <details class="story-detail"><summary>Design notes</summary><div>
       <p>The optical bay reserves controlled lighting, RGB and an optional depth mount. A new PCB dataset and validated coverage are still needed; the 400 mm optical footprint is an example within a 600 mm belt.</p>
       <div class="points"><div><b>Detect</b><span>Find each piece on the moving belt.</span></div><div><b>Classify</b><span>Score what it looks like — not what it is made of.</span></div><div><b>Track</b><span>Test object association through sensing and ejection.</span></div></div>
       <p class="micro">Appearance is not an assay. The steel/copper replay below is separate from this PCB concept.</p>
       <a class="link" href="#vision-demo">Watch the steel / copper replay <span>→</span></a>
+    </div></details>
     </div></div></section>
     <section id="sensing" class="scene-step" data-stage="2"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">02 / Inductive sensing</p>
-      <h2>Then, we sense.</h2>
+      <h2>Induction cassette.</h2>
       <p class="lead">A second, independent kind of evidence.</p>
+      <details class="story-detail"><summary>Design notes</summary><div>
       <p>A replaceable induction cassette is reserved beneath a nonconductive window. The study tests whether its response adds useful information to RGB. Gap, coverage and interference remain unvalidated; it cannot assay copper or gold.</p>
       <svg class="waveform" viewBox="0 0 340 100" preserveAspectRatio="none" aria-label="Illustrative oscillating sensor signal"><path class="wave-grid" d="M0 25H340M0 50H340M0 75H340M50 0V100M120 0V100M190 0V100M260 0V100"/><path class="wave-line" d="M0 50Q15 48 25 50T45 50Q50 15 58 50T74 50T90 50T106 50T122 50T138 50T154 50T170 50T186 50Q198 25 210 50Q225 64 240 50T270 50T310 50H340"/></svg>
       <p class="micro">Size, shape, gap and material all shape the reading. <a class="source-link" href="#source-ti">[02]</a></p>
+    </div></details>
     </div></div></section>
     <section id="intelligence" class="scene-step" data-stage="3"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">03 / Sensor fusion + control</p>
-      <h2>Two inputs.<br>One decision.</h2>
+      <h2>Position &amp; timing.</h2>
       <p class="lead">Track distance. Bound uncertainty.</p>
+      <details class="story-detail"><summary>Design notes</summary><div>
       <p>The proposed controller joins image and induction observations in encoder coordinates. The final sensing datum is 1250 mm before the lip: 1.25 seconds of travel at the 1 m/s study reference.</p>
       <div class="fusion"><div class="fusion-in"><span>Vision</span><i>+</i><span>Induction</span><i>+</i><span>Position</span></div><div class="fusion-out"><i>↓</i><b>Destination · Timing</b></div></div>
       <p class="micro">Calculated travel is not measured latency. Invalid or overlapping groups need suppressed target ejection and conservative review handling.</p>
+    </div></details>
     </div></div></section>
     <section id="sorting" class="scene-step" data-stage="4"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">04 / Physical sorting</p>
-      <h2>Don’t just identify.<br>Separate.</h2>
+      <h2>Routing hardware.</h2>
       <p class="lead">A target split, then a review window.</p>
+      <details class="story-detail"><summary>Design notes</summary><div>
       <p>An airjet stage proposes PCB-rich target versus balance. A second gate on the balance chute diverts groups or broad windows to review, after feed inhibit, a verified clear gap and gate-position feedback.</p>
       <div class="points routes"><div><i class="route-dot accent"></i><span><b>01</b> &nbsp;PCB-rich target</span></div><div><i class="route-dot"></i><span><b>02</b> &nbsp;Balance → existing process</span></div><div><i class="route-dot grey"></i><span><b>03</b> &nbsp;Balance-window review</span></div></div>
       <p class="micro">The balance gate cannot recover material already ejected into target. Three bins do not imply three-way per-object sorting or a certified safety function.</p>
+    </div></details>
     </div></div></section>
     <section id="feedback" class="scene-step" data-stage="5"><div class="wrap"><div class="step-copy">
       <p class="eyebrow">05 / Verification + improvement</p>
-      <h2>Close the loop.</h2>
+      <h2>Verification plan.</h2>
       <p class="lead">A correct label is not enough.</p>
+      <details class="story-detail"><summary>Design notes</summary><div>
       <p>Weigh input and every output; separate recognition, tracking and actuator errors. Begin with sparse, qualified 12.5–25 mm and 25–50 mm campaigns. The 50–200 kg/h ramp is a proposed trial, not rated capacity.</p>
       <div class="metric-grid"><div><b>Recovery</b><span>Target material captured</span></div><div><b>Purity</b><span>Unwanted material excluded</span></div><div><b>Throughput</b><span>Mass processed per hour</span></div><div><b>Net value</b><span>After all added costs</span></div></div>
       <a class="link" href="engineering/">Inspect the assembly and design basis <span>→</span></a>
+    </div></details>
     </div></div></section>
   </div>
 </div>
@@ -604,6 +612,7 @@ dialog .micro{margin-top:16px}
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <noscript><div class="noscript">Animations and the calculator require JavaScript. The explanations and source links remain available.</div></noscript>
 <script src="engineering/conveyor-viewer.js"></script>
+<script src="engineering/conveyor-details.js"></script>
 <script>
 /* Site UI, live scenario model and illustrative network. No tracking, backend or API calls. */
 (function(){'use strict';
@@ -613,10 +622,10 @@ const scene=window.ferroScene||{update(){},pause(){},explode(){},orbit(){},reset
 function toast(text){let el=$('toast');el.textContent=text;el.classList.add('active');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('active'),3500);}
 async function copy(text){try{await navigator.clipboard.writeText(text);}catch{let t=document.createElement('textarea');t.value=text;t.style.cssText='position:fixed;left:-10000px;top:0';document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();if(!ok)throw Error('Clipboard unavailable');}}
 function setPause(value){paused=value;document.body.classList.toggle('motion-paused',paused);scene.pause(paused);$('motion-toggle').setAttribute('aria-pressed',String(paused));$('motion-toggle').innerHTML=paused?'▶ <span>Play</span>':'Ⅱ <span>Pause</span>';window.ferroMotionPaused=paused;}
-setPause(paused);reduced.addEventListener('change',e=>setPause(e.matches));
+setPause(paused);scene.orbit(true);reduced.addEventListener('change',e=>setPause(e.matches));
 $('motion-toggle').addEventListener('click',()=>setPause(!paused));$('footer-motion').addEventListener('click',()=>{setPause(!paused);toast(paused?'Decorative motion paused.':'Decorative motion enabled.');});
 for(const[name,fn]of[['explode',v=>scene.explode(v)],['orbit',v=>scene.orbit(v)]]){const el=$(name+'-toggle');el.addEventListener('click',()=>{const active=el.getAttribute('aria-pressed')!=='true';el.setAttribute('aria-pressed',String(active));fn(active);if(name==='orbit'&&active)toast('Drag the 3D model to rotate. Scroll to continue the tour.');});}
-$('reset-view').addEventListener('click',()=>{scene.reset();scene.orbit(false);scene.explode(false);$('orbit-toggle').setAttribute('aria-pressed','false');$('explode-toggle').setAttribute('aria-pressed','false');});
+$('reset-view').addEventListener('click',()=>{scene.reset();scene.orbit(true);scene.explode(false);$('orbit-toggle').setAttribute('aria-pressed','true');$('explode-toggle').setAttribute('aria-pressed','false');});
 // Scroll-story focus: each step's copy fades in as it takes the viewport; roadmap steps brighten near the viewport centre.
 const stepFocus=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('in-view',e.isIntersecting)),{threshold:.4});document.querySelectorAll('.scene-step').forEach(el=>stepFocus.observe(el));
 const buildWrap=document.querySelector('.build-steps'),buildSteps=buildWrap?[...buildWrap.querySelectorAll('article')]:[];
