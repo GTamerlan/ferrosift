@@ -6,3 +6,21 @@
 #machine .machine-stage.research-active:after{display:none}
 @media(max-width:760px){#machine .machine-stage.research-active .assembly-inspector{top:158px;bottom:auto;left:auto;right:var(--gutter);z-index:30}}
 @media(max-width:360px){#machine .view-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}#machine .view-presets button{padding-inline:5px;min-width:0}#machine .machine-stage.research-active .assembly-inspector{top:195px}}
+
+/* Visible research entry, without changing the ordinary CAD default. */
+#machine .research-invitation{margin-top:20px;padding:16px;border:1px solid #4d8e7f;border-radius:6px;background:#12312de8;pointer-events:auto}
+#machine .research-invitation-kicker{margin:0 0 7px;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#91d5bc}
+#machine .research-invitation h2{font:500 18px/1.2 var(--sans);letter-spacing:-.02em;margin:0 0 9px;color:#e2f5ed}
+#machine .research-invitation>p:not(.research-invitation-kicker){font:12px/1.5 var(--sans);color:#b9d8cc;margin:0}
+.research-invitation-links{display:grid;gap:10px;margin-top:13px}.research-invitation-links a{font:11px/1.35 var(--sans);color:#d2f8e8;text-underline-offset:4px}.research-invitation-links a:first-child{font-weight:600}
+#machine #research-entry-status:empty{display:none}#machine #research-entry-status:not(:empty){margin-top:10px;font-size:10px;color:#efcb89}
+.research-quick-controls a{display:inline-flex;align-items:center;justify-content:center;border:1px solid #4e7a72;color:#d5efe7;background:#203e37;border-radius:3px;padding:9px 12px;font-size:11px;text-decoration:none}
+.research-invitation a:focus-visible,.research-quick-controls a:focus-visible{outline:2px solid #e9bb76;outline-offset:4px}
+@media(max-width:760px){#machine .research-invitation{margin-top:12px;padding:12px}#machine .research-invitation h2{font-size:16px;margin-bottom:6px}#machine .research-invitation>p:not(.research-invitation-kicker){font-size:11px;line-height:1.45}#machine .research-invitation-kicker{font-size:8px;margin-bottom:5px}.research-invitation-links{gap:9px;margin-top:10px}.research-invitation-links a{font-size:11px}#machine .hero .tour-status{display:none}#machine:has(.hero.in-view) .machine-stage:not(.research-active) .scene-area{top:calc(var(--header) + 390px)}#machine .machine-stage.research-active .scene-area{top:calc(var(--header) + 160px);bottom:214px}.research-quick-controls a{font-size:10px;padding:8px 9px;min-height:32px}}
+@media(max-width:360px){#machine .hero .step-copy{padding-top:18px}#machine .research-invitation h2{font-size:15px}#machine .research-invitation{padding:10px}#machine:has(.hero.in-view) .machine-stage:not(.research-active) .scene-area{top:calc(var(--header) + 430px)}}
+
+/* Compact the first invitation on short phones while keeping CAD room below it. */
+@media(max-width:760px) and (max-height:740px){#machine .hero .step-copy>.eyebrow,#machine .hero .step-copy>.lead{display:none}#machine .hero .step-copy h1{font-size:20px;line-height:1.2;margin-bottom:0}#machine:has(.hero.in-view) .machine-stage:not(.research-active) .scene-area{top:calc(var(--header) + 300px)}}
+@media(max-width:360px) and (max-height:740px){#machine:has(.hero.in-view) .machine-stage:not(.research-active) .scene-area{top:calc(var(--header) + 355px)}}
+
+@media(max-width:360px){.research-active .research-quick-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.research-quick-controls button,.research-quick-controls a{padding-inline:4px;min-height:34px;font-size:9px}}
