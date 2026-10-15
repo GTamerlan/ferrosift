@@ -3,3 +3,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 .comparison-row{padding:16px 0;border-bottom:1px solid var(--line)}.comparison-row:last-child{border:0}.comparison-row h4{font-size:13px;color:var(--ink);margin:0 0 8px}.comparison-row p{font-size:12px}.response-heading>span{font-size:13px}
+
+.schematic-scope{margin:0;padding:12px 24px;border-top:1px solid #365155;font-size:11px;line-height:1.65;color:#d0be96;background:#172729}@media(max-width:700px){.schematic-scope{padding:12px 16px;font-size:10px}}
+
+.workflow-banner{padding:14px 18px;border:1px solid #6e7355;background:#293b32;color:#e6e3c4;font:11px/1.7 ui-monospace,monospace;margin:18px 0;}

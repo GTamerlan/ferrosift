@@ -1313,3 +1313,40 @@ section[id] {
 .technology-preview-figure figcaption{font-size:12px;color:#9da9ae;line-height:1.5;margin-top:12px}
 @media(max-width:860px){.technology-preview{grid-template-columns:1fr;gap:30px}.technology-preview-copy{max-width:650px}.technology-preview-figure{max-width:820px}}
 @media(max-width:600px){.hero .scene-copy{font-size:18px;line-height:1.4}.hero .hero-actions{margin-top:25px;gap:8px}.hero .hero-actions .button{min-width:0;width:100%;gap:20px}.technology-preview-copy>p:not(.eyebrow){font-size:17px}.technology-preview-copy h2{font-size:34px}.technology-preview-actions .button{font-size:12px;padding:16px 17px}.technology-preview-invite{padding:15px;font-size:14px}}
+
+/* Retrofit module candidate: retain Ferrosift typography and photographic story. */
+.hero h1{font-size:clamp(42px,5.65vw,88px);line-height:1.02;letter-spacing:-1.6px;max-width:960px}
+.hero .scene-content{padding-top:142px;padding-bottom:96px}
+.hero-research-note{max-width:530px;margin-top:24px;color:#b8c0c5;font-size:12px;line-height:1.5}
+.hero .scene-copy{max-width:560px}
+.citation{font-size:13px;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+.results-scope{max-width:900px;font-size:16px;line-height:1.6;color:#abb5bc;margin-top:28px}
+.research-note{display:grid;grid-template-columns:.8fr 1.1fr 1.1fr;gap:36px;margin-top:64px;padding-top:32px;border-top:1px solid #34414a}
+.research-note h3{font-size:24px;line-height:1.1;margin:0}
+.research-note p{font-size:16px;line-height:1.6;color:#bac4ca;margin:0;max-width:none}
+.research-note a{text-decoration:underline;text-underline-offset:3px}
+.module-boundary{background:#0b1117;border-block:1px solid #27343d}
+.boundary-heading{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end}
+.boundary-heading h2,.roadmap>h2{font-size:clamp(34px,4vw,58px);line-height:1.05;letter-spacing:-.7px}
+.boundary-heading>p{font-size:20px;line-height:1.5;color:#c2cbd1;max-width:520px}
+.boundary-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:58px}
+.boundary-grid article{border-top:2px solid #8cbcb4;padding-top:25px}
+.boundary-grid article:last-child{border-color:#56616a}
+.boundary-grid .eyebrow{color:#a7b5bd;font-size:12px;margin:0 0 18px}
+.boundary-grid h3{font-size:26px;line-height:1.1}
+.boundary-grid p:last-child{font-size:18px;line-height:1.6;color:#c2cbd1;margin-top:22px;max-width:540px}
+.boundary-footnote{font-size:14px;line-height:1.6;color:#98a9b5;max-width:900px;margin-top:36px}
+.roadmap{background:#070b0f}
+.roadmap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin-top:54px}
+.roadmap-grid article{border-top:1px solid #8b9aab;padding-top:22px}
+.roadmap-time{font-size:13px;color:#9bb5c8;line-height:1.5;min-height:40px}
+.roadmap-grid h3{font-size:26px;line-height:1.05;margin:14px 0 22px;min-height:55px}
+.roadmap-grid p:not(.roadmap-time){font-size:17px;line-height:1.55;color:#b6c0c9}
+.roadmap-grid p.roadmap-gate{font-size:14px;margin-top:26px;color:#8f9dab}
+.roadmap-gate strong{display:block;color:#d6dce2;font-weight:400;margin-bottom:8px}
+.contact h2{font-size:clamp(34px,4.4vw,65px);line-height:1.05}
+@media(max-width:1050px){.roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 32px}.research-note{grid-template-columns:1fr 1fr}.research-note h3{grid-column:1/-1}.boundary-heading{gap:32px}.hero h1{font-size:clamp(44px,6.7vw,70px)}}
+@media(max-width:600px){.hero h1{font-size:clamp(34px,8.6vw,50px);letter-spacing:-.7px}.hero .scene-content{padding-top:126px;padding-bottom:86px}.hero-research-note{font-size:11px;margin-top:18px;max-width:350px}.hero .scene-copy{font-size:18px;margin-top:22px}.hero-actions{align-items:flex-start}.hero-mission-link{font-size:13px}.mission-grid h2{font-size:34px}.boundary-heading,.boundary-grid,.research-note,.roadmap-grid{grid-template-columns:1fr;gap:30px}.boundary-grid{margin-top:34px}.boundary-heading>p{font-size:18px}.boundary-grid h3,.roadmap-grid h3{font-size:25px}.research-note{margin-top:38px;gap:20px}.roadmap-grid{margin-top:36px;gap:30px}.roadmap-time,.roadmap-grid h3{min-height:0}.roadmap-grid h3{margin:12px 0 18px}.roadmap-grid p.roadmap-gate{margin-top:20px}.contact h2{font-size:32px}.horizon .scene-content{padding-bottom:70px}}
+@media(min-width:861px) and (max-height:760px){.hero .scene-content{padding-top:115px;padding-bottom:55px}.hero h1{font-size:clamp(42px,4.4vw,64px)}.hero-research-note{margin-top:16px}}
+
+.development{background:#080d11;border-bottom:1px solid #28353e}.development-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:50px}.development-grid article{border-top:1px solid #536774;padding-top:24px}.development-grid h3{font-size:25px;line-height:1.1;margin:22px 0}.development-grid p{font-size:17px;line-height:1.55;color:#bbc6ce}.development-grid p.development-output{font-size:14px;color:#9bb9c7;margin-top:24px}.development>.text-link{display:inline-flex;margin-top:28px}@media(max-width:760px){.development-grid{grid-template-columns:1fr;gap:30px;margin-top:36px}.development-grid h3{margin:16px 0;font-size:24px}}

@@ -16,7 +16,15 @@ This is a comparison of complete selected model configurations, with architectur
 
 ## Engineering status
 
-IR01-R1 CAD, drawings and source files are preliminary and not for fabrication. Receiving containment has an unresolved outer-lane capture hold, with the analysis in `engineering/downloads/receiving_capture_hold.json`. The website's model comparison, illustrative machine motion and operator planning scenario have separate purposes and units.
+M01 is a proposed retrofit sensing module with a separate grey host-conveyor reference. Its 180 mm guided lane is a mechanical experimental passage on a 600 mm host belt, not validated sensor coverage. Two sequential stations illustrate vertical and transverse excitation with six unoptimized functional windings (two transmit and four candidate receive windings). RGB, optional exterior 3D, acquisition, calibration, host encoder association and routing interfaces remain a research integration program. Dimensions and exports are preliminary and not fabrication-certified.
+
+The complete conveyor IR01-R1 is preserved separately in project history, including its unresolved receiving-containment hold. It is not the current module offer. Host feeding, downstream ejection and collection are outside M01 and need their own engineering and physical validation. The recorded CV comparison and reader-assumption calculator retain their original evidence and units.
+
+## Module rationale and longer horizon
+
+The public methods section links primary research on moving-belt induction, optical/inductive fusion and controlled PCB inspection, plus incumbent vendor descriptions. Generic sensor fusion already exists. Ferrosift proposes testing geometry-conditioned directional and frequency response sequences on independent PCB/e-scrap lots against strong simpler baselines. No source validates the exact proposed module or establishes direct elemental assay.
+
+The 2045 horizon is aspirational. Published magnetic manipulation and detumbling work describes constrained laboratory experiments or simulations, not Ferrosift flight evidence. Any orbital application would require a separate actuation architecture, stand-off/force/torque testing, power and thermal engineering, reaction control, safe proximity operations, a mission partner and flight qualification. Detumbling concerns relative rotation, not stopping orbital motion. The dated, source-specific boundaries and accessible primary links are on the homepage under Sources.
 
 ## Industry evidence
 

@@ -1,0 +1,290 @@
+{
+  "revision": "M01-W1",
+  "status": "PASS",
+  "created_utc": "2026-10-15T11:37:56.471442+00:00",
+  "pdf": "module_drawings.pdf",
+  "page_count": 6,
+  "a3_landscape_mm": [
+    420,
+    297
+  ],
+  "source_step_sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e",
+  "source_manifest_sha256": "4664531ea662a4d8ec067b0f720959dded1d43b882fa9efb069012cff32a46ed",
+  "source_contract_sha256": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c",
+  "projection_method": "OpenCascade exact visible-edge HLR; actual solid/plane section intersections where named",
+  "render_backend": "PyMuPDF SVG to PDF and raster (Poppler unavailable in environment)",
+  "checks": {
+    "A3_page_size": "PASS",
+    "six_pages": "PASS",
+    "source_hashes_current": "PASS",
+    "viewports_fit": "PASS",
+    "annotation_contract_matches": "PASS",
+    "visual_review": "PASS",
+    "physical_sensing_and_fabrication_validation": "NOT PERFORMED"
+  },
+  "views": [
+    {
+      "sheet": 1,
+      "view": "installed_side",
+      "scale_denominator": 15,
+      "viewport_mm": [
+        24,
+        64,
+        257,
+        98
+      ],
+      "projected_size_mm": [
+        168.0,
+        91.8
+      ],
+      "projection_input_sha256": "4fdc3f439c0e725a1f5679bbfa30e38554ebc064d22ca16bcb4cd0cc0c08b13e"
+    },
+    {
+      "sheet": 1,
+      "view": "module_plan",
+      "scale_denominator": 25,
+      "viewport_mm": [
+        24,
+        194,
+        257,
+        52
+      ],
+      "projected_size_mm": [
+        83.9,
+        49.080000004
+      ],
+      "projection_input_sha256": "5d0159664af74ae142005b455262c883a13640c3c3e10f12c6cee629ace51b65"
+    },
+    {
+      "sheet": 2,
+      "view": "under_windings_plan",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        23,
+        65,
+        174,
+        116
+      ],
+      "projected_size_mm": [
+        93.90000005087848,
+        115.40000005087846
+      ],
+      "projection_input_sha256": "820fb474cc29c886a5b1be0aeced475cf03e2574dc6a183a43c79b8cc9eb27db"
+    },
+    {
+      "sheet": 2,
+      "view": "transverse_windings_side",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        224,
+        65,
+        172,
+        62
+      ],
+      "projected_size_mm": [
+        72.90000005087846,
+        40.40000004999996
+      ],
+      "projection_input_sha256": "c6a1b24221ac6141dc655d2a1b3fdba9e4450f8f83e4d56715dd2e692991346e"
+    },
+    {
+      "sheet": 2,
+      "view": "transverse_windings_end",
+      "scale_denominator": 3,
+      "viewport_mm": [
+        224,
+        151,
+        172,
+        30
+      ],
+      "projected_size_mm": [
+        82.00000006926945,
+        26.933333333333316
+      ],
+      "projection_input_sha256": "9a38677c019d81da9e5239a4e4c01c3a8c52dc7b7022fd83435fc224e396e304"
+    },
+    {
+      "sheet": 3,
+      "view": "stack_section_end",
+      "scale_denominator": 5,
+      "viewport_mm": [
+        26,
+        57,
+        247,
+        73
+      ],
+      "projected_size_mm": [
+        160.0,
+        71.60000000000001
+      ],
+      "projection_input_sha256": "7b9d02758a4494b493ed9753b1148efce85a0b634038ed7ca454bff612cd07ee"
+    },
+    {
+      "sheet": 3,
+      "view": "stack_section_detail",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        26,
+        176,
+        155,
+        48
+      ],
+      "projected_size_mm": [
+        155.0,
+        39.0
+      ],
+      "projection_input_sha256": "615c55c3a2ccebc572ef3668c46b2eba1bbf815bfde809ab2d8f483910c3dc72"
+    },
+    {
+      "sheet": 4,
+      "view": "optics_side",
+      "scale_denominator": 6,
+      "viewport_mm": [
+        25,
+        65,
+        238,
+        125
+      ],
+      "projected_size_mm": [
+        166.66666668333335,
+        109.66666668333332
+      ],
+      "projection_input_sha256": "90735fa47573c22c617a901e083d9b8290a67dfe20538402284193c318ce1320"
+    },
+    {
+      "sheet": 5,
+      "view": "calibration_accessory_iso",
+      "scale_denominator": 3,
+      "viewport_mm": [
+        24,
+        55,
+        112,
+        46
+      ],
+      "projected_size_mm": [
+        66.30627697345594,
+        35.87197730435378
+      ],
+      "projection_input_sha256": "4babee83f68a20b8c7913d749214bd68d1af7342c4b70f6cfc2d1201faa65bba"
+    },
+    {
+      "sheet": 5,
+      "view": "cartridge_service_end",
+      "scale_denominator": 6,
+      "viewport_mm": [
+        24,
+        124,
+        252,
+        52
+      ],
+      "projected_size_mm": [
+        241.66666666666666,
+        28.333333333333332
+      ],
+      "projection_input_sha256": "64b5b13acbbfbb92f1c6328ae692dd4b3ae6b0322d985373361073267a321031"
+    },
+    {
+      "sheet": 6,
+      "view": "controls_open_front",
+      "scale_denominator": 4,
+      "viewport_mm": [
+        24,
+        64,
+        166,
+        140
+      ],
+      "projected_size_mm": [
+        100.0,
+        115.50000005000001
+      ],
+      "projection_input_sha256": "bbf7c9522da81580bd75ebf1cbfb844964dbfb5aebfdb054e54bea908e4982ba"
+    }
+  ],
+  "annotated_basis_mm": {
+    "belt_width": 600,
+    "belt_top_z": 1000,
+    "lane_width": 180,
+    "optics_x": -280,
+    "A_x": 0,
+    "B_x": 300,
+    "coil_core_top_standoff": 30.85,
+    "enclosure_width": 340,
+    "enclosure_height": 440,
+    "carrying_belt_thickness": 4.0,
+    "support_window_thickness": 6.0,
+    "closed_head_to_support_gap": 10.0,
+    "actual_Rx_core_top_to_belt": 30.849999899999943,
+    "actual_Rx_insulation_top_to_belt": 30.599999899999943,
+    "actual_Rx_terminal_top_to_belt": 30.199999999999932,
+    "actual_Tx_core_top_to_belt": 37.84999989999994,
+    "actual_Tx_insulation_top_to_belt": 37.59999989999994,
+    "actual_Tx_terminal_top_to_belt": 37.19999999999993,
+    "actual_Tx_core_extent_x": 185.5000002,
+    "actual_Tx_core_extent_y": 228.5000002,
+    "actual_Tx_insulation_extent_x": 186.0000002,
+    "actual_Tx_insulation_extent_y": 229.0000002,
+    "transverse_main_plane_spacing": 238.6,
+    "core_diameter": 0.9,
+    "insulation_od": 1.4,
+    "path_centre_pitch": 3.8,
+    "return_top_to_shell_bottom": 64.0,
+    "nominal_shell_to_host_rail_clearance": 30.0
+  },
+  "sheets": [
+    {
+      "path": "FS-M01-01.svg",
+      "sha256": "a788845c5af7d4c47bb68726fc25c897da1182a163452bbaed744a5c80a1b01c"
+    },
+    {
+      "path": "FS-M01-02.svg",
+      "sha256": "a540941d54581ea79092f3b4a504273eb07c9c20fc92196babea177ab34dd6c1"
+    },
+    {
+      "path": "FS-M01-03.svg",
+      "sha256": "b3850f4b08716bc37201161355eed5cf03c12e35789d01afa65b28792392d62c"
+    },
+    {
+      "path": "FS-M01-04.svg",
+      "sha256": "cf4ff1d1aea91ecf8c1cdb89919a7733bb1192b6e648c1e5b006c9410f8f727b"
+    },
+    {
+      "path": "FS-M01-05.svg",
+      "sha256": "978286dbfc793574a10aeb3c0fb79c1af751b38e1106091beb889e1d6b5ef475"
+    },
+    {
+      "path": "FS-M01-06.svg",
+      "sha256": "376f65a47de6fb483763b8e507123e7185a4558cacdf7e66c7179f3993cb321b"
+    }
+  ],
+  "pdf_sha256": "388e3af9594268f3bbab150933f6e98dc1e4ddc5768875a4db2b74435a1893f9",
+  "limitations": [
+    "All dimensions and interfaces are proposed research geometry.",
+    "Neither CAD validity nor the drawing checks establish load capacity, operational safety, compatibility or electromagnetic performance.",
+    "Usable aperture, full-width scale-up and the advantage of complementary sensing directions are unvalidated."
+  ],
+  "visual_review": {
+    "reviewed_utc": "2026-10-15T11:44:47.361692+00:00",
+    "method": "Inspected all six final page PNGs after frozen M01-W1 CAD regeneration",
+    "pages": [
+      "FS-M01-01.png",
+      "FS-M01-02.png",
+      "FS-M01-03.png",
+      "FS-M01-04.png",
+      "FS-M01-05.png",
+      "FS-M01-06.png"
+    ],
+    "result": "No clipped text, unreadable views, overlapping labels or incorrect source dimensions observed.",
+    "scope": "Layout and source correspondence only; no physical, safety or electromagnetic validation."
+  },
+  "source_module_step_sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d",
+  "source_web_mesh_sha256": "a14643ad4b60b20d3772cbebc24b0685544ab46155e9ad0b13f2d9a6373f3fb9",
+  "authoring_source_sha256": {
+    "check_drawings.py": "f8645b868778ddf3aec81e61e2f3b50ca0f2f6602070ce57c0310765c6bca1a3",
+    "check_review_sections.py": "a4c0dad84d34762c1793b8abb9ca176d61d9ff8097f706507c182a7c11a97044",
+    "compose_sheets.py": "819a6c7f46e1f8f09710cdcf33d1f073b9e118d66d4cd55a7ac6ab2596cf3b1d",
+    "generate_drawings.py": "a622a721b77cd4bf70e20c371400fc8d88540f1a9faeddda82d0709d0ac1dce2",
+    "generate_review_views.py": "52ec6b9b9d59aba490a6954ad92dd1165e6c8d8a41f6462594ddbb4b3d77e906",
+    "project_views.py": "1736c98718558578cea512b654616c2839674721d700316f6fd935cb971faac3"
+  },
+  "view_definitions_sha256": "50ee3231b60477ff6d5844ae951908e6d41621a83e322d91818731480603d619"
+}

@@ -1,9 +1,0 @@
-id,interface,nominal,target,method,gate
-T01,Frame coordination lengths,Per modeled geometry,+/-2 mm,Measure unloaded against datum A/B/C,Structural/mechanical design approval
-T02,Head/tail shaft parallelism,Axes parallel in plan,0.3 mm over 600 mm,"Indicator or laser alignment, unloaded",Belt tracking trial under load
-T03,Camera bracket repositioning,Calibration origin retained,+/-1 mm translation,Fiducial recheck after repositioning,Pixel-to-belt calibration and blur test
-T04,Cassette mount repositioning,Repeat measured reference pose,+/-0.5 mm translation,Gauge installed mount reference points,Response/repeatability versus lift-off
-T05,Nonmetallic window flatness,600 mm transverse span,0.5 mm unloaded,Straightedge / indicator on test fixture,"Loaded deflection, wear and EMC trial"
-T06,Shaft/bearing fits and runout,Envelope bores only,TBD - no fit released,Vendor drawing and load calculation,"Bearing life, shaft/fit engineering"
-T07,Nozzles / splitter / chute angles,Adjustable study configuration,TBD after sample tests,High-speed measured trajectories,Recovery at fixed purity/throughput
-T08,Guards / interlocks / air isolation,Access concept only,TBD after risk review,Competent machinery safety assessment,Validated protection and procedures

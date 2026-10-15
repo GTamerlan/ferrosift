@@ -1,0 +1,523 @@
+{
+  "revision": "M01-W1",
+  "generated_utc": "2026-10-15T11:39:27.651743+00:00",
+  "status": "passed_scoped_geometry",
+  "scope": "Nominal CAD geometry, documented clearances and export integrity only; no fabrication, operation, safety or sensor performance approval.",
+  "components": 303,
+  "module_components": 289,
+  "host_reference_components": 14,
+  "triangles": 381379,
+  "source_sha256": {
+    "cad/build_module.py": "f2aa1333872c5734805a43a3b2b8d540a62b2c3a9216c2476de2204d26f9e0df",
+    "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
+    "cad/export_common.py": "729ecd42bee8dd4e430765cd0be87cd2e0715d936f7204d9dc627cb4b256d972",
+    "design_basis/parameters.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c",
+    "design_basis/interface_contract.json": "717dd47e350de349a415e524eb26e6d7dc8ff1b954eca7affe8e212a81cd2b32",
+    "design_basis/design_holds.json": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408",
+    "design_basis/geometry_contract.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c"
+  },
+  "web_sha256": "a14643ad4b60b20d3772cbebc24b0685544ab46155e9ad0b13f2d9a6373f3fb9",
+  "module_STEP_sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d",
+  "nominal_dimensions_mm": {
+    "host_belt_width": 600.0,
+    "clear_lane_between_skirts": 180.0,
+    "rigid_guide_to_belt_gap": 3.0,
+    "skirt_to_belt_nominal_gap": 0.0,
+    "belt_thickness": 4.0,
+    "support_thickness": 6.0,
+    "head_cover_to_support_gap": 10.0,
+    "rx_winding_top_to_belt_top": 30.849999899999943,
+    "tx_winding_top_to_belt_top": 37.84999989999994,
+    "cartridge_to_return_run_gap": 64.0,
+    "side_cover_to_guide_outer_clearance": 7.0,
+    "side_cover_to_lane_boundary_clearance": 15.0,
+    "scope": "Unloaded nominal geometry. Tolerance, deflection and physical feed validation remain open."
+  },
+  "checks": [
+    {
+      "check": "source_hashes_match_all_native_receipts",
+      "passed": true
+    },
+    {
+      "check": "source_and_STEP_roundtrips",
+      "passed": true,
+      "roundtrips": {
+        "module_assembly": {
+          "status": "passed",
+          "components": 289,
+          "source_solids": 289,
+          "reimported_solids": 289,
+          "reimported_valid": true,
+          "relative_volume_error": 6.93822018077824e-10,
+          "bbox_difference_mm": 0.0,
+          "bbox": {
+            "min": [
+              -1097.5,
+              -752.0,
+              795.0
+            ],
+            "max": [
+              1000.0,
+              475.0,
+              1630.0
+            ]
+          },
+          "step_sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d"
+        },
+        "module_with_host": {
+          "status": "passed",
+          "components": 303,
+          "source_solids": 303,
+          "reimported_solids": 303,
+          "reimported_valid": true,
+          "relative_volume_error": 2.958245687742223e-10,
+          "bbox_difference_mm": 0.0,
+          "bbox": {
+            "min": [
+              -1260.0,
+              -752.0,
+              253.0
+            ],
+            "max": [
+              1260.0,
+              475.0,
+              1630.0
+            ]
+          },
+          "step_sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e"
+        },
+        "host_reference": {
+          "status": "passed",
+          "components": 14,
+          "source_solids": 14,
+          "reimported_solids": 14,
+          "reimported_valid": true,
+          "relative_volume_error": 7.942392913788046e-14,
+          "bbox_difference_mm": 0.0,
+          "bbox": {
+            "min": [
+              -1260.0,
+              -425.0,
+              253.0
+            ],
+            "max": [
+              1260.0,
+              425.0,
+              1000.0
+            ]
+          },
+          "step_sha256": "638eaf1a548820476340072bbc83a4a80b300853041698f9068f0a30f8062230"
+        }
+      }
+    },
+    {
+      "check": "targeted_source_interfaces",
+      "passed": true,
+      "executed_check_count": 13
+    },
+    {
+      "check": "independent_binary_geometry_and_scope",
+      "passed": true,
+      "details": [
+        {
+          "name": "module_assembly",
+          "parts": 289,
+          "max_glb_coordinate_error_metres": 1.8720642080971572e-07,
+          "step_brep_relative_volume_error": 4.748009599029037e-11,
+          "step_independent_source_relative_volume_error": 6.93822018077824e-10,
+          "step_solids": 289,
+          "scope_and_optional_metadata": "pass"
+        },
+        {
+          "name": "module_with_host",
+          "parts": 303,
+          "max_glb_coordinate_error_metres": 1.8720642080971572e-07,
+          "step_brep_relative_volume_error": 2.143152838333072e-11,
+          "step_independent_source_relative_volume_error": 2.958245687742223e-10,
+          "step_solids": 303,
+          "scope_and_optional_metadata": "pass"
+        }
+      ]
+    },
+    {
+      "check": "datum_translation_executes_once",
+      "passed": true,
+      "delta_mm": 100,
+      "scope": "Geometry-only datum translation. Exported nominal M01 is pinned to Z1000. This does not establish arbitrary host widths or update every descriptive coordinate field."
+    },
+    {
+      "check": "six_continuous_windings_and_separate_terminals",
+      "passed": true,
+      "scope": "Open source paths, insulation spacing, former support, distinct terminal contacts and housing clearance only; electrical design and internal harness remain unresolved."
+    },
+    {
+      "check": "six_source_coil_planes",
+      "passed": true,
+      "details": [
+        {
+          "id": "under_tx_xy",
+          "plane": "XY",
+          "bbox_span_mm": [
+            185.5000002,
+            228.5000002,
+            3.9000002000000222
+          ],
+          "normal_axis_verified": "Z"
+        },
+        {
+          "id": "under_rx_xy_-42",
+          "plane": "XY",
+          "bbox_span_mm": [
+            61.50000020000001,
+            172.5000002,
+            3.9000002000000222
+          ],
+          "normal_axis_verified": "Z"
+        },
+        {
+          "id": "under_rx_xy_42",
+          "plane": "XY",
+          "bbox_span_mm": [
+            61.50000020000001,
+            172.5000002,
+            3.9000002000000222
+          ],
+          "normal_axis_verified": "Z"
+        },
+        {
+          "id": "side_tx_xz",
+          "plane": "XZ",
+          "bbox_span_mm": [
+            143.5000002,
+            3.900000200000008,
+            78.50000020000004
+          ],
+          "normal_axis_verified": "Y"
+        },
+        {
+          "id": "side_rx_xz_266",
+          "plane": "XZ",
+          "bbox_span_mm": [
+            53.50000020000007,
+            3.900000199999994,
+            62.500000200000045
+          ],
+          "normal_axis_verified": "Y"
+        },
+        {
+          "id": "side_rx_xz_334",
+          "plane": "XZ",
+          "bbox_span_mm": [
+            53.50000020000016,
+            3.900000199999994,
+            62.500000200000045
+          ],
+          "normal_axis_verified": "Y"
+        }
+      ]
+    },
+    {
+      "check": "structural_metal_outside_selected_reservation",
+      "passed": true,
+      "exceptions": "Intended coil conductors and leads are inside; actual host belt and return reinforcement/splices remain uncharacterized."
+    },
+    {
+      "check": "four_continuous_conservative_removal_sweeps",
+      "passed": true,
+      "details": [
+        {
+          "method": "Continuous conservative swept bounding box vs retained source solids",
+          "travel_mm": [
+            0,
+            -850,
+            0
+          ],
+          "swept_bbox": {
+            "min": [
+              -148.0,
+              -1030.0,
+              930.0
+            ],
+            "max": [
+              148.0,
+              150.0,
+              980.0
+            ]
+          },
+          "removed_before_test": [
+            "cable_under_lead",
+            "under_cover_retainer_-100",
+            "under_cover_retainer_100"
+          ],
+          "potential_obstructions": []
+        },
+        {
+          "name": "optical_lid_removal",
+          "travel_mm": [
+            0,
+            0,
+            200
+          ],
+          "swept_bbox": {
+            "min": [
+              -410.0,
+              -145.0,
+              1549.0
+            ],
+            "max": [
+              -150.0,
+              285.0,
+              1755.0
+            ]
+          },
+          "removed_before_test": [],
+          "potential_obstructions": []
+        },
+        {
+          "name": "control_front_removal",
+          "travel_mm": [
+            0,
+            -350,
+            0
+          ],
+          "swept_bbox": {
+            "min": [
+              650.0,
+              -1098.5,
+              970.0
+            ],
+            "max": [
+              990.0,
+              -740.0,
+              1410.0
+            ]
+          },
+          "removed_before_test": [
+            "control_panel_retainer_675_995",
+            "control_panel_retainer_675_1385",
+            "control_panel_retainer_965_995",
+            "control_panel_retainer_965_1385"
+          ],
+          "potential_obstructions": []
+        },
+        {
+          "name": "calibration_accessory_withdrawal",
+          "travel_mm": [
+            -450,
+            0,
+            0
+          ],
+          "swept_bbox": {
+            "min": [
+              -1005.0,
+              -70.0,
+              1000.0
+            ],
+            "max": [
+              -350.0,
+              70.0,
+              1006.0
+            ]
+          },
+          "removed_before_test": [],
+          "potential_obstructions": []
+        }
+      ]
+    },
+    {
+      "check": "optical_central_rays",
+      "passed": true,
+      "details": [
+        {
+          "id": "rgb_lens_glass",
+          "origin_mm": [
+            -280.0,
+            1.797724934052655e-15,
+            1443.0
+          ],
+          "direction": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "belt_intersection_mm": [
+            -280.0,
+            1.797724934052655e-15,
+            1000.0
+          ],
+          "obstructions": [],
+          "scope": "Central ray only, not calibrated field of view"
+        },
+        {
+          "id": "optional_3d_aperture_130",
+          "origin_mm": [
+            -280.0,
+            121.19708254731815,
+            1471.9480598167097
+          ],
+          "direction": [
+            0.0,
+            -0.31730465640509214,
+            -0.9483236552061993
+          ],
+          "belt_intersection_mm": [
+            -280.0,
+            -36.71452931543739,
+            1000.0
+          ],
+          "obstructions": [],
+          "scope": "Central ray only, not calibrated field of view"
+        },
+        {
+          "id": "optional_3d_aperture_170",
+          "origin_mm": [
+            -280.0,
+            159.13002875556606,
+            1459.255873560506
+          ],
+          "direction": [
+            0.0,
+            -0.31730465640509214,
+            -0.9483236552061993
+          ],
+          "belt_intersection_mm": [
+            -280.0,
+            5.465163008384849,
+            1000.0
+          ],
+          "obstructions": [],
+          "scope": "Central ray only, not calibrated field of view"
+        }
+      ],
+      "scope": "Centre lines only; does not validate field of view, depth accuracy, lighting or optics."
+    },
+    {
+      "check": "adjustment_hardware_to_cover_clearance",
+      "passed": true
+    },
+    {
+      "check": "module_host_intersections",
+      "passed": true,
+      "intentional_intersections": [
+        {
+          "module": "encoder_coupling",
+          "host": "host_roller_-1050",
+          "intersection_mm3": 1256.63706143592,
+          "interpretation": "intended_coupling_engagement"
+        }
+      ],
+      "unexpected_intersections": [],
+      "scope": "Device endpoint/coupling engagement only; connector details and internal wiring remain unselected."
+    },
+    {
+      "check": "cable_structure_intersections",
+      "passed": true,
+      "intentional_intersections": [
+        {
+          "cable": "cable_optical",
+          "fixed": "rgb_body",
+          "intersection_mm3": 437.4708622830154,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_optical",
+          "fixed": "control_connector_optics",
+          "intersection_mm3": 224.0087674211849,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_optional_3d",
+          "fixed": "optional_3d_body",
+          "intersection_mm3": 285.2433226070231,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_optional_3d",
+          "fixed": "control_connector_optics",
+          "intersection_mm3": 224.0087674211849,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_under_lead",
+          "fixed": "under_cartridge_shell",
+          "intersection_mm3": 385.7511332825988,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_under_lead",
+          "fixed": "control_connector_coil_A",
+          "intersection_mm3": 250.45896949485456,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_side_near",
+          "fixed": "side_cartridge_-1",
+          "intersection_mm3": 11.576227384586542,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_side_far",
+          "fixed": "side_cartridge_1",
+          "intersection_mm3": 11.576227378268808,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_encoder",
+          "fixed": "control_connector_encoder",
+          "intersection_mm3": 125.52863707683889,
+          "interpretation": "intended_device_endpoint"
+        },
+        {
+          "cable": "cable_encoder",
+          "fixed": "encoder_body",
+          "intersection_mm3": 201.9555555625242,
+          "interpretation": "intended_device_endpoint"
+        }
+      ],
+      "unexpected_intersections": [],
+      "scope": "Device endpoint/coupling engagement only; connector details and internal wiring remain unselected."
+    }
+  ],
+  "evidence_files": {
+    "cad_export": {
+      "path": "engineering/verification/cad_export_validation.json",
+      "sha256": "b338cc8e9dedfdd212c92490e78620b41bed5e7eea4919c09aaf1edc4824afcd"
+    },
+    "interfaces": {
+      "path": "engineering/verification/interfaces_review.json",
+      "sha256": "66f10a5b0538a6276380115d78bb76c6a0b278fdc0dbefcadf540e3e0791482b"
+    },
+    "independent_source": {
+      "path": "verification/independent_engineering/SOURCE_SPATIAL_REVIEW.json",
+      "sha256": "2bb1af1fad42f68587d27fc6acf10e33341941b7cf543a9d2865f9603154e85d"
+    },
+    "independent_exports": {
+      "path": "verification/independent_engineering/EXPORT_FILE_REVIEW.json",
+      "sha256": "34b320287ed23bb0e178ee74c449802e04b9dfe8b383d094c6837f4e3a1da9ac"
+    },
+    "datum": {
+      "path": "verification/independent_engineering/DATUM_PARAMETER_REVIEW.json",
+      "sha256": "f33aa9cb3d704fd5a045ddab42706b965fcb19d86461d418803b2fd3d219d526"
+    },
+    "winding_verdict": {
+      "path": "verification/independent_engineering/WINDING_REVIEW_VERDICT.json",
+      "sha256": "d49bb4ab689b272139cad0669ad74a642d6014d1301d0491484f034a4e8b3e6f"
+    },
+    "winding_geometry": {
+      "path": "verification/independent_engineering/WINDING_GEOMETRY_REVIEW.json",
+      "sha256": "89aa523ca91ced873d0932285873e837b689af4712c950d1cd3ce8c3c2f3b789"
+    }
+  },
+  "holds_file": {
+    "path": "design_basis/design_holds.json",
+    "sha256": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408"
+  },
+  "physical_validation_performed": false,
+  "electromagnetic_simulation_performed": false,
+  "limitations": [
+    "No validated active sensing width, field response, component ratings, feed/operating limits, safe handling, recovery, purity or economic benefit.",
+    "Grey host is a partial reference, with bearings, drive, turnaround belt and guarding intentionally incomplete.",
+    "Calibration accessory is separate; rigid structural contact is not strength or manufacturability proof.",
+    "Only nominal adjustment pose and 600 mm host interface checked; movement range, locking loads, tolerance and calibration repeatability remain open."
+  ]
+}

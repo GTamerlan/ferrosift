@@ -1,0 +1,312 @@
+[
+  {
+    "schema_version": "0.1",
+    "acquisition_mode": "illustrative",
+    "display_banner": "Illustrative workflow. No trained-model predictions or measured sensor traces.",
+    "feed": {
+      "screen_fraction_mm": [
+        12.5,
+        50
+      ],
+      "screen_method": null,
+      "source_lot_id": null,
+      "depollution_verified": null
+    },
+    "geometry": {
+      "position_mm": null,
+      "height_mm": null,
+      "mass_g": null,
+      "measurement_source": null
+    },
+    "measurements": {
+      "rgb_frame": null,
+      "depth_frame": null,
+      "complex_induction_sequences": null,
+      "calibration_id": null
+    },
+    "inference": {
+      "model_id": null,
+      "route_probabilities": null,
+      "confidence_calibrated": false,
+      "status": "NOT_RUN",
+      "ood_status": "NOT_ASSESSED"
+    },
+    "control": {
+      "recommended_route": null,
+      "actuation_command": null,
+      "deadline_encoder_count": null
+    },
+    "host_outcome": {
+      "acknowledgement": null,
+      "observed_bin": null
+    },
+    "offline_ground_truth": {
+      "assay_id": null,
+      "element_concentrations": null,
+      "teardown_id": null,
+      "economic_reference_route": null
+    },
+    "economics": {
+      "buyer_terms_id": null,
+      "price_date": null,
+      "net_value": null
+    },
+    "event_id": "illustrative_A",
+    "fragment_id": null,
+    "title": "Bare-looking board fragment",
+    "illustrative_annotations": {
+      "visible_observation": "Visible board-like outline; no inferred elemental grade.",
+      "research_question": "Do geometry-conditioned sequences distinguish a plane-bearing fragment from sparse traces on unseen lots?",
+      "illustrative_candidate_action": "Retain candidate, subject to assay-backed routing validation.",
+      "verification_plan": "Whole-fragment multi-metal assay plus a structural teardown subset."
+    }
+  },
+  {
+    "schema_version": "0.1",
+    "acquisition_mode": "illustrative",
+    "display_banner": "Illustrative workflow. No trained-model predictions or measured sensor traces.",
+    "feed": {
+      "screen_fraction_mm": [
+        12.5,
+        50
+      ],
+      "screen_method": null,
+      "source_lot_id": null,
+      "depollution_verified": null
+    },
+    "geometry": {
+      "position_mm": null,
+      "height_mm": null,
+      "mass_g": null,
+      "measurement_source": null
+    },
+    "measurements": {
+      "rgb_frame": null,
+      "depth_frame": null,
+      "complex_induction_sequences": null,
+      "calibration_id": null
+    },
+    "inference": {
+      "model_id": null,
+      "route_probabilities": null,
+      "confidence_calibrated": false,
+      "status": "NOT_RUN",
+      "ood_status": "NOT_ASSESSED"
+    },
+    "control": {
+      "recommended_route": null,
+      "actuation_command": null,
+      "deadline_encoder_count": null
+    },
+    "host_outcome": {
+      "acknowledgement": null,
+      "observed_bin": null
+    },
+    "offline_ground_truth": {
+      "assay_id": null,
+      "element_concentrations": null,
+      "teardown_id": null,
+      "economic_reference_route": null
+    },
+    "economics": {
+      "buyer_terms_id": null,
+      "price_date": null,
+      "net_value": null
+    },
+    "event_id": "illustrative_B",
+    "fragment_id": null,
+    "title": "Contact-bearing fragment",
+    "illustrative_annotations": {
+      "visible_observation": "Repeated contact-like features; appearance alone does not prove gold.",
+      "research_question": "Can the joint observations recognize a useful route family even when bulk response is not the largest?",
+      "illustrative_candidate_action": "Preserve in PCB recovery or a validated contact route; no direct gold claim.",
+      "verification_plan": "Assay contacts and remainder with complete mass reconciliation."
+    }
+  },
+  {
+    "schema_version": "0.1",
+    "acquisition_mode": "illustrative",
+    "display_banner": "Illustrative workflow. No trained-model predictions or measured sensor traces.",
+    "feed": {
+      "screen_fraction_mm": [
+        12.5,
+        50
+      ],
+      "screen_method": null,
+      "source_lot_id": null,
+      "depollution_verified": null
+    },
+    "geometry": {
+      "position_mm": null,
+      "height_mm": null,
+      "mass_g": null,
+      "measurement_source": null
+    },
+    "measurements": {
+      "rgb_frame": null,
+      "depth_frame": null,
+      "complex_induction_sequences": null,
+      "calibration_id": null
+    },
+    "inference": {
+      "model_id": null,
+      "route_probabilities": null,
+      "confidence_calibrated": false,
+      "status": "NOT_RUN",
+      "ood_status": "NOT_ASSESSED"
+    },
+    "control": {
+      "recommended_route": null,
+      "actuation_command": null,
+      "deadline_encoder_count": null
+    },
+    "host_outcome": {
+      "acknowledgement": null,
+      "observed_bin": null
+    },
+    "offline_ground_truth": {
+      "assay_id": null,
+      "element_concentrations": null,
+      "teardown_id": null,
+      "economic_reference_route": null
+    },
+    "economics": {
+      "buyer_terms_id": null,
+      "price_date": null,
+      "net_value": null
+    },
+    "event_id": "illustrative_C",
+    "fragment_id": null,
+    "title": "Covered board fragment",
+    "illustrative_annotations": {
+      "visible_observation": "Metal cover obscures the interior.",
+      "research_question": "Does shielding make underlying economic differences unresolvable?",
+      "illustrative_candidate_action": "Recheck/rework or conservatively retain under agreed host policy.",
+      "verification_plan": "Remove cover for structural analysis; assay cover and underlying board separately."
+    }
+  },
+  {
+    "schema_version": "0.1",
+    "acquisition_mode": "illustrative",
+    "display_banner": "Illustrative workflow. No trained-model predictions or measured sensor traces.",
+    "feed": {
+      "screen_fraction_mm": [
+        12.5,
+        50
+      ],
+      "screen_method": null,
+      "source_lot_id": null,
+      "depollution_verified": null
+    },
+    "geometry": {
+      "position_mm": null,
+      "height_mm": null,
+      "mass_g": null,
+      "measurement_source": null
+    },
+    "measurements": {
+      "rgb_frame": null,
+      "depth_frame": null,
+      "complex_induction_sequences": null,
+      "calibration_id": null
+    },
+    "inference": {
+      "model_id": null,
+      "route_probabilities": null,
+      "confidence_calibrated": false,
+      "status": "NOT_RUN",
+      "ood_status": "NOT_ASSESSED"
+    },
+    "control": {
+      "recommended_route": null,
+      "actuation_command": null,
+      "deadline_encoder_count": null
+    },
+    "host_outcome": {
+      "acknowledgement": null,
+      "observed_bin": null
+    },
+    "offline_ground_truth": {
+      "assay_id": null,
+      "element_concentrations": null,
+      "teardown_id": null,
+      "economic_reference_route": null
+    },
+    "economics": {
+      "buyer_terms_id": null,
+      "price_date": null,
+      "net_value": null
+    },
+    "event_id": "illustrative_D",
+    "fragment_id": null,
+    "title": "Rolling fragment",
+    "illustrative_annotations": {
+      "visible_observation": "Pose/identity is uncertain between sensing stations.",
+      "research_question": "Can the same physical object be registered reliably across stations?",
+      "illustrative_candidate_action": "INVALID / recheck; do not issue a material route from misregistered data.",
+      "verification_plan": "Controlled repeated motion test and independent track/outcome observation."
+    }
+  },
+  {
+    "schema_version": "0.1",
+    "acquisition_mode": "illustrative",
+    "display_banner": "Illustrative workflow. No trained-model predictions or measured sensor traces.",
+    "feed": {
+      "screen_fraction_mm": [
+        12.5,
+        50
+      ],
+      "screen_method": null,
+      "source_lot_id": null,
+      "depollution_verified": null
+    },
+    "geometry": {
+      "position_mm": null,
+      "height_mm": null,
+      "mass_g": null,
+      "measurement_source": null
+    },
+    "measurements": {
+      "rgb_frame": null,
+      "depth_frame": null,
+      "complex_induction_sequences": null,
+      "calibration_id": null
+    },
+    "inference": {
+      "model_id": null,
+      "route_probabilities": null,
+      "confidence_calibrated": false,
+      "status": "NOT_RUN",
+      "ood_status": "NOT_ASSESSED"
+    },
+    "control": {
+      "recommended_route": null,
+      "actuation_command": null,
+      "deadline_encoder_count": null
+    },
+    "host_outcome": {
+      "acknowledgement": null,
+      "observed_bin": null
+    },
+    "offline_ground_truth": {
+      "assay_id": null,
+      "element_concentrations": null,
+      "teardown_id": null,
+      "economic_reference_route": null
+    },
+    "economics": {
+      "buyer_terms_id": null,
+      "price_date": null,
+      "net_value": null
+    },
+    "event_id": "illustrative_E",
+    "fragment_id": null,
+    "title": "Laminate-like low-response candidate",
+    "illustrative_annotations": {
+      "visible_observation": "Exposed surface appears laminate-like.",
+      "research_question": "Is a low response real, or caused by pose, distance or measurement failure?",
+      "illustrative_candidate_action": "Secondary recovery only after loss-of-value validation; never label metal-free.",
+      "verification_plan": "Audit low-signal and missed-detection pieces with whole-piece assay."
+    }
+  }
+]

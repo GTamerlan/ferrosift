@@ -1,0 +1,90 @@
+{
+  "revision": "M01-W1",
+  "status": "Open research/concept holds; no operation/fabrication approval",
+  "holds": [
+    {
+      "id": "H01",
+      "topic": "Host compatibility",
+      "status": "open",
+      "required_evidence": "Actual belt reinforcement/splices, frames, return run, rollers, fasteners and drive/actuator EMI must be characterized. Exclusion-box extent is provisional."
+    },
+    {
+      "id": "H02",
+      "topic": "Usable sensing aperture",
+      "status": "open",
+      "required_evidence": "Map mounted empty-belt/reference responses over X/Y/Z, poses, frequencies and feed; 180 mm lane is not measured sensor coverage."
+    },
+    {
+      "id": "H03",
+      "topic": "Coils and acquisition",
+      "status": "open",
+      "required_evidence": "Six functional windings have continuous illustrative three-pass paths, insulation, separate terminals and recessed return channels. Select electrical turns/wire/insulation, frequency/current, polarity, Rx combination, parasitics, bandwidth, thermal design, retention/manufacture and calibration. Internal harness from terminal pairs to cartridge cable exits, shielding, pinout, synchronous drive/phase reference and channel delays remain unresolved. No complete electrical circuit or balanced response is established."
+    },
+    {
+      "id": "H04",
+      "topic": "Incremental information",
+      "status": "open",
+      "required_evidence": "Compare pose/geometry-conditioned directional and frequency sequences against strong simpler baselines on held-out objects/lots. No multi-angle advantage demonstrated."
+    },
+    {
+      "id": "H05",
+      "topic": "Feed and containment",
+      "status": "open",
+      "required_evidence": "Host must meter into central lane before stationary exclusion masks. Size/height/mass/occupancy, jam/escape/collision, skirts, wear and contamination require tests; no operating feed envelope approved."
+    },
+    {
+      "id": "H06",
+      "topic": "Structural and mechanical design",
+      "status": "open",
+      "required_evidence": "Select materials/fasteners, loads, vibration, deflection, wear, manufacturability, retention and tolerances. Nominal contacts and gaps are not load certification."
+    },
+    {
+      "id": "H07",
+      "topic": "Adjustment and calibration",
+      "status": "open",
+      "required_evidence": "Nominal Y/Z slots and under-head spacer adjustment shown; complete movement, retention, repeatability, standards, target placement and safe calibration procedures unvalidated."
+    },
+    {
+      "id": "H08",
+      "topic": "Object association",
+      "status": "open",
+      "required_evidence": "Register the same moving fragment across separated optical/A/B stations under slip, roll, bounce, stops and ramps. Encoder measures belt travel only."
+    },
+    {
+      "id": "H09",
+      "topic": "Timing and usable datum",
+      "status": "open",
+      "required_evidence": "Measured excitation/settling/demodulation, common timebase, channel delay and processing-tail latency required. Last required usable observation X and usable downstream distance TBD."
+    },
+    {
+      "id": "H10",
+      "topic": "Host actuation",
+      "status": "open",
+      "required_evidence": "Module only proposes object decision output. Downstream transport/scheduling/ejection and physical capture need independent integration tests and ownership."
+    },
+    {
+      "id": "H11",
+      "topic": "Optics",
+      "status": "open",
+      "required_evidence": "RGB / optional 3D device, lens/FOV across height, illumination, contamination windows and calibration unselected. Centreline clearance is not FOV validation."
+    },
+    {
+      "id": "H12",
+      "topic": "Electrical/environment/safety",
+      "status": "open",
+      "required_evidence": "Power, pinouts/protocol, protection, grounding, EMC, thermal, ingress, guards/interlocks/isolation/restart require competent installation-specific design. Classification confidence is not a certified safety function."
+    },
+    {
+      "id": "H13",
+      "topic": "Full-width scaling",
+      "status": "open",
+      "required_evidence": "New array/channel layout, fields, crosstalk, calibration, timing and mechanics required; no 600 mm sensing coverage claim."
+    },
+    {
+      "id": "H14",
+      "topic": "Partial host context",
+      "status": "open",
+      "required_evidence": "Grey segment omits roller bearings, drive, belt turnaround curves and complete guards. It is an interface illustration, not a host design or structural approval."
+    }
+  ]
+}

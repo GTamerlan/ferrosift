@@ -1,0 +1,259 @@
+{
+  "release_id": "Ferrosift_M01-W1_20261015",
+  "geometry_revision": "M01-W1",
+  "status": "UNPUBLISHED_REVIEW_CANDIDATE",
+  "created_utc": "2026-10-15T11:45:57.763902+00:00",
+  "source_root": "module_package_20261015_v01/engineering",
+  "baseline_public_commit": "f94b35f2ce7c555cd05a726774c5d2d58024a1fa",
+  "publication_authorization": "User authorized finished public website, Explorer and CAD; awaiting parent final review before publication.",
+  "geometry_status": "Preliminary, not fabrication-certified; no electromagnetic or physical validation",
+  "component_counts": 303,
+  "triangles": 381379,
+  "source_hashes": {
+    "cad/build_module.py": "f2aa1333872c5734805a43a3b2b8d540a62b2c3a9216c2476de2204d26f9e0df",
+    "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
+    "cad/export_common.py": "729ecd42bee8dd4e430765cd0be87cd2e0715d936f7204d9dc627cb4b256d972",
+    "design_basis/parameters.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c",
+    "design_basis/interface_contract.json": "717dd47e350de349a415e524eb26e6d7dc8ff1b954eca7affe8e212a81cd2b32",
+    "design_basis/design_holds.json": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408",
+    "design_basis/geometry_contract.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c"
+  },
+  "mapping": {
+    "web/module-assembly.json": "module-assembly.json",
+    "exports/assembly_manifest.json": "downloads/assembly_manifest.json",
+    "exports/selections/winding_detail.step": "downloads/winding_detail.step",
+    "drawings/module_drawings.pdf": "downloads/module_drawings.pdf",
+    "drawings/drawing_manifest.json": "downloads/drawing_manifest.json",
+    "figures/figure_manifest.json": "downloads/figure_manifest.json",
+    "figures/module_isolated.png": "figures/module_isolated.png",
+    "design_basis/geometry_contract.json": "downloads/design_basis.json",
+    "design_basis/design_holds.json": "downloads/design_holds.json",
+    "design_basis/interface_contract.json": "downloads/interface_contract.json",
+    "verification/geometry_checks.json": "downloads/geometry_checks.json",
+    "bom/component_schedule.csv": "downloads/module_component_schedule.csv",
+    "exports/module_assembly.step": "downloads/module_assembly.step",
+    "exports/module_assembly.brep": "downloads/module_assembly.brep",
+    "exports/module_assembly.glb": "downloads/module_assembly.glb",
+    "exports/module_with_host.step": "downloads/module_with_host.step",
+    "exports/module_with_host.brep": "downloads/module_with_host.brep",
+    "exports/module_with_host.glb": "downloads/module_with_host.glb",
+    "exports/host_reference.step": "downloads/host_reference.step",
+    "exports/host_reference.brep": "downloads/host_reference.brep",
+    "exports/host_reference.glb": "downloads/host_reference.glb",
+    "drawings/FS-M01-01.svg": "drawings/FS-M01-01.svg",
+    "drawings/FS-M01-02.svg": "drawings/FS-M01-02.svg",
+    "drawings/FS-M01-03.svg": "drawings/FS-M01-03.svg",
+    "drawings/FS-M01-04.svg": "drawings/FS-M01-04.svg",
+    "drawings/FS-M01-05.svg": "drawings/FS-M01-05.svg",
+    "drawings/FS-M01-06.svg": "drawings/FS-M01-06.svg",
+    "figures/module_installed_host.png": "figures/module_installed_host.png",
+    "figures/module_installed_host_clean.png": "figures/module_installed_host_clean.png",
+    "figures/module_isolated_clean.png": "figures/module_isolated_clean.png",
+    "figures/module_maintenance_interfaces.png": "figures/module_maintenance_interfaces.png",
+    "figures/module_maintenance_interfaces_clean.png": "figures/module_maintenance_interfaces_clean.png",
+    "figures/module_sensing_arrangement.png": "figures/module_sensing_arrangement.png",
+    "figures/module_sensing_arrangement_clean.png": "figures/module_sensing_arrangement_clean.png"
+  },
+  "files": [
+    {
+      "path": "engineering/README.md",
+      "bytes": 2050,
+      "sha256": "5106456f15b9484dada5b072a39602d13b033e0fa65bdadf435cc2812ac0487f"
+    },
+    {
+      "path": "engineering/downloads/assembly_manifest.json",
+      "bytes": 331389,
+      "sha256": "4664531ea662a4d8ec067b0f720959dded1d43b882fa9efb069012cff32a46ed"
+    },
+    {
+      "path": "engineering/downloads/benchmark_verification_contract.json",
+      "bytes": 23991,
+      "sha256": "d0b25dc1d3415dbf52f03c1fd0dc14a5df5c71675da362209574e61b87b6d0ce"
+    },
+    {
+      "path": "engineering/downloads/design_basis.json",
+      "bytes": 14934,
+      "sha256": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c"
+    },
+    {
+      "path": "engineering/downloads/design_holds.json",
+      "bytes": 4532,
+      "sha256": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408"
+    },
+    {
+      "path": "engineering/downloads/drawing_manifest.json",
+      "bytes": 8723,
+      "sha256": "91366069a9f9dd7dfcf5ea31b8eb76971143c38bcf9f9491a98d996368fdfe8b"
+    },
+    {
+      "path": "engineering/downloads/figure_manifest.json",
+      "bytes": 33510,
+      "sha256": "6a7e70e9fd11d4753251ba8a34829a170615c792fd7f8100cada36613318ee4f"
+    },
+    {
+      "path": "engineering/downloads/geometry_checks.json",
+      "bytes": 16538,
+      "sha256": "d4810b2d6a389362a1c974c0a9ec4256f5e6601ee3bdb2a4ae7d48c3f6615cfd"
+    },
+    {
+      "path": "engineering/downloads/historical_video_evidence_audit.json",
+      "bytes": 19486,
+      "sha256": "721ee942f33157e558b01aae6ac02d9d1f4b429d42a07b4cd7c95b6bb0f12ea4"
+    },
+    {
+      "path": "engineering/downloads/host_reference.brep",
+      "bytes": 28874,
+      "sha256": "de4567830c26f5409d0fccc7282bd3b9fe91a4824e8901c4d64ea2f385a79480"
+    },
+    {
+      "path": "engineering/downloads/host_reference.glb",
+      "bytes": 47388,
+      "sha256": "9859a38445f5b18f7c23de988ec679c7ea4f012bacae9761915616ad3669d2e6"
+    },
+    {
+      "path": "engineering/downloads/host_reference.step",
+      "bytes": 215126,
+      "sha256": "638eaf1a548820476340072bbc83a4a80b300853041698f9068f0a30f8062230"
+    },
+    {
+      "path": "engineering/downloads/interface_contract.json",
+      "bytes": 5329,
+      "sha256": "717dd47e350de349a415e524eb26e6d7dc8ff1b954eca7affe8e212a81cd2b32"
+    },
+    {
+      "path": "engineering/downloads/module_assembly.brep",
+      "bytes": 2287848,
+      "sha256": "b6b14266a13c2e83a508378141e83359c942dbd7ce6c323a27ed57fa3b21b5f1"
+    },
+    {
+      "path": "engineering/downloads/module_assembly.glb",
+      "bytes": 11545476,
+      "sha256": "528e7b651b2880bd1fe4f452fe773c41d8db5c7a5fdd1ae92d1731472f243f75"
+    },
+    {
+      "path": "engineering/downloads/module_assembly.step",
+      "bytes": 9291690,
+      "sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d"
+    },
+    {
+      "path": "engineering/downloads/module_component_schedule.csv",
+      "bytes": 73365,
+      "sha256": "ed4813c33918335810313cd958d249cee5f1e01f18d8759d74076a0f94db23f4"
+    },
+    {
+      "path": "engineering/downloads/module_drawings.pdf",
+      "bytes": 379269,
+      "sha256": "388e3af9594268f3bbab150933f6e98dc1e4ddc5768875a4db2b74435a1893f9"
+    },
+    {
+      "path": "engineering/downloads/module_source.zip",
+      "bytes": 149068,
+      "sha256": "cec4ea48e5bce378d384cf79a0eae795df8a95458663447cb1f35c902b3c8cbc"
+    },
+    {
+      "path": "engineering/downloads/module_with_host.brep",
+      "bytes": 2319801,
+      "sha256": "bd7c2c0864c94cdef02accf35be7d8aeda2db2311ffabf4d35757edc0221fca8"
+    },
+    {
+      "path": "engineering/downloads/module_with_host.glb",
+      "bytes": 11592812,
+      "sha256": "4f6713a3234e727c26d7dd5455aa81fa6d4847785cb152d70fd52af55f09295e"
+    },
+    {
+      "path": "engineering/downloads/module_with_host.step",
+      "bytes": 9527434,
+      "sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e"
+    },
+    {
+      "path": "engineering/downloads/winding_detail.step",
+      "bytes": 3697529,
+      "sha256": "bc74f443d0fe8300f9f93a764216ee30abcd7519a6a2051bc6f1f0fec9da8ec2"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-01.svg",
+      "bytes": 653830,
+      "sha256": "a788845c5af7d4c47bb68726fc25c897da1182a163452bbaed744a5c80a1b01c"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-02.svg",
+      "bytes": 431718,
+      "sha256": "a540941d54581ea79092f3b4a504273eb07c9c20fc92196babea177ab34dd6c1"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-03.svg",
+      "bytes": 1986645,
+      "sha256": "b3850f4b08716bc37201161355eed5cf03c12e35789d01afa65b28792392d62c"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-04.svg",
+      "bytes": 111682,
+      "sha256": "cf4ff1d1aea91ecf8c1cdb89919a7733bb1192b6e648c1e5b006c9410f8f727b"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-05.svg",
+      "bytes": 63807,
+      "sha256": "978286dbfc793574a10aeb3c0fb79c1af751b38e1106091beb889e1d6b5ef475"
+    },
+    {
+      "path": "engineering/drawings/FS-M01-06.svg",
+      "bytes": 18753,
+      "sha256": "376f65a47de6fb483763b8e507123e7185a4558cacdf7e66c7179f3993cb321b"
+    },
+    {
+      "path": "engineering/drawings/module_isometric.png",
+      "bytes": 303572,
+      "sha256": "c672724947096952f852e008d7b08c3c41054c08751cea1f62057414d62ae9e8"
+    },
+    {
+      "path": "engineering/figures/module_installed_host.png",
+      "bytes": 292009,
+      "sha256": "9627afe592b7011ed82d6a9aacf97bc0bca3aaaef62188b3088c331a76f9a72e"
+    },
+    {
+      "path": "engineering/figures/module_installed_host_clean.png",
+      "bytes": 182788,
+      "sha256": "dec588836e6feb1b527f6c4f168fd7cbc51e02bf8deee7cd16a63d84d1f993a3"
+    },
+    {
+      "path": "engineering/figures/module_isolated.png",
+      "bytes": 312019,
+      "sha256": "243d9bb87a355d2065871f2893f07a12a035eb47ee42a1dd86d58d0d265b4f47"
+    },
+    {
+      "path": "engineering/figures/module_isolated_clean.png",
+      "bytes": 208814,
+      "sha256": "699912787de44b92107d850f56c1c64db961ef6f762b8a84b562af738d68c4d3"
+    },
+    {
+      "path": "engineering/figures/module_maintenance_interfaces.png",
+      "bytes": 182760,
+      "sha256": "7593edc1e42ea6703a3ae8b8ce2a53a2853440d5b22d895d8c1085c80a855a9e"
+    },
+    {
+      "path": "engineering/figures/module_maintenance_interfaces_clean.png",
+      "bytes": 69132,
+      "sha256": "11ce747ef4f5e852bf6f1a5cbfe1ce4790fc3cc5c48d8d36ae45a7b8cd4febb7"
+    },
+    {
+      "path": "engineering/figures/module_sensing_arrangement.png",
+      "bytes": 458327,
+      "sha256": "b6368351779d8f5d612295573ace48f1b5309c207e4e40dac4ee9a036ed37e4c"
+    },
+    {
+      "path": "engineering/figures/module_sensing_arrangement_clean.png",
+      "bytes": 337258,
+      "sha256": "37936f78508b0f4560e33de90f3130373dbc6e9727145884d85d2173c9a1db28"
+    },
+    {
+      "path": "engineering/index.html",
+      "bytes": 885,
+      "sha256": "ebd5a9a022689f51beed71eefaf0f9f628337ff63716d835f95fc91f4fcb0964"
+    },
+    {
+      "path": "engineering/module-assembly.json",
+      "bytes": 19599401,
+      "sha256": "a14643ad4b60b20d3772cbebc24b0685544ab46155e9ad0b13f2d9a6373f3fb9"
+    }
+  ]
+}

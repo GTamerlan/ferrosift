@@ -1,27 +1,27 @@
-# Ferrosift — conveyor intelligence and engineering
+# Ferrosift — retrofit sensing module
 
-Ferrosift connects visual material detection with the engineering of physical separation. This static website brings the model comparison, conveyor design, engineering program and operator planning scenario together.
+This unpublished M01 candidate presents a removable computer-vision and multi-angle, multi-frequency induction sensing module for existing recycling lines. The grey host conveyor is installation reference; feed preparation, drive, downstream ejection and collection are host responsibilities.
 
-Serve this directory over HTTP and open `index.html`. Explore `model-demo/` for the conveyor video comparison and `explorer.html` for the machine, teams we're building, planning scenario and engineering downloads. The `engineering/` route opens the machine view. There is no build step or server-side inference.
+Serve this directory over HTTP and open `index.html`. `explorer.html#machine` contains the module-only/context viewer, six inspection views, optional 3D head, named components, and labelled field-direction and service overlays. `engineering/` redirects there. No build step or server-side inference is required.
 
-The comparison now puts synchronized saved Ferrosift/reference views first, with the selected clip's scores immediately underneath. Shared playback and seeking follow the source recording clock; images and boxes update at the actual saved sample times. Original footage and source details remain available below the comparison.
+## Research scope
 
-`sensor-concept/` explains a proposed experiment on one tracked fragment through RGB, optional exterior 3D geometry, and sequential under-belt and side-coil measurements. Explorer's **Research cell** control adds a separate procedural 3D overlay. These are labeled research schematics: no measured sensor performance, buildable coil design or hidden copper map is asserted. Authoritative CAD and engineering downloads are unchanged.
+The 180 mm guided central lane on a 600 mm reference belt is a proposed mechanical experiment, not measured sensor coverage. Horizontal XY coils below the belt and upright XZ side coils provide intended complementary orientations. The six functional windings (two transmit and four candidate receive windings) illustrate two transmitters and four receivers; their balance, field patterns and channel arrangement are unoptimized. The stations are sequential, and belt travel does not guarantee fragment association.
 
-The video picker contains 38 recordings from four datasets and 2,720 saved comparison frames. Both exact model checkpoints ran on the same decoded pixels. Seven clips have scores on 979 verified labeled frames; the other 31 show “Accuracy unavailable: no verified labels.” The selected-clip metric is copper-annotation routing recall under the frozen all-proposal matcher. Source credits, exposure history, model hashes, thresholds and runtime are included with the comparison. `model-demo/method/` contains the calculation source and run provenance.
-
-On our labeled conveyor evaluation, Ferrosift detected 94.0% of copper annotations versus 85.6% for the YOLO11s reference, an 8.4 percentage-point improvement. The homepage's **Methods, assumptions & design status** section gives the exact counts and comparison scope. These historical results come from the development cohort used to select the model configuration and operating point.
+The proposed contribution is geometry- and pose-conditioned interpretation of directional, frequency-dependent response sequences on irregular layered PCB/e-scrap. Optical/induction fusion already exists. Comparison with strong simpler baselines on independent fragments and source lots, then collected-output measurement, will determine whether the module adds value. The 2045 horizon is aspirational; space actuation is a separate research program with its own physical and flight gates.
 
 ## Engineering files
 
-The current IR01-R1 assembly contains 494 named solids and 204,200 triangles, with ten A3 drawing sheets. STEP, BREP, GLB and browser geometry come from the same editable CadQuery source. `engineering/downloads/manifest.json` records exact engineering-file sizes and checksums; `engineering/README.md` describes the file set and design review.
+`engineering/downloads/module_manifest.json` lists exact public engineering file identities. `module_assembly.*` contains the module only; `module_with_host.*` includes the grey reference belt/frame. Editable source, component schedule, six proposed-layout drawing sheets, design assumptions, host interfaces and geometry checks accompany the interchange files. All derive from the same M01 source revision. The complete conveyor IR01-R1 and its receiving-capture hold remain preserved in local project history and frozen earlier releases, separate from this offer.
 
-## Methods and design status
+The CAD is preliminary and not fabrication-certified. Checks concern the stated nominal geometry and export consistency. They do not establish electromagnetic performance, usable aperture, allowable loads, tolerances, field compatibility, speed, safety compliance or successful physical recovery. See the design holds and interface contract before using the geometry.
 
-The historical candidate found 7,081 of 7,535 copper annotations; the reference found 6,448. Repeated frames count repeated annotations. The selected configurations combine architecture, training and model-selection effects. Their approximately 1% development alarm-burden cap remains a selection constraint, distinct from physical steel loss or a field guarantee. Source exposure, thresholds, steel alarms and exact counts are recorded in the public conveyor evidence excerpt and evaluation contract.
+## Preserved recorded evidence
 
-The CAD is preliminary and not for fabrication. Receiving containment has an unresolved capture hold, documented in `engineering/downloads/receiving_capture_hold.json`. No operating speed or full-width capture route is approved. Actuator selection, sensing coverage, controls, guarding and physical recovery trials remain part of the engineering program.
+The side-by-side comparison contains 38 recordings and 2,720 saved frame pairs. Seven clips have scores on 979 verified labelled frames, including one where the reference leads; 31 have no verified accuracy. The complete `model-demo/` assets, sources, labels, predictions, loss and scoring code remain unchanged from the frozen public baseline.
 
-Source playback, prediction cadence, measured inference speed and schematic belt motion are separate quantities. New operating conditions require their own evaluation. The **Planning scenario** uses explicit reader-entered assumptions for recovery, prices and costs.
+The separate historical selected development result is 7,081/7,535 visible-copper annotations (94.0%) versus 6,448/7,535 (85.6%). Configuration and thresholds were selected on those 1,522 development frames. Repeated appearances count as annotations; this does not establish physical recovery, purity or financial gain. Full methods, exposure history and thresholds remain available. Training provenance is in `training.html`.
 
-This release builds on the preserved IR01-R1 website. Model development is described in `training.html`; engineering provenance is retained in the engineering manifests. The five expandable programs include research questions, proposed mechanisms, concept sketches, measurable gates and primary-source references.
+The operator calculator is unchanged and uses independent reader assumptions for physical recovery, value and costs. It is not a module price or a performance forecast. Proposed R&D workstreams are planning descriptions, not staffed-team claims.
+
+Private papers, investor decks, funding/salary scenarios, private website QA and local coordination sources are excluded from this website. Scoped engineering verification accompanies the editable CAD source. This candidate has not been published.
