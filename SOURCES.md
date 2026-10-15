@@ -42,7 +42,7 @@ The 2024 Global E-waste Monitor from UNITAR / ITU reports 2022 estimates of 62 m
 
 https://unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling
 
-TOMRA's manufacturer-published customer case studies describe PNW Metal's loss of smaller metals to landfill and expanded Zorba product offerings, and Premier Surplus's approximately 95% first-pass material recovery. Product offerings growing fourfold is not a claim of fourfold recovery. Neither source provides a dollar value for company losses. These examples are unrelated to Ferrosift's own performance.
+TOMRA's manufacturer-published customer case studies describe PNW Metal's loss of smaller metals to landfill and expanded Zorba product offerings, and Premier Surplus's approximately 95% first-pass material recovery. Product offerings growing fourfold is not a claim of fourfold recovery. Neither source provides a dollar value for company losses. These examples are unrelated to Ferrosift's own performance. In the Premier article, the 75–90% figure is a consultant expectation; about 95% is the operator's report for its specific e-scrap line, downstream of a Javelin eddy-current separator. Neither is a universal baseline or multilayer-PCB copper-recovery rate. The hypothetical operator example uses independent assumptions. Further processing described in the article concerns ejected products, not an assertion that the unrecovered share is subsequently recovered.
 
 - PNW, May 2021: https://www.tomra.com/en-ie/waste-metal-recycling/media-center/customer-stories/pnw-metal-recycling-inc
 - Premier, March 2021: https://www.tomra.com/en-gb/waste-metal-recycling/media-center/customer-stories/premier-surplus
