@@ -1,13 +1,14 @@
 {
-  "figure_package": "Ferrosift retrofit module M01-W1",
+  "figure_package": "Ferrosift retrofit module M02",
+  "draft": false,
   "status": "PASS",
-  "created_utc": "2026-10-15T11:40:21.731Z",
+  "created_utc": "2026-10-15T22:16:08.321Z",
   "capture_kind": "Offscreen static CAD rendering; not a browser or application screenshot",
   "geometry_source": "web/module-assembly.json",
-  "geometry_sha256": "a14643ad4b60b20d3772cbebc24b0685544ab46155e9ad0b13f2d9a6373f3fb9",
-  "renderer_sha256": "cf2627f231f5cb79ee75b32fd278f6fd9bf722bef0e75a35d03cf7a156b85cf8",
-  "runner_sha256": "a77ee004a22c9125ce07b56b0f7ad36f44731c07ae2f63471137940779a87c04",
-  "step_sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e",
+  "geometry_sha256": "69193345ccb3b96337e8fe24009af8f59a3be45a0ff20f0266779b6417da684c",
+  "renderer_sha256": "5cdf026f6a39b40fd800b7fbf887a2f1066fff85c0cea2c6b5b76dac7f9cefa4",
+  "runner_sha256": "cb420973fb5c1e613815539833efc728a91230be99cb9833c845aa77e924260f",
+  "step_sha256": "947a02e2ca06b383c31953c216e20c97fa7ff8f8c9290a2fbcbbde60154d95cb",
   "profile": "Fresh temporary profile; removed after run",
   "external_network_requests": [],
   "previews": [
@@ -15,9 +16,9 @@
       "name": "module_isolated.png",
       "width": 2400,
       "height": 1440,
-      "visible_components": 268,
-      "visible_source_triangles": 208925,
-      "opaque_components": 268,
+      "visible_components": 318,
+      "visible_source_triangles": 410189,
+      "opaque_components": 318,
       "transparent_components": 0,
       "triangle_sorted_transparent_triangles": 0,
       "source_component_ids": [
@@ -140,16 +141,22 @@
         "under_tx_xy_terminal_base_0",
         "under_tx_xy_terminal_1",
         "under_tx_xy_terminal_base_1",
+        "under_tx_xy_bobbin_lip",
+        "under_tx_xy_keeper",
         "under_rx_xy_-42",
         "under_rx_xy_-42_terminal_0",
         "under_rx_xy_-42_terminal_base_0",
         "under_rx_xy_-42_terminal_1",
         "under_rx_xy_-42_terminal_base_1",
+        "under_rx_xy_-42_bobbin_lip",
+        "under_rx_xy_-42_keeper",
         "under_rx_xy_42",
         "under_rx_xy_42_terminal_0",
         "under_rx_xy_42_terminal_base_0",
         "under_rx_xy_42_terminal_1",
         "under_rx_xy_42_terminal_base_1",
+        "under_rx_xy_42_bobbin_lip",
+        "under_rx_xy_42_keeper",
         "under_tx_former",
         "under_rx_former",
         "under_former_post_-102_-110",
@@ -212,16 +219,22 @@
         "side_tx_xz_terminal_base_0",
         "side_tx_xz_terminal_1",
         "side_tx_xz_terminal_base_1",
+        "side_tx_xz_bobbin_lip",
+        "side_tx_xz_keeper",
         "side_rx_xz_266",
         "side_rx_xz_266_terminal_0",
         "side_rx_xz_266_terminal_base_0",
         "side_rx_xz_266_terminal_1",
         "side_rx_xz_266_terminal_base_1",
+        "side_rx_xz_266_bobbin_lip",
+        "side_rx_xz_266_keeper",
         "side_rx_xz_334",
         "side_rx_xz_334_terminal_0",
         "side_rx_xz_334_terminal_base_0",
         "side_rx_xz_334_terminal_1",
         "side_rx_xz_334_terminal_base_1",
+        "side_rx_xz_334_bobbin_lip",
+        "side_rx_xz_334_keeper",
         "side_winding_former_-1",
         "side_winding_former_1",
         "optical_slotted_carrier",
@@ -234,6 +247,9 @@
         "rgb_body",
         "rgb_lens_barrel",
         "rgb_lens_glass",
+        "rgb_mount_screw_-303",
+        "rgb_mount_screw_-257",
+        "rgb_mount_pad",
         "light_bar_-1",
         "light_diffuser_-1",
         "light_drop_arm_-1",
@@ -242,7 +258,9 @@
         "light_drop_arm_1",
         "optional_3d_mount",
         "optional_3d_body",
+        "optional_3d_bezel_130",
         "optional_3d_aperture_130",
+        "optional_3d_bezel_170",
         "optional_3d_aperture_170",
         "optical_lid_spacer_-390_-100",
         "optical_lid_spacer_-390_240",
@@ -267,14 +285,47 @@
         "control_carrier_1050",
         "control_carrier_1360",
         "control_connector_power",
+        "control_connector_power_locknut",
+        "control_connector_power_seal",
         "control_connector_host_io",
+        "control_connector_host_io_locknut",
+        "control_connector_host_io_seal",
         "control_connector_encoder",
+        "control_connector_encoder_locknut",
+        "control_connector_encoder_seal",
         "control_connector_optics",
+        "control_connector_optics_locknut",
+        "control_connector_optics_seal",
+        "control_connector_optional_3d",
+        "control_connector_optional_3d_locknut",
+        "control_connector_optional_3d_seal",
         "control_connector_coil_A",
-        "control_connector_coil_B",
+        "control_connector_coil_A_locknut",
+        "control_connector_coil_A_seal",
+        "control_connector_coil_B_tx",
+        "control_connector_coil_B_tx_locknut",
+        "control_connector_coil_B_tx_seal",
+        "control_connector_coil_B_rx",
+        "control_connector_coil_B_rx_locknut",
+        "control_connector_coil_B_rx_seal",
         "encoder_body",
         "encoder_coupling",
         "encoder_bracket",
+        "rgb_cable_gland",
+        "rgb_cable_gland_locknut",
+        "rgb_cable_gland_seal",
+        "depth_cable_gland",
+        "depth_cable_gland_locknut",
+        "depth_cable_gland_seal",
+        "under_cable_gland",
+        "under_cable_gland_locknut",
+        "under_cable_gland_seal",
+        "side_cable_gland_-1",
+        "side_cable_gland_-1_locknut",
+        "side_cable_gland_-1_seal",
+        "side_cable_gland_1",
+        "side_cable_gland_1_locknut",
+        "side_cable_gland_1_seal",
         "cable_optical",
         "cable_optional_3d",
         "cable_under_lead",
@@ -299,12 +350,12 @@
       "gl_error": 0,
       "clip_min_mm": [
         -1270,
-        -762,
+        -814.0000001,
         243
       ],
       "clip_max_mm": [
         1270,
-        485,
+        514.0000001000001,
         1640
       ],
       "camera": {
@@ -312,19 +363,19 @@
         "elevation_deg": 24,
         "projection": "orthographic",
         "view_plane_span_mm": [
-          3116.2071701517348,
-          1502.9494758696421
+          2562.8469577096216,
+          1768.0399898123337
         ],
         "view_bounds": {
           "min": [
-            -1223.0161579984233,
-            405.736548307097,
+            -1298.6924682326894,
+            329.4072947630477,
             -327.08286802700445
           ],
           "max": [
-            1032.5584702800447,
+            1052.5432727853115,
             1772.0542536431353,
-            1599.8265653189326
+            1633.155846827213
           ]
         }
       },
@@ -335,16 +386,121 @@
         "module"
       ],
       "opacity_overrides": {},
+      "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+      "shadow_pass": {
+        "source": "Same visible opaque CAD triangle buffers",
+        "resolution": [
+          4096,
+          2048
+        ],
+        "filter": "3x3 percentage-closer filtering",
+        "added_geometry": false
+      },
+      "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+      "included_id_prefixes": null,
       "geometric_annotations": null,
       "routes": false,
-      "bytes": 312019,
-      "sha256": "243d9bb87a355d2065871f2893f07a12a035eb47ee42a1dd86d58d0d265b4f47",
+      "detail_panel": {
+        "width": 610,
+        "height": 900,
+        "visible_components": 9,
+        "visible_source_triangles": 11546,
+        "opaque_components": 9,
+        "transparent_components": 0,
+        "triangle_sorted_transparent_triangles": 0,
+        "source_component_ids": [
+          "rgb_body",
+          "rgb_lens_barrel",
+          "rgb_lens_glass",
+          "rgb_mount_screw_-303",
+          "rgb_mount_screw_-257",
+          "rgb_mount_pad",
+          "rgb_cable_gland",
+          "rgb_cable_gland_locknut",
+          "rgb_cable_gland_seal"
+        ],
+        "depth_test_enabled": true,
+        "depth_write_restored": true,
+        "depth_bits": 24,
+        "antialias": true,
+        "renderer": "WebKit WebGL",
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "gl_error": 0,
+        "clip_min_mm": [
+          -1270,
+          -814.0000001,
+          243
+        ],
+        "clip_max_mm": [
+          1270,
+          514.0000001000001,
+          1640
+        ],
+        "camera": {
+          "azimuth_deg": -62,
+          "elevation_deg": -30,
+          "projection": "orthographic",
+          "view_plane_span_mm": [
+            129.60197514813686,
+            191.21602890708718
+          ],
+          "view_bounds": {
+            "min": [
+              -306.6757733161586,
+              1164.6351390399686,
+              -930.252159327561
+            ],
+            "max": [
+              -187.7748786848404,
+              1290.129909420455,
+              -796.9294485195378
+            ]
+          }
+        },
+        "capture": "Raw WebGL canvas drawn onto a captioned 2D canvas; no UI screenshot",
+        "geometry": "Exactly expanded source indices/vertices/normals; no simplification, remeshing or pose changes",
+        "omitted_component_ids": [],
+        "scopes": [
+          "module",
+          "host_reference"
+        ],
+        "opacity_overrides": {},
+        "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+        "shadow_pass": {
+          "source": "Same visible opaque CAD triangle buffers",
+          "resolution": [
+            4096,
+            2048
+          ],
+          "filter": "3x3 percentage-closer filtering",
+          "added_geometry": false
+        },
+        "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+        "included_id_prefixes": [
+          "rgb_"
+        ],
+        "geometric_annotations": null,
+        "routes": false,
+        "placement_px": [
+          1650,
+          80,
+          610,
+          900
+        ],
+        "caption": "B RGB head detail; carrier, cover and lighting omitted."
+      },
+      "clean_canvas_size": [
+        2260,
+        1090
+      ],
+      "bytes": 400120,
+      "sha256": "0c904d0e3a7f1f35dc098721de2b5101969e827acc2a7fdaec5b7f8901f625cb",
       "clean_image": {
         "path": "module_isolated_clean.png",
         "width": 2260,
         "height": 1090,
-        "sha256": "699912787de44b92107d850f56c1c64db961ef6f762b8a84b562af738d68c4d3",
-        "bytes": 208814,
+        "sha256": "601c10d1f9aa0cb3f6c926cfedec10e5deba57515202af9e00b269fddd2101bd",
+        "bytes": 301248,
         "note": "Raw exact CAD depth-buffer view; excludes caption and schematic overlay. Use with supplied concept-status caption."
       }
     },
@@ -352,9 +508,9 @@
       "name": "module_installed_host.png",
       "width": 2400,
       "height": 1440,
-      "visible_components": 282,
-      "visible_source_triangles": 209693,
-      "opaque_components": 282,
+      "visible_components": 332,
+      "visible_source_triangles": 410957,
+      "opaque_components": 332,
       "transparent_components": 0,
       "triangle_sorted_transparent_triangles": 0,
       "source_component_ids": [
@@ -491,16 +647,22 @@
         "under_tx_xy_terminal_base_0",
         "under_tx_xy_terminal_1",
         "under_tx_xy_terminal_base_1",
+        "under_tx_xy_bobbin_lip",
+        "under_tx_xy_keeper",
         "under_rx_xy_-42",
         "under_rx_xy_-42_terminal_0",
         "under_rx_xy_-42_terminal_base_0",
         "under_rx_xy_-42_terminal_1",
         "under_rx_xy_-42_terminal_base_1",
+        "under_rx_xy_-42_bobbin_lip",
+        "under_rx_xy_-42_keeper",
         "under_rx_xy_42",
         "under_rx_xy_42_terminal_0",
         "under_rx_xy_42_terminal_base_0",
         "under_rx_xy_42_terminal_1",
         "under_rx_xy_42_terminal_base_1",
+        "under_rx_xy_42_bobbin_lip",
+        "under_rx_xy_42_keeper",
         "under_tx_former",
         "under_rx_former",
         "under_former_post_-102_-110",
@@ -563,16 +725,22 @@
         "side_tx_xz_terminal_base_0",
         "side_tx_xz_terminal_1",
         "side_tx_xz_terminal_base_1",
+        "side_tx_xz_bobbin_lip",
+        "side_tx_xz_keeper",
         "side_rx_xz_266",
         "side_rx_xz_266_terminal_0",
         "side_rx_xz_266_terminal_base_0",
         "side_rx_xz_266_terminal_1",
         "side_rx_xz_266_terminal_base_1",
+        "side_rx_xz_266_bobbin_lip",
+        "side_rx_xz_266_keeper",
         "side_rx_xz_334",
         "side_rx_xz_334_terminal_0",
         "side_rx_xz_334_terminal_base_0",
         "side_rx_xz_334_terminal_1",
         "side_rx_xz_334_terminal_base_1",
+        "side_rx_xz_334_bobbin_lip",
+        "side_rx_xz_334_keeper",
         "side_winding_former_-1",
         "side_winding_former_1",
         "optical_slotted_carrier",
@@ -585,6 +753,9 @@
         "rgb_body",
         "rgb_lens_barrel",
         "rgb_lens_glass",
+        "rgb_mount_screw_-303",
+        "rgb_mount_screw_-257",
+        "rgb_mount_pad",
         "light_bar_-1",
         "light_diffuser_-1",
         "light_drop_arm_-1",
@@ -593,7 +764,9 @@
         "light_drop_arm_1",
         "optional_3d_mount",
         "optional_3d_body",
+        "optional_3d_bezel_130",
         "optional_3d_aperture_130",
+        "optional_3d_bezel_170",
         "optional_3d_aperture_170",
         "optical_lid_spacer_-390_-100",
         "optical_lid_spacer_-390_240",
@@ -618,14 +791,47 @@
         "control_carrier_1050",
         "control_carrier_1360",
         "control_connector_power",
+        "control_connector_power_locknut",
+        "control_connector_power_seal",
         "control_connector_host_io",
+        "control_connector_host_io_locknut",
+        "control_connector_host_io_seal",
         "control_connector_encoder",
+        "control_connector_encoder_locknut",
+        "control_connector_encoder_seal",
         "control_connector_optics",
+        "control_connector_optics_locknut",
+        "control_connector_optics_seal",
+        "control_connector_optional_3d",
+        "control_connector_optional_3d_locknut",
+        "control_connector_optional_3d_seal",
         "control_connector_coil_A",
-        "control_connector_coil_B",
+        "control_connector_coil_A_locknut",
+        "control_connector_coil_A_seal",
+        "control_connector_coil_B_tx",
+        "control_connector_coil_B_tx_locknut",
+        "control_connector_coil_B_tx_seal",
+        "control_connector_coil_B_rx",
+        "control_connector_coil_B_rx_locknut",
+        "control_connector_coil_B_rx_seal",
         "encoder_body",
         "encoder_coupling",
         "encoder_bracket",
+        "rgb_cable_gland",
+        "rgb_cable_gland_locknut",
+        "rgb_cable_gland_seal",
+        "depth_cable_gland",
+        "depth_cable_gland_locknut",
+        "depth_cable_gland_seal",
+        "under_cable_gland",
+        "under_cable_gland_locknut",
+        "under_cable_gland_seal",
+        "side_cable_gland_-1",
+        "side_cable_gland_-1_locknut",
+        "side_cable_gland_-1_seal",
+        "side_cable_gland_1",
+        "side_cable_gland_1_locknut",
+        "side_cable_gland_1_seal",
         "cable_optical",
         "cable_optional_3d",
         "cable_under_lead",
@@ -650,12 +856,12 @@
       "gl_error": 0,
       "clip_min_mm": [
         -1270,
-        -762,
+        -814.0000001,
         243
       ],
       "clip_max_mm": [
         1270,
-        485,
+        514.0000001000001,
         1640
       ],
       "camera": {
@@ -675,7 +881,7 @@
           "max": [
             1300.3025921166043,
             1772.2626988113152,
-            1585.077363000978
+            1616.6737273392314
           ]
         }
       },
@@ -687,16 +893,32 @@
         "host_reference"
       ],
       "opacity_overrides": {},
+      "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+      "shadow_pass": {
+        "source": "Same visible opaque CAD triangle buffers",
+        "resolution": [
+          4096,
+          2048
+        ],
+        "filter": "3x3 percentage-closer filtering",
+        "added_geometry": false
+      },
+      "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+      "included_id_prefixes": null,
       "geometric_annotations": null,
       "routes": false,
-      "bytes": 292009,
-      "sha256": "9627afe592b7011ed82d6a9aacf97bc0bca3aaaef62188b3088c331a76f9a72e",
+      "clean_canvas_size": [
+        2260,
+        1090
+      ],
+      "bytes": 368654,
+      "sha256": "2f01b53eb7906e9840c766ef256194fd3c51ae780f895f5140186d1e73f0ac40",
       "clean_image": {
         "path": "module_installed_host_clean.png",
         "width": 2260,
         "height": 1090,
-        "sha256": "dec588836e6feb1b527f6c4f168fd7cbc51e02bf8deee7cd16a63d84d1f993a3",
-        "bytes": 182788,
+        "sha256": "cd9f312b15a4a47a4431bee4c71869a1eb5cb38b6ceca2ffdc0b29860d910c94",
+        "bytes": 289835,
         "note": "Raw exact CAD depth-buffer view; excludes caption and schematic overlay. Use with supplied concept-status caption."
       }
     },
@@ -704,143 +926,415 @@
       "name": "module_sensing_arrangement.png",
       "width": 2400,
       "height": 1440,
-      "visible_components": 51,
-      "visible_source_triangles": 107455,
-      "opaque_components": 46,
-      "transparent_components": 5,
-      "triangle_sorted_transparent_triangles": 700,
+      "visible_components": 65,
+      "visible_source_triangles": 126983,
       "source_component_ids": [
-        "host_carrying_belt",
-        "lane_guide_-1",
-        "lane_skirt_-1",
-        "lane_guide_1",
-        "lane_skirt_1",
+        "under_cartridge_shell",
         "under_tx_xy",
         "under_tx_xy_terminal_0",
         "under_tx_xy_terminal_base_0",
         "under_tx_xy_terminal_1",
         "under_tx_xy_terminal_base_1",
+        "under_tx_xy_bobbin_lip",
+        "under_tx_xy_keeper",
         "under_rx_xy_-42",
         "under_rx_xy_-42_terminal_0",
         "under_rx_xy_-42_terminal_base_0",
         "under_rx_xy_-42_terminal_1",
         "under_rx_xy_-42_terminal_base_1",
+        "under_rx_xy_-42_bobbin_lip",
+        "under_rx_xy_-42_keeper",
         "under_rx_xy_42",
         "under_rx_xy_42_terminal_0",
         "under_rx_xy_42_terminal_base_0",
         "under_rx_xy_42_terminal_1",
         "under_rx_xy_42_terminal_base_1",
+        "under_rx_xy_42_bobbin_lip",
+        "under_rx_xy_42_keeper",
+        "under_tx_former",
+        "under_rx_former",
         "under_former_post_-102_-110",
         "under_former_post_-102_110",
         "under_former_post_102_-110",
         "under_former_post_102_110",
-        "under_slide_flange_-128",
-        "under_slide_flange_128",
-        "under_coil_support_-106",
-        "under_coil_support_106",
-        "under_slide_rail_-135",
-        "under_slide_rail_135",
         "under_pull_handle",
-        "under_cover_retainer_-100",
-        "under_cover_retainer_100",
+        "under_cable_gland",
+        "under_cable_gland_locknut",
+        "under_cable_gland_seal",
+        "side_cartridge_-1",
+        "side_former_spacer_-1",
         "side_tx_xz",
         "side_tx_xz_terminal_0",
         "side_tx_xz_terminal_base_0",
         "side_tx_xz_terminal_1",
         "side_tx_xz_terminal_base_1",
+        "side_tx_xz_bobbin_lip",
+        "side_tx_xz_keeper",
+        "side_winding_former_-1",
+        "side_cable_gland_-1",
+        "side_cable_gland_-1_locknut",
+        "side_cable_gland_-1_seal",
+        "side_cartridge_1",
+        "side_former_spacer_1",
         "side_rx_xz_266",
         "side_rx_xz_266_terminal_0",
         "side_rx_xz_266_terminal_base_0",
         "side_rx_xz_266_terminal_1",
         "side_rx_xz_266_terminal_base_1",
+        "side_rx_xz_266_bobbin_lip",
+        "side_rx_xz_266_keeper",
         "side_rx_xz_334",
         "side_rx_xz_334_terminal_0",
         "side_rx_xz_334_terminal_base_0",
         "side_rx_xz_334_terminal_1",
         "side_rx_xz_334_terminal_base_1",
-        "cable_under_lead",
-        "cable_side_near",
-        "cable_side_far"
+        "side_rx_xz_334_bobbin_lip",
+        "side_rx_xz_334_keeper",
+        "side_winding_former_1",
+        "side_cable_gland_1",
+        "side_cable_gland_1_locknut",
+        "side_cable_gland_1_seal"
       ],
+      "depth_bits": 24,
       "depth_test_enabled": true,
       "depth_write_restored": true,
-      "depth_bits": 24,
-      "antialias": true,
-      "renderer": "WebKit WebGL",
-      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
       "gl_error": 0,
-      "clip_min_mm": [
-        -160,
-        -200,
-        925
-      ],
-      "clip_max_mm": [
-        410,
-        200,
-        1120
-      ],
-      "camera": {
-        "azimuth_deg": -62,
-        "elevation_deg": 40,
-        "projection": "orthographic",
-        "view_plane_span_mm": [
-          1039.358357702844,
-          501.2834557062389
-        ],
-        "view_bounds": {
-          "min": [
-            -235.16592741460647,
-            472.1250457826469,
-            401.76134644515486
+      "multi_view_panels": [
+        {
+          "width": 1280,
+          "height": 1020,
+          "visible_components": 32,
+          "visible_source_triangles": 64557,
+          "opaque_components": 32,
+          "transparent_components": 0,
+          "triangle_sorted_transparent_triangles": 0,
+          "source_component_ids": [
+            "under_cartridge_shell",
+            "under_tx_xy",
+            "under_tx_xy_terminal_0",
+            "under_tx_xy_terminal_base_0",
+            "under_tx_xy_terminal_1",
+            "under_tx_xy_terminal_base_1",
+            "under_tx_xy_bobbin_lip",
+            "under_tx_xy_keeper",
+            "under_rx_xy_-42",
+            "under_rx_xy_-42_terminal_0",
+            "under_rx_xy_-42_terminal_base_0",
+            "under_rx_xy_-42_terminal_1",
+            "under_rx_xy_-42_terminal_base_1",
+            "under_rx_xy_-42_bobbin_lip",
+            "under_rx_xy_-42_keeper",
+            "under_rx_xy_42",
+            "under_rx_xy_42_terminal_0",
+            "under_rx_xy_42_terminal_base_0",
+            "under_rx_xy_42_terminal_1",
+            "under_rx_xy_42_terminal_base_1",
+            "under_rx_xy_42_bobbin_lip",
+            "under_rx_xy_42_keeper",
+            "under_tx_former",
+            "under_rx_former",
+            "under_former_post_-102_-110",
+            "under_former_post_-102_110",
+            "under_former_post_102_-110",
+            "under_former_post_102_110",
+            "under_pull_handle",
+            "under_cable_gland",
+            "under_cable_gland_locknut",
+            "under_cable_gland_seal"
           ],
-          "max": [
-            455.90282562933817,
-            927.837278242864,
-            1002.6483358324465
+          "depth_test_enabled": true,
+          "depth_write_restored": true,
+          "depth_bits": 24,
+          "antialias": true,
+          "renderer": "WebKit WebGL",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gl_error": 0,
+          "clip_min_mm": [
+            -1270,
+            -814.0000001,
+            243
+          ],
+          "clip_max_mm": [
+            1270,
+            514.0000001000001,
+            1640
+          ],
+          "camera": {
+            "azimuth_deg": -62,
+            "elevation_deg": 54,
+            "projection": "orthographic",
+            "view_plane_span_mm": [
+              458.9645416323985,
+              365.7373691133175
+            ],
+            "view_bounds": {
+              "min": [
+                -176.37444556095488,
+                393.9150867468553,
+                641.4244534071091
+              ],
+              "max": [
+                176.37444556095488,
+                726.4036041225985,
+                900.5619378715407
+              ]
+            }
+          },
+          "capture": "Raw WebGL canvas drawn onto a captioned 2D canvas; no UI screenshot",
+          "geometry": "Exactly expanded source indices/vertices/normals; no simplification, remeshing or pose changes",
+          "omitted_component_ids": [
+            "under_cartridge_cover"
+          ],
+          "scopes": [
+            "module",
+            "host_reference"
+          ],
+          "opacity_overrides": {},
+          "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+          "shadow_pass": {
+            "source": "Same visible opaque CAD triangle buffers",
+            "resolution": [
+              4096,
+              2048
+            ],
+            "filter": "3x3 percentage-closer filtering",
+            "added_geometry": false
+          },
+          "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+          "included_id_prefixes": [
+            "under_cartridge",
+            "under_tx",
+            "under_rx",
+            "under_former",
+            "under_pull",
+            "under_cable"
+          ],
+          "geometric_annotations": null,
+          "routes": false,
+          "label": "A  UNDER-BELT CARTRIDGE",
+          "placement_px": [
+            0,
+            45,
+            1280,
+            1020
+          ]
+        },
+        {
+          "width": 920,
+          "height": 510,
+          "visible_components": 13,
+          "visible_source_triangles": 21960,
+          "opaque_components": 13,
+          "transparent_components": 0,
+          "triangle_sorted_transparent_triangles": 0,
+          "source_component_ids": [
+            "side_cartridge_-1",
+            "side_former_spacer_-1",
+            "side_tx_xz",
+            "side_tx_xz_terminal_0",
+            "side_tx_xz_terminal_base_0",
+            "side_tx_xz_terminal_1",
+            "side_tx_xz_terminal_base_1",
+            "side_tx_xz_bobbin_lip",
+            "side_tx_xz_keeper",
+            "side_winding_former_-1",
+            "side_cable_gland_-1",
+            "side_cable_gland_-1_locknut",
+            "side_cable_gland_-1_seal"
+          ],
+          "depth_test_enabled": true,
+          "depth_write_restored": true,
+          "depth_bits": 24,
+          "antialias": true,
+          "renderer": "WebKit WebGL",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gl_error": 0,
+          "clip_min_mm": [
+            -1270,
+            -814.0000001,
+            243
+          ],
+          "clip_max_mm": [
+            1270,
+            514.0000001000001,
+            1640
+          ],
+          "camera": {
+            "azimuth_deg": 75,
+            "elevation_deg": 16,
+            "projection": "orthographic",
+            "view_plane_span_mm": [
+              247.97950338084615,
+              137.46689861329514
+            ],
+            "view_bounds": {
+              "min": [
+                -410.87518620626946,
+                966.9998134921825,
+                206.69904805906384
+              ],
+              "max": [
+                -230.79688039177663,
+                1091.9697213224508,
+                304.08604731178514
+              ]
+            }
+          },
+          "capture": "Raw WebGL canvas drawn onto a captioned 2D canvas; no UI screenshot",
+          "geometry": "Exactly expanded source indices/vertices/normals; no simplification, remeshing or pose changes",
+          "omitted_component_ids": [],
+          "scopes": [
+            "module",
+            "host_reference"
+          ],
+          "opacity_overrides": {},
+          "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+          "shadow_pass": {
+            "source": "Same visible opaque CAD triangle buffers",
+            "resolution": [
+              4096,
+              2048
+            ],
+            "filter": "3x3 percentage-closer filtering",
+            "added_geometry": false
+          },
+          "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+          "included_id_prefixes": [
+            "side_tx_xz",
+            "side_cartridge_-1",
+            "side_winding_former_-1",
+            "side_former_spacer_-1",
+            "side_cable_gland_-1"
+          ],
+          "geometric_annotations": null,
+          "routes": false,
+          "label": "B  LANE-FACING Tx HEAD",
+          "placement_px": [
+            1340,
+            0,
+            920,
+            510
+          ]
+        },
+        {
+          "width": 920,
+          "height": 510,
+          "visible_components": 20,
+          "visible_source_triangles": 40466,
+          "opaque_components": 20,
+          "transparent_components": 0,
+          "triangle_sorted_transparent_triangles": 0,
+          "source_component_ids": [
+            "side_cartridge_1",
+            "side_former_spacer_1",
+            "side_rx_xz_266",
+            "side_rx_xz_266_terminal_0",
+            "side_rx_xz_266_terminal_base_0",
+            "side_rx_xz_266_terminal_1",
+            "side_rx_xz_266_terminal_base_1",
+            "side_rx_xz_266_bobbin_lip",
+            "side_rx_xz_266_keeper",
+            "side_rx_xz_334",
+            "side_rx_xz_334_terminal_0",
+            "side_rx_xz_334_terminal_base_0",
+            "side_rx_xz_334_terminal_1",
+            "side_rx_xz_334_terminal_base_1",
+            "side_rx_xz_334_bobbin_lip",
+            "side_rx_xz_334_keeper",
+            "side_winding_former_1",
+            "side_cable_gland_1",
+            "side_cable_gland_1_locknut",
+            "side_cable_gland_1_seal"
+          ],
+          "depth_test_enabled": true,
+          "depth_write_restored": true,
+          "depth_bits": 24,
+          "antialias": true,
+          "renderer": "WebKit WebGL",
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "gl_error": 0,
+          "clip_min_mm": [
+            -1270,
+            -814.0000001,
+            243
+          ],
+          "clip_max_mm": [
+            1270,
+            514.0000001000001,
+            1640
+          ],
+          "camera": {
+            "azimuth_deg": -105,
+            "elevation_deg": 16,
+            "projection": "orthographic",
+            "view_plane_span_mm": [
+              247.97950338084615,
+              137.46689861329514
+            ],
+            "view_bounds": {
+              "min": [
+                168.6803095671716,
+                1009.8039318284661,
+                57.42334751723263
+              ],
+              "max": [
+                348.75861538166447,
+                1134.7738396587345,
+                154.81034676995392
+              ]
+            }
+          },
+          "capture": "Raw WebGL canvas drawn onto a captioned 2D canvas; no UI screenshot",
+          "geometry": "Exactly expanded source indices/vertices/normals; no simplification, remeshing or pose changes",
+          "omitted_component_ids": [],
+          "scopes": [
+            "module",
+            "host_reference"
+          ],
+          "opacity_overrides": {},
+          "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+          "shadow_pass": {
+            "source": "Same visible opaque CAD triangle buffers",
+            "resolution": [
+              4096,
+              2048
+            ],
+            "filter": "3x3 percentage-closer filtering",
+            "added_geometry": false
+          },
+          "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+          "included_id_prefixes": [
+            "side_rx_xz",
+            "side_cartridge_1",
+            "side_winding_former_1",
+            "side_former_spacer_1",
+            "side_cable_gland_1"
+          ],
+          "geometric_annotations": null,
+          "routes": false,
+          "label": "C  LANE-FACING Rx HEAD",
+          "placement_px": [
+            1340,
+            560,
+            920,
+            510
           ]
         }
-      },
-      "capture": "Raw WebGL canvas drawn onto a captioned 2D canvas; no UI screenshot",
-      "geometry": "Exactly expanded source indices/vertices/normals; no simplification, remeshing or pose changes",
-      "omitted_component_ids": [
-        "under_cartridge_cover",
-        "under_cartridge_shell",
-        "side_cartridge_-1",
-        "side_cartridge_1",
-        "side_face_cover_-1",
-        "side_face_cover_1",
-        "module_support_window",
-        "under_tx_former",
-        "under_rx_former",
-        "side_winding_former_-1",
-        "side_winding_former_1",
-        "side_arm_-1",
-        "side_arm_1",
-        "side_head_hanger_-1",
-        "side_head_hanger_1",
-        "side_y_adjust_bolt_-1",
-        "side_y_adjust_bolt_1",
-        "side_former_spacer_-1",
-        "side_former_spacer_1"
       ],
-      "scopes": [
-        "module",
-        "host_reference"
+      "capture": "Exact source mesh views assembled on a canvas; no UI screenshot",
+      "geometry": "No geometry changes; declared omissions and independent view scales",
+      "clean_canvas_size": [
+        2260,
+        1090
       ],
-      "opacity_overrides": {
-        "host": 0.14,
-        "lane": 0.18
-      },
-      "geometric_annotations": null,
-      "routes": false,
-      "bytes": 458327,
-      "sha256": "b6368351779d8f5d612295573ace48f1b5309c207e4e40dac4ee9a036ed37e4c",
+      "bytes": 586869,
+      "sha256": "a4aead5e39bde488d90e863d1b28cafde5f2a46e7e57d2bc8f7a6341855ad5e7",
       "clean_image": {
         "path": "module_sensing_arrangement_clean.png",
         "width": 2260,
         "height": 1090,
-        "sha256": "37936f78508b0f4560e33de90f3130373dbc6e9727145884d85d2173c9a1db28",
-        "bytes": 337258,
+        "sha256": "f23c90d24515e130ccf517f2f80918721126247b66b5d3ba02dec26411ff1dcb",
+        "bytes": 479372,
         "note": "Raw exact CAD depth-buffer view; excludes caption and schematic overlay. Use with supplied concept-status caption."
       }
     },
@@ -848,9 +1342,9 @@
       "name": "module_maintenance_interfaces.png",
       "width": 2400,
       "height": 1440,
-      "visible_components": 24,
-      "visible_source_triangles": 5136,
-      "opaque_components": 24,
+      "visible_components": 42,
+      "visible_source_triangles": 30224,
+      "opaque_components": 42,
       "transparent_components": 0,
       "triangle_sorted_transparent_triangles": 0,
       "source_component_ids": [
@@ -873,11 +1367,29 @@
         "control_carrier_1050",
         "control_carrier_1360",
         "control_connector_power",
+        "control_connector_power_locknut",
+        "control_connector_power_seal",
         "control_connector_host_io",
+        "control_connector_host_io_locknut",
+        "control_connector_host_io_seal",
         "control_connector_encoder",
+        "control_connector_encoder_locknut",
+        "control_connector_encoder_seal",
         "control_connector_optics",
+        "control_connector_optics_locknut",
+        "control_connector_optics_seal",
+        "control_connector_optional_3d",
+        "control_connector_optional_3d_locknut",
+        "control_connector_optional_3d_seal",
         "control_connector_coil_A",
-        "control_connector_coil_B"
+        "control_connector_coil_A_locknut",
+        "control_connector_coil_A_seal",
+        "control_connector_coil_B_tx",
+        "control_connector_coil_B_tx_locknut",
+        "control_connector_coil_B_tx_seal",
+        "control_connector_coil_B_rx",
+        "control_connector_coil_B_rx_locknut",
+        "control_connector_coil_B_rx_seal"
       ],
       "depth_test_enabled": true,
       "depth_write_restored": true,
@@ -888,12 +1400,12 @@
       "gl_error": 0,
       "clip_min_mm": [
         -1270,
-        -762,
+        -814.0000001,
         243
       ],
       "clip_max_mm": [
         1270,
-        485,
+        514.0000001000001,
         1640
       ],
       "camera": {
@@ -901,13 +1413,13 @@
         "elevation_deg": -8,
         "projection": "orthographic",
         "view_plane_span_mm": [
-          1106.5200421958023,
-          533.6755955723117
+          1093.7825090840659,
+          527.532272080368
         ],
         "view_bounds": {
           "min": [
             451.6700193356434,
-            1044.3795829387404,
+            1049.964422476871,
             360.39204229378004
           ],
           "max": [
@@ -932,33 +1444,51 @@
         "host_reference"
       ],
       "opacity_overrides": {},
+      "lighting": "Three directional studio lights plus hemispheric ambient; exact source-triangle depth shadow, linear-color shading, material-dependent specular, tone mapping",
+      "shadow_pass": {
+        "source": "Same visible opaque CAD triangle buffers",
+        "resolution": [
+          4096,
+          2048
+        ],
+        "filter": "3x3 percentage-closer filtering",
+        "added_geometry": false
+      },
+      "material_display": "Copper-colored functional winding cores and pins; grey host; source component colors otherwise retained. Appearance is illustrative, not a selected finish or alloy.",
+      "included_id_prefixes": null,
       "geometric_annotations": null,
       "routes": false,
-      "bytes": 182760,
-      "sha256": "7593edc1e42ea6703a3ae8b8ce2a53a2853440d5b22d895d8c1085c80a855a9e",
+      "clean_canvas_size": [
+        2260,
+        1090
+      ],
+      "bytes": 164123,
+      "sha256": "6b0b2d52d2fd169d5fb70d870cc5a4d127a95811e05af55253ba169f6d88d54a",
       "clean_image": {
         "path": "module_maintenance_interfaces_clean.png",
         "width": 2260,
         "height": 1090,
-        "sha256": "11ce747ef4f5e852bf6f1a5cbfe1ce4790fc3cc5c48d8d36ae45a7b8cd4febb7",
-        "bytes": 69132,
+        "sha256": "e7b84c96f5a0409bbef935873e15d18250d0e29d0bc7484df019c8cbc0efdf0d",
+        "bytes": 80201,
         "note": "Raw exact CAD depth-buffer view; excludes caption and schematic overlay. Use with supplied concept-status caption."
       }
     }
   ],
-  "assembly_manifest_sha256": "4664531ea662a4d8ec067b0f720959dded1d43b882fa9efb069012cff32a46ed",
+  "assembly_manifest_sha256": "3b9f312a897db0e17b2cde2dfd34a952c624282ef779bc8b8dc9a0ab95eb97e3",
+  "draft_geometry_provenance": null,
   "source_sha256": {
-    "cad/build_module.py": "f2aa1333872c5734805a43a3b2b8d540a62b2c3a9216c2476de2204d26f9e0df",
+    "cad/build_module.py": "042f4d2c4c189dbf87de2ff12ead217b736732dfe513dc12abbe1b6369943670",
+    "cad/details.py": "79c8a2f0c018ae75e05eb578a63605544c852116bd8f746aae42906a265ea881",
     "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
     "cad/export_common.py": "729ecd42bee8dd4e430765cd0be87cd2e0715d936f7204d9dc627cb4b256d972",
-    "design_basis/parameters.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c",
-    "design_basis/interface_contract.json": "717dd47e350de349a415e524eb26e6d7dc8ff1b954eca7affe8e212a81cd2b32",
-    "design_basis/design_holds.json": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408",
-    "design_basis/geometry_contract.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c"
+    "design_basis/parameters.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a",
+    "design_basis/interface_contract.json": "34721c57b56da1cf6e6cb9f336a24e8a073e94ec6c18d5701424e64f09f85a0f",
+    "design_basis/design_holds.json": "a8cd10e341d2dfe33162a8e07b98287e2de46b5227c8fc64b4c75cc49604ce26",
+    "design_basis/geometry_contract.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a"
   },
   "source_stats": {
-    "objects": 303,
-    "triangles": 381379
+    "objects": 353,
+    "triangles": 582643
   },
   "depth_occlusion_probe": {
     "passed": true,
@@ -985,21 +1515,15 @@
     "/favicon.ico"
   ],
   "runtime_exceptions": [],
-  "geometry_sha256_after": "a14643ad4b60b20d3772cbebc24b0685544ab46155e9ad0b13f2d9a6373f3fb9",
-  "step_sha256_after": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e",
+  "geometry_sha256_after": "69193345ccb3b96337e8fe24009af8f59a3be45a0ff20f0266779b6417da684c",
+  "step_sha256_after": "947a02e2ca06b383c31953c216e20c97fa7ff8f8c9290a2fbcbbde60154d95cb",
   "visual_review": {
     "status": "PASS",
-    "reviewed_utc": "2026-10-15T11:44:47.361692+00:00",
-    "images": [
-      "module_isolated.png",
-      "module_installed_host.png",
-      "module_sensing_arrangement.png",
-      "module_maintenance_interfaces.png"
-    ],
-    "result": "Frozen M01-W1 geometry rendered with intended module/host contrast. The closer declared cutaway resolves actual XY/XZ winding paths, three illustrative perimeter passes and separate terminal pins; enclosure internals and bottom connectors are visible. Captions and geometry remain within image bounds.",
-    "clean_variants": "Same depth-buffer canvases without captions or schematic overlays; use with concept-status caption.",
-    "limitations": "Not fabrication certified. Field, coverage, electrical/thermal behavior, safe service and comparative sensing advantage remain unvalidated."
+    "reviewed_utc": "2026-10-15T22:22:16.608550+00:00",
+    "method": "Direct inspection of all four final captioned CAD figures and their matching clean canvases",
+    "result": "Hardware, copper winding paths and declared cutaways are clear; host contrast and captions are legible.",
+    "scope": "Illustrative appearance, not selected material/finish or physical validation."
   },
-  "figure_specs_sha256": "d92c70b1c082526c89fcf596c191e5d3cfedbbb980025283674f2b00c3ef757f",
-  "source_module_step_sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d"
+  "figure_specs_sha256": "5233d208d07f1f43de64d4cc770658234e2a8cf1a2d64d95877a2b1cb9db66af",
+  "source_module_step_sha256": "5347a873db0cd159892b88fd43bf6cec842ef846f3168bc170055108f0450fd6"
 }

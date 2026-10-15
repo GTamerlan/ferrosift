@@ -1,5 +1,5 @@
 {
-  "revision": "M01-W1",
+  "revision": "M02",
   "status": "Open research/concept holds; no operation/fabrication approval",
   "holds": [
     {
@@ -36,7 +36,15 @@
       "id": "H06",
       "topic": "Structural and mechanical design",
       "status": "open",
-      "required_evidence": "Select materials/fasteners, loads, vibration, deflection, wear, manufacturability, retention and tolerances. Nominal contacts and gaps are not load certification."
+      "required_evidence": "Select materials/fasteners, loads, vibration, deflection, wear, manufacturability, retention and tolerances. Nominal contacts and gaps are not load certification. Real socket recesses do not complete simplified receiver passages, bearing surfaces, fastener engagement or installation design.",
+      "inherited_receiver_interfaces": {
+        "window_bridge_bolt_*": "Window bridge/post receiver passages and bearing faces require coordinated drilling or retained-insert design; several current shafts overlap receiver material.",
+        "mount_bolt_*": "Four nominal clamp shafts cross lower-side-rail receiver material; rail pass-through details require coordinated source edits before installation.",
+        "lane_retainer_*": "Guide/drop/arm receivers are simplified engagement geometry; clearance, insert, bearing and retention details unresolved.",
+        "under_cover_retainer_*": "Cover receiver geometry, captive retention, passage and sealing remain unqualified.",
+        "control_panel_retainer_*": "Panel and enclosure receiver passages/retained inserts remain unresolved.",
+        "rgb_mount_screw_*": "Small nominal shaft/housing interference is illustrative engagement only; no helical thread, material, preload or strength selected."
+      }
     },
     {
       "id": "H07",
@@ -85,6 +93,12 @@
       "topic": "Partial host context",
       "status": "open",
       "required_evidence": "Grey segment omits roller bearings, drive, belt turnaround curves and complete guards. It is an interface illustration, not a host design or structural approval."
+    },
+    {
+      "id": "H15",
+      "topic": "External cable installation",
+      "status": "open",
+      "required_evidence": "Wall bores, gland bearing faces and separated external source paths are modeled. Select actual cables, minimum bend radii, strain relief, shielding/grounding, remaining tray/clips and service disconnection. Only the four overhead optical saddles are modeled as local supports. Encoder sensor-end seal and all internal harnesses/pinouts remain unresolved."
     }
   ]
 }

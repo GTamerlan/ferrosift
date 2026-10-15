@@ -1,0 +1,47 @@
+FERROSIFT — HOW IT WORKS
+Original illustrative concept. 50-second silent guide.
+
+0–5s | First, find the fragment.
+The camera detects a piece and separates its visible outline from the belt.
+An outline describes appearance. It does not reveal composition.
+
+5–10s | Give it a temporary identity.
+Software calls this fragment “42” and links its observations as it travels.
+42 is a software record—not a tag attached to the metal.
+
+10–15s | Add geometry, if depth is available.
+Optional depth sensing could estimate external height and pose.
+Surface geometry is not an elemental map or a view inside the fragment.
+
+15–20s | Predict when 42 reaches each station.
+An encoder measures belt travel. Software predicts station arrival.
+A prediction still needs an association check: pieces can slip, overlap or rotate.
+
+20–27s | A changing magnetic field induces currents.
+AC in a transmit coil creates a changing field. Closed eddy-current loops form inside a conductor.
+Blue arrows: magnetic field. Orange loops: electrical current inside metal.
+
+27–33s | Measure the electrical response.
+The conductor’s secondary magnetic field changes the receive-coil voltage. Link the measurement to 42.
+Amplitude and phase are measured relative to the drive; this illustration contains no measured data.
+
+33–39s | Try another field direction.
+A second station gives another directional view of the same fragment’s response.
+Another projection may help. Two directions do not recover an interior map or a full tensor.
+
+39–45s | Combine observations. Keep uncertainty.
+A proposed model combines shape, response and association quality to estimate a routing class.
+Low confidence or uncertain identity should lead to recheck. No assay or value is inferred here.
+
+45–50s | Send a decision to the existing sorter.
+The host receives a proposed route—or recheck—with the piece ID and timing information.
+The host actuator, collection and recovery must be tested. This is an unvalidated concept.
+
+Arrows are illustrative, not solved fields. Orange loops are electrical currents inside a generic conductor. Blue arrows represent magnetic field in air. No measured response, classification, assay, value, coverage or validated performance is shown.
+
+Association can fail through overlap, occlusion, slip, bounce or rotation. Encoder travel alone is not proof of object identity. Another field direction must earn its cost against simpler baselines. The existing host sorter and collection require end-to-end validation.
+
+Primary physics sources:
+https://www.feynmanlectures.caltech.edu/II_17.html
+https://openstax.org/books/university-physics-volume-2/pages/13-5-eddy-currents
+https://docs.zhinst.com/mfli_user_manual/signal_processing_basics.html

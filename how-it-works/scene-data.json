@@ -1,0 +1,82 @@
+{
+  "duration_seconds": 50,
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "frame_count": 1200,
+  "scenes": [
+    {
+      "id": "camera",
+      "short": "See",
+      "duration": 5,
+      "title": "First, find the fragment.",
+      "caption": "The camera detects a piece and separates its visible outline from the belt.",
+      "note": "An outline describes appearance. It does not reveal composition."
+    },
+    {
+      "id": "identity",
+      "short": "Track",
+      "duration": 5,
+      "title": "Give it a temporary identity.",
+      "caption": "Software calls this fragment “42” and links its observations as it travels.",
+      "note": "42 is a software record—not a tag attached to the metal."
+    },
+    {
+      "id": "depth",
+      "short": "Shape",
+      "duration": 5,
+      "title": "Add geometry, if depth is available.",
+      "caption": "Optional depth sensing could estimate external height and pose.",
+      "note": "Surface geometry is not an elemental map or a view inside the fragment."
+    },
+    {
+      "id": "timing",
+      "short": "Time",
+      "duration": 5,
+      "title": "Predict when 42 reaches each station.",
+      "caption": "An encoder measures belt travel. Software predicts station arrival.",
+      "note": "A prediction still needs an association check: pieces can slip, overlap or rotate."
+    },
+    {
+      "id": "induction",
+      "short": "Excite",
+      "duration": 7,
+      "title": "A changing magnetic field induces currents.",
+      "caption": "AC in a transmit coil creates a changing field. Closed eddy-current loops form inside a conductor.",
+      "note": "Blue arrows: magnetic field. Orange loops: electrical current inside metal."
+    },
+    {
+      "id": "response",
+      "short": "Measure",
+      "duration": 6,
+      "title": "Measure the electrical response.",
+      "caption": "The conductor’s secondary magnetic field changes the receive-coil voltage. Link the measurement to 42.",
+      "note": "Amplitude and phase are measured relative to the drive; this illustration contains no measured data."
+    },
+    {
+      "id": "direction",
+      "short": "Compare",
+      "duration": 6,
+      "title": "Try another field direction.",
+      "caption": "A second station gives another directional view of the same fragment’s response.",
+      "note": "Another projection may help. Two directions do not recover an interior map or a full tensor."
+    },
+    {
+      "id": "fusion",
+      "short": "Combine",
+      "duration": 6,
+      "title": "Combine observations. Keep uncertainty.",
+      "caption": "A proposed model combines shape, response and association quality to estimate a routing class.",
+      "note": "Low confidence or uncertain identity should lead to recheck. No assay or value is inferred here."
+    },
+    {
+      "id": "host",
+      "short": "Output",
+      "duration": 5,
+      "title": "Send a decision to the existing sorter.",
+      "caption": "The host receives a proposed route—or recheck—with the piece ID and timing information.",
+      "note": "The host actuator, collection and recovery must be tested. This is an unvalidated concept."
+    }
+  ],
+  "scope": "Original illustrative schematic. No field solution, measured data, physical validation or selected electrical specifications."
+}

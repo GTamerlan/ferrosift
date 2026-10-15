@@ -1,5 +1,5 @@
 {
-  "revision": "M01-W1",
+  "revision": "M02",
   "status": "Proposed coordination dimensions; research geometry, not fabrication certified",
   "units": "mm",
   "axes": "X travel, Y across belt, Z up",
@@ -114,7 +114,7 @@
       0,
       1500
     ],
-    "lens_tip_z": 1445,
+    "lens_tip_z": 1441,
     "optional_3d_centre": [
       -280,
       150,
@@ -141,7 +141,7 @@
       "status": "Assumed centerline toward lane; field of view and calibration unvalidated"
     },
     "glass_tip_z": 1443,
-    "lens_tip_z_definition": "Lens barrel lower datum; glass lowest surface at 1443",
+    "lens_tip_z_definition": "Lower edge of recessed-window retaining rim; glass datum remains1443.",
     "light_bar_centres": [
       [
         -420,
@@ -153,7 +153,13 @@
         150,
         1390
       ]
-    ]
+    ],
+    "rgb_housing_size_mm": [
+      90,
+      84,
+      65
+    ],
+    "rgb_housing_top_z_mm": 1532
   },
   "under_belt": {
     "cartridge_centre": [
@@ -504,7 +510,7 @@
   "deviations_from_parent_example": {
     "central_lane_mm": "180 vs optional 120; explicitly mechanical, not active coverage",
     "station_spacing_mm": "300 vs optional 200; sequential association remains required",
-    "coil_count": "Six functional windings: two Tx and four independently terminated Rx. M01-W1 draws three open rectangular perimeter passes per winding; electrical turn count and balance remain unselected.",
+    "coil_count": "Six functional windings: two Tx and four independently terminated Rx. M02 draws three open rectangular perimeter passes per winding; electrical turn count and balance remain unselected.",
     "belt_datum_z_mm": "1000 retained for project coordination; carrying-surface-relative height equals Z\u22121000",
     "enclosure_mm": "340 x 240 x 440, coherent placeholder packaging",
     "host_bridge_allocation_mm": "1240 portal spacing, no installed structural adequacy claim"
@@ -534,7 +540,7 @@
     "selection": "exports/selections/calibration_accessory.step",
     "status": "Removable carrier with unselected reference coupon envelope. No calibration material, procedure, field map, repeatability or safety validation is established."
   },
-  "parameter_execution_scope": "Host width and belt datum are directly consumed from JSON. Winding dimensions are source-bound constants in cad/windings.py. Other register dimensions require coordinated Python edits. Width variants are validity probes, not approved installation variants.",
+  "parameter_execution_scope": "Host width and belt datum affect source shapes. All released geometry and coordinate metadata are checked only at nominal width 600 mm and belt-top Z=1000 mm. A nonnominal datum test proves shape translation only: coordinate metadata remains nominal and must be regenerated consistently before any nonnominal export. Winding dimensions are source-bound constants in cad/windings.py; other register dimensions require coordinated Python edits. Width variants are validity probes, not approved installations.",
   "winding_geometry": {
     "source": "cad/windings.py",
     "functional_windings": 6,
@@ -572,6 +578,72 @@
     ],
     "minimum_nonlocal_centreline_separation_mm": 2.54558,
     "minimum_nonlocal_insulation_separation_mm": 1.14558,
-    "separation_scope": "Independent source-curve check, excluding successive local bend segments. Distinct from the 1.6 mm straight crossing separation; no dielectric or manufacturing tolerance qualification."
+    "separation_scope": "Independent source-curve check, excluding successive local bend segments. Distinct from the 1.6 mm straight crossing separation; no dielectric or manufacturing tolerance qualification.",
+    "preserved_path_baseline": "M01-W1 six source line/arc paths; M02 changes support hardware and visibility, not electrical winding choices.",
+    "keeper_top_normal_mm": 2,
+    "bobbin_lip_top_normal_mm": 1.4,
+    "retention_hold": "Keeper bridges nominally touch insulation and use nonmetallic locating pins. Retention, fatigue, fit, adhesive, manufacture and dielectric suitability remain unqualified."
+  },
+  "mechanical_detail_revision": {
+    "status": "Proposed native CAD hardware detail; no vendor selection, fabrication or electrical release",
+    "source": "cad/details.py",
+    "bobbin_changes": [
+      "Open Tx former centre",
+      "Two relieved receiver beds joined by end bridges",
+      "Nonmetallic perimeter lips",
+      "Three-strand keeper bridges with locating pins",
+      "Existing insulated return channels and terminal seats retained"
+    ],
+    "optical_changes": [
+      "Hollow RGB and optional depth housings",
+      "RGB retaining seat and three real lens-barrel grooves",
+      "Recessed optional-window bezels",
+      "Recessed camera mounting shoe with carrier counterbores",
+      "Shallow housing-panel grooves"
+    ],
+    "fastener_socket_mm": {
+      "head_thickness": 5,
+      "recess_depth": 3,
+      "remaining_floor": 2
+    },
+    "gland_geometry": {
+      "shaft_radius": 6.3,
+      "wall_opening_radius": 6.4,
+      "bore_radius": 4.2,
+      "contact_insert_inner_radius": 4,
+      "status": "Modeled wall-normal entries with flange and inner-locknut bearing; no ingress/strain-relief certification"
+    },
+    "cabinet_ports_x_mm": {
+      "power": 700,
+      "host_io": 748,
+      "encoder": 796,
+      "RGB": 832,
+      "optional_3D": 856,
+      "coil_A": 892,
+      "coil_B_Tx": 928,
+      "coil_B_Rx": 952
+    },
+    "cabinet_port_y_mm": -620,
+    "cabinet_outer_bottom_z_mm": 970,
+    "cabinet_wall_mm": 6,
+    "cable_route_status": "Rounded source paths with separate branches and normal gland approaches. Selected cable construction, minimum bend radius, shielding, support loads and internal wiring remain unresolved. Encoder sensor-end seal is still an explicit interface hold.",
+    "inherited_fastener_receiver_holds": {
+      "window_bridge_bolt_*": "Window bridge/post receiver passages and bearing faces require coordinated drilling or retained-insert design; several current shafts overlap receiver material.",
+      "mount_bolt_*": "Four nominal clamp shafts cross lower-side-rail receiver material; rail pass-through details require coordinated source edits before installation.",
+      "lane_retainer_*": "Guide/drop/arm receivers are simplified engagement geometry; clearance, insert, bearing and retention details unresolved.",
+      "under_cover_retainer_*": "Cover receiver geometry, captive retention, passage and sealing remain unqualified.",
+      "control_panel_retainer_*": "Panel and enclosure receiver passages/retained inserts remain unresolved.",
+      "rgb_mount_screw_*": "Small nominal shaft/housing interference is illustrative engagement only; no helical thread, material, preload or strength selected."
+    },
+    "cable_routing_layers_z_mm": {
+      "encoder": 840,
+      "RGB": 860,
+      "optional_3D": 880,
+      "coil_A": 900,
+      "coil_B_Tx": 920,
+      "coil_B_Rx": 940
+    },
+    "cable_route_support_scope": "Only four overhead optical saddles are modeled. Remaining tray/clips, strain relief, acceptable bends and service disconnection remain installation engineering holds; separated source paths are routing geometry only.",
+    "optional_depth_mount": "Fitted wedge between tilted exterior housing and carrier underside; nominal bearing contact only, attachment/load/tolerance design unresolved."
   }
 }

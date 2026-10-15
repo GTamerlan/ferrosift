@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ENCODE_AND_FULL_DECODE",
+  "duration_seconds": 50.0,
+  "decoded_frames": 1200,
+  "metadata": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24.0,
+    "reported_frame_count": 1200
+  },
+  "silent": true,
+  "scope": "Illustrative educational animation only; no simulated electromagnetic solution, measured signal, validated classification, assay or host actuation."
+}

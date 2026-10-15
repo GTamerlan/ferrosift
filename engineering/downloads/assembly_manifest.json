@@ -1,47 +1,48 @@
 {
   "schema_version": 2,
-  "release_id": "Ferrosift_M01_W1_20261015",
-  "generated_utc": "2026-10-15T11:34:51.975888+00:00",
+  "release_id": "Ferrosift_M02_20261015",
+  "generated_utc": "2026-10-15T22:14:29.094304+00:00",
   "units": "mm",
   "coordinate_system": "X travel, Y across, Z up",
   "status": "Proposed retrofit research geometry; no fabrication or performance certification",
   "source_sha256": {
-    "cad/build_module.py": "f2aa1333872c5734805a43a3b2b8d540a62b2c3a9216c2476de2204d26f9e0df",
+    "cad/build_module.py": "042f4d2c4c189dbf87de2ff12ead217b736732dfe513dc12abbe1b6369943670",
+    "cad/details.py": "79c8a2f0c018ae75e05eb578a63605544c852116bd8f746aae42906a265ea881",
     "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
     "cad/export_common.py": "729ecd42bee8dd4e430765cd0be87cd2e0715d936f7204d9dc627cb4b256d972",
-    "design_basis/parameters.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c",
-    "design_basis/interface_contract.json": "717dd47e350de349a415e524eb26e6d7dc8ff1b954eca7affe8e212a81cd2b32",
-    "design_basis/design_holds.json": "cd276f21a0709a0651082fc69c12737d568f958b4002bc2986acde3104f60408",
-    "design_basis/geometry_contract.json": "a4fd2a623d4e426977d055a2ec91bec62e5449e39889dfb4f15b55a958d6974c"
+    "design_basis/parameters.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a",
+    "design_basis/interface_contract.json": "34721c57b56da1cf6e6cb9f336a24e8a073e94ec6c18d5701424e64f09f85a0f",
+    "design_basis/design_holds.json": "a8cd10e341d2dfe33162a8e07b98287e2de46b5227c8fc64b4c75cc49604ce26",
+    "design_basis/geometry_contract.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a"
   },
-  "part_count": 303,
+  "part_count": 353,
   "scope_counts": {
-    "module_assembly": 289,
-    "module_with_host": 303,
+    "module_assembly": 339,
+    "module_with_host": 353,
     "host_reference": 14
   },
   "bounds": {
     "module_assembly": {
       "min": [
         -1097.5,
-        -752.0,
+        -804.0000001,
         795.0
       ],
       "max": [
         1000.0,
-        475.0,
+        504.0000001,
         1630.0
       ]
     },
     "module_with_host": {
       "min": [
         -1260.0,
-        -752.0,
+        -804.0000001,
         253.0
       ],
       "max": [
         1260.0,
-        475.0,
+        504.0000001,
         1630.0
       ]
     },
@@ -542,6 +543,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -555,7 +562,7 @@
           993.0
         ]
       },
-      "volume_mm3": 2988.2829320946107,
+      "volume_mm3": 2918.1348743880703,
       "solid_count": 1
     },
     {
@@ -569,6 +576,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -582,7 +595,7 @@
           993.0
         ]
       },
-      "volume_mm3": 2988.2829320946107,
+      "volume_mm3": 2918.1348743880703,
       "solid_count": 1
     },
     {
@@ -674,6 +687,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -687,7 +706,7 @@
           993.0
         ]
       },
-      "volume_mm3": 2988.282932094612,
+      "volume_mm3": 2918.134874388072,
       "solid_count": 1
     },
     {
@@ -701,6 +720,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -714,7 +739,7 @@
           993.0
         ]
       },
-      "volume_mm3": 2988.282932094612,
+      "volume_mm3": 2918.134874388072,
       "solid_count": 1
     },
     {
@@ -824,6 +849,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -837,7 +868,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -877,6 +908,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -890,7 +927,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.258251737918,
       "solid_count": 1
     },
     {
@@ -930,6 +967,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -943,7 +986,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -983,6 +1026,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -996,7 +1045,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.258251737918,
       "solid_count": 1
     },
     {
@@ -1262,6 +1311,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1275,7 +1330,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1315,6 +1370,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1328,7 +1389,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1368,6 +1429,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1381,7 +1448,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1421,6 +1488,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1434,7 +1507,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1726,6 +1799,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1739,7 +1818,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1779,6 +1858,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1792,7 +1877,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1832,6 +1917,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1845,7 +1936,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -1885,6 +1976,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -1898,7 +1995,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -2164,6 +2261,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2177,7 +2280,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -2217,6 +2320,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2230,7 +2339,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -2270,6 +2379,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2283,7 +2398,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -2323,6 +2438,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2336,7 +2457,7 @@
           966.0
         ]
       },
-      "volume_mm3": 9070.40630944446,
+      "volume_mm3": 9000.25825173792,
       "solid_count": 1
     },
     {
@@ -2769,6 +2890,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2782,7 +2909,7 @@
           1054.0
         ]
       },
-      "volume_mm3": 860.9534667162824,
+      "volume_mm3": 821.4951842563532,
       "solid_count": 1
     },
     {
@@ -2874,6 +3001,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -2887,7 +3020,7 @@
           1054.0
         ]
       },
-      "volume_mm3": 860.9534667162824,
+      "volume_mm3": 821.4951842563532,
       "solid_count": 1
     },
     {
@@ -3034,6 +3167,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -3047,7 +3186,7 @@
           1054.0
         ]
       },
-      "volume_mm3": 860.9534667162824,
+      "volume_mm3": 821.4951842563532,
       "solid_count": 1
     },
     {
@@ -3139,6 +3278,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -3152,7 +3297,7 @@
           1054.0
         ]
       },
-      "volume_mm3": 860.9534667162824,
+      "volume_mm3": 821.4951842563532,
       "solid_count": 1
     },
     {
@@ -3553,7 +3698,7 @@
           976.0
         ]
       },
-      "volume_mm3": 575075.866565451,
+      "volume_mm3": 574432.4683899959,
       "solid_count": 1
     },
     {
@@ -3592,7 +3737,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -4445,7 +4590,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_tx_xy",
@@ -4504,7 +4649,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_tx_xy",
@@ -4557,13 +4702,73 @@
       "solid_count": 1
     },
     {
+      "id": "under_tx_xy_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_tx_xy",
+      "winding_part": "bobbin",
+      "service_group": "under_cartridge",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          -99.0,
+          -122.0,
+          961.0
+        ],
+        "max": [
+          99.0,
+          122.0,
+          962.4
+        ]
+      },
+      "volume_mm3": 2446.791148575092,
+      "solid_count": 1
+    },
+    {
+      "id": "under_tx_xy_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_tx_xy",
+      "winding_part": "retainer",
+      "service_group": "under_cartridge",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          -3.0,
+          97.0,
+          960.0
+        ],
+        "max": [
+          3.0,
+          117.0,
+          963.0
+        ]
+      },
+      "volume_mm3": 111.88318530718175,
+      "solid_count": 1
+    },
+    {
       "id": "under_rx_xy_-42",
       "name": "Rx proposed continuous winding \u00b7 XY main plane",
       "group": "under_belt",
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#71d9d1",
+      "color": "#4bc7b2",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -5416,7 +5621,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_rx_xy_-42",
@@ -5475,7 +5680,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_rx_xy_-42",
@@ -5528,13 +5733,73 @@
       "solid_count": 1
     },
     {
+      "id": "under_rx_xy_-42_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_rx_xy_-42",
+      "winding_part": "bobbin",
+      "service_group": "under_cartridge",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          -80.0,
+          -94.0,
+          968.0
+        ],
+        "max": [
+          -4.0,
+          94.0,
+          969.4
+        ]
+      },
+      "volume_mm3": 1449.9911485751109,
+      "solid_count": 1
+    },
+    {
+      "id": "under_rx_xy_-42_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_rx_xy_-42",
+      "winding_part": "retainer",
+      "service_group": "under_cartridge",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          -45.0,
+          69.0,
+          967.0
+        ],
+        "max": [
+          -39.0,
+          89.0,
+          970.0
+        ]
+      },
+      "volume_mm3": 111.88318530718175,
+      "solid_count": 1
+    },
+    {
       "id": "under_rx_xy_42",
       "name": "Rx proposed continuous winding \u00b7 XY main plane",
       "group": "under_belt",
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#71d9d1",
+      "color": "#4bc7b2",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -6387,7 +6652,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_rx_xy_42",
@@ -6446,7 +6711,7 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "under_rx_xy_42",
@@ -6499,13 +6764,73 @@
       "solid_count": 1
     },
     {
+      "id": "under_rx_xy_42_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_rx_xy_42",
+      "winding_part": "bobbin",
+      "service_group": "under_cartridge",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          4.0,
+          -94.0,
+          968.0
+        ],
+        "max": [
+          80.0,
+          94.0,
+          969.4
+        ]
+      },
+      "volume_mm3": 1449.9911485751109,
+      "solid_count": 1
+    },
+    {
+      "id": "under_rx_xy_42_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "under_rx_xy_42",
+      "winding_part": "retainer",
+      "service_group": "under_cartridge",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          39.0,
+          69.0,
+          967.0
+        ],
+        "max": [
+          45.0,
+          89.0,
+          970.0
+        ]
+      },
+      "volume_mm3": 111.88318530718175,
+      "solid_count": 1
+    },
+    {
       "id": "under_tx_former",
       "name": "Nonmetallic Tx former with open recessed return channel",
       "group": "under_belt",
       "category": "under_belt",
       "scope": "module",
       "materialClass": "nonmetallic",
-      "color": "#9ac9c3",
+      "color": "#33434d",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "service_group": "under_cartridge",
@@ -6522,7 +6847,7 @@
           961.0000001
         ]
       },
-      "volume_mm3": 200623.7926978391,
+      "volume_mm3": 86545.01532355732,
       "solid_count": 1
     },
     {
@@ -6532,24 +6857,24 @@
       "category": "under_belt",
       "scope": "module",
       "materialClass": "nonmetallic",
-      "color": "#9ac9c3",
+      "color": "#33434d",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "service_group": "under_cartridge",
       "optional": false,
       "bbox": {
         "min": [
-          -102.5000001,
-          -122.5000001,
+          -102.5,
+          -116.0,
           964.0
         ],
         "max": [
-          102.5000001,
-          122.5000001,
+          102.5,
+          116.0,
           968.0000001000002
         ]
       },
-      "volume_mm3": 200471.19596371124,
+      "volume_mm3": 115252.02692614225,
       "solid_count": 1
     },
     {
@@ -6833,6 +7158,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -6846,7 +7177,7 @@
           936.0
         ]
       },
-      "volume_mm3": 3541.203239126414,
+      "volume_mm3": 3471.0551814198734,
       "solid_count": 1
     },
     {
@@ -6940,6 +7271,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -6953,7 +7290,7 @@
           936.0
         ]
       },
-      "volume_mm3": 3541.203239126414,
+      "volume_mm3": 3471.0551814198734,
       "solid_count": 1
     },
     {
@@ -7073,6 +7410,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7086,7 +7429,7 @@
           936.0
         ]
       },
-      "volume_mm3": 3541.203239126414,
+      "volume_mm3": 3471.0551814198734,
       "solid_count": 1
     },
     {
@@ -7180,6 +7523,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7193,7 +7542,7 @@
           936.0
         ]
       },
-      "volume_mm3": 3541.203239126414,
+      "volume_mm3": 3471.0551814198734,
       "solid_count": 1
     },
     {
@@ -7286,6 +7635,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7299,7 +7654,7 @@
           981.0
         ]
       },
-      "volume_mm3": 634.7587956578176,
+      "volume_mm3": 595.300513197889,
       "solid_count": 1
     },
     {
@@ -7313,6 +7668,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7326,7 +7687,7 @@
           981.0
         ]
       },
-      "volume_mm3": 634.7587956578176,
+      "volume_mm3": 595.300513197889,
       "solid_count": 1
     },
     {
@@ -7353,7 +7714,7 @@
           1115.0
         ]
       },
-      "volume_mm3": 152200.00000000006,
+      "volume_mm3": 151556.60182454486,
       "solid_count": 1
     },
     {
@@ -7476,6 +7837,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7489,7 +7856,7 @@
           1154.0
         ]
       },
-      "volume_mm3": 2686.6900373499916,
+      "volume_mm3": 2616.541979643452,
       "solid_count": 1
     },
     {
@@ -7529,6 +7896,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7542,7 +7915,7 @@
           1106.8
         ]
       },
-      "volume_mm3": 3842.796133871026,
+      "volume_mm3": 3772.648076164485,
       "solid_count": 1
     },
     {
@@ -7582,6 +7955,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7595,7 +7974,7 @@
           1106.8
         ]
       },
-      "volume_mm3": 3842.796133871026,
+      "volume_mm3": 3772.648076164485,
       "solid_count": 1
     },
     {
@@ -7701,7 +8080,7 @@
           1115.0
         ]
       },
-      "volume_mm3": 152200.00000000006,
+      "volume_mm3": 151556.60182454486,
       "solid_count": 1
     },
     {
@@ -7824,6 +8203,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7837,7 +8222,7 @@
           1154.0
         ]
       },
-      "volume_mm3": 2686.6900373499916,
+      "volume_mm3": 2616.541979643452,
       "solid_count": 1
     },
     {
@@ -7877,6 +8262,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7890,7 +8281,7 @@
           1106.8
         ]
       },
-      "volume_mm3": 3842.796133871026,
+      "volume_mm3": 3772.6480761644852,
       "solid_count": 1
     },
     {
@@ -7930,6 +8321,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -7943,7 +8340,7 @@
           1106.8
         ]
       },
-      "volume_mm3": 3842.796133871026,
+      "volume_mm3": 3772.6480761644852,
       "solid_count": 1
     },
     {
@@ -8086,7 +8483,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -8939,7 +9336,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_tx_xz",
@@ -8998,7 +9395,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_tx_xz",
@@ -9051,13 +9448,73 @@
       "solid_count": 1
     },
     {
+      "id": "side_tx_xz_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_tx_xz",
+      "winding_part": "bobbin",
+      "service_group": "side_head_-1",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          220.0,
+          -120.0,
+          1010.0
+        ],
+        "max": [
+          380.0,
+          -118.6,
+          1100.0
+        ]
+      },
+      "volume_mm3": 1371.5911485751226,
+      "solid_count": 1
+    },
+    {
+      "id": "side_tx_xz_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_tx_xz",
+      "winding_part": "retainer",
+      "service_group": "side_head_-1",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          297.0,
+          -121.0,
+          1013.0
+        ],
+        "max": [
+          303.0,
+          -118.0,
+          1033.0
+        ]
+      },
+      "volume_mm3": 111.88318530717906,
+      "solid_count": 1
+    },
+    {
       "id": "side_rx_xz_266",
       "name": "Rx proposed continuous winding \u00b7 XZ main plane",
       "group": "transverse",
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#71d9d1",
+      "color": "#4bc7b2",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -9910,7 +10367,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_rx_xz_266",
@@ -9969,7 +10426,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_rx_xz_266",
@@ -10022,13 +10479,73 @@
       "solid_count": 1
     },
     {
+      "id": "side_rx_xz_266_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_rx_xz_266",
+      "winding_part": "bobbin",
+      "service_group": "side_head_1",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          233.0,
+          118.6,
+          1016.0
+        ],
+        "max": [
+          299.0,
+          120.00000000000001,
+          1094.0
+        ]
+      },
+      "volume_mm3": 777.9911485751297,
+      "solid_count": 1
+    },
+    {
+      "id": "side_rx_xz_266_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_rx_xz_266",
+      "winding_part": "retainer",
+      "service_group": "side_head_1",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          263.0,
+          118.0,
+          1069.0
+        ],
+        "max": [
+          269.0,
+          121.0,
+          1089.0
+        ]
+      },
+      "volume_mm3": 111.8831853071804,
+      "solid_count": 1
+    },
+    {
       "id": "side_rx_xz_334",
       "name": "Rx proposed continuous winding \u00b7 XZ main plane",
       "group": "transverse",
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_conductor",
-      "color": "#71d9d1",
+      "color": "#4bc7b2",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "coil": {
@@ -10881,7 +11398,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_rx_xz_334",
@@ -10940,7 +11457,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "coil_terminal",
-      "color": "#df9b53",
+      "color": "#d68a43",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "winding_id": "side_rx_xz_334",
@@ -10993,13 +11510,73 @@
       "solid_count": 1
     },
     {
+      "id": "side_rx_xz_334_bobbin_lip",
+      "name": "Nonmetallic bobbin perimeter lip",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#33434d",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_rx_xz_334",
+      "winding_part": "bobbin",
+      "service_group": "side_head_1",
+      "status": "Proposed retention geometry; molding, material, adhesive and dielectric qualification unresolved",
+      "optional": false,
+      "bbox": {
+        "min": [
+          301.0,
+          118.6,
+          1016.0
+        ],
+        "max": [
+          367.0,
+          120.00000000000001,
+          1094.0
+        ]
+      },
+      "volume_mm3": 777.9911485751297,
+      "solid_count": 1
+    },
+    {
+      "id": "side_rx_xz_334_keeper",
+      "name": "Nonmetallic three-strand keeper with locating pins",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#52646b",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "winding_id": "side_rx_xz_334",
+      "winding_part": "retainer",
+      "service_group": "side_head_1",
+      "status": "Nominal insulation contact, nonmetallic pin sockets; retention loads and fatigue unqualified",
+      "optional": false,
+      "bbox": {
+        "min": [
+          331.0,
+          118.0,
+          1069.0
+        ],
+        "max": [
+          337.0,
+          121.0,
+          1089.0
+        ]
+      },
+      "volume_mm3": 111.8831853071804,
+      "solid_count": 1
+    },
+    {
       "id": "side_winding_former_-1",
       "name": "Nonmetallic transverse former with open return channels",
       "group": "transverse",
       "category": "transverse",
       "scope": "module",
       "materialClass": "nonmetallic",
-      "color": "#9ac9c3",
+      "color": "#33434d",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "service_group": "side_head_-1",
@@ -11016,7 +11593,7 @@
           1108.0000001
         ]
       },
-      "volume_mm3": 63591.40331719229,
+      "volume_mm3": 44223.80698300682,
       "solid_count": 1
     },
     {
@@ -11026,7 +11603,7 @@
       "category": "transverse",
       "scope": "module",
       "materialClass": "nonmetallic",
-      "color": "#9ac9c3",
+      "color": "#33434d",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "service_group": "side_head_1",
@@ -11043,7 +11620,7 @@
           1108.0000001
         ]
       },
-      "volume_mm3": 63438.806617500784,
+      "volume_mm3": 57599.61394137675,
       "solid_count": 1
     },
     {
@@ -11070,7 +11647,7 @@
           1544.0
         ]
       },
-      "volume_mm3": 2141457.1859703558,
+      "volume_mm3": 2140755.856826368,
       "solid_count": 1
     },
     {
@@ -11110,6 +11687,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11123,7 +11706,7 @@
           1550.0
         ]
       },
-      "volume_mm3": 1631.1149057438208,
+      "volume_mm3": 1560.9668480372804,
       "solid_count": 1
     },
     {
@@ -11137,6 +11720,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11150,7 +11739,7 @@
           1550.0
         ]
       },
-      "volume_mm3": 1631.11490574382,
+      "volume_mm3": 1560.9668480372798,
       "solid_count": 1
     },
     {
@@ -11190,6 +11779,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11203,7 +11798,7 @@
           1550.0
         ]
       },
-      "volume_mm3": 1631.1149057438208,
+      "volume_mm3": 1560.9668480372804,
       "solid_count": 1
     },
     {
@@ -11217,6 +11812,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 6.0
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11230,12 +11831,12 @@
           1550.0
         ]
       },
-      "volume_mm3": 1631.11490574382,
+      "volume_mm3": 1560.9668480372798,
       "solid_count": 1
     },
     {
       "id": "rgb_body",
-      "name": "RGB industrial camera envelope \u00b7 hardware unselected",
+      "name": "RGB camera hollow housing with panel grooves \u00b7 unselected hardware",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11243,6 +11844,10 @@
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
+      "housing": {
+        "wall_mm": 4,
+        "status": "Proposed housing, seals, optics and electronics unselected"
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11253,15 +11858,15 @@
         "max": [
           -235.0,
           42.0,
-          1533.0
+          1532.0
         ]
       },
-      "volume_mm3": 496920.42414492933,
+      "volume_mm3": 113189.76568201282,
       "solid_count": 1
     },
     {
       "id": "rgb_lens_barrel",
-      "name": "RGB lens envelope",
+      "name": "Stepped lens barrel with retaining seat and focus-ring grooves",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11269,12 +11874,17 @@
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
+      "optical_detail": {
+        "glass_recess_mm": 2,
+        "glass_datum_unchanged": true,
+        "status": "No focal length, lens selection or optical prescription"
+      },
       "optional": false,
       "bbox": {
         "min": [
           -306.0,
           -26.0,
-          1445.0
+          1441.0
         ],
         "max": [
           -254.0,
@@ -11282,12 +11892,12 @@
           1467.0
         ]
       },
-      "volume_mm3": 46721.7659441874,
+      "volume_mm3": 14619.036988732307,
       "solid_count": 1
     },
     {
       "id": "rgb_lens_glass",
-      "name": "RGB lens aperture",
+      "name": "RGB recessed optical window",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11309,6 +11919,98 @@
         ]
       },
       "volume_mm3": 3041.0616886749194,
+      "solid_count": 1
+    },
+    {
+      "id": "rgb_mount_screw_-303",
+      "name": "Illustrative retained fastener, size/rating unselected",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "metal",
+      "color": "#8a9aa3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 3.75
+      },
+      "optional": false,
+      "bbox": {
+        "min": [
+          -307.25,
+          -4.25,
+          1529.0
+        ],
+        "max": [
+          -298.75,
+          4.25,
+          1547.0
+        ]
+      },
+      "volume_mm3": 511.57790458988194,
+      "solid_count": 1
+    },
+    {
+      "id": "rgb_mount_screw_-257",
+      "name": "Illustrative retained fastener, size/rating unselected",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "metal",
+      "color": "#8a9aa3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 3.75
+      },
+      "optional": false,
+      "bbox": {
+        "min": [
+          -261.25,
+          -4.25,
+          1529.0
+        ],
+        "max": [
+          -252.75,
+          4.25,
+          1547.0
+        ]
+      },
+      "volume_mm3": 511.5779045898815,
+      "solid_count": 1
+    },
+    {
+      "id": "rgb_mount_pad",
+      "name": "Recessed camera mounting shoe; thread engagement unqualified",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "metal",
+      "color": "#8a9aa3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "optional": false,
+      "bbox": {
+        "min": [
+          -312.0,
+          -29.0,
+          1530.0
+        ],
+        "max": [
+          -248.0,
+          29.0,
+          1532.0
+        ]
+      },
+      "volume_mm3": 7332.39115822132,
       "solid_count": 1
     },
     {
@@ -11469,7 +12171,7 @@
     },
     {
       "id": "optional_3d_mount",
-      "name": "OPTION: 3D mounting spacer",
+      "name": "OPTION: fitted wedge between tilted head and carrier",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11478,24 +12180,25 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "optional": true,
+      "mounting_status": "Real exterior bearing faces; fastening, adjustment loads and tolerances remain unqualified",
       "bbox": {
         "min": [
           -312.5,
           127.5,
-          1523.0
+          1516.9973899378788
         ],
         "max": [
           -247.5,
           172.5,
-          1539.0
+          1532.0
         ]
       },
-      "volume_mm3": 46800.0,
+      "volume_mm3": 21896.437848774687,
       "solid_count": 1
     },
     {
       "id": "optional_3d_body",
-      "name": "OPTION: exterior 3D geometry sensor envelope",
+      "name": "OPTION: hollow exterior-geometry head with recessed twin windows",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11504,7 +12207,7 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "optional": true,
-      "measurement": "Exterior geometry/pose only; device and calibration unselected",
+      "measurement": "Exterior geometry/pose only; device, stereo/baseline interpretation and calibration unselected",
       "bbox": {
         "min": [
           -330.0,
@@ -11517,12 +12220,42 @@
           1531.865463678939
         ]
       },
-      "volume_mm3": 362269.4507896374,
+      "volume_mm3": 107720.1407109978,
+      "solid_count": 1
+    },
+    {
+      "id": "optional_3d_bezel_130",
+      "name": "OPTION: recessed-window retaining bezel",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "optional": true,
+      "optical_detail": {
+        "glass_recess_mm": 2,
+        "status": "Window seating geometry only; no qualified seal or optical performance"
+      },
+      "bbox": {
+        "min": [
+          -292.5,
+          108.70842754443044,
+          1466.0851043012337
+        ],
+        "max": [
+          -267.5,
+          134.00304220661093,
+          1478.7593389873919
+        ]
+      },
+      "volume_mm3": 906.7578876056218,
       "solid_count": 1
     },
     {
       "id": "optional_3d_aperture_130",
-      "name": "OPTION: 3D optical aperture",
+      "name": "OPTION: recessed 3D optical window",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11547,8 +12280,38 @@
       "solid_count": 1
     },
     {
+      "id": "optional_3d_bezel_170",
+      "name": "OPTION: recessed-window retaining bezel",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "optional": true,
+      "optical_detail": {
+        "glass_recess_mm": 2,
+        "status": "Window seating geometry only; no qualified seal or optical performance"
+      },
+      "bbox": {
+        "min": [
+          -292.5,
+          146.64137375267836,
+          1453.39291804503
+        ],
+        "max": [
+          -267.5,
+          171.93598841485885,
+          1466.0671527311881
+        ]
+      },
+      "volume_mm3": 906.7578876056219,
+      "solid_count": 1
+    },
+    {
       "id": "optional_3d_aperture_170",
-      "name": "OPTION: 3D optical aperture",
+      "name": "OPTION: recessed 3D optical window",
       "group": "optical",
       "category": "optical",
       "scope": "module",
@@ -11727,7 +12490,7 @@
           1410.0
         ]
       },
-      "volume_mm3": 3023923.5867634728,
+      "volume_mm3": 3017746.964279092,
       "solid_count": 1
     },
     {
@@ -11795,6 +12558,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11808,7 +12577,7 @@
           1000.1
         ]
       },
-      "volume_mm3": 860.9534667162847,
+      "volume_mm3": 821.495184256356,
       "solid_count": 1
     },
     {
@@ -11822,6 +12591,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11835,7 +12610,7 @@
           1390.1
         ]
       },
-      "volume_mm3": 860.9534667162844,
+      "volume_mm3": 821.4951842563531,
       "solid_count": 1
     },
     {
@@ -11849,6 +12624,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11862,7 +12643,7 @@
           1000.1
         ]
       },
-      "volume_mm3": 860.9534667162847,
+      "volume_mm3": 821.495184256356,
       "solid_count": 1
     },
     {
@@ -11876,6 +12657,12 @@
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
       "hardware_status": "Illustrative geometry; supplier, preload and load rating unselected",
+      "socket_recess": {
+        "depth_mm": 3.0,
+        "head_thickness_mm": 5.0,
+        "remaining_floor_mm": 2.0,
+        "hex_circumdiameter_mm": 4.5
+      },
       "optional": false,
       "bbox": {
         "min": [
@@ -11889,7 +12676,7 @@
           1390.1
         ]
       },
-      "volume_mm3": 860.9534667162844,
+      "volume_mm3": 821.4951842563531,
       "solid_count": 1
     },
     {
@@ -12344,170 +13131,858 @@
     },
     {
       "id": "control_connector_power",
-      "name": "Interface connector: power",
+      "name": "Proposed wall-mounted cable gland body",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "power",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": null,
+        "outer_wall_point_mm": [
+          700,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_power_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          690.0,
-          -630.0,
-          948.0
+          690.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          710.0,
-          -610.0,
-          970.0
+          709.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_power_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_power",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          691.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          709.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.50872139727983,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_power_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_power",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          695.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          704.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
       "solid_count": 1
     },
     {
       "id": "control_connector_host_io",
-      "name": "Interface connector: host io",
+      "name": "Proposed wall-mounted cable gland body",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "host_io",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": null,
+        "outer_wall_point_mm": [
+          748,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_host_io_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          738.0,
-          -630.0,
-          948.0
+          738.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          758.0,
-          -610.0,
-          970.0
+          757.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_host_io_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_host_io",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          739.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          757.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.50872139727983,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_host_io_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_host_io",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          743.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          752.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
       "solid_count": 1
     },
     {
       "id": "control_connector_encoder",
-      "name": "Interface connector: encoder",
+      "name": "Proposed wall-mounted cable gland body",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "encoder",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_encoder",
+        "outer_wall_point_mm": [
+          796,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_encoder_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          786.0,
-          -630.0,
-          948.0
+          786.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          806.0,
-          -610.0,
-          970.0
+          805.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_encoder_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_encoder",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          787.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          805.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.50872139727988,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_encoder_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_encoder",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          791.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          800.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
       "solid_count": 1
     },
     {
       "id": "control_connector_optics",
-      "name": "Interface connector: optics",
+      "name": "Proposed wall-mounted cable gland body",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "optics",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_optical",
+        "outer_wall_point_mm": [
+          832,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_optics_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          834.0,
-          -630.0,
-          948.0
+          822.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          854.0,
-          -610.0,
-          970.0
+          841.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_optics_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_optics",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          823.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          841.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.50872139727988,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_optics_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_optics",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          827.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          836.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_optional_3d",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_optional_3d",
+        "outer_wall_point_mm": [
+          856,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_optional_3d_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          846.5,
+          -628.2272413359522,
+          958.0
+        ],
+        "max": [
+          865.5,
+          -611.7727586640478,
+          978.0
+        ]
+      },
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_optional_3d_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_optional_3d",
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          847.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          865.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.50872139727988,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_optional_3d_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_optional_3d",
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          851.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          860.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
       "solid_count": 1
     },
     {
       "id": "control_connector_coil_A",
-      "name": "Interface connector: coil A",
+      "name": "Proposed wall-mounted cable gland body",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "coil_A",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_under_lead",
+        "outer_wall_point_mm": [
+          892,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_coil_A_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          882.0,
-          -630.0,
-          948.0
+          882.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          902.0,
-          -610.0,
-          970.0
+          901.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869035,
       "solid_count": 1
     },
     {
-      "id": "control_connector_coil_B",
-      "name": "Interface connector: coil B",
+      "id": "control_connector_coil_A_locknut",
+      "name": "Gland inner locknut bearing on wall",
       "group": "controls",
       "category": "controls",
       "scope": "module",
-      "materialClass": "metal",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_A",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          883.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          901.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.5087213972799,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_A_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_A",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          887.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          896.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_tx",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
       "color": "#22343e",
       "proposed": true,
       "geometryStatus": "research_coordination_not_fabrication_release",
-      "interface": "coil_B",
-      "connector_status": "Unselected connector/pinout/seal/EMC concept",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_side_near",
+        "outer_wall_point_mm": [
+          928,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_coil_B_tx_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
       "optional": false,
+      "service_group": null,
       "bbox": {
         "min": [
-          930.0,
-          -630.0,
-          948.0
+          918.5,
+          -628.2272413359522,
+          958.0
         ],
         "max": [
-          950.0,
-          -610.0,
-          970.0
+          937.5,
+          -611.7727586640478,
+          978.0
         ]
       },
-      "volume_mm3": 6911.503837897544,
+      "volume_mm3": 1905.1888551869035,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_tx_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_B_tx",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          919.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          937.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.5087213972799,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_tx_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_B_tx",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          923.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          932.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_rx",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "control_enclosure_shell",
+        "cable_id": "cable_side_far",
+        "outer_wall_point_mm": [
+          952,
+          -620,
+          970
+        ],
+        "outward_axis": [
+          0,
+          0,
+          -1
+        ],
+        "wall_thickness_mm": 6,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "control_enclosure_shell",
+          "control_connector_coil_B_rx_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          942.5,
+          -628.2272413359522,
+          958.0
+        ],
+        "max": [
+          961.5,
+          -611.7727586640478,
+          978.0
+        ]
+      },
+      "volume_mm3": 1905.1888551869038,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_rx_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_B_rx",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          943.0,
+          -627.79422863406,
+          976.0
+        ],
+        "max": [
+          961.0,
+          -612.20577136594,
+          978.0
+        ]
+      },
+      "volume_mm3": 171.5087213972799,
+      "solid_count": 1
+    },
+    {
+      "id": "control_connector_coil_B_rx_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "controls",
+      "category": "controls",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "control_connector_coil_B_rx",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          947.8,
+          -624.2,
+          958.0
+        ],
+        "max": [
+          956.2,
+          -615.8,
+          960.0
+        ]
+      },
+      "volume_mm3": 10.304423903774577,
       "solid_count": 1
     },
     {
@@ -12589,8 +14064,543 @@
       "solid_count": 1
     },
     {
+      "id": "rgb_cable_gland",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "rgb_body",
+        "cable_id": "cable_optical",
+        "outer_wall_point_mm": [
+          -235,
+          0,
+          1500
+        ],
+        "outward_axis": [
+          1,
+          0,
+          0
+        ],
+        "wall_thickness_mm": 4,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "rgb_body",
+          "rgb_cable_gland_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -241.0,
+          -8.22724133595217,
+          1490.5
+        ],
+        "max": [
+          -223.0,
+          8.227241335952169,
+          1509.5
+        ]
+      },
+      "volume_mm3": 1766.6446191635948,
+      "solid_count": 1
+    },
+    {
+      "id": "rgb_cable_gland_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "rgb_cable_gland",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -241.0,
+          -7.794228634059952,
+          1491.0
+        ],
+        "max": [
+          -239.0,
+          7.794228634059948,
+          1509.0
+        ]
+      },
+      "volume_mm3": 171.50872139728062,
+      "solid_count": 1
+    },
+    {
+      "id": "rgb_cable_gland_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "rgb_cable_gland",
+      "optional": false,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -225.0,
+          -4.2,
+          1495.8
+        ],
+        "max": [
+          -223.0,
+          4.2,
+          1504.2
+        ]
+      },
+      "volume_mm3": 10.304423903775799,
+      "solid_count": 1
+    },
+    {
+      "id": "depth_cable_gland",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "optional_3d_body",
+        "cable_id": "cable_optional_3d",
+        "outer_wall_point_mm": [
+          -230,
+          150,
+          1495
+        ],
+        "outward_axis": [
+          1,
+          0,
+          0
+        ],
+        "wall_thickness_mm": 4,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "optional_3d_body",
+          "depth_cable_gland_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -236.0,
+          141.77275866404784,
+          1485.5
+        ],
+        "max": [
+          -218.0,
+          158.22724133595216,
+          1504.5
+        ]
+      },
+      "volume_mm3": 1766.6446191635935,
+      "solid_count": 1
+    },
+    {
+      "id": "depth_cable_gland_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "depth_cable_gland",
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -236.0,
+          142.20577136594005,
+          1486.0
+        ],
+        "max": [
+          -234.0,
+          157.79422863405995,
+          1504.0
+        ]
+      },
+      "volume_mm3": 171.5087213972808,
+      "solid_count": 1
+    },
+    {
+      "id": "depth_cable_gland_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "optical",
+      "category": "optical",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "depth_cable_gland",
+      "optional": true,
+      "service_group": null,
+      "bbox": {
+        "min": [
+          -220.0,
+          145.8,
+          1490.8
+        ],
+        "max": [
+          -218.0,
+          154.2,
+          1499.2
+        ]
+      },
+      "volume_mm3": 10.30442390377587,
+      "solid_count": 1
+    },
+    {
+      "id": "under_cable_gland",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "under_cartridge_shell",
+        "cable_id": "cable_under_lead",
+        "outer_wall_point_mm": [
+          96,
+          -150,
+          951
+        ],
+        "outward_axis": [
+          0,
+          -1,
+          0
+        ],
+        "wall_thickness_mm": 5,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "under_cartridge_shell",
+          "under_cable_gland_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": false,
+      "service_group": "under_cartridge",
+      "bbox": {
+        "min": [
+          86.5,
+          -162.0,
+          942.7727586640478
+        ],
+        "max": [
+          105.5,
+          -143.0,
+          959.2272413359522
+        ]
+      },
+      "volume_mm3": 1835.916737175265,
+      "solid_count": 1
+    },
+    {
+      "id": "under_cable_gland_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "under_cable_gland",
+      "optional": false,
+      "service_group": "under_cartridge",
+      "bbox": {
+        "min": [
+          87.0,
+          -145.0,
+          943.20577136594
+        ],
+        "max": [
+          105.00000000000001,
+          -143.0,
+          958.79422863406
+        ]
+      },
+      "volume_mm3": 171.50872139727844,
+      "solid_count": 1
+    },
+    {
+      "id": "under_cable_gland_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "under_belt",
+      "category": "under_belt",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "under_cable_gland",
+      "optional": false,
+      "service_group": "under_cartridge",
+      "bbox": {
+        "min": [
+          91.8,
+          -162.0,
+          946.8
+        ],
+        "max": [
+          100.2,
+          -160.0,
+          955.2
+        ]
+      },
+      "volume_mm3": 10.304423903774207,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_-1",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "side_cartridge_-1",
+        "cable_id": "cable_side_near",
+        "outer_wall_point_mm": [
+          365,
+          -132,
+          1080
+        ],
+        "outward_axis": [
+          0,
+          -1,
+          0
+        ],
+        "wall_thickness_mm": 5,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "side_cartridge_-1",
+          "side_cable_gland_-1_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": false,
+      "service_group": "side_head_-1",
+      "bbox": {
+        "min": [
+          355.5,
+          -144.0,
+          1071.7727586640478
+        ],
+        "max": [
+          374.5,
+          -125.0,
+          1088.2272413359522
+        ]
+      },
+      "volume_mm3": 1835.9167371752674,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_-1_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "side_cable_gland_-1",
+      "optional": false,
+      "service_group": "side_head_-1",
+      "bbox": {
+        "min": [
+          356.0,
+          -127.0,
+          1072.20577136594
+        ],
+        "max": [
+          374.0,
+          -125.0,
+          1087.79422863406
+        ]
+      },
+      "volume_mm3": 171.5087213972773,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_-1_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "side_cable_gland_-1",
+      "optional": false,
+      "service_group": "side_head_-1",
+      "bbox": {
+        "min": [
+          360.8,
+          -144.0,
+          1075.8
+        ],
+        "max": [
+          369.2,
+          -142.0,
+          1084.2
+        ]
+      },
+      "volume_mm3": 10.304423903774463,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_1",
+      "name": "Proposed wall-mounted cable gland body",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#22343e",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland": {
+        "host_id": "side_cartridge_1",
+        "cable_id": "cable_side_far",
+        "outer_wall_point_mm": [
+          365,
+          132,
+          1080
+        ],
+        "outward_axis": [
+          0,
+          1,
+          0
+        ],
+        "wall_thickness_mm": 5,
+        "wall_bore_radius_mm": 6.4,
+        "shaft_radius_mm": 6.3,
+        "cable_bore_radius_mm": 4.2,
+        "seal_bore_radius_mm": 4.0,
+        "expected_bearing_ids": [
+          "side_cartridge_1",
+          "side_cable_gland_1_locknut"
+        ],
+        "status": "Proposed compression geometry; seal material, torque, strain relief, bend rating, pinout and ingress performance unselected"
+      },
+      "optional": false,
+      "service_group": "side_head_1",
+      "bbox": {
+        "min": [
+          355.5,
+          125.0,
+          1071.7727586640478
+        ],
+        "max": [
+          374.5,
+          144.0,
+          1088.2272413359522
+        ]
+      },
+      "volume_mm3": 1835.9167371752671,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_1_locknut",
+      "name": "Gland inner locknut bearing on wall",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#9ac9c3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "side_cable_gland_1",
+      "optional": false,
+      "service_group": "side_head_1",
+      "bbox": {
+        "min": [
+          356.0,
+          125.0,
+          1072.20577136594
+        ],
+        "max": [
+          374.0,
+          127.0,
+          1087.79422863406
+        ]
+      },
+      "volume_mm3": 171.5087213972773,
+      "solid_count": 1
+    },
+    {
+      "id": "side_cable_gland_1_seal",
+      "name": "Proposed gland cable-contact insert",
+      "group": "transverse",
+      "category": "transverse",
+      "scope": "module",
+      "materialClass": "nonmetallic",
+      "color": "#41bba3",
+      "proposed": true,
+      "geometryStatus": "research_coordination_not_fabrication_release",
+      "gland_parent": "side_cable_gland_1",
+      "optional": false,
+      "service_group": "side_head_1",
+      "bbox": {
+        "min": [
+          360.8,
+          142.0,
+          1075.8
+        ],
+        "max": [
+          369.2,
+          144.0,
+          1084.2
+        ]
+      },
+      "volume_mm3": 10.304423903774463,
+      "solid_count": 1
+    },
+    {
       "id": "cable_optical",
-      "name": "RGB/illumination association cable route",
+      "name": "RGB/illumination association cable through wall-normal glands",
       "group": "cables",
       "category": "cables",
       "scope": "module",
@@ -12601,56 +14611,468 @@
       "optional": false,
       "points_mm": [
         [
-          -235,
+          -239,
           0,
           1500
         ],
         [
           -200,
+          0,
+          1500
+        ],
+        [
+          -190,
           -360,
           1510
         ],
         [
-          -200,
+          -190,
           -460,
           1510
         ],
         [
-          530,
+          550,
           -460,
           1510
         ],
         [
-          530,
+          550,
           -500,
-          930
+          1510
         ],
         [
-          844,
+          522,
+          -500,
+          1450
+        ],
+        [
+          522,
+          -500,
+          860
+        ],
+        [
+          522,
+          -800,
+          860
+        ],
+        [
+          832,
+          -800,
+          860
+        ],
+        [
+          832,
           -620,
-          948
+          860
+        ],
+        [
+          832,
+          -620,
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            -239.0,
+            0.0,
+            1500.0
+          ],
+          "middle": [
+            -227.3,
+            0.0,
+            1500.0
+          ],
+          "end": [
+            -215.6,
+            0.0,
+            1500.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -215.6,
+            0.0,
+            1500.0
+          ],
+          "middle": [
+            -204.41709362509104,
+            -4.53969475669575,
+            1500.1261026321304
+          ],
+          "end": [
+            -199.56700064231038,
+            -15.587976876826598,
+            1500.4329993576896
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -199.56700064231038,
+            -15.587976876826598,
+            1500.4329993576896
+          ],
+          "middle": [
+            -194.79004003802206,
+            -187.5585586312054,
+            1505.209959961978
+          ],
+          "end": [
+            -190.01307943373374,
+            -359.5291403855841,
+            1509.9869205662662
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -190.01307943373374,
+            -359.5291403855841,
+            1509.9869205662662
+          ],
+          "middle": [
+            -190.00327017350935,
+            -360.00009080313447,
+            1509.9967298264905
+          ],
+          "end": [
+            -189.99999999999997,
+            -360.4712227919588,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -189.99999999999997,
+            -360.4712227919588,
+            1510.0
+          ],
+          "middle": [
+            -190.0,
+            -398.2356113959794,
+            1510.0
+          ],
+          "end": [
+            -190.0,
+            -436.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -190.0,
+            -436.0,
+            1510.0
+          ],
+          "middle": [
+            -182.97056274847716,
+            -452.97056274847716,
+            1510.0
+          ],
+          "end": [
+            -166.0,
+            -460.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -166.0,
+            -460.0,
+            1510.0
+          ],
+          "middle": [
+            184.0,
+            -460.0,
+            1510.0
+          ],
+          "end": [
+            534.0,
+            -460.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            534.0,
+            -460.0,
+            1510.0
+          ],
+          "middle": [
+            545.3137084989847,
+            -464.68629150101526,
+            1510.0
+          ],
+          "end": [
+            550.0,
+            -476.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            550.0,
+            -476.0,
+            1510.0
+          ],
+          "middle": [
+            550.0,
+            -480.0,
+            1510.0
+          ],
+          "end": [
+            550.0,
+            -484.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            550.0,
+            -484.0,
+            1510.0
+          ],
+          "middle": [
+            548.0182354379159,
+            -495.31370849898474,
+            1505.7533616526769
+          ],
+          "end": [
+            543.233832554702,
+            -500.0,
+            1495.5010697600758
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            543.233832554702,
+            -500.0,
+            1495.5010697600758
+          ],
+          "middle": [
+            533.7427185974078,
+            -500.0,
+            1475.1629684230168
+          ],
+          "end": [
+            524.2516046401137,
+            -500.0,
+            1454.8248670859577
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            524.2516046401137,
+            -500.0,
+            1454.8248670859577
+          ],
+          "middle": [
+            522.5696618821103,
+            -500.0,
+            1449.8736208892824
+          ],
+          "end": [
+            522.0,
+            -500.0,
+            1444.6756159180109
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            522.0,
+            -500.0,
+            1444.6756159180109
+          ],
+          "middle": [
+            522.0,
+            -500.0,
+            1164.3378079590054
+          ],
+          "end": [
+            522.0,
+            -500.0,
+            884.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            522.0,
+            -500.0,
+            884.0
+          ],
+          "middle": [
+            522.0,
+            -507.02943725152284,
+            867.0294372515228
+          ],
+          "end": [
+            522.0,
+            -524.0,
+            860.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            522.0,
+            -524.0,
+            860.0
+          ],
+          "middle": [
+            522.0,
+            -650.0,
+            860.0
+          ],
+          "end": [
+            522.0,
+            -776.0,
+            860.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            522.0,
+            -776.0,
+            860.0
+          ],
+          "middle": [
+            529.0294372515228,
+            -792.9705627484772,
+            860.0
+          ],
+          "end": [
+            546.0,
+            -800.0,
+            860.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            546.0,
+            -800.0,
+            860.0
+          ],
+          "middle": [
+            677.0,
+            -800.0,
+            860.0
+          ],
+          "end": [
+            808.0,
+            -800.0,
+            860.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            808.0,
+            -800.0,
+            860.0
+          ],
+          "middle": [
+            824.9705627484772,
+            -792.9705627484772,
+            860.0
+          ],
+          "end": [
+            832.0,
+            -776.0,
+            860.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            832.0,
+            -776.0,
+            860.0
+          ],
+          "middle": [
+            832.0,
+            -710.0,
+            860.0
+          ],
+          "end": [
+            832.0,
+            -644.0,
+            860.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            832.0,
+            -644.0,
+            860.0
+          ],
+          "middle": [
+            832.0,
+            -627.0294372515228,
+            867.0294372515228
+          ],
+          "end": [
+            832.0,
+            -620.0,
+            884.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            832.0,
+            -620.0,
+            884.0
+          ],
+          "middle": [
+            832.0,
+            -620.0,
+            930.0
+          ],
+          "end": [
+            832.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 16.00000000000002,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": false,
       "bbox": {
         "min": [
-          -238.98124301832678,
-          -623.7372208425297,
-          926.0057224130537
+          -239.0,
+          -804.0000001,
+          855.9999999
         ],
         "max": [
-          845.4418484429996,
-          0.40239876501730804,
-          1514.0
+          836.0000001,
+          4.000000100000004,
+          1514.0000001
         ]
       },
-      "volume_mm3": 105892.25645175879,
+      "volume_mm3": 139216.772759264,
       "solid_count": 1
     },
     {
       "id": "cable_optional_3d",
-      "name": "Optional 3D cable route envelope",
+      "name": "Optional geometry cable through separate wall-normal glands",
       "group": "cables",
       "category": "cables",
       "scope": "module",
@@ -12661,61 +15083,550 @@
       "optional": true,
       "points_mm": [
         [
-          -230,
+          -234,
           150,
           1495
         ],
         [
-          -200,
+          -195,
+          150,
+          1495
+        ],
+        [
+          -190,
           350,
           1510
         ],
         [
-          -200,
+          -190,
           460,
           1510
         ],
         [
-          530,
+          570,
           460,
           1510
         ],
         [
-          530,
-          460,
+          570,
+          500,
+          1510
+        ],
+        [
+          538,
+          500,
+          1450
+        ],
+        [
+          538,
+          500,
           930
         ],
         [
-          530,
-          -500,
+          538,
+          -520,
           930
         ],
         [
-          844,
+          538,
+          -520,
+          880
+        ],
+        [
+          538,
+          -800,
+          880
+        ],
+        [
+          856,
+          -800,
+          880
+        ],
+        [
+          856,
           -620,
-          948
+          880
+        ],
+        [
+          856,
+          -620,
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            -234.0,
+            150.0,
+            1495.0
+          ],
+          "middle": [
+            -222.3,
+            150.0,
+            1495.0
+          ],
+          "end": [
+            -210.6,
+            150.0,
+            1495.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -210.6,
+            150.0,
+            1495.0
+          ],
+          "middle": [
+            -199.43252319994696,
+            154.53167566353034,
+            1495.3398756747647
+          ],
+          "end": [
+            -194.6112130667022,
+            165.55147733191188,
+            1496.1663607998935
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -194.6112130667022,
+            165.55147733191188,
+            1496.1663607998935
+          ],
+          "middle": [
+            -192.31740977560546,
+            257.30360897578106,
+            1503.0477706731838
+          ],
+          "end": [
+            -190.02360648450878,
+            349.05574061965024,
+            1509.9291805464738
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -190.02360648450878,
+            349.05574061965024,
+            1509.9291805464738
+          ],
+          "middle": [
+            -190.00590391748383,
+            350.00073684016604,
+            1509.9822882475487
+          ],
+          "end": [
+            -190.00000000000003,
+            350.94720559462405,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -190.00000000000003,
+            350.94720559462405,
+            1510.0
+          ],
+          "middle": [
+            -190.0,
+            393.473602797312,
+            1510.0
+          ],
+          "end": [
+            -190.0,
+            436.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -190.0,
+            436.0,
+            1510.0
+          ],
+          "middle": [
+            -182.97056274847716,
+            452.97056274847716,
+            1510.0
+          ],
+          "end": [
+            -166.0,
+            460.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -166.0,
+            460.0,
+            1510.0
+          ],
+          "middle": [
+            194.0,
+            460.0,
+            1510.0
+          ],
+          "end": [
+            554.0,
+            460.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            554.0,
+            460.0,
+            1510.0
+          ],
+          "middle": [
+            565.3137084989847,
+            464.68629150101526,
+            1510.0
+          ],
+          "end": [
+            570.0,
+            476.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            570.0,
+            476.0,
+            1510.0
+          ],
+          "middle": [
+            570.0,
+            480.0,
+            1510.0
+          ],
+          "end": [
+            570.0,
+            484.0,
+            1510.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            570.0,
+            484.0,
+            1510.0
+          ],
+          "middle": [
+            567.7946863524634,
+            495.3137084989848,
+            1505.865036910869
+          ],
+          "end": [
+            562.4705882352941,
+            500.0,
+            1495.8823529411766
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            562.4705882352941,
+            500.0,
+            1495.8823529411766
+          ],
+          "middle": [
+            551.6470588235295,
+            500.0,
+            1475.5882352941178
+          ],
+          "end": [
+            540.8235294117648,
+            500.0,
+            1455.2941176470588
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            540.8235294117648,
+            500.0,
+            1455.2941176470588
+          ],
+          "middle": [
+            538.716579996512,
+            500.0,
+            1449.820855000872
+          ],
+          "end": [
+            538.0,
+            500.0,
+            1444.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            538.0,
+            500.0,
+            1444.0
+          ],
+          "middle": [
+            538.0,
+            500.0,
+            1199.0
+          ],
+          "end": [
+            538.0,
+            500.0,
+            954.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            538.0,
+            500.0,
+            954.0
+          ],
+          "middle": [
+            538.0,
+            492.97056274847716,
+            937.0294372515228
+          ],
+          "end": [
+            538.0,
+            476.0,
+            930.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            538.0,
+            476.0,
+            930.0
+          ],
+          "middle": [
+            538.0,
+            -12.0,
+            930.0
+          ],
+          "end": [
+            538.0,
+            -500.0,
+            930.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            538.0,
+            -500.0,
+            930.0
+          ],
+          "middle": [
+            538.0,
+            -514.142135623731,
+            924.142135623731
+          ],
+          "end": [
+            538.0,
+            -520.0,
+            910.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            538.0,
+            -520.0,
+            910.0
+          ],
+          "middle": [
+            538.0,
+            -520.0,
+            905.0
+          ],
+          "end": [
+            538.0,
+            -520.0,
+            900.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            538.0,
+            -520.0,
+            900.0
+          ],
+          "middle": [
+            538.0,
+            -525.857864376269,
+            885.857864376269
+          ],
+          "end": [
+            538.0,
+            -540.0,
+            880.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            538.0,
+            -540.0,
+            880.0
+          ],
+          "middle": [
+            538.0,
+            -658.0,
+            880.0
+          ],
+          "end": [
+            538.0,
+            -776.0,
+            880.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            538.0,
+            -776.0,
+            880.0
+          ],
+          "middle": [
+            545.0294372515228,
+            -792.9705627484772,
+            880.0
+          ],
+          "end": [
+            562.0,
+            -800.0,
+            880.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            562.0,
+            -800.0,
+            880.0
+          ],
+          "middle": [
+            697.0,
+            -800.0,
+            880.0
+          ],
+          "end": [
+            832.0,
+            -800.0,
+            880.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            832.0,
+            -800.0,
+            880.0
+          ],
+          "middle": [
+            848.9705627484772,
+            -792.9705627484772,
+            880.0
+          ],
+          "end": [
+            856.0,
+            -776.0,
+            880.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            856.0,
+            -776.0,
+            880.0
+          ],
+          "middle": [
+            856.0,
+            -710.0,
+            880.0
+          ],
+          "end": [
+            856.0,
+            -644.0,
+            880.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            856.0,
+            -644.0,
+            880.0
+          ],
+          "middle": [
+            856.0,
+            -627.0294372515228,
+            887.0294372515228
+          ],
+          "end": [
+            856.0,
+            -620.0,
+            904.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            856.0,
+            -620.0,
+            904.0
+          ],
+          "middle": [
+            856.0,
+            -620.0,
+            940.0
+          ],
+          "end": [
+            856.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 15.993754709379532,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": false,
       "bbox": {
         "min": [
-          -233.95598888071189,
-          -623.7372208425297,
-          926.0
+          -234.0,
+          -804.0000001,
+          875.9999999
         ],
         "max": [
-          845.4418484429996,
-          464.0,
-          1514.0
+          860.0000001,
+          504.0000001,
+          1514.0000001
         ]
       },
-      "volume_mm3": 146554.59015396808,
+      "volume_mm3": 180578.7057201056,
       "solid_count": 1
     },
     {
       "id": "cable_under_lead",
-      "name": "Under-belt acquisition lead \u00b7 routing influence unvalidated",
+      "name": "Under-belt acquisition route; internal terminal harness unresolved",
       "group": "under_belt",
       "category": "under_belt",
       "scope": "module",
@@ -12726,51 +15637,427 @@
       "optional": false,
       "points_mm": [
         [
-          100,
-          -140,
+          96,
+          -145,
+          951
+        ],
+        [
+          96,
+          -180,
           951
         ],
         [
           160,
-          -170,
+          -200,
           951
         ],
         [
           160,
-          -500,
+          -480,
           951
         ],
         [
           620,
-          -500,
+          -480,
           951
+        ],
+        [
+          620,
+          -530,
+          951
+        ],
+        [
+          620,
+          -530,
+          900
+        ],
+        [
+          620,
+          -800,
+          900
+        ],
+        [
+          892,
+          -800,
+          900
         ],
         [
           892,
           -620,
-          948
+          900
+        ],
+        [
+          892,
+          -620,
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            96.0,
+            -145.0,
+            951.0
+          ],
+          "middle": [
+            96.0,
+            -155.5,
+            951.0
+          ],
+          "end": [
+            96.0,
+            -166.0,
+            951.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            96.0,
+            -166.0,
+            951.0
+          ],
+          "middle": [
+            99.70016850807497,
+            -177.27966973485138,
+            951.0
+          ],
+          "end": [
+            109.36271969249042,
+            -184.17584990390324,
+            951.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            109.36271969249042,
+            -184.17584990390324,
+            951.0
+          ],
+          "middle": [
+            126.26065976387656,
+            -189.45645617621142,
+            951.0
+          ],
+          "end": [
+            143.15859983526272,
+            -194.7370624485196,
+            951.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            143.15859983526272,
+            -194.7370624485196,
+            951.0
+          ],
+          "middle": [
+            155.33657668831668,
+            -203.42850644404075,
+            951.0
+          ],
+          "end": [
+            160.0,
+            -217.64458192136033,
+            951.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            160.0,
+            -217.64458192136033,
+            951.0
+          ],
+          "middle": [
+            160.0,
+            -336.82229096068016,
+            951.0
+          ],
+          "end": [
+            160.0,
+            -456.0,
+            951.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            160.0,
+            -456.0,
+            951.0
+          ],
+          "middle": [
+            167.02943725152284,
+            -472.97056274847716,
+            951.0
+          ],
+          "end": [
+            184.0,
+            -480.0,
+            951.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            184.0,
+            -480.0,
+            951.0
+          ],
+          "middle": [
+            392.0,
+            -480.0,
+            951.0
+          ],
+          "end": [
+            600.0,
+            -480.0,
+            951.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            600.0,
+            -480.0,
+            951.0
+          ],
+          "middle": [
+            614.142135623731,
+            -485.85786437626905,
+            951.0
+          ],
+          "end": [
+            620.0,
+            -500.0,
+            951.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            620.0,
+            -500.0,
+            951.0
+          ],
+          "middle": [
+            620.0,
+            -505.0,
+            951.0
+          ],
+          "end": [
+            620.0,
+            -510.0,
+            951.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            620.0,
+            -510.0,
+            951.0
+          ],
+          "middle": [
+            620.0,
+            -524.142135623731,
+            945.142135623731
+          ],
+          "end": [
+            620.0,
+            -530.0,
+            931.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            620.0,
+            -530.0,
+            931.0
+          ],
+          "middle": [
+            620.0,
+            -530.0,
+            925.7
+          ],
+          "end": [
+            620.0,
+            -530.0,
+            920.4
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            620.0,
+            -530.0,
+            920.4
+          ],
+          "middle": [
+            620.0,
+            -535.9750216637945,
+            905.9750216637945
+          ],
+          "end": [
+            620.0,
+            -550.4,
+            900.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            620.0,
+            -550.4,
+            900.0
+          ],
+          "middle": [
+            620.0,
+            -663.2,
+            900.0
+          ],
+          "end": [
+            620.0,
+            -776.0,
+            900.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            620.0,
+            -776.0,
+            900.0
+          ],
+          "middle": [
+            627.0294372515228,
+            -792.9705627484772,
+            900.0
+          ],
+          "end": [
+            644.0,
+            -800.0,
+            900.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            644.0,
+            -800.0,
+            900.0
+          ],
+          "middle": [
+            756.0,
+            -800.0,
+            900.0
+          ],
+          "end": [
+            868.0,
+            -800.0,
+            900.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            868.0,
+            -800.0,
+            900.0
+          ],
+          "middle": [
+            884.9705627484772,
+            -792.9705627484772,
+            900.0
+          ],
+          "end": [
+            892.0,
+            -776.0,
+            900.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            892.0,
+            -776.0,
+            900.0
+          ],
+          "middle": [
+            892.0,
+            -710.0,
+            900.0
+          ],
+          "end": [
+            892.0,
+            -644.0,
+            900.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            892.0,
+            -644.0,
+            900.0
+          ],
+          "middle": [
+            892.0,
+            -627.0294372515228,
+            907.0294372515228
+          ],
+          "end": [
+            892.0,
+            -620.0,
+            924.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            892.0,
+            -620.0,
+            924.0
+          ],
+          "middle": [
+            892.0,
+            -620.0,
+            950.0
+          ],
+          "end": [
+            892.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 19.042672787460187,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": true,
       "bbox": {
         "min": [
-          98.21114561800017,
-          -623.659707468917,
-          944.0002036412183
+          91.99999989999999,
+          -804.0000001,
+          895.9999999
         ],
         "max": [
-          893.6149830742859,
-          -136.42229123600035,
-          955.0
+          896.0000001,
+          -145.0,
+          976.0
         ]
       },
-      "volume_mm3": 57936.19925846614,
+      "volume_mm3": 83702.57892356995,
       "solid_count": 1
     },
     {
       "id": "cable_side_near",
-      "name": "Transverse Tx lead \u00b7 routing influence unvalidated",
+      "name": "Transverse Tx external route through its own cabinet entry",
       "group": "transverse",
       "category": "transverse",
       "scope": "module",
@@ -12781,56 +16068,345 @@
       "optional": false,
       "points_mm": [
         [
-          350,
-          -132,
+          365,
+          -127,
           1080
         ],
         [
-          350,
+          365,
+          -165,
+          1080
+        ],
+        [
+          365,
           -390,
           1150
         ],
         [
-          530,
-          -460,
+          550,
+          -500,
           1150
         ],
         [
-          530,
+          550,
           -500,
-          950
+          920
         ],
         [
-          940,
-          -620,
-          930
+          550,
+          -800,
+          920
         ],
         [
-          940,
+          928,
+          -800,
+          920
+        ],
+        [
+          928,
           -620,
-          948
+          920
+        ],
+        [
+          928,
+          -620,
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            365.0,
+            -127.0,
+            1080.0
+          ],
+          "middle": [
+            365.0,
+            -144.17643999560624,
+            1080.0
+          ],
+          "end": [
+            365.0,
+            -161.3528799912125,
+            1080.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            365.0,
+            -161.3528799912125,
+            1080.0
+          ],
+          "middle": [
+            365.0,
+            -164.95860438677215,
+            1080.2724052718513
+          ],
+          "end": [
+            365.0,
+            -168.48247725448235,
+            1081.0834373680611
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            365.0,
+            -168.48247725448235,
+            1081.0834373680611
+          ],
+          "middle": [
+            365.0,
+            -272.51997657805447,
+            1113.4506593798392
+          ],
+          "end": [
+            365.0,
+            -376.5574759016265,
+            1145.8178813916174
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            365.0,
+            -376.5574759016265,
+            1145.8178813916174
+          ],
+          "middle": [
+            368.2483842598208,
+            -388.32284785207514,
+            1148.8773170182287
+          ],
+          "end": [
+            377.1005916013229,
+            -397.19494635754336,
+            1150.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            377.1005916013229,
+            -397.19494635754336,
+            1150.0
+          ],
+          "middle": [
+            453.23586514441354,
+            -442.4645684642459,
+            1150.0
+          ],
+          "end": [
+            529.3711386875042,
+            -487.7341905709484,
+            1150.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            529.3711386875042,
+            -487.7341905709484,
+            1150.0
+          ],
+          "middle": [
+            543.9579464097268,
+            -496.40742759497266,
+            1142.970562748477
+          ],
+          "end": [
+            550.0,
+            -500.0,
+            1126.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            550.0,
+            -500.0,
+            1126.0
+          ],
+          "middle": [
+            550.0,
+            -500.0,
+            1035.0
+          ],
+          "end": [
+            550.0,
+            -500.0,
+            944.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            550.0,
+            -500.0,
+            944.0
+          ],
+          "middle": [
+            550.0,
+            -507.02943725152284,
+            927.0294372515228
+          ],
+          "end": [
+            550.0,
+            -524.0,
+            920.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            550.0,
+            -524.0,
+            920.0
+          ],
+          "middle": [
+            550.0,
+            -650.0,
+            920.0
+          ],
+          "end": [
+            550.0,
+            -776.0,
+            920.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            550.0,
+            -776.0,
+            920.0
+          ],
+          "middle": [
+            557.0294372515228,
+            -792.9705627484772,
+            920.0
+          ],
+          "end": [
+            574.0,
+            -800.0,
+            920.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            574.0,
+            -800.0,
+            920.0
+          ],
+          "middle": [
+            739.0,
+            -800.0,
+            920.0
+          ],
+          "end": [
+            904.0,
+            -800.0,
+            920.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            904.0,
+            -800.0,
+            920.0
+          ],
+          "middle": [
+            920.9705627484772,
+            -792.9705627484772,
+            920.0
+          ],
+          "end": [
+            928.0,
+            -776.0,
+            920.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            928.0,
+            -776.0,
+            920.0
+          ],
+          "middle": [
+            928.0,
+            -709.2,
+            920.0
+          ],
+          "end": [
+            928.0,
+            -642.4,
+            920.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            928.0,
+            -642.4,
+            920.0
+          ],
+          "middle": [
+            928.0,
+            -626.5608081014213,
+            926.5608081014213
+          ],
+          "end": [
+            928.0,
+            -620.0,
+            942.4
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            928.0,
+            -620.0,
+            942.4
+          ],
+          "middle": [
+            928.0,
+            -620.0,
+            959.2
+          ],
+          "end": [
+            928.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 22.399999999999967,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": true,
       "bbox": {
         "min": [
-          346.0,
-          -624.0,
-          926.0043763689253
+          360.9999999,
+          -804.0000001,
+          915.9999999
         ],
         "max": [
-          944.0,
-          -130.95259565577888,
-          1154.0
+          932.0000001,
+          -127.0,
+          1154.0000001
         ]
       },
-      "volume_mm3": 55589.783246497595,
+      "volume_mm3": 79384.50483588937,
       "solid_count": 1
     },
     {
       "id": "cable_side_far",
-      "name": "Transverse Rx lead \u00b7 routing influence unvalidated",
+      "name": "Transverse Rx external route through its own cabinet entry",
       "group": "transverse",
       "category": "transverse",
       "scope": "module",
@@ -12841,61 +16417,345 @@
       "optional": false,
       "points_mm": [
         [
-          350,
-          132,
+          365,
+          127,
           1080
         ],
         [
-          350,
+          365,
+          165,
+          1080
+        ],
+        [
+          365,
           390,
           1150
         ],
         [
-          530,
-          420,
+          532,
+          440,
           1150
         ],
         [
-          530,
-          420,
-          950
+          532,
+          440,
+          940
         ],
         [
-          530,
-          -500,
-          950
+          532,
+          -800,
+          940
         ],
         [
-          940,
+          952,
+          -800,
+          940
+        ],
+        [
+          952,
           -620,
-          930
+          940
         ],
         [
-          940,
+          952,
           -620,
-          948
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            365.0,
+            127.0,
+            1080.0
+          ],
+          "middle": [
+            365.0,
+            144.17643999560624,
+            1080.0
+          ],
+          "end": [
+            365.0,
+            161.3528799912125,
+            1080.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            365.0,
+            161.3528799912125,
+            1080.0
+          ],
+          "middle": [
+            365.0,
+            164.95860438677215,
+            1080.2724052718513
+          ],
+          "end": [
+            365.0,
+            168.48247725448235,
+            1081.0834373680611
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            365.0,
+            168.48247725448235,
+            1081.0834373680611
+          ],
+          "middle": [
+            365.0,
+            270.5903152452077,
+            1112.8503202985091
+          ],
+          "end": [
+            365.0,
+            372.6981532359331,
+            1144.617203228957
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            365.0,
+            372.6981532359331,
+            1144.617203228957
+          ],
+          "middle": [
+            369.8269491088758,
+            386.63400235140176,
+            1148.5031847134217
+          ],
+          "end": [
+            382.35851197554354,
+            395.1971592741148,
+            1150.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            382.35851197554354,
+            395.1971592741148,
+            1150.0
+          ],
+          "middle": [
+            445.68344769894327,
+            414.1567208679471,
+            1150.0
+          ],
+          "end": [
+            509.008383422343,
+            433.11628246177935,
+            1150.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            509.008383422343,
+            433.11628246177935,
+            1150.0
+          ],
+          "middle": [
+            525.2659114148453,
+            437.98380581282794,
+            1142.970562748477
+          ],
+          "end": [
+            532.0,
+            440.0,
+            1126.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            532.0,
+            440.0,
+            1126.0
+          ],
+          "middle": [
+            532.0,
+            440.0,
+            1045.0
+          ],
+          "end": [
+            532.0,
+            440.0,
+            964.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            532.0,
+            440.0,
+            964.0
+          ],
+          "middle": [
+            532.0,
+            432.97056274847716,
+            947.0294372515228
+          ],
+          "end": [
+            532.0,
+            416.0,
+            940.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            532.0,
+            416.0,
+            940.0
+          ],
+          "middle": [
+            532.0,
+            -180.0,
+            940.0
+          ],
+          "end": [
+            532.0,
+            -776.0,
+            940.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            532.0,
+            -776.0,
+            940.0
+          ],
+          "middle": [
+            539.0294372515228,
+            -792.9705627484772,
+            940.0
+          ],
+          "end": [
+            556.0,
+            -800.0,
+            940.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            556.0,
+            -800.0,
+            940.0
+          ],
+          "middle": [
+            742.0,
+            -800.0,
+            940.0
+          ],
+          "end": [
+            928.0,
+            -800.0,
+            940.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            928.0,
+            -800.0,
+            940.0
+          ],
+          "middle": [
+            944.9705627484772,
+            -792.9705627484772,
+            940.0
+          ],
+          "end": [
+            952.0,
+            -776.0,
+            940.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            952.0,
+            -776.0,
+            940.0
+          ],
+          "middle": [
+            952.0,
+            -705.2,
+            940.0
+          ],
+          "end": [
+            952.0,
+            -634.4,
+            940.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            952.0,
+            -634.4,
+            940.0
+          ],
+          "middle": [
+            952.0,
+            -624.2176623509137,
+            944.2176623509137
+          ],
+          "end": [
+            952.0,
+            -620.0,
+            954.4
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            952.0,
+            -620.0,
+            954.4
+          ],
+          "middle": [
+            952.0,
+            -620.0,
+            965.2
+          ],
+          "end": [
+            952.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 14.399999999999872,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": true,
       "bbox": {
         "min": [
-          346.0,
-          -624.0,
-          926.0043763689253
+          360.9999999,
+          -804.0000001,
+          935.9999999
         ],
         "max": [
-          944.0,
-          424.0,
-          1154.0
+          956.0000001,
+          444.0000001000002,
+          1154.0000001
         ]
       },
-      "volume_mm3": 101043.46175913143,
+      "volume_mm3": 124724.93694830769,
       "solid_count": 1
     },
     {
       "id": "cable_encoder",
-      "name": "Encoder association cable route",
+      "name": "Encoder association external route; sensor-end seal unresolved",
       "group": "cables",
       "category": "cables",
       "scope": "module",
@@ -12921,26 +16781,284 @@
           860
         ],
         [
+          620,
+          -460,
+          840
+        ],
+        [
+          620,
+          -780,
+          840
+        ],
+        [
+          796,
+          -780,
+          840
+        ],
+        [
           796,
           -620,
-          948
+          840
+        ],
+        [
+          796,
+          -620,
+          976
         ]
       ],
-      "EMC_status": "Lead dress, pair balance, shielding, bend radii and connector pinout unresolved",
+      "path_edges": [
+        {
+          "type": "LINE",
+          "start": [
+            -1050.0,
+            -405.0,
+            931.0
+          ],
+          "middle": [
+            -1050.0,
+            -410.01954085820375,
+            907.2408399378357
+          ],
+          "end": [
+            -1050.0,
+            -415.03908171640745,
+            883.4816798756715
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            -1050.0,
+            -415.03908171640745,
+            883.4816798756715
+          ],
+          "middle": [
+            -1042.970562748477,
+            -418.54698067564806,
+            866.8776248019326
+          ],
+          "end": [
+            -1026.0,
+            -420.0,
+            860.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            -1026.0,
+            -420.0,
+            860.0
+          ],
+          "middle": [
+            -211.9442719099991,
+            -420.0,
+            860.0
+          ],
+          "end": [
+            602.1114561800017,
+            -420.0,
+            860.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            602.1114561800017,
+            -420.0,
+            860.0
+          ],
+          "middle": [
+            614.7605668206752,
+            -424.68629150101526,
+            857.6568542494924
+          ],
+          "end": [
+            620.0,
+            -436.0,
+            852.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            620.0,
+            -436.0,
+            852.0
+          ],
+          "middle": [
+            620.0,
+            -445.46625258399797,
+            847.2668737080011
+          ],
+          "end": [
+            620.0,
+            -454.93250516799594,
+            842.533747416002
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            620.0,
+            -454.93250516799594,
+            842.533747416002
+          ],
+          "middle": [
+            620.0,
+            -460.1515613668583,
+            840.6420242527745
+          ],
+          "end": [
+            620.0,
+            -465.6656314599949,
+            840.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            620.0,
+            -465.6656314599949,
+            840.0
+          ],
+          "middle": [
+            620.0,
+            -610.8328157299975,
+            840.0
+          ],
+          "end": [
+            620.0,
+            -756.0,
+            840.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            620.0,
+            -756.0,
+            840.0
+          ],
+          "middle": [
+            627.0294372515228,
+            -772.9705627484772,
+            840.0
+          ],
+          "end": [
+            644.0,
+            -780.0,
+            840.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            644.0,
+            -780.0,
+            840.0
+          ],
+          "middle": [
+            708.0,
+            -780.0,
+            840.0
+          ],
+          "end": [
+            772.0,
+            -780.0,
+            840.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            772.0,
+            -780.0,
+            840.0
+          ],
+          "middle": [
+            788.9705627484772,
+            -772.9705627484772,
+            840.0
+          ],
+          "end": [
+            796.0,
+            -756.0,
+            840.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            796.0,
+            -756.0,
+            840.0
+          ],
+          "middle": [
+            796.0,
+            -700.0,
+            840.0
+          ],
+          "end": [
+            796.0,
+            -644.0,
+            840.0
+          ]
+        },
+        {
+          "type": "CIRCLE",
+          "start": [
+            796.0,
+            -644.0,
+            840.0
+          ],
+          "middle": [
+            796.0,
+            -627.0294372515228,
+            847.0294372515228
+          ],
+          "end": [
+            796.0,
+            -620.0,
+            864.0
+          ]
+        },
+        {
+          "type": "LINE",
+          "start": [
+            796.0,
+            -620.0,
+            864.0
+          ],
+          "middle": [
+            796.0,
+            -620.0,
+            920.0
+          ],
+          "end": [
+            796.0,
+            -620.0,
+            976.0
+          ]
+        }
+      ],
+      "minimum_drawn_bend_radius_mm": 17.8885438199983,
+      "cable_radius_mm": 4,
+      "EMC_status": "Lead dress, selected bend radius, pair balance, shielding and connector pinout unresolved",
       "intended_sensor_lead": false,
       "bbox": {
         "min": [
-          -1054.0,
-          -622.8053375374786,
-          856.0
+          -1054.0000001,
+          -784.0000001,
+          835.9999999
         ],
         "max": [
-          799.1151348350674,
+          800.0000001,
           -401.0863866873881,
-          951.798159588559
+          976.0
         ]
       },
-      "volume_mm3": 101584.51917363731,
+      "volume_mm3": 127181.89804096408,
       "solid_count": 1
     },
     {
@@ -13265,7 +17383,7 @@
         "host_leg_1050_1",
         "host_foot_1050_1"
       ],
-      "sha256": "0bddd475ab88fb32391cb0567b8cc10a6f2984c1a7d2c959eda4ea3a98edee11"
+      "sha256": "f82afa0f8e2b64c1793259cdcf5e0475700f17be5fe6fe13519a2c7eb5a0d8e9"
     },
     "under_belt": {
       "file": "groups/under_belt.step",
@@ -13279,18 +17397,24 @@
         "under_tx_xy_terminal_base_0",
         "under_tx_xy_terminal_1",
         "under_tx_xy_terminal_base_1",
+        "under_tx_xy_bobbin_lip",
+        "under_tx_xy_keeper",
         "under_rx_xy_-42",
         "under_rx_xy_-42_insulation",
         "under_rx_xy_-42_terminal_0",
         "under_rx_xy_-42_terminal_base_0",
         "under_rx_xy_-42_terminal_1",
         "under_rx_xy_-42_terminal_base_1",
+        "under_rx_xy_-42_bobbin_lip",
+        "under_rx_xy_-42_keeper",
         "under_rx_xy_42",
         "under_rx_xy_42_insulation",
         "under_rx_xy_42_terminal_0",
         "under_rx_xy_42_terminal_base_0",
         "under_rx_xy_42_terminal_1",
         "under_rx_xy_42_terminal_base_1",
+        "under_rx_xy_42_bobbin_lip",
+        "under_rx_xy_42_keeper",
         "under_tx_former",
         "under_rx_former",
         "under_former_post_-102_-110",
@@ -13322,9 +17446,12 @@
         "under_pull_handle",
         "under_cover_retainer_-100",
         "under_cover_retainer_100",
+        "under_cable_gland",
+        "under_cable_gland_locknut",
+        "under_cable_gland_seal",
         "cable_under_lead"
       ],
-      "sha256": "fcc4e53d191369646f13a27ce578f15a1ec6967d1e988409696718254a947b84"
+      "sha256": "2bcd8baca91470cade4e6a2f94c4a6b50df791f7ddaed486b621d4c6bfefd3ec"
     },
     "mounting": {
       "file": "groups/mounting.step",
@@ -13410,7 +17537,7 @@
         "overhead_side_rail_1",
         "lower_side_rail_1"
       ],
-      "sha256": "78cc7deac1800bc7a57a2a3aca282fd72f2d70a54216fae69bc5cffc46da45b6"
+      "sha256": "a683399443074ff5d15111b5ebf12cf0549e448a12c06227cb51118ec266e656"
     },
     "lane": {
       "file": "groups/lane.step",
@@ -13453,7 +17580,7 @@
         "calibration_handle",
         "calibration_coupon_envelope"
       ],
-      "sha256": "422fa732a68eb412eb3fef715f9e15bee1317fd0b9ddedda07bbde6ac82e86c1"
+      "sha256": "02a0c01659b71d23a7c6e3e31f6d4db44479553bef14b835ce9d7521c685ed1a"
     },
     "transverse": {
       "file": "groups/transverse.step",
@@ -13492,24 +17619,36 @@
         "side_tx_xz_terminal_base_0",
         "side_tx_xz_terminal_1",
         "side_tx_xz_terminal_base_1",
+        "side_tx_xz_bobbin_lip",
+        "side_tx_xz_keeper",
         "side_rx_xz_266",
         "side_rx_xz_266_insulation",
         "side_rx_xz_266_terminal_0",
         "side_rx_xz_266_terminal_base_0",
         "side_rx_xz_266_terminal_1",
         "side_rx_xz_266_terminal_base_1",
+        "side_rx_xz_266_bobbin_lip",
+        "side_rx_xz_266_keeper",
         "side_rx_xz_334",
         "side_rx_xz_334_insulation",
         "side_rx_xz_334_terminal_0",
         "side_rx_xz_334_terminal_base_0",
         "side_rx_xz_334_terminal_1",
         "side_rx_xz_334_terminal_base_1",
+        "side_rx_xz_334_bobbin_lip",
+        "side_rx_xz_334_keeper",
         "side_winding_former_-1",
         "side_winding_former_1",
+        "side_cable_gland_-1",
+        "side_cable_gland_-1_locknut",
+        "side_cable_gland_-1_seal",
+        "side_cable_gland_1",
+        "side_cable_gland_1_locknut",
+        "side_cable_gland_1_seal",
         "cable_side_near",
         "cable_side_far"
       ],
-      "sha256": "458515126261bfc3ba8c575b973318205eb4de63d4bd3bb86bf8337ea27c8ec2"
+      "sha256": "9d7d1f7b284b0d6c6ff6d4f966d0fa4e9547c754583569adaa442aa0b6069143"
     },
     "optical": {
       "file": "groups/optical.step",
@@ -13524,6 +17663,9 @@
         "rgb_body",
         "rgb_lens_barrel",
         "rgb_lens_glass",
+        "rgb_mount_screw_-303",
+        "rgb_mount_screw_-257",
+        "rgb_mount_pad",
         "light_bar_-1",
         "light_diffuser_-1",
         "light_drop_arm_-1",
@@ -13532,15 +17674,23 @@
         "light_drop_arm_1",
         "optional_3d_mount",
         "optional_3d_body",
+        "optional_3d_bezel_130",
         "optional_3d_aperture_130",
+        "optional_3d_bezel_170",
         "optional_3d_aperture_170",
         "optical_top_service_cover",
         "optical_lid_spacer_-390_-100",
         "optical_lid_spacer_-390_240",
         "optical_lid_spacer_-170_-100",
-        "optical_lid_spacer_-170_240"
+        "optical_lid_spacer_-170_240",
+        "rgb_cable_gland",
+        "rgb_cable_gland_locknut",
+        "rgb_cable_gland_seal",
+        "depth_cable_gland",
+        "depth_cable_gland_locknut",
+        "depth_cable_gland_seal"
       ],
-      "sha256": "7b24c1daf2db6563437a4da599846bd96f411075f8174b856c5ef2723bb30242"
+      "sha256": "33e6e68e28301c458ce807d897d6bf8383de37ccfcbd4182500111e1cdd42046"
     },
     "controls": {
       "file": "groups/controls.step",
@@ -13570,13 +17720,31 @@
         "control_carrier_1050",
         "control_carrier_1360",
         "control_connector_power",
+        "control_connector_power_locknut",
+        "control_connector_power_seal",
         "control_connector_host_io",
+        "control_connector_host_io_locknut",
+        "control_connector_host_io_seal",
         "control_connector_encoder",
+        "control_connector_encoder_locknut",
+        "control_connector_encoder_seal",
         "control_connector_optics",
+        "control_connector_optics_locknut",
+        "control_connector_optics_seal",
+        "control_connector_optional_3d",
+        "control_connector_optional_3d_locknut",
+        "control_connector_optional_3d_seal",
         "control_connector_coil_A",
-        "control_connector_coil_B"
+        "control_connector_coil_A_locknut",
+        "control_connector_coil_A_seal",
+        "control_connector_coil_B_tx",
+        "control_connector_coil_B_tx_locknut",
+        "control_connector_coil_B_tx_seal",
+        "control_connector_coil_B_rx",
+        "control_connector_coil_B_rx_locknut",
+        "control_connector_coil_B_rx_seal"
       ],
-      "sha256": "a005c82559db091711472058e30c8e93d54feadba3b45db2243bb5c781d6ded0"
+      "sha256": "c1bbf57d0b2c6b6970425e13fc7a9ecbb5e5b4df59c81bdde755e05ca23c4670"
     },
     "encoder": {
       "file": "groups/encoder.step",
@@ -13585,7 +17753,7 @@
         "encoder_coupling",
         "encoder_bracket"
       ],
-      "sha256": "c7d04ac861d92d85eaf35d5dccec4468fb4a39e8f79a5d5e1c77ba37093d233f"
+      "sha256": "d56297f93d68d304e96efee35aae088065faa250ac4d3fae164d96badc5a4906"
     },
     "cables": {
       "file": "groups/cables.step",
@@ -13602,13 +17770,13 @@
         "cable_saddle_bracket_500_1",
         "cable_clip_500_1"
       ],
-      "sha256": "6c947460e36ef228ac47ad1a3b1af970479af1f5d2cc79897da370153028c61e"
+      "sha256": "48ca5583d408b91b8d43926c8c19fb5181d40311bdc20077bf19b5a0d11b9aee"
     }
   },
   "exports": {
     "module_with_host.step": {
-      "bytes": 9527434,
-      "sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e"
+      "bytes": 13786559,
+      "sha256": "947a02e2ca06b383c31953c216e20c97fa7ff8f8c9290a2fbcbbde60154d95cb"
     },
     "host_reference.brep": {
       "bytes": 28874,
@@ -13619,74 +17787,74 @@
       "sha256": "9859a38445f5b18f7c23de988ec679c7ea4f012bacae9761915616ad3669d2e6"
     },
     "host_reference.step": {
-      "bytes": 215126,
-      "sha256": "638eaf1a548820476340072bbc83a4a80b300853041698f9068f0a30f8062230"
+      "bytes": 215120,
+      "sha256": "beb5b40d36807f85f46c17109aae9d34fb3aab1c313bbb1b089ebe687bc94ec5"
     },
     "module_with_host.brep": {
-      "bytes": 2319801,
-      "sha256": "bd7c2c0864c94cdef02accf35be7d8aeda2db2311ffabf4d35757edc0221fca8"
+      "bytes": 3276584,
+      "sha256": "395c023f4fd172a3c4d8b2c1c50950c8b385352d2ae001161290def847f37cfd"
     },
     "module_with_host.glb": {
-      "bytes": 11592812,
-      "sha256": "4f6713a3234e727c26d7dd5455aa81fa6d4847785cb152d70fd52af55f09295e"
+      "bytes": 17441208,
+      "sha256": "a951526d252174d1428b5d4acef1dd8ce02b3139db9f007cba3946277eaa1720"
     },
     "module_assembly.step": {
-      "bytes": 9291690,
-      "sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d"
+      "bytes": 13550677,
+      "sha256": "5347a873db0cd159892b88fd43bf6cec842ef846f3168bc170055108f0450fd6"
     },
     "module_assembly.glb": {
-      "bytes": 11545476,
-      "sha256": "528e7b651b2880bd1fe4f452fe773c41d8db5c7a5fdd1ae92d1731472f243f75"
+      "bytes": 17393792,
+      "sha256": "4b7d9665e2ac1cb94c85817ecee2f7297113c00127f3ee54d48603b21926c392"
     },
     "module_assembly.brep": {
-      "bytes": 2287848,
-      "sha256": "b6b14266a13c2e83a508378141e83359c942dbd7ce6c323a27ed57fa3b21b5f1"
+      "bytes": 3244740,
+      "sha256": "62d17cee44246d54717871448c8229afe4afc94328086285a2b1a627fe002433"
     }
   },
   "geometric_checks": {
     "module_assembly": {
       "status": "passed",
-      "components": 289,
-      "source_solids": 289,
-      "reimported_solids": 289,
+      "components": 339,
+      "source_solids": 339,
+      "reimported_solids": 339,
       "reimported_valid": true,
-      "relative_volume_error": 6.93822018077824e-10,
+      "relative_volume_error": 7.87683642407262e-10,
       "bbox_difference_mm": 0.0,
       "bbox": {
         "min": [
           -1097.5,
-          -752.0,
+          -804.0000001,
           795.0
         ],
         "max": [
           1000.0,
-          475.0,
+          504.0000001,
           1630.0
         ]
       },
-      "step_sha256": "f758f65796dbc7c36c8b0c4cba4ff29985299635904402654219e00fe2a3499d"
+      "step_sha256": "5347a873db0cd159892b88fd43bf6cec842ef846f3168bc170055108f0450fd6"
     },
     "module_with_host": {
       "status": "passed",
-      "components": 303,
-      "source_solids": 303,
-      "reimported_solids": 303,
+      "components": 353,
+      "source_solids": 353,
+      "reimported_solids": 353,
       "reimported_valid": true,
-      "relative_volume_error": 2.958245687742223e-10,
+      "relative_volume_error": 3.42685997179748e-10,
       "bbox_difference_mm": 0.0,
       "bbox": {
         "min": [
           -1260.0,
-          -752.0,
+          -804.0000001,
           253.0
         ],
         "max": [
           1260.0,
-          475.0,
+          504.0000001,
           1630.0
         ]
       },
-      "step_sha256": "5f091afbdf702875efc3f4d043a9d38df2914251149edfeb6d94b0b2fd53cd6e"
+      "step_sha256": "947a02e2ca06b383c31953c216e20c97fa7ff8f8c9290a2fbcbbde60154d95cb"
     },
     "host_reference": {
       "status": "passed",
@@ -13708,7 +17876,7 @@
           1000.0
         ]
       },
-      "step_sha256": "638eaf1a548820476340072bbc83a4a80b300853041698f9068f0a30f8062230"
+      "step_sha256": "beb5b40d36807f85f46c17109aae9d34fb3aab1c313bbb1b089ebe687bc94ec5"
     }
   },
   "limitations": [

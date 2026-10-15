@@ -4,7 +4,7 @@
 
 `model-demo/catalog.json` records all 38 playback files with original source links, CC BY 4.0 credits, viewing transformations and exposure history. `model-demo/ATTRIBUTION.txt` carries the complete recording credits for SteelDS, the iron-ore laboratory conveyor, RGB–LWIR consumer-waste footage and the C&D author demonstration. The author demonstration retains its embedded graphics; Ferrosift and reference overlays are presented in separate saved sample panels.
 
-New local inference covers 2,720 identical decoded frame pairs. Scores use 979 labeled frames across seven SteelDS recordings, including training and previously exposed development/diagnostic material. The other 31 recordings have no verified scores. Frame-level label evidence includes 843 direct content alignments and 136 additional ordinal/provenance joins supported by recording-level checks. This is separate from the earlier development result below. The run record and calculation source are in `model-demo/method/`; verified training facts are in `training/verified-facts.json`.
+The preserved recorded inference covers 2,720 identical decoded frame pairs. Scores use 979 labeled frames across seven SteelDS recordings, including training and previously exposed development/diagnostic material. The other 31 recordings have no verified scores. Frame-level label evidence includes 843 direct content alignments and 136 additional ordinal/provenance joins supported by recording-level checks. This is separate from the earlier development result below. The run record and calculation source are in `model-demo/method/`; verified training facts are in `training/verified-facts.json`. The M02 presentation revision does not retrain models or rerun inference.
 
 ## Ferrosift conveyor result
 
@@ -16,15 +16,25 @@ This is a comparison of complete selected model configurations, with architectur
 
 ## Engineering status
 
-M01 is a proposed retrofit sensing module with a separate grey host-conveyor reference. Its 180 mm guided lane is a mechanical experimental passage on a 600 mm host belt, not validated sensor coverage. Two sequential stations illustrate vertical and transverse excitation with six unoptimized functional windings (two transmit and four candidate receive windings). RGB, optional exterior 3D, acquisition, calibration, host encoder association and routing interfaces remain a research integration program. Dimensions and exports are preliminary and not fabrication-certified.
+M02 is a proposed retrofit sensing module with a separate grey host-conveyor reference. Its 180 mm guided lane is a mechanical experimental passage on a 600 mm host belt, not validated sensor coverage. Two sequential stations illustrate vertical and transverse excitation with six unoptimized functional windings (two transmit and four candidate receive windings). The refined bobbins, housings, terminals, glands and fasteners are source CAD geometry; their detail does not imply qualified components or manufacturing readiness. RGB, optional exterior 3D, acquisition, calibration, host encoder association and routing interfaces remain a research integration program. Dimensions and exports are preliminary and not fabrication-certified.
 
-The complete conveyor IR01-R1 is preserved separately in project history, including its unresolved receiving-containment hold. It is not the current module offer. Host feeding, downstream ejection and collection are outside M01 and need their own engineering and physical validation. The recorded CV comparison and reader-assumption calculator retain their original evidence and units.
+The complete conveyor IR01-R1 is preserved separately in project history, including its unresolved receiving-containment hold. It is not the current module offer. Host feeding, downstream ejection and collection are outside M02 and need their own engineering and physical validation. The recorded CV comparison and reader-assumption calculator retain their original evidence and units.
+
+## Matched comparison and illustrative economics
+
+Official vendor descriptions checked on 15 October 2026 establish existing capabilities: [STEINERT KSS CLI](https://steinertglobal.com/us/sorting-systems/sensor-sorting/combined-sensor-sorting-systems/steinert-kss-cli-1/) combines colour, laser 3D and induction; [TOMRA’s 14 April 2026 FINDER announcement](https://www.tomra.com/en-gb/waste-metal-recycling/media-center/news/2026/tomra-recycling-launches-the-new-finder) describes PCB sorting and insulated-wire recovery. These sources do not establish that competitors lack multiple sensing directions. Ferrosift must demonstrate useful incremental information and better routing against strong simpler baselines and the incumbent process at matched throughput, output purity and total cost.
+
+The fixed illustration assumes 1,000 t annual feed, 10% contained Cu, physical Cu recovery of 80% versus 85%, US$8,000 payable value per extra recovered Cu tonne, and US$20,000 extra annual operating cost. This gives 100 t contained Cu, 80 versus 85 t recovered, and 5 extra t × US$8,000/t − US$20,000 = US$20,000/year before capital costs, financing and tax. Payable value is an invented assumption after assumed buyer deductions. The example is not a measured outcome, market quote, module capacity, profit, ROI or payback. Other-metal credits and unstated route costs are outside this simplified example. No CV score is converted into recovery or money.
 
 ## Module rationale and longer horizon
 
 The public methods section links primary research on moving-belt induction, optical/inductive fusion and controlled PCB inspection, plus incumbent vendor descriptions. Generic sensor fusion already exists. Ferrosift proposes testing geometry-conditioned directional and frequency response sequences on independent PCB/e-scrap lots against strong simpler baselines. No source validates the exact proposed module or establishes direct elemental assay.
 
 The 2045 horizon is aspirational. Published magnetic manipulation and detumbling work describes constrained laboratory experiments or simulations, not Ferrosift flight evidence. Any orbital application would require a separate actuation architecture, stand-off/force/torque testing, power and thermal engineering, reaction control, safe proximity operations, a mission partner and flight qualification. Detumbling concerns relative rotation, not stopping orbital motion. The dated, source-specific boundaries and accessible primary links are on the homepage under Sources.
+
+## Beginner guide
+
+The optional beginner guide uses original schematics and captions. The induction explanation is grounded in [Feynman Lectures II–17](https://www.feynmanlectures.caltech.edu/II_17.html) and [OpenStax University Physics 13.5](https://openstax.org/books/university-physics-volume-2/pages/13-5-eddy-currents): changing magnetic fields can drive circulating electric fields and currents in conductors, which alter a receiving coil's electrical response. The guide is not a field solution, interior elemental map, tracking demonstration or measured sorting result. Its record association and routing sequence describe the proposed Ferrosift architecture.
 
 ## Industry evidence
 

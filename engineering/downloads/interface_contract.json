@@ -1,5 +1,5 @@
 {
-  "revision": "M01-W1",
+  "revision": "M02",
   "status": "Proposed interface contract; no selected protocol/devices, certification or operating limits",
   "boundary": {
     "module": [
@@ -114,7 +114,8 @@
     "ingress_rating": null,
     "safety_rating": null,
     "status": "All remain selection/verification holds; modeled enclosures and connectors are envelopes.",
-    "internal_winding_harness": "Unresolved: six independent winding terminal pairs are modeled, but terminal-to-acquisition cable routing, pinout, paired/shielded lead construction and circuit connections are not designed. Shell endpoint contact is not electrical completion."
+    "internal_winding_harness": "Unresolved: six independent winding terminal pairs are modeled, but terminal-to-acquisition cable routing, pinout, paired/shielded lead construction and circuit connections are not designed. Shell endpoint contact is not electrical completion.",
+    "modeled_entries": "Separate proposed RGB, optional depth, A, B-Tx, B-Rx and encoder wall-normal cable glands; power and host IO ports have no modeled external cables. Internal circuitry and harness remain unresolved."
   },
   "calibration": {
     "accessory": "Removable nonmetallic carrier and unselected reference coupon envelope",
