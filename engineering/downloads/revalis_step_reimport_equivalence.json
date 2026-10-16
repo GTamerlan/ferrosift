@@ -1,0 +1,35 @@
+{
+  "status": "PASS_EXACT_REIMPORTED_SOLID_FACTS",
+  "created_utc": "2026-10-16T02:59:59.951389+00:00",
+  "method": "Independent OpenCascade STEP import of old and new files; compare per-solid volume, XYZ bounds, face count and edge count after sorting; native BRep byte identity and STEP normalized text equality separately recorded.",
+  "exports": [
+    {
+      "export": "module_assembly.step",
+      "solid_count": 339,
+      "valid": true,
+      "sorted_solid_volume_bounds_face_edge_facts_identical": true,
+      "maximum_numeric_difference": 0.0,
+      "baseline_sha256": "5347a873db0cd159892b88fd43bf6cec842ef846f3168bc170055108f0450fd6",
+      "revalis_sha256": "1551965223921f4c08bdeb281702b4e6218b7eb5f5522d43f6743b25c6e8cf30"
+    },
+    {
+      "export": "module_with_host.step",
+      "solid_count": 353,
+      "valid": true,
+      "sorted_solid_volume_bounds_face_edge_facts_identical": true,
+      "maximum_numeric_difference": 0.0,
+      "baseline_sha256": "947a02e2ca06b383c31953c216e20c97fa7ff8f8c9290a2fbcbbde60154d95cb",
+      "revalis_sha256": "0eda2f5315ef767e4c3f229d25f2f5cdfa8a514b9600679e8cb68f258c68c905"
+    },
+    {
+      "export": "host_reference.step",
+      "solid_count": 14,
+      "valid": true,
+      "sorted_solid_volume_bounds_face_edge_facts_identical": true,
+      "maximum_numeric_difference": 0.0,
+      "baseline_sha256": "beb5b40d36807f85f46c17109aae9d34fb3aab1c313bbb1b089ebe687bc94ec5",
+      "revalis_sha256": "50905c50f64fa2075a53f59251fdb0060bbaa610c41d42f1a96ab38afe698038"
+    }
+  ],
+  "physical_validation_performed": false
+}

@@ -1,0 +1,16 @@
+REVALIS - RETROFIT SENSING MODULE
+Geometry M02 / branding R01 / 16 October 2026
+
+This is an inspectable preliminary research design, not a fabrication-certified product. It is the same 353-component hardware geometry as the preserved M02 package, with Revalis assembly names, title blocks and current download names. No conveyor, feeder, ejector, collection bin or copper-liberation equipment is part of the module. The 180 mm mechanical test lane on a 600 mm host does not establish sensing coverage or throughput.
+
+Engineering source: engineering/README.md
+CAD: engineering/exports/module_assembly.step
+CAD with grey host context: engineering/exports/module_with_host.step
+Six A3 drawing sheets: engineering/drawings/module_drawings.pdf
+Four paper figures plus clean canvases: engineering/figures/
+Five detailed review views: engineering/figures/review/
+Exact shape/data comparison and reimport checks: verification/rebrand/
+
+The new public download names start with revalis_. The original public files and historical names remain unchanged for working links and provenance. The current code remains geometry revision M02; R01 is a packaging and branding revision. The compact source ZIP can regenerate CAD, drawing projections and figures using the included instructions and local requirements. Regenerated exports have new timestamps/hashes; regenerate all dependent manifests and repeat review before treating a rebuild as a release.
+
+The baseline geometry/interface checks and independent review reports are retained verbatim as historical evidence. They were not re-executed by this branding task. New checks establish label-only shape/data equivalence, actual STEP import facts, current drawing layout, actual conductor section intersections and visual branding quality. No field or physical performance validation is implied.

@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.0.0",
+  "asOf": "2026-10-14",
+  "status": "Concept stage. No measured Revalis performance or binding buyer or equipment quotes.",
+  "currency": "USD",
+  "massBasis": "dry metric tonne",
+  "fractionConvention": "All percentages stored as fractions from 0 to 1. UI must divide displayed percentage values by 100.",
+  "disclaimer": "Every scenario value is a planning assumption. Neither the copper price nor salaries and cost allowances are current price quotes.",
+  "presets": [
+    {
+      "id": "illustrative_stress",
+      "label": "Hypothetical stress case",
+      "shared": {
+        "feedCopperGrade": 0.1,
+        "copperPriceUsdPerT": 7000,
+        "scheduledHoursPerYear": 2500,
+        "availableFeedTPerYear": 800,
+        "feedAcquisitionUsdPerFeedT": 250,
+        "inboundFreightUsdPerFeedT": 30,
+        "electricityUsdPerKwh": 0.2
+      },
+      "baseline": {
+        "throughputDryTPerOperatingHour": 0.4,
+        "availability": 0.65,
+        "copperRecoveryToProduct": 0.7,
+        "productCopperGrade": 0.25,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.75,
+        "tailCopperPayability": 0.2,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 25,
+        "consumablesUsdPerFeedT": 10,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.5,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 8000,
+        "annualOtherFixedOpexUsd": 20000
+      },
+      "candidate": {
+        "throughputDryTPerOperatingHour": 0.45,
+        "availability": 0.65,
+        "copperRecoveryToProduct": 0.75,
+        "productCopperGrade": 0.28,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.76,
+        "tailCopperPayability": 0.2,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 45,
+        "consumablesUsdPerFeedT": 18,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.75,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 18000,
+        "annualOtherFixedOpexUsd": 35000
+      },
+      "investment": {
+        "incrementalInstalledCapexUsd": 250000,
+        "incrementalWorkingCapitalUsd": 30000,
+        "discountRate": 0.12,
+        "lifeYears": 5,
+        "salvageValueUsd": 0,
+        "targetPaybackYears": 3
+      }
+    },
+    {
+      "id": "illustrative_middle",
+      "label": "Hypothetical middle case",
+      "shared": {
+        "feedCopperGrade": 0.18,
+        "copperPriceUsdPerT": 9000,
+        "scheduledHoursPerYear": 4000,
+        "availableFeedTPerYear": 2200,
+        "feedAcquisitionUsdPerFeedT": 650,
+        "inboundFreightUsdPerFeedT": 30,
+        "electricityUsdPerKwh": 0.2
+      },
+      "baseline": {
+        "throughputDryTPerOperatingHour": 0.5,
+        "availability": 0.75,
+        "copperRecoveryToProduct": 0.72,
+        "productCopperGrade": 0.36,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.78,
+        "tailCopperPayability": 0.35,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 25,
+        "consumablesUsdPerFeedT": 10,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.5,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 8000,
+        "annualOtherFixedOpexUsd": 20000
+      },
+      "candidate": {
+        "throughputDryTPerOperatingHour": 0.5,
+        "availability": 0.75,
+        "copperRecoveryToProduct": 0.86,
+        "productCopperGrade": 0.46,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.83,
+        "tailCopperPayability": 0.35,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 45,
+        "consumablesUsdPerFeedT": 18,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.75,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 18000,
+        "annualOtherFixedOpexUsd": 35000
+      },
+      "investment": {
+        "incrementalInstalledCapexUsd": 250000,
+        "incrementalWorkingCapitalUsd": 30000,
+        "discountRate": 0.12,
+        "lifeYears": 5,
+        "salvageValueUsd": 0,
+        "targetPaybackYears": 3
+      }
+    },
+    {
+      "id": "illustrative_upside",
+      "label": "Hypothetical favorable case",
+      "shared": {
+        "feedCopperGrade": 0.18,
+        "copperPriceUsdPerT": 9000,
+        "scheduledHoursPerYear": 4000,
+        "availableFeedTPerYear": 2200,
+        "feedAcquisitionUsdPerFeedT": 650,
+        "inboundFreightUsdPerFeedT": 30,
+        "electricityUsdPerKwh": 0.2
+      },
+      "baseline": {
+        "throughputDryTPerOperatingHour": 0.5,
+        "availability": 0.75,
+        "copperRecoveryToProduct": 0.72,
+        "productCopperGrade": 0.36,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.78,
+        "tailCopperPayability": 0.35,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 25,
+        "consumablesUsdPerFeedT": 10,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.5,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 8000,
+        "annualOtherFixedOpexUsd": 20000
+      },
+      "candidate": {
+        "throughputDryTPerOperatingHour": 0.65,
+        "availability": 0.85,
+        "copperRecoveryToProduct": 0.9,
+        "productCopperGrade": 0.5,
+        "residueDryMassFraction": 0.02,
+        "copperFractionToResidue": 0.01,
+        "productCopperPayability": 0.86,
+        "tailCopperPayability": 0.35,
+        "feedPreparationUsdPerFeedT": 50,
+        "energyKwhPerFeedT": 45,
+        "consumablesUsdPerFeedT": 18,
+        "productChargesUsdPerProductT": 150,
+        "tailChargesUsdPerTailT": 70,
+        "residueDisposalUsdPerResidueT": 500,
+        "operatorFtePerScheduledHour": 0.75,
+        "loadedOperatorUsdPerHour": 40,
+        "annualMaintenanceUsd": 18000,
+        "annualOtherFixedOpexUsd": 35000
+      },
+      "investment": {
+        "incrementalInstalledCapexUsd": 250000,
+        "incrementalWorkingCapitalUsd": 30000,
+        "discountRate": 0.12,
+        "lifeYears": 5,
+        "salvageValueUsd": 0,
+        "targetPaybackYears": 3
+      }
+    }
+  ],
+  "formulas": [
+    {
+      "id": "annual_feed",
+      "expression": "min(availableFeedTPerYear, throughputDryTPerOperatingHour * scheduledHoursPerYear * availability)",
+      "unit": "dry t/year",
+      "note": "Throughput is while operating. Do not apply availability again to a measured throughput that already includes downtime."
+    },
+    {
+      "id": "product_copper",
+      "expression": "feedT * feedCopperGrade * copperRecoveryToProduct",
+      "unit": "t Cu"
+    },
+    {
+      "id": "product_mass",
+      "expression": "product_copper / productCopperGrade",
+      "unit": "dry t product",
+      "note": "Product grade is metal mass grade, not image classification precision."
+    },
+    {
+      "id": "residue_mass",
+      "expression": "feedT * residueDryMassFraction",
+      "unit": "dry t residue",
+      "note": "Residue is separately collected and assayed; this is not unexplained mass disappearance."
+    },
+    {
+      "id": "residue_copper",
+      "expression": "feedT * feedCopperGrade * copperFractionToResidue",
+      "unit": "t Cu"
+    },
+    {
+      "id": "tail_mass",
+      "expression": "feedT - product_mass - residue_mass",
+      "unit": "dry t tail"
+    },
+    {
+      "id": "tail_copper",
+      "expression": "feedT * feedCopperGrade - product_copper - residue_copper",
+      "unit": "t Cu"
+    },
+    {
+      "id": "copper_revenue",
+      "expression": "copperPriceUsdPerT * (product_copper * productCopperPayability + tail_copper * tailCopperPayability)",
+      "unit": "USD",
+      "note": "Purity determines product mass and buyer terms. Never multiply copperProduct by purity again. Other metal revenue is excluded pending full mass balances."
+    },
+    {
+      "id": "output_charges",
+      "expression": "product_mass * productChargesUsdPerProductT + tail_mass * tailChargesUsdPerTailT + residue_mass * residueDisposalUsdPerResidueT",
+      "unit": "USD",
+      "note": "Combined buyer treatment, outbound freight and penalties per relevant dry output tonne. If a quote is already net of these, do not subtract twice."
+    },
+    {
+      "id": "variable_cost",
+      "expression": "feedT * (feedAcquisitionUsdPerFeedT + inboundFreightUsdPerFeedT + feedPreparationUsdPerFeedT + energyKwhPerFeedT * electricityUsdPerKwh + consumablesUsdPerFeedT)",
+      "unit": "USD",
+      "note": "Energy includes compressor and extraction share. Do not charge compressed air electricity again."
+    },
+    {
+      "id": "fixed_opex",
+      "expression": "scheduledHoursPerYear * operatorFtePerScheduledHour * loadedOperatorUsdPerHour + annualMaintenanceUsd + annualOtherFixedOpexUsd",
+      "unit": "USD/year",
+      "note": "Operator wages are plant-operation costs. Startup R&D payroll is separate."
+    },
+    {
+      "id": "operating_contribution",
+      "expression": "copper_revenue - output_charges - variable_cost - fixed_opex",
+      "unit": "USD/year"
+    },
+    {
+      "id": "increment",
+      "expression": "candidate.operating_contribution - baseline.operating_contribution",
+      "unit": "USD/year"
+    },
+    {
+      "id": "simple_payback",
+      "expression": "(incrementalInstalledCapexUsd + incrementalWorkingCapitalUsd) / increment, only when increment > 0",
+      "unit": "years",
+      "note": "Negative or zero contribution means no finite simple payback, not negative years."
+    },
+    {
+      "id": "npv",
+      "expression": "-incrementalInstalledCapexUsd - incrementalWorkingCapitalUsd + sum(year=1..lifeYears, increment / (1+discountRate)^year) + (incrementalWorkingCapitalUsd + salvageValueUsd)/(1+discountRate)^lifeYears",
+      "unit": "USD",
+      "note": "Illustrative constant annual contribution, pre-tax, unlevered. No revenue ramp or actual financing terms represented."
+    }
+  ],
+  "uiRequirements": [
+    "Show Hypothetical assumptions on the calculator and every exported result.",
+    "Default to matched_feed comparison. Capacity mode must visibly disclose the supply and offtake conditions.",
+    "Display operating contribution as operator economics, never Revalis company revenue.",
+    "Use a joint grade-recovery-payability operating point; do not add team recovery percentages.",
+    "Reject physically impossible mass partitions rather than clamp them to valid-looking results.",
+    "Show null payback as No finite payback.",
+    "Always display all product, tail and residue masses and copper masses.",
+    "Zero unverified extra-metal revenue.",
+    "For saleable product claims replace assumptions with buyer-specific assay, deductions and acceptance limits.",
+    "Label baseline Existing route assumption; no performance data from an actual commercial competitor has been supplied."
+  ],
+  "evidenceNeeded": {
+    "feedCopperGrade": "Independent lot assay on dry basis; full valuable and penalty element panel.",
+    "throughputDryTPerOperatingHour": "Measured dry feed mass per operating time on defined size distribution, loading and overlap.",
+    "availability": "Scheduled versus operating logs including cleaning, jams and calibration.",
+    "copperRecoveryToProduct": "Collected product Cu mass divided by assayed input Cu mass.",
+    "productCopperGrade": "Independent product assay; no classifier metric substitution.",
+    "productCopperPayability": "Written buyer terms for the actual output and contaminant specification.",
+    "tailCopperPayability": "Buyer terms for tails, including whether payable at all.",
+    "costs": "Quoted procurement/integration plus measured labor, power, compressed air, extraction, disposal and freight.",
+    "incrementalInstalledCapexUsd": "Actual cash investment versus counterfactual, not candidate value less the book value of sunk equipment."
+  }
+}

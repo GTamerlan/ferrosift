@@ -1,0 +1,266 @@
+{
+  "status": "PASS_LABEL_ONLY_GEOMETRY_EQUIVALENCE",
+  "created_utc": "2026-10-16T02:55:42.729699+00:00",
+  "geometry_revision": "M02",
+  "branding_revision": "R01",
+  "baseline_release": "Ferrosift_M02_20261015",
+  "new_release": "Revalis_M02_R01_20261016",
+  "scope": "Exact data identity of shapes, positions, dimensions and component metadata; not new physical validation.",
+  "native_brep": [
+    {
+      "file": "exports/host_reference.brep",
+      "byte_identical": true,
+      "sha256": "de4567830c26f5409d0fccc7282bd3b9fe91a4824e8901c4d64ea2f385a79480"
+    },
+    {
+      "file": "exports/module_with_host.brep",
+      "byte_identical": true,
+      "sha256": "395c023f4fd172a3c4d8b2c1c50950c8b385352d2ae001161290def847f37cfd"
+    },
+    {
+      "file": "exports/module_assembly.brep",
+      "byte_identical": true,
+      "sha256": "62d17cee44246d54717871448c8229afe4afc94328086285a2b1a627fe002433"
+    }
+  ],
+  "step_files": [
+    {
+      "file": "exports/module_with_host.step",
+      "label_substitutions": 2,
+      "normalized_bytes_equal": true,
+      "sha256": "0eda2f5315ef767e4c3f229d25f2f5cdfa8a514b9600679e8cb68f258c68c905"
+    },
+    {
+      "file": "exports/host_reference.step",
+      "label_substitutions": 2,
+      "normalized_bytes_equal": true,
+      "sha256": "50905c50f64fa2075a53f59251fdb0060bbaa610c41d42f1a96ab38afe698038"
+    },
+    {
+      "file": "exports/module_assembly.step",
+      "label_substitutions": 2,
+      "normalized_bytes_equal": true,
+      "sha256": "1551965223921f4c08bdeb281702b4e6218b7eb5f5522d43f6743b25c6e8cf30"
+    },
+    {
+      "file": "exports/selections/winding_detail.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "35c80bdfaba2e5496d7d6533e69fb214334048b9afee671237cc5fa9599bce35"
+    },
+    {
+      "file": "exports/selections/optical_lid.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "d1ddb10902dd6e0ea80c976c96fa0fc944608f96d27cdf1e48113de99e8784a3"
+    },
+    {
+      "file": "exports/selections/under_windings.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "aec168bd0784f2c8bfa499d48101c2fe60dd2cef24b065c324e7d1ae3da0fd57"
+    },
+    {
+      "file": "exports/selections/calibration_accessory.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "ef33f5af60b649e035dcf1b42e9c8f40511da8138548708405942e4cf02d2f98"
+    },
+    {
+      "file": "exports/selections/controls_front.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "16368fdd5b4092e4dc99f329e5fd6cc001de7d94b23f806f91f5b930075736aa"
+    },
+    {
+      "file": "exports/selections/controls_open.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "67b76687af2db652851f4f312438d5413c90ab62d349674d59001b779f3e8aea"
+    },
+    {
+      "file": "exports/selections/optical_detail.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "c7ea504608acf3b7336799e28d56e8e570415e8f30fb9c7e185a375ef1a49b6c"
+    },
+    {
+      "file": "exports/selections/transverse_windings.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "27203ab9d002ef2865499aad4409be1ab499fd0452fb9543f9ded7c19088c7fb"
+    },
+    {
+      "file": "exports/selections/under_cartridge.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "66df3b71318fd4900073ae79dec0d5be15676d214eb15c69e9b0603e0747bf80"
+    },
+    {
+      "file": "exports/groups/cables.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "48ca5583d408b91b8d43926c8c19fb5181d40311bdc20077bf19b5a0d11b9aee"
+    },
+    {
+      "file": "exports/groups/optical.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "33e6e68e28301c458ce807d897d6bf8383de37ccfcbd4182500111e1cdd42046"
+    },
+    {
+      "file": "exports/groups/transverse.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "9d7d1f7b284b0d6c6ff6d4f966d0fa4e9547c754583569adaa442aa0b6069143"
+    },
+    {
+      "file": "exports/groups/lane.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "02a0c01659b71d23a7c6e3e31f6d4db44479553bef14b835ce9d7521c685ed1a"
+    },
+    {
+      "file": "exports/groups/under_belt.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "2bcd8baca91470cade4e6a2f94c4a6b50df791f7ddaed486b621d4c6bfefd3ec"
+    },
+    {
+      "file": "exports/groups/host.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "f82afa0f8e2b64c1793259cdcf5e0475700f17be5fe6fe13519a2c7eb5a0d8e9"
+    },
+    {
+      "file": "exports/groups/encoder.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "d56297f93d68d304e96efee35aae088065faa250ac4d3fae164d96badc5a4906"
+    },
+    {
+      "file": "exports/groups/mounting.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "a683399443074ff5d15111b5ebf12cf0549e448a12c06227cb51118ec266e656"
+    },
+    {
+      "file": "exports/groups/controls.step",
+      "label_substitutions": 0,
+      "normalized_bytes_equal": true,
+      "sha256": "c1bbf57d0b2c6b6970425e13fc7a9ecbb5e5b4df59c81bdde755e05ca23c4670"
+    }
+  ],
+  "glb_files": [
+    {
+      "file": "exports/host_reference.glb",
+      "json_except_generator_equal": true,
+      "binary_chunks_byte_identical": true,
+      "binary_chunks_sha256": "fd6493c7855e976e6c0e15d992b22899f119161792a840a8d1fdf3e243c58d6c"
+    },
+    {
+      "file": "exports/module_with_host.glb",
+      "json_except_generator_equal": true,
+      "binary_chunks_byte_identical": true,
+      "binary_chunks_sha256": "2baaa3704f6a6883e365bb99df6f7a1ff1a54f5960f850b93557aafe8d1d7135"
+    },
+    {
+      "file": "exports/module_assembly.glb",
+      "json_except_generator_equal": true,
+      "binary_chunks_byte_identical": true,
+      "binary_chunks_sha256": "329f7e569d101e5f228d7c529f28b88986de5208fbe37478224459a2389a3906"
+    }
+  ],
+  "web_mesh": {
+    "component_objects_identical": true,
+    "component_count": 353,
+    "triangles": 582643,
+    "baseline_sha256": "69193345ccb3b96337e8fe24009af8f59a3be45a0ff20f0266779b6417da684c",
+    "new_sha256": "bd5139951f5a263d1dee4f74f3e35ad0d20875b4fb765d2694c221a7bc3cc6b6"
+  },
+  "design_basis": [
+    {
+      "file": "design_basis/parameters.json",
+      "byte_identical": true
+    },
+    {
+      "file": "design_basis/interface_contract.json",
+      "byte_identical": true
+    },
+    {
+      "file": "design_basis/design_holds.json",
+      "byte_identical": true
+    },
+    {
+      "file": "design_basis/geometry_contract.json",
+      "byte_identical": true
+    }
+  ],
+  "drawing_projections": [
+    {
+      "name": "installed_side",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "module_plan",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "under_windings_plan",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "transverse_windings_side",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "transverse_windings_end",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "stack_section_end",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "stack_section_detail",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "mounting_plan",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "optics_side",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "cartridge_service_end",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "controls_open_front",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "calibration_accessory_iso",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "optical_detail_iso",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "review_installed_top",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "review_stack_section_side",
+      "all_geometric_projection_fields_identical": true
+    },
+    {
+      "name": "review_transverse_section",
+      "all_geometric_projection_fields_identical": true
+    }
+  ],
+  "physical_validation_performed": false
+}

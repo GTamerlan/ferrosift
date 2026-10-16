@@ -1,0 +1,131 @@
+{
+  "revision": "M02",
+  "status": "Proposed interface contract; no selected protocol/devices, certification or operating limits",
+  "boundary": {
+    "module": [
+      "RGB and lighting mounts",
+      "optional exterior 3D geometry capture",
+      "two intended field orientations with candidate Tx/Rx channels",
+      "encoder association interface",
+      "synchronized acquisition/control enclosure",
+      "calibration carrier and decision software"
+    ],
+    "host": [
+      "conveyor drive/frame/belt",
+      "depollution, metering and singulation into narrow lane",
+      "compatible support/window integration",
+      "safe guarding/isolation/restart",
+      "downstream scheduling/actuation and capture"
+    ],
+    "scope_note": "Grey host is partial reference. Full-width retrofit and universal bolt-on compatibility not established."
+  },
+  "mechanical": {
+    "nominal_host_width_mm": 600,
+    "central_mechanical_lane_mm": 180,
+    "belt_top_z_mm": 1000,
+    "axes": "X travel, Y across, Z up",
+    "host_clamp_slots_mm": [
+      24,
+      9
+    ],
+    "rail_top_z_mm": 900,
+    "under_head_cover_gap_mm": 10,
+    "under_rx_top_to_belt_top_mm": 30.85,
+    "under_tx_top_to_belt_top_mm": 37.85,
+    "return_clearance_mm": 64,
+    "checked_pose": "Nominal assembly only; all dimensions proposed",
+    "requires": [
+      "surveyed host interfaces and support/return clearance",
+      "permitted structural load/vibration",
+      "qualified material/hardware/tolerances",
+      "safe service and calibration access"
+    ],
+    "fixed_module_to_host_rail_nominal_gap_mm": 10,
+    "cartridge_to_host_rail_nominal_gap_mm": 30,
+    "coil_gap_definition": "Bare winding core maximum, excluding separate terminal pins; main paths have out-of-plane recessed returns.",
+    "under_insulation_top_to_belt_top_mm": {
+      "Tx": 37.6,
+      "Rx": 30.6
+    },
+    "under_terminal_top_to_belt_top_mm": {
+      "Tx": 37.2,
+      "Rx": 30.2
+    }
+  },
+  "acquisition": {
+    "required_system": [
+      "Stable drive/receive phase reference and common timebase",
+      "Characterized channel, acquisition and demodulation delays",
+      "Coherent complex response capture with calibrated gain/phase and saturation detection",
+      "Encoder scale/direction and timestamp ownership"
+    ],
+    "required_record_fields": [
+      "object_id",
+      "channel_id",
+      "orientation_id",
+      "frequency_hz",
+      "drive_current",
+      "I",
+      "Q",
+      "acquisition_timestamp",
+      "encoder_count",
+      "calibration_id",
+      "temperature",
+      "saturation_flag",
+      "quality_flags"
+    ],
+    "warning": "A generic PLC digital input does not acquire these complex induction signals. Frequency, channels, bandwidth, ADC and analog hardware remain unselected."
+  },
+  "association": {
+    "rgb_datum_x_mm": -280,
+    "station_A_x_mm": 0,
+    "station_B_x_mm": 300,
+    "station_spacing_mm": 300,
+    "last_required_usable_observation_x_mm": null,
+    "encoder_meaning": "Belt travel proxy, not item-position accuracy or fragment motion",
+    "requires": [
+      "survey station datums",
+      "characterize belt/fragment slip, bounce, roll and overlapping objects",
+      "optical reassociation or other independent checks where needed",
+      "validate ramps, stops, missed triggers and loss of encoder"
+    ],
+    "simultaneity": "The same object reaches A and B at different times; no simultaneous two-station claim"
+  },
+  "decision_output": {
+    "proposed_fields": [
+      "object_id",
+      "coordinate",
+      "timestamp",
+      "recommended_route",
+      "confidence",
+      "validity",
+      "reason",
+      "deadline",
+      "calibration_id"
+    ],
+    "invalid_handling": "Explicit invalid/abstain on lost tracking, saturation, stale calibration or missed deadline. Host-approved policy for such objects remains to be agreed; no silent guaranteed safe route.",
+    "heartbeat": "Agreed heartbeat, acknowledgement, stale-data handling, fault semantics and outcome logging required.",
+    "physical_scope": "Output is decision support. Recovery/capture requires separately tested host actuation and outcome measurement."
+  },
+  "electrical": {
+    "power": null,
+    "connector_pinout": null,
+    "network_protocol": null,
+    "ingress_rating": null,
+    "safety_rating": null,
+    "status": "All remain selection/verification holds; modeled enclosures and connectors are envelopes.",
+    "internal_winding_harness": "Unresolved: six independent winding terminal pairs are modeled, but terminal-to-acquisition cable routing, pinout, paired/shielded lead construction and circuit connections are not designed. Shell endpoint contact is not electrical completion.",
+    "modeled_entries": "Separate proposed RGB, optional depth, A, B-Tx, B-Rx and encoder wall-normal cable glands; power and host IO ports have no modeled external cables. Internal circuitry and harness remain unresolved."
+  },
+  "calibration": {
+    "accessory": "Removable nonmetallic carrier and unselected reference coupon envelope",
+    "requires": [
+      "empty-belt/background scans with host equipment operating",
+      "reference objects at representative lateral positions/heights/poses",
+      "calibration ID and temperature/quality tracking",
+      "measured repeatability after head adjustment/service",
+      "approved safe insertion/handling procedure"
+    ]
+  },
+  "claim_boundary": "CAD establishes geometry only. Existing CV annotation scores are separate evidence and do not validate induction, physical recovery, purity or monetary savings."
+}

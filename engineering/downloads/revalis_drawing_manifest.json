@@ -1,0 +1,290 @@
+{
+  "revision": "M02",
+  "status": "PASS",
+  "created_utc": "2026-10-16T02:55:45.860104+00:00",
+  "pdf": "module_drawings.pdf",
+  "page_count": 6,
+  "a3_landscape_mm": [
+    420,
+    297
+  ],
+  "source_step_sha256": "0eda2f5315ef767e4c3f229d25f2f5cdfa8a514b9600679e8cb68f258c68c905",
+  "source_manifest_sha256": "a86e432347e5e2d1c9b1bd6682e9314bd7ce53fe012ffacdfd2fcf130979de30",
+  "source_contract_sha256": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a",
+  "projection_method": "OpenCascade exact visible-edge HLR; actual solid/plane section intersections where named",
+  "render_backend": "PyMuPDF SVG to PDF and raster (Poppler unavailable in environment)",
+  "checks": {
+    "A3_page_size": "PASS",
+    "six_pages": "PASS",
+    "source_hashes_current": "PASS",
+    "viewports_fit": "PASS",
+    "annotation_contract_matches": "PASS",
+    "visual_review": "PASS",
+    "physical_sensing_and_fabrication_validation": "NOT PERFORMED"
+  },
+  "views": [
+    {
+      "sheet": 1,
+      "view": "installed_side",
+      "scale_denominator": 15,
+      "viewport_mm": [
+        24,
+        64,
+        257,
+        98
+      ],
+      "projected_size_mm": [
+        168.0,
+        91.8
+      ],
+      "projection_input_sha256": "383fc4ba549b0838deb9126907b75ec4abeda6b0d8a8c12a26580ce70f9d9ef1"
+    },
+    {
+      "sheet": 1,
+      "view": "module_plan",
+      "scale_denominator": 25,
+      "viewport_mm": [
+        24,
+        194,
+        257,
+        54
+      ],
+      "projected_size_mm": [
+        83.9,
+        52.320000059640016
+      ],
+      "projection_input_sha256": "f052dfdb0241aa53ba267cfa5988c5f942034cee645597d6ec45f6105ffb46f1"
+    },
+    {
+      "sheet": 2,
+      "view": "under_windings_plan",
+      "scale_denominator": 2.5,
+      "viewport_mm": [
+        23,
+        65,
+        174,
+        116
+      ],
+      "projected_size_mm": [
+        79.2,
+        97.60000000000001
+      ],
+      "projection_input_sha256": "50a50933f88b78a57ed442025fd0f609aea1b9921155fdfd5b06fb81585168fc"
+    },
+    {
+      "sheet": 2,
+      "view": "transverse_windings_side",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        224,
+        65,
+        172,
+        62
+      ],
+      "projected_size_mm": [
+        80.0,
+        45.0
+      ],
+      "projection_input_sha256": "06f43730f9538a965b968e6b8169719da591f863b1167eb4eb5057b70d8619c2"
+    },
+    {
+      "sheet": 2,
+      "view": "transverse_windings_end",
+      "scale_denominator": 3,
+      "viewport_mm": [
+        224,
+        151,
+        172,
+        30
+      ],
+      "projected_size_mm": [
+        82.00000006926945,
+        30.00000006666668
+      ],
+      "projection_input_sha256": "1c45c795ab33a2c28d0bfad831950db096f38285dec89d6534265a2cb420cf6e"
+    },
+    {
+      "sheet": 3,
+      "view": "stack_section_end",
+      "scale_denominator": 5,
+      "viewport_mm": [
+        26,
+        57,
+        247,
+        73
+      ],
+      "projected_size_mm": [
+        160.0,
+        71.60000000000001
+      ],
+      "projection_input_sha256": "36a6214ea03293e55684f15c1aac4046c5a0f88c27627282b23d9d8dd1427236"
+    },
+    {
+      "sheet": 3,
+      "view": "stack_section_detail",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        26,
+        176,
+        155,
+        48
+      ],
+      "projected_size_mm": [
+        155.0,
+        39.0
+      ],
+      "projection_input_sha256": "ce1ba9d512e7bc2fd5b0af0dca2d52d4900f3ae8d51e21121e829cabddb9f728"
+    },
+    {
+      "sheet": 4,
+      "view": "optics_side",
+      "scale_denominator": 6,
+      "viewport_mm": [
+        25,
+        65,
+        238,
+        125
+      ],
+      "projected_size_mm": [
+        166.66666668333335,
+        109.66666668333332
+      ],
+      "projection_input_sha256": "b630e37aaad748140b13dcb4a05b23eccf553d231df3c0b185202c69b227749f"
+    },
+    {
+      "sheet": 4,
+      "view": "optical_detail_iso",
+      "scale_denominator": 2,
+      "viewport_mm": [
+        286,
+        173,
+        115,
+        69
+      ],
+      "projected_size_mm": [
+        59.03300858899105,
+        60.11696274531744
+      ],
+      "projection_input_sha256": "3190a0a3a2a14a54134dcdc58735ae46931411e231cb216eb900e4b249e4c0a3"
+    },
+    {
+      "sheet": 5,
+      "view": "calibration_accessory_iso",
+      "scale_denominator": 3,
+      "viewport_mm": [
+        24,
+        55,
+        112,
+        46
+      ],
+      "projected_size_mm": [
+        66.30627697345594,
+        35.87197730435378
+      ],
+      "projection_input_sha256": "4bfd278ea4151fe00a54789f6b45f62290c62003b7d6b8c84297a2040da9d44a"
+    },
+    {
+      "sheet": 5,
+      "view": "cartridge_service_end",
+      "scale_denominator": 6,
+      "viewport_mm": [
+        24,
+        124,
+        252,
+        52
+      ],
+      "projected_size_mm": [
+        241.66666666666666,
+        28.333333333333332
+      ],
+      "projection_input_sha256": "5640641ff934073674eeff0e90b80ebcfe259eba7b9c7abf696dee4dd2582245"
+    },
+    {
+      "sheet": 6,
+      "view": "controls_open_front",
+      "scale_denominator": 4,
+      "viewport_mm": [
+        24,
+        64,
+        166,
+        140
+      ],
+      "projected_size_mm": [
+        100.0,
+        113.00000005000001
+      ],
+      "projection_input_sha256": "87331468133240a46c729778ef50f3f33ac8004a3d736d762ef3a3935398af3c"
+    }
+  ],
+  "annotated_basis_mm": {
+    "belt_width": 600,
+    "belt_top_z": 1000,
+    "lane_width": 180,
+    "optics_x": -280,
+    "A_x": 0,
+    "B_x": 300,
+    "coil_core_top_standoff": 30.85,
+    "enclosure_width": 340,
+    "enclosure_height": 440,
+    "rgb_front_glass_z": 1443.0,
+    "carrying_belt_thickness": 4.0,
+    "support_window_thickness": 6.0,
+    "closed_head_to_support_gap": 10.0,
+    "actual_Rx_core_top_to_belt": 30.849999899999943,
+    "actual_Rx_insulation_top_to_belt": 30.599999899999943,
+    "actual_Rx_terminal_top_to_belt": 30.199999999999932,
+    "actual_Tx_core_top_to_belt": 37.84999989999994,
+    "actual_Tx_insulation_top_to_belt": 37.59999989999994,
+    "actual_Tx_terminal_top_to_belt": 37.19999999999993,
+    "actual_Tx_core_extent_x": 185.5000002,
+    "actual_Tx_core_extent_y": 228.5000002,
+    "actual_Tx_insulation_extent_x": 186.0000002,
+    "actual_Tx_insulation_extent_y": 229.0000002,
+    "transverse_main_plane_spacing": 238.6,
+    "core_diameter": 0.9,
+    "insulation_od": 1.4,
+    "path_centre_pitch": 3.8,
+    "return_top_to_shell_bottom": 64.0,
+    "nominal_shell_to_host_rail_clearance": 30.0
+  },
+  "sheets": [
+    {
+      "path": "RV-M02-01.svg",
+      "sha256": "ccee586f409d8f6bc450bfecad399fe77ae7555fff4be61377111c596ca75d82"
+    },
+    {
+      "path": "RV-M02-02.svg",
+      "sha256": "fb49b3753fd6270357e01855213c9d0074bb7c217152d5ac085619eafb8306c4"
+    },
+    {
+      "path": "RV-M02-03.svg",
+      "sha256": "e10f501d22e22397f8e71507f7a873c692ff3faf43a373d4a22ae409d31d8ec5"
+    },
+    {
+      "path": "RV-M02-04.svg",
+      "sha256": "7788692521f7a3b370459fb6a9758afebc8ccc970cb5386a645cf734f4413d43"
+    },
+    {
+      "path": "RV-M02-05.svg",
+      "sha256": "112bdcc62d91afb12a0d7965372914a670fb8cf44be1a647634ab1449b139b26"
+    },
+    {
+      "path": "RV-M02-06.svg",
+      "sha256": "ec57fec2fbc92f1b35ab89997fbe3089664e5c72cfe49987827673cc33178f26"
+    }
+  ],
+  "pdf_sha256": "51e19c7f7a020225cfea0062451a3a0d23bbf461c38cbb3410de782b46c3cd11",
+  "limitations": [
+    "All dimensions and interfaces are proposed research geometry.",
+    "Neither CAD validity nor the drawing checks establish load capacity, operational safety, compatibility or electromagnetic performance.",
+    "Usable aperture, full-width scale-up and the advantage of complementary sensing directions are unvalidated."
+  ],
+  "visual_review": {
+    "status": "PASS",
+    "reviewed_utc": "2026-10-16T03:16:20.788537+00:00",
+    "method": "Direct inspection of all 6 Revalis page PNGs, 4 captioned CAD figures and 5 standalone review PNGs; all 4 clean figures are pixel-identical to their preserved M02 originals.",
+    "result": "Revalis title blocks, captions and revision labels are legible; no clipping or overlapping labels observed. All original geometry views and declared omissions are retained.",
+    "physical_validation_performed": false
+  },
+  "branding_revision": "R01"
+}

@@ -1,0 +1,261 @@
+{
+  "release_id": "Revalis_M02_R01_20261016",
+  "geometry_revision": "M02",
+  "branding_revision": "R01",
+  "status": "PREPARED_NOT_PUBLISHED",
+  "created_utc": "2026-10-16T03:16:20.788537+00:00",
+  "source_root": "revalis_module_package_20261016_v03/engineering",
+  "baseline_public_commit": "12f03b2ab17db3898ade087f4a393665a247b97a",
+  "geometry_status": "Exact M02 shapes preserved; preliminary, not fabrication-certified; no physical validation",
+  "component_counts": 353,
+  "triangles": 582643,
+  "source_hashes": {
+    "cad/build_module.py": "9d6e8ef30908e5e358dbc05d01f0ac9a4c8049f93124be5e61151800960ca1c7",
+    "cad/details.py": "79c8a2f0c018ae75e05eb578a63605544c852116bd8f746aae42906a265ea881",
+    "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
+    "cad/export_common.py": "22618295ebc502014da3294747f9e09dcde1020eafc79c9aab8f02d67801a29f",
+    "design_basis/parameters.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a",
+    "design_basis/interface_contract.json": "34721c57b56da1cf6e6cb9f336a24e8a073e94ec6c18d5701424e64f09f85a0f",
+    "design_basis/design_holds.json": "a8cd10e341d2dfe33162a8e07b98287e2de46b5227c8fc64b4c75cc49604ce26",
+    "design_basis/geometry_contract.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a"
+  },
+  "mapping": {
+    "web/module-assembly.json": "revalis-module-assembly.json",
+    "exports/assembly_manifest.json": "downloads/revalis_assembly_manifest.json",
+    "exports/selections/winding_detail.step": "downloads/revalis_winding_detail.step",
+    "drawings/module_drawings.pdf": "downloads/revalis_module_drawings.pdf",
+    "drawings/drawing_manifest.json": "downloads/revalis_drawing_manifest.json",
+    "figures/figure_manifest.json": "downloads/revalis_figure_manifest.json",
+    "drawings/module_isometric.png": "drawings/revalis_module_isometric.png",
+    "design_basis/geometry_contract.json": "downloads/revalis_design_basis.json",
+    "design_basis/design_holds.json": "downloads/revalis_design_holds.json",
+    "design_basis/interface_contract.json": "downloads/revalis_interface_contract.json",
+    "verification/geometry_checks.json": "downloads/revalis_geometry_checks.json",
+    "verification/rebrand_geometry_equivalence.json": "downloads/revalis_geometry_equivalence.json",
+    "verification/step_reimport_equivalence.json": "downloads/revalis_step_reimport_equivalence.json",
+    "bom/component_schedule.csv": "downloads/revalis_module_component_schedule.csv",
+    "REVALIS_RELEASE_NOTES.txt": "revalis_RELEASE_NOTES.txt",
+    "exports/module_assembly.step": "downloads/revalis_module_assembly.step",
+    "exports/module_assembly.brep": "downloads/revalis_module_assembly.brep",
+    "exports/module_assembly.glb": "downloads/revalis_module_assembly.glb",
+    "exports/module_with_host.step": "downloads/revalis_module_with_host.step",
+    "exports/module_with_host.brep": "downloads/revalis_module_with_host.brep",
+    "exports/module_with_host.glb": "downloads/revalis_module_with_host.glb",
+    "exports/host_reference.step": "downloads/revalis_host_reference.step",
+    "exports/host_reference.brep": "downloads/revalis_host_reference.brep",
+    "exports/host_reference.glb": "downloads/revalis_host_reference.glb",
+    "drawings/RV-M02-01.svg": "drawings/RV-M02-01.svg",
+    "drawings/RV-M02-02.svg": "drawings/RV-M02-02.svg",
+    "drawings/RV-M02-03.svg": "drawings/RV-M02-03.svg",
+    "drawings/RV-M02-04.svg": "drawings/RV-M02-04.svg",
+    "drawings/RV-M02-05.svg": "drawings/RV-M02-05.svg",
+    "drawings/RV-M02-06.svg": "drawings/RV-M02-06.svg",
+    "figures/module_installed_host.png": "figures/revalis_module_installed_host.png",
+    "figures/module_installed_host_clean.png": "figures/revalis_module_installed_host_clean.png",
+    "figures/module_isolated.png": "figures/revalis_module_isolated.png",
+    "figures/module_isolated_clean.png": "figures/revalis_module_isolated_clean.png",
+    "figures/module_maintenance_interfaces.png": "figures/revalis_module_maintenance_interfaces.png",
+    "figures/module_maintenance_interfaces_clean.png": "figures/revalis_module_maintenance_interfaces_clean.png",
+    "figures/module_sensing_arrangement.png": "figures/revalis_module_sensing_arrangement.png",
+    "figures/module_sensing_arrangement_clean.png": "figures/revalis_module_sensing_arrangement_clean.png"
+  },
+  "legacy_compatibility": "All pre-existing engineering files remain byte-identical at their original URLs. New primary links use revalis_ names; RV-M02 drawing identifiers distinguish the rebranded sheets.",
+  "files": [
+    {
+      "path": "engineering/downloads/revalis_assembly_manifest.json",
+      "bytes": 428437,
+      "sha256": "a86e432347e5e2d1c9b1bd6682e9314bd7ce53fe012ffacdfd2fcf130979de30"
+    },
+    {
+      "path": "engineering/downloads/revalis_design_basis.json",
+      "bytes": 18991,
+      "sha256": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a"
+    },
+    {
+      "path": "engineering/downloads/revalis_design_holds.json",
+      "bytes": 6114,
+      "sha256": "a8cd10e341d2dfe33162a8e07b98287e2de46b5227c8fc64b4c75cc49604ce26"
+    },
+    {
+      "path": "engineering/downloads/revalis_drawing_manifest.json",
+      "bytes": 8201,
+      "sha256": "0732d9d019daae008a3f3d016c428dcf66f6b9138a214f571ea2e9d38a2809ee"
+    },
+    {
+      "path": "engineering/downloads/revalis_figure_manifest.json",
+      "bytes": 53401,
+      "sha256": "59bcaa4ae064a5288b6ac92d47cb767a1c6f64d7423de62eb8b96bbb440af644"
+    },
+    {
+      "path": "engineering/downloads/revalis_geometry_checks.json",
+      "bytes": 1765,
+      "sha256": "ab593d1e22ab2ed1a748efba539c0bc32f98a317d7245b865f31a3730af3018c"
+    },
+    {
+      "path": "engineering/downloads/revalis_geometry_equivalence.json",
+      "bytes": 8686,
+      "sha256": "4f16cbbb72c045c28998e3b4242c982d6f89a52f9ae98d3b4d7a42c19a39f4e1"
+    },
+    {
+      "path": "engineering/downloads/revalis_host_reference.brep",
+      "bytes": 28874,
+      "sha256": "de4567830c26f5409d0fccc7282bd3b9fe91a4824e8901c4d64ea2f385a79480"
+    },
+    {
+      "path": "engineering/downloads/revalis_host_reference.glb",
+      "bytes": 47384,
+      "sha256": "01cc78ac4a50000f6e468955144a1a7db04c3fbb6aef3f6d65666aa9a717d7a3"
+    },
+    {
+      "path": "engineering/downloads/revalis_host_reference.step",
+      "bytes": 215116,
+      "sha256": "50905c50f64fa2075a53f59251fdb0060bbaa610c41d42f1a96ab38afe698038"
+    },
+    {
+      "path": "engineering/downloads/revalis_interface_contract.json",
+      "bytes": 5550,
+      "sha256": "34721c57b56da1cf6e6cb9f336a24e8a073e94ec6c18d5701424e64f09f85a0f"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_assembly.brep",
+      "bytes": 3244740,
+      "sha256": "62d17cee44246d54717871448c8229afe4afc94328086285a2b1a627fe002433"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_assembly.glb",
+      "bytes": 17393788,
+      "sha256": "34edbb7e566107b1778190a04004d366b3aa799e26c96505390edb1a121d5e62"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_assembly.step",
+      "bytes": 13550673,
+      "sha256": "1551965223921f4c08bdeb281702b4e6218b7eb5f5522d43f6743b25c6e8cf30"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_component_schedule.csv",
+      "bytes": 85907,
+      "sha256": "d011349cc42bcaf3879c51b1674bc81a75fe1ea78ee8f86a0c336bfe48b9e778"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_drawings.pdf",
+      "bytes": 576837,
+      "sha256": "51e19c7f7a020225cfea0062451a3a0d23bbf461c38cbb3410de782b46c3cd11"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_source.zip",
+      "bytes": 210883,
+      "sha256": "169501f5490f92ceddac581274c57dfe3a06b1dadd602032d4e0e0e615f60928"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_with_host.brep",
+      "bytes": 3276584,
+      "sha256": "395c023f4fd172a3c4d8b2c1c50950c8b385352d2ae001161290def847f37cfd"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_with_host.glb",
+      "bytes": 17441208,
+      "sha256": "0ee8799853a4d7ad7d4b046ed21348ee07b3e432e3138ae241bf41050535938f"
+    },
+    {
+      "path": "engineering/downloads/revalis_module_with_host.step",
+      "bytes": 13786555,
+      "sha256": "0eda2f5315ef767e4c3f229d25f2f5cdfa8a514b9600679e8cb68f258c68c905"
+    },
+    {
+      "path": "engineering/downloads/revalis_step_reimport_equivalence.json",
+      "bytes": 1577,
+      "sha256": "11d39bde0cc8a5c61d8c801de56f74cf8737b5881c9e166a2e5256effc96b566"
+    },
+    {
+      "path": "engineering/downloads/revalis_winding_detail.step",
+      "bytes": 4950719,
+      "sha256": "35c80bdfaba2e5496d7d6533e69fb214334048b9afee671237cc5fa9599bce35"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-01.svg",
+      "bytes": 1428552,
+      "sha256": "ccee586f409d8f6bc450bfecad399fe77ae7555fff4be61377111c596ca75d82"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-02.svg",
+      "bytes": 428688,
+      "sha256": "fb49b3753fd6270357e01855213c9d0074bb7c217152d5ac085619eafb8306c4"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-03.svg",
+      "bytes": 1996852,
+      "sha256": "e10f501d22e22397f8e71507f7a873c692ff3faf43a373d4a22ae409d31d8ec5"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-04.svg",
+      "bytes": 391935,
+      "sha256": "7788692521f7a3b370459fb6a9758afebc8ccc970cb5386a645cf734f4413d43"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-05.svg",
+      "bytes": 88501,
+      "sha256": "112bdcc62d91afb12a0d7965372914a670fb8cf44be1a647634ab1449b139b26"
+    },
+    {
+      "path": "engineering/drawings/RV-M02-06.svg",
+      "bytes": 34717,
+      "sha256": "ec57fec2fbc92f1b35ab89997fbe3089664e5c72cfe49987827673cc33178f26"
+    },
+    {
+      "path": "engineering/drawings/revalis_module_isometric.png",
+      "bytes": 400271,
+      "sha256": "205f4aa0f326e9998fdf2f5baab2288121d2fc08416cb0d5656ca9b50fb9be20"
+    },
+    {
+      "path": "engineering/figures/revalis_module_installed_host.png",
+      "bytes": 368629,
+      "sha256": "7ec7956cc7ac4a374223c9afd76aee4567a475fc6d2da60d568897d10f52f4aa"
+    },
+    {
+      "path": "engineering/figures/revalis_module_installed_host_clean.png",
+      "bytes": 289835,
+      "sha256": "cd9f312b15a4a47a4431bee4c71869a1eb5cb38b6ceca2ffdc0b29860d910c94"
+    },
+    {
+      "path": "engineering/figures/revalis_module_isolated.png",
+      "bytes": 400271,
+      "sha256": "205f4aa0f326e9998fdf2f5baab2288121d2fc08416cb0d5656ca9b50fb9be20"
+    },
+    {
+      "path": "engineering/figures/revalis_module_isolated_clean.png",
+      "bytes": 301248,
+      "sha256": "601c10d1f9aa0cb3f6c926cfedec10e5deba57515202af9e00b269fddd2101bd"
+    },
+    {
+      "path": "engineering/figures/revalis_module_maintenance_interfaces.png",
+      "bytes": 164212,
+      "sha256": "08f1369a1f2393d6b0b8ec93fece00730898fec99583754d47e9d7b52888e648"
+    },
+    {
+      "path": "engineering/figures/revalis_module_maintenance_interfaces_clean.png",
+      "bytes": 80201,
+      "sha256": "e7b84c96f5a0409bbef935873e15d18250d0e29d0bc7484df019c8cbc0efdf0d"
+    },
+    {
+      "path": "engineering/figures/revalis_module_sensing_arrangement.png",
+      "bytes": 586441,
+      "sha256": "987835217c282f96d639b04ee9de2dd3b561a25093458c9205e93500870a4e35"
+    },
+    {
+      "path": "engineering/figures/revalis_module_sensing_arrangement_clean.png",
+      "bytes": 479372,
+      "sha256": "f23c90d24515e130ccf517f2f80918721126247b66b5d3ba02dec26411ff1dcb"
+    },
+    {
+      "path": "engineering/revalis-module-assembly.json",
+      "bytes": 29931213,
+      "sha256": "bd5139951f5a263d1dee4f74f3e35ad0d20875b4fb765d2694c221a7bc3cc6b6"
+    },
+    {
+      "path": "engineering/revalis_RELEASE_NOTES.txt",
+      "bytes": 1835,
+      "sha256": "4c370f35f55557b96c5802226771a3aa9f9a09b3f19ca9a2e4b664a4ed7e6f84"
+    }
+  ],
+  "source_zip_member_count": 52
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS_BRANDING_ONLY_GEOMETRY_EQUIVALENCE",
+  "release_id": "Revalis_M02_R01_20261016",
+  "geometry_revision": "M02",
+  "branding_revision": "R01",
+  "source_sha256": {
+    "cad/build_module.py": "9d6e8ef30908e5e358dbc05d01f0ac9a4c8049f93124be5e61151800960ca1c7",
+    "cad/details.py": "79c8a2f0c018ae75e05eb578a63605544c852116bd8f746aae42906a265ea881",
+    "cad/windings.py": "41bed76bdaede1e66125493240922430088b409d0fb51124effbe857a4553d75",
+    "cad/export_common.py": "22618295ebc502014da3294747f9e09dcde1020eafc79c9aab8f02d67801a29f",
+    "design_basis/parameters.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a",
+    "design_basis/interface_contract.json": "34721c57b56da1cf6e6cb9f336a24e8a073e94ec6c18d5701424e64f09f85a0f",
+    "design_basis/design_holds.json": "a8cd10e341d2dfe33162a8e07b98287e2de46b5227c8fc64b4c75cc49604ce26",
+    "design_basis/geometry_contract.json": "37e5e4a1d50f5d4868b340f2d1d826d784af8e4b41f3b36930dbca8b2eb7523a"
+  },
+  "web_sha256": "bd5139951f5a263d1dee4f74f3e35ad0d20875b4fb765d2694c221a7bc3cc6b6",
+  "components": 353,
+  "triangle_count": 582643,
+  "checks": [
+    {
+      "kind": "Exact geometry/data identity",
+      "receipt": "rebrand_geometry_equivalence.json",
+      "sha256": "4f16cbbb72c045c28998e3b4242c982d6f89a52f9ae98d3b4d7a42c19a39f4e1"
+    },
+    {
+      "kind": "STEP reimport and sorted per-solid facts",
+      "receipt": "step_reimport_equivalence.json",
+      "sha256": "11d39bde0cc8a5c61d8c801de56f74cf8737b5881c9e166a2e5256effc96b566"
+    }
+  ],
+  "limitations": "Branding migration only. Earlier scoped geometric checks are inherited without rerunning the physical design. No physical testing, sensing performance, operational safety or fabrication certification."
+}
