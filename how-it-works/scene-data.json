@@ -19,15 +19,15 @@
       "duration": 5,
       "title": "Give it a temporary identity.",
       "caption": "Software calls this fragment “42” and links its observations as it travels.",
-      "note": "42 is a software record—not a tag attached to the metal."
+      "note": "42 is a temporary ID for this tracked piece—not a physical tag or proof of correct matching."
     },
     {
       "id": "depth",
       "short": "Shape",
       "duration": 5,
       "title": "Add geometry, if depth is available.",
-      "caption": "Optional depth sensing could estimate external height and pose.",
-      "note": "Surface geometry is not an elemental map or a view inside the fragment."
+      "caption": "Optional depth sensing could estimate surface height and pose to help account for distance and orientation.",
+      "note": "Proposed, unselected sensor. Surface geometry is not hidden-metal depth or automatic calibration."
     },
     {
       "id": "timing",
@@ -42,32 +42,32 @@
       "short": "Excite",
       "duration": 7,
       "title": "A changing magnetic field induces currents.",
-      "caption": "AC in a transmit coil creates a changing field. Closed eddy-current loops form inside a conductor.",
-      "note": "Blue arrows: magnetic field. Orange loops: electrical current inside metal."
+      "caption": "AC in the coil creates a changing magnetic field. It induces closed current loops inside conducting scrap.",
+      "note": "No current jumps from a coil or cover into scrap. A nonconductive sensing window is not metal shielding."
     },
     {
       "id": "response",
       "short": "Measure",
       "duration": 6,
       "title": "Measure the electrical response.",
-      "caption": "The conductor’s secondary magnetic field changes the receive-coil voltage. Link the measurement to 42.",
-      "note": "Amplitude and phase are measured relative to the drive; this illustration contains no measured data."
+      "caption": "The fragment’s secondary field changes receive-coil voltage. Timing and tracking would associate a reading with piece 42.",
+      "note": "Amplitude and phase are relative to the drive. Calibration would use known samples; no measurements are shown."
     },
     {
       "id": "direction",
       "short": "Compare",
       "duration": 6,
       "title": "Try another field direction.",
-      "caption": "A second station gives another directional view of the same fragment’s response.",
-      "note": "Another projection may help. Two directions do not recover an interior map or a full tensor."
+      "caption": "For this assumed patch, the transverse magnetic field crosses its face more directly. The response could be stronger.",
+      "note": "Fixed pose; conceptual cutaway, not an interior scan. Actual response depends on transmitter and receiver geometry."
     },
     {
       "id": "fusion",
       "short": "Combine",
       "duration": 6,
       "title": "Combine observations. Keep uncertainty.",
-      "caption": "A proposed model combines shape, response and association quality to estimate a routing class.",
-      "note": "Low confidence or uncertain identity should lead to recheck. No assay or value is inferred here."
+      "caption": "Camera appearance, optional surface geometry and directional responses would inform a routing class and uncertainty.",
+      "note": "Copper and aluminium both conduct. Pose and distance change response; stronger does not mean more copper."
     },
     {
       "id": "host",

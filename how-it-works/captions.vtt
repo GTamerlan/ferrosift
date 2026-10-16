@@ -10,7 +10,7 @@ Software calls this fragment “42” and links its observations as it travels.
 
 00:00:10.000 --> 00:00:15.000
 Add geometry, if depth is available.
-Optional depth sensing could estimate external height and pose.
+Optional depth sensing could estimate surface height and pose to help account for distance and orientation.
 
 00:00:15.000 --> 00:00:20.000
 Predict when 42 reaches each station.
@@ -18,19 +18,19 @@ An encoder measures belt travel. Software predicts station arrival.
 
 00:00:20.000 --> 00:00:27.000
 A changing magnetic field induces currents.
-AC in a transmit coil creates a changing field. Closed eddy-current loops form inside a conductor.
+AC in the coil creates a changing magnetic field. It induces closed current loops inside conducting scrap.
 
 00:00:27.000 --> 00:00:33.000
 Measure the electrical response.
-The conductor’s secondary magnetic field changes the receive-coil voltage. Link the measurement to 42.
+The fragment’s secondary field changes receive-coil voltage. Timing and tracking would associate a reading with piece 42.
 
 00:00:33.000 --> 00:00:39.000
 Try another field direction.
-A second station gives another directional view of the same fragment’s response.
+For this assumed patch, the transverse magnetic field crosses its face more directly. The response could be stronger.
 
 00:00:39.000 --> 00:00:45.000
 Combine observations. Keep uncertainty.
-A proposed model combines shape, response and association quality to estimate a routing class.
+Camera appearance, optional surface geometry and directional responses would inform a routing class and uncertainty.
 
 00:00:45.000 --> 00:00:50.000
 Send a decision to the existing sorter.

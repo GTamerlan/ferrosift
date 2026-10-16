@@ -1,4 +1,4 @@
-import {scenes,duration,locate,renderSvg} from './scenes.mjs?v=79cc2294684d';
+import {scenes,duration,locate,renderSvg} from './scenes.mjs?v=2514a839105a';
 const $=id=>document.getElementById(id),motion=matchMedia('(prefers-reduced-motion: reduce)');
 let t=0,playing=false,last=0,active=-1,raf=0;const starts=[];let sum=0;for(const s of scenes){starts.push(sum);sum+=s.duration;}
 const chapterButtons=scenes.map((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=`${i+1} ${s.short}`;b.setAttribute('aria-label',`Scene ${i+1}: ${s.title}`);b.addEventListener('click',()=>jump(i));$('chapters').append(b);return b;});

@@ -7,31 +7,31 @@ An outline describes appearance. It does not reveal composition.
 
 5–10s | Give it a temporary identity.
 Software calls this fragment “42” and links its observations as it travels.
-42 is a software record—not a tag attached to the metal.
+42 is a temporary ID for this tracked piece—not a physical tag or proof of correct matching.
 
 10–15s | Add geometry, if depth is available.
-Optional depth sensing could estimate external height and pose.
-Surface geometry is not an elemental map or a view inside the fragment.
+Optional depth sensing could estimate surface height and pose to help account for distance and orientation.
+Proposed, unselected sensor. Surface geometry is not hidden-metal depth or automatic calibration.
 
 15–20s | Predict when 42 reaches each station.
 An encoder measures belt travel. Software predicts station arrival.
 A prediction still needs an association check: pieces can slip, overlap or rotate.
 
 20–27s | A changing magnetic field induces currents.
-AC in a transmit coil creates a changing field. Closed eddy-current loops form inside a conductor.
-Blue arrows: magnetic field. Orange loops: electrical current inside metal.
+AC in the coil creates a changing magnetic field. It induces closed current loops inside conducting scrap.
+No current jumps from a coil or cover into scrap. A nonconductive sensing window is not metal shielding.
 
 27–33s | Measure the electrical response.
-The conductor’s secondary magnetic field changes the receive-coil voltage. Link the measurement to 42.
-Amplitude and phase are measured relative to the drive; this illustration contains no measured data.
+The fragment’s secondary field changes receive-coil voltage. Timing and tracking would associate a reading with piece 42.
+Amplitude and phase are relative to the drive. Calibration would use known samples; no measurements are shown.
 
 33–39s | Try another field direction.
-A second station gives another directional view of the same fragment’s response.
-Another projection may help. Two directions do not recover an interior map or a full tensor.
+For this assumed patch, the transverse magnetic field crosses its face more directly. The response could be stronger.
+Fixed pose; conceptual cutaway, not an interior scan. Actual response depends on transmitter and receiver geometry.
 
 39–45s | Combine observations. Keep uncertainty.
-A proposed model combines shape, response and association quality to estimate a routing class.
-Low confidence or uncertain identity should lead to recheck. No assay or value is inferred here.
+Camera appearance, optional surface geometry and directional responses would inform a routing class and uncertainty.
+Copper and aluminium both conduct. Pose and distance change response; stronger does not mean more copper.
 
 45–50s | Send a decision to the existing sorter.
 The host receives a proposed route—or recheck—with the piece ID and timing information.
