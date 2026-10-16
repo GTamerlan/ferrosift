@@ -38,6 +38,10 @@ The homepage's orientation hypothesis is consistent with [Abdel Rehim et al.'s d
 
 The 2045 horizon is aspirational. Published magnetic manipulation and detumbling work describes constrained laboratory experiments or simulations, not Revalis flight evidence. Any orbital application would require a separate actuation architecture, stand-off/force/torque testing, power and thermal engineering, reaction control, safe proximity operations, a mission partner and flight qualification. Detumbling concerns relative rotation, not stopping orbital motion. The dated, source-specific boundaries and accessible primary links are on the homepage under Sources.
 
+## Scroll-controlled scrap illustration
+
+The Explorer adds a conceptual broken steel core with an attached copper winding to the unchanged M02 CAD context. Its travel and camera pose follow page scroll, with no autonomous piece playback. The visible materials are specified for the illustration, not identified by measured sensor outputs. The winding is open-ended; no current distribution, signal amplitude or copper assay is depicted. Travelling blue field arrows and orange current glyphs have been removed because they could be mistaken for a tracking trace or computed response. The actual coil geometry and station-direction text remain. The final route is an explicitly schematic host-sorter decision for the entire attached piece, not proof of physical capture or material liberation.
+
 ## Beginner guide
 
 The optional beginner guide uses original schematics and captions. The induction explanation is grounded in [Feynman Lectures II–17](https://www.feynmanlectures.caltech.edu/II_17.html) and [OpenStax University Physics 13.5](https://openstax.org/books/university-physics-volume-2/pages/13-5-eddy-currents): changing magnetic fields can drive circulating electric fields and currents in conductors, which alter a receiving coil's electrical response. The guide is not a field solution, interior elemental map, tracking demonstration or measured sorting result. Its record association and routing sequence describe the proposed Revalis architecture.
