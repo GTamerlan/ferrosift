@@ -57,10 +57,11 @@ function visible(o){
 function material(o){let c=tint(o.color),surface=[30,.10];if(o.scope==='host_reference')c=[.42,.47,.45];if(o.materialClass==='metal')surface=[65,.30];if(o.materialClass==='coil_conductor'||o.materialClass==='coil_terminal')surface=[95,.58];if(o.materialClass==='optical_glass'||/lens_glass|aperture/.test(o.id)){c=[.07,.13,.16];surface=[130,.65]}if(o.winding_part==='bobbin'||o.winding_part==='retainer'||/former/.test(o.id)){c=[.17,.23,.26];surface=[38,.14]}return{c,surface}}
 function drawMesh(m,offset=[0,0,0],alpha=1){gl.bindBuffer(gl.ARRAY_BUFFER,m.v);gl.enableVertexAttribArray(loc.position);gl.vertexAttribPointer(loc.position,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,m.n);gl.enableVertexAttribArray(loc.normal);gl.vertexAttribPointer(loc.normal,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,m.i);gl.uniform3fv(loc.tint,m.c);gl.uniform2fv(loc.surface,m.surface);gl.uniform3fv(loc.offset,offset);gl.uniform1f(loc.alpha,alpha);gl.uniform1f(loc.unlit,m.unlit||0);gl.drawElements(gl.TRIANGLES,m.count,gl.UNSIGNED_INT,0);}
 function project(point,vp,w,h){const p=[...point,1],v=[0,0,0,0];for(let r=0;r<4;r++)for(let c=0;c<4;c++)v[r]+=vp[c*4+r]*p[c];return{x:(v[0]/v[3]*.5+.5)*w,y:(.5-v[1]/v[3]*.5)*h,visible:v[3]>0&&Math.abs(v[0]/v[3])<1&&Math.abs(v[1]/v[3])<1};}
-function render(now){frame=0;if(!ready||!sceneVisible||document.hidden)return;
+function samplePieceClock(now){if(!settling)return pieceProgress;const t=clamp((now-settleStart)/settleDuration,0,1);return mix(settleFrom,inputProgress,1-(1-t)**3)}
+function render(_frameTimestamp){const now=performance.now();frame=0;if(!ready||!sceneVisible||document.hidden)return;
  // This is the only piece presentation clock. The finite cubic reaches the
  // current input exactly with zero terminal velocity; it never extrapolates.
- if(mode==='piece'&&!manual&&settling){const t=clamp((now-settleStart)/settleDuration,0,1);pieceProgress=mix(settleFrom,inputProgress,1-(1-t)**3);if(t>=1){pieceProgress=inputProgress;settling=false;}}
+ if(mode==='piece'&&!manual&&settling){pieceProgress=samplePieceClock(now);if(now>=settleStart+settleDuration){pieceProgress=inputProgress;settling=false;}}
  const state=mode==='piece'?window.ferroPieceScene.stateAt(pieceProgress,{details:false}):null;
  if(state&&!manual)updateGoal(state);
  const dt=last?Math.min(now-last,50):16;last=now;const t=mode==='piece'||reduced.matches?1:1-Math.exp(-dt/125);let delta=0;for(let k=0;k<3;k++){const d=goal.target[k]-camera.target[k];camera.target[k]+=d*t;delta=Math.max(delta,Math.abs(d)/1000)}for(const k of ['radius','yaw','pitch']){const d=goal[k]-camera[k];camera[k]+=d*t;delta=Math.max(delta,Math.abs(d)/(k==='radius'?1000:1))}
@@ -99,10 +100,15 @@ function pieceState(){if(mode!=='piece'||!window.ferroPieceScene)return null;ret
 window.ferroWalkthrough={
  setProgress(p){requested=clamp(p,0,2);if(mode==='hardware'&&!manual){updateGoal();changed()}},
  setMode(next){if(!['piece','hardware'].includes(next))return;if(next==='piece'&&!window.ferroPieceScene)return;mode=next;manual=false;settling=false;if(mode==='piece')pieceProgress=inputProgress;updateGoal();Object.assign(camera,goal,{target:[...goal.target]});changed()},
- setPieceProgress(p,{resumeOnProgressChange=true,immediate=false}={}){const next=clamp(p,0,1),progressChanged=Math.abs(next-inputProgress)>1e-7,resumed=mode==='piece'&&manual&&progressChanged&&resumeOnProgressChange;inputProgress=next;
+ setPieceProgress(p,{resumeOnProgressChange=true,immediate=false}={}){const next=clamp(p,0,1),progressChanged=Math.abs(next-inputProgress)>1e-7,resumed=mode==='piece'&&manual&&progressChanged&&resumeOnProgressChange,clockNow=performance.now(),retargetFrom=samplePieceClock(clockNow);inputProgress=next;
   if(mode==='piece'){if(progressChanged&&resumeOnProgressChange)manual=false;
    if(immediate||reduced.matches||!ready||!sceneVisible||document.hidden){pieceProgress=inputProgress;settling=false;}
-   else if(progressChanged&&!manual){settleFrom=pieceProgress;settleStart=performance.now();settling=Math.abs(inputProgress-pieceProgress)>1e-7;}
+   else if(progressChanged&&!manual){
+    // A scroll callback can run after the RAF timestamp for this same frame.
+    // Preserve elapsed motion on the OLD curve before replacing its target;
+    // otherwise every continuous input can restart at t=0 and starve rendering.
+    settleFrom=retargetFrom;settleStart=clockNow;settling=Math.abs(inputProgress-retargetFrom)>1e-7;if(!settling)pieceProgress=inputProgress;
+   }
    if(!manual&&!settling){updateGoal();Object.assign(camera,goal,{target:[...goal.target]})}changed();if(resumed)window.dispatchEvent(new Event('ferrosift-resume'));}},
  resume(){manual=false;settling=false;if(mode==='piece')pieceProgress=inputProgress;updateGoal();changed()},
  getState:()=>({ready,manual,mode,scene,progress:requested,inputProgress,presentedProgress:pieceProgress,settling,settleDurationMs:settleDuration,settleDeadline:settling?settleStart+settleDuration:null,renderedFrames,framePending:!!frame,sceneVisible,components:meshes.length,drawn,piece:pieceState(),camera:{...camera,target:[...camera.target]}})
