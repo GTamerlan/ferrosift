@@ -32,17 +32,22 @@ const copperPath=copperCenterline();
 function sweepMinZ(points,r){let min=Infinity;for(let j=0;j<points.length-1;j++){const a=points[j],b=points[j+1],d=unit(b.map((v,i)=>v-a[i])),u=unit(cross(d,Math.abs(d[2])>.8?[0,1,0]:[0,0,1])),v=cross(d,u);for(let i=0;i<10;i++){const t=i*2*Math.PI/10,dz=(u[2]*Math.cos(t)+v[2]*Math.sin(t))*r;min=Math.min(min,a[2]+dz,b[2]+dz);}}return min;}
 const supportDrop=Math.min(sweepMinZ(copperPath,copperWireRadius),...[36,148,255,375].map(i=>sweepMinZ([copperPath[i],copperPath[i+1]],copperWireRadius+.025)));
 for(const q of copperPath)q[2]-=supportDrop;
-const positions=[[0,-640],[.14,-280],[.26,-280],[.41,0],[.57,0],[.69,300],[.83,300],[.90,550],[1,780]];
-function positionAt(p){for(let i=0;i<positions.length-1;i++){const a=positions[i],b=positions[i+1];if(p<=b[0])return mix(a[1],b[1],ease(clamp((p-a[0])/(b[0]-a[0]))));}return 780;}
+// Continuous monotone travel through each station; there are no scroll dwells.
+const positions=[[0,-640],[.22,-280],[.50,0],[.75,300],[.90,550],[1,780]];
+const travelSlopes=positions.map((a,i)=>{if(i===0)return(positions[1][1]-a[1])/(positions[1][0]-a[0]);if(i===positions.length-1)return(a[1]-positions[i-1][1])/(a[0]-positions[i-1][0]);const h0=a[0]-positions[i-1][0],h1=positions[i+1][0]-a[0],d0=(a[1]-positions[i-1][1])/h0,d1=(positions[i+1][1]-a[1])/h1;return 3*(h0+h1)/((2*h1+h0)/d0+(h1+2*h0)/d1);});
+function positionAt(p){p=clamp(p);let i=0;while(i<positions.length-2&&p>positions[i+1][0])i++;const a=positions[i],b=positions[i+1],h=b[0]-a[0],t=(p-a[0])/h,t2=t*t,t3=t2*t;return(2*t3-3*t2+1)*a[1]+(t3-2*t2+t)*h*travelSlopes[i]+(-2*t3+3*t2)*b[1]+(t3-t2)*h*travelSlopes[i+1];}
+const ramp=(p,a,b)=>ease(clamp((p-a)/(b-a)));
+const axisDefinitions=[{id:'station-bottom-intended-axis',tag:'bottomAxis',cadReference:[0,0,961.7],from:[0,-72,1048],to:[0,-72,1120],axis:[0,0,1]},{id:'station-transverse-intended-axis',tag:'sideAxis',cadReference:[300,-119.3,1055],from:[300,-66,1118],to:[300,66,1118],axis:[0,1,0]}];
+function annotationState(p){return{fixedWorld:true,depthTested:true,displacedAxisIndicators:true,notLocalFieldSolution:true,travelOpacity:1-ramp(p,.83,.89),bottomOpacity:ramp(p,.34,.39)*(1-ramp(p,.58,.64)),sideOpacity:ramp(p,.63,.68)*(1-ramp(p,.83,.88)),travel:{id:'belt-travel-chevrons',direction:[1,0,0],anchors:[-620,-400,-180,40,260,480].map(x=>[x,-60,1001.2])},axes:axisDefinitions};}
 function routeAt(p){return p<.90?0:ease(clamp((p-.90)/.10));}
-function stateAt(progress){
+function stateAt(progress,{details=true}={}){
  const p=clamp(progress),x=positionAt(p),route=routeAt(p),y=-130*route,transition=ease(clamp((p-.86)/.08));
  return {conceptual:true,id:'42',progress:p,x,y,station:p<.14?'intro':p<.30?'optical':p<.62?'bottom':p<.90?'transverse':'fusion',object:'irregular assumed laminated-steel fragment with attached open copper winding',
   pose:{translation:[x,y,1000],coreAxis:[0,1,0],supportMinZ:1000,constantOrientation:true,wholePieceRigid:true},
-  bottomField:[0,0,1],transverseField:[0,1,0],fieldVisible:null,fieldGlyphs:false,currentGlyphs:false,
+  bottomField:[0,0,1],transverseField:[0,1,0],fieldVisible:null,fieldGlyphs:true,currentGlyphs:false,annotations:annotationState(p),cutaway:ramp(p,.29,.35)*(1-ramp(p,.59,.66)),
   bounds:{min:[x-36,y-57,1000],max:[x+36,y+55,1057]},
   materials:{core:'assumed laminated steel',winding:'assumed copper',sleeve:'assumed insulating material',compositionKnownForIllustration:true,notInferredBySensors:true,steelContributesToBothChannels:true},
-  copperPaths:{type:'single continuous open-ended attached winding',closed:false,wireRadius:copperWireRadius,centerline:copperPath.map(q=>[...q]),electricalConnectionUnspecified:true,retainedAroundBrokenInsulatingFormer:true},
+  copperPaths:{type:'single continuous open-ended attached winding',closed:false,wireRadius:copperWireRadius,centerline:details?copperPath.map(q=>[...q]):undefined,electricalConnectionUnspecified:true,retainedAroundBrokenInsulatingFormer:true},
   currentLoops:{shown:false,excitationAndMagnitudeUnsolved:true},
   routing:{active:p>=.90,opacity:transition,hardwareOpacity:1-transition,schematic:true,wholePiece:true,progress:route,selected:'mixed-material stream',alternative:'steel stream',entry:[550,0,1000],selectedEndpoint:[780,-130,1000],alternativeEndpoint:[780,130,1000],noValidatedActuatorOrCapture:true},
   evidence:{appearance:p>=.22,bottom:p>=.50,transverse:p>=.75,fusion:p>=.90}};
@@ -100,8 +105,13 @@ function makeGeometry(){
  for(let i=0;i<copperPath.length-1;i++)tube(copper,copperPath[i],copperPath[i+1],copperWireRadius,10);
  const tarnish=mesh('fragment-copper-abrasion',[.38,.18,.065],'piece',[18,.08]);
  for(const i of [36,148,255,375])tube(tarnish,copperPath[i],copperPath[i+1],copperWireRadius+.025,10);
- // There is intentionally no travelling field/current overlay. Intended field
- // directions belong to the stations; no response or current has been solved.
+ // These are fixed world annotations, never translated with the fragment.
+ // Blue double arrows indicate an intended station axis, displaced for clarity;
+ // they are not local field lines, polarity, current, response or motion forces.
+ function doubleArrow(m,a,b){const d=unit(b.map((v,i)=>v-a[i])),r=1.65,head=9,u=unit(cross(d,Math.abs(d[2])>.8?[0,1,0]:[0,0,1])),v=cross(d,u),aa=add(a,scale(d,head)),bb=add(b,scale(d,-head));tube(m,aa,bb,r,10);for(const [tip,base] of[[a,aa],[b,bb]])for(let i=0;i<12;i++){const t=i*Math.PI/6,tt=(i+1)*Math.PI/6;tri(m,tip,add(base,add(scale(u,Math.cos(t)*3.6),scale(v,Math.sin(t)*3.6))),add(base,add(scale(u,Math.cos(tt)*3.6),scale(v,Math.sin(tt)*3.6))));}}
+ for(const a of axisDefinitions){const m=mesh(a.id,[.20,.46,.67],a.tag,[16,.04],.55);doubleArrow(m,a.from,a.to);}
+ const travel=mesh('belt-travel-chevrons',[.27,.56,.43],'travel',[12,.02],.7);
+ for(const x of[-620,-400,-180,40,260,480]){const z=1001.2,y=-60;quad(travel,[x-16,y-3,z],[x+3,y-3,z],[x+3,y+3,z],[x-16,y+3,z]);tri(travel,[x+12,y,z],[x+1,y+8,z],[x+1,y-8,z]);}
  // A flat branching diagram is an explicitly separate host-sorter schematic,
  // not fabricated CAD for an ejector, chute, bin, capture envelope or mechanism.
  const floor=mesh('schematic-host-routing-board',[.77,.82,.78],'route',[12,.02],.55);
@@ -116,13 +126,17 @@ function makeGeometry(){
  for(const y of[-130,130]){const c=[650,y*.44,.2],dir=unit([230,y,0]),n=[-dir[1],dir[0],0];tri(arrows,add(c,scale(dir,17)),add(add(c,scale(dir,-10)),scale(n,15)),add(add(c,scale(dir,-10)),scale(n,-15)));}
  return result;
 }
-function hardwareVisible(o,p){const id=o.id;if(p>=.94)return false;
- if(id==='host_carrying_belt'||id==='module_support_window')return true;
- if(/^lane_(guide|skirt)_/.test(id))return true;
- if(o.group==='optical')return p<.34&&!o.default_hidden&&!/carrier|lid_spacer|cable_gland|mount_screw|mount_pad|drop_arm/.test(id);
- if(o.group==='under_belt')return p>=.30&&p<=.65&&!/_insulation$|cable|height_shim|slide_|cover|shell|support|handle|retainer|post/.test(id)&&(!o.default_hidden||o.winding_part==='bobbin');
- if(o.group==='transverse')return p>=.60&&p<=.94&&id!=='side_winding_former_-1'&&!/_insulation$|cable|cartridge|cover|arm_|hanger|adjust|clamp|support|bracket|former_spacer/.test(id)&&(!o.default_hidden||o.winding_part==='bobbin');
- return false;
+// Compile eligibility once per original CAD object; only numeric opacity curves
+// vary while scrolling. No original hardware vertices or materials are altered.
+function hardwareCategory(o){const id=o.id;
+ if(id==='host_carrying_belt')return'belt';if(id==='module_support_window')return'window';
+ if(/^lane_(guide|skirt)_/.test(id))return'guide';
+ if(o.group==='optical'&&!o.default_hidden&&!/carrier|lid_spacer|cable_gland|mount_screw|mount_pad|drop_arm/.test(id))return'optical';
+ if(o.group==='under_belt'&&!/_insulation$|cable|height_shim|slide_|cover|shell|support|handle|retainer|post/.test(id)&&(!o.default_hidden||o.winding_part==='bobbin'))return'bottom';
+ if(o.group==='transverse'&&id!=='side_winding_former_-1'&&!/_insulation$|cable|cartridge|cover|arm_|hanger|adjust|clamp|support|bracket|former_spacer/.test(id)&&(!o.default_hidden||o.winding_part==='bobbin'))return'transverse';
+ return'none';
 }
-window.ferroPieceScene=Object.freeze({stateAt,cameraAt,makeGeometry,hardwareVisible});
+function hardwareOpacity(category,p){if(category==='none')return 0;if(category==='optical')return 1-ramp(p,.29,.35);if(category==='bottom')return ramp(p,.29,.35)*(1-ramp(p,.60,.66));if(category==='transverse')return ramp(p,.59,.66);return 1;}
+function hardwareVisible(o,p){return p<.94&&hardwareOpacity(hardwareCategory(o),p)>0;}
+window.ferroPieceScene=Object.freeze({stateAt,cameraAt,makeGeometry,hardwareVisible,hardwareCategory,hardwareOpacity});
 })();

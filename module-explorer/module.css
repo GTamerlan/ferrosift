@@ -27,3 +27,11 @@
 .walkthrough[data-mode=piece] #scroll-hint{color:#40594f}
 @media(max-width:700px){.walkthrough[data-mode=piece] .stage-controls{flex-wrap:nowrap}.walkthrough[data-mode=piece] .research-note{max-width:130px}.walkthrough[data-mode=piece] #scroll-hint{font-size:9px;line-height:1.4}}
 @media(max-width:370px){.walkthrough[data-mode=piece] .research-note{max-width:110px}}
+
+/* Directions share the rendered scene's presented progress, not raw input. */
+.direction-legend{position:absolute;right:4vw;top:65px;z-index:3;display:flex;flex-direction:column;align-items:flex-end;gap:5px;font:9px/1.25 var(--mono);color:#40594f;pointer-events:none}
+.direction-legend>span{display:flex;align-items:center;gap:7px;padding:3px 6px;border-radius:2px;background:#f0f3ece6}
+.direction-legend i{display:inline-block;font:700 18px/10px Arial,sans-serif;font-style:normal;min-width:18px;text-align:center}
+.travel-key{color:#458f6e}.field-key{color:#3375ab}
+@media(max-width:700px){.direction-legend{right:20px;top:77px;font-size:7px;gap:3px}.direction-legend>span{gap:5px;padding:2px 4px}.direction-legend i{font-size:15px;min-width:15px}}
+@media(max-width:370px){.direction-legend{right:16px;font-size:6px}}
